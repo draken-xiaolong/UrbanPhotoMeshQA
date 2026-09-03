@@ -14,3 +14,9 @@ data/
 datasets/
 server_runs/
 scratch/
+
+# Regenerable Iteration 2 attack-manifest intermediates (keep the effective manifest)
+artifacts/manifests/iteration2_attack_stage1_seed2026.json
+artifacts/manifests/iteration2_attack_stage1_shard*_seed2026.json
+artifacts/manifests/iteration2_attack_stage1_formal_seed2026.json
+artifacts/manifests/iteration2_quality_dataset_stage1_formal_seed2026.json

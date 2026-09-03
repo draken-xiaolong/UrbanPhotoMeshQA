@@ -1,0 +1,640 @@
+{
+  "schema_version": 1,
+  "count": 90,
+  "attack_counts": {
+    "texture_detail_loss": 80,
+    "texture_misalignment": 10
+  },
+  "records": [
+    {
+      "asset_id": "B354901751101063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B354901751101063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B354901751101063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B356381770501063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B356381770501063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B356381770501063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B356931767301063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B356931767301063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B356931767301063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B356931767301063A0",
+      "attack": "texture_misalignment",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B359721769101063A0",
+      "attack": "texture_misalignment",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B359721769101063A0",
+      "attack": "texture_misalignment",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B361111758801063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B361111758801063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B361111758801063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B358021775701063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B358021775701063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B358021775701063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B358531771801063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B358531771801063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B358531771801063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B359191789701063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B359191789701063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B359191789701063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B360321782401063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B360321782401063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B360321782401063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B354891751601063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B354891751601063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B354891751601063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B355691764201063A0",
+      "attack": "texture_misalignment",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B355691764201063A0",
+      "attack": "texture_misalignment",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B358361756601063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B358361756601063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B358361756601063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B359061740801063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B359061740801063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B359061740801063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B360101765701063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B360101765701063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B360101765701063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B367141793401063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B367141793401063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B367141793401063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "train",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B413902122002063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "val",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B413902122002063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "val",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B413902122002063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "val",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B365101588801063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "val",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B365101588801063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "val",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B365101588801063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "val",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B360421792601063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B360421792601063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B360421792601063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B413222108101063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B413222108101063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B413222108101063A0",
+      "attack": "texture_misalignment",
+      "level": "light",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B413222108101063A0",
+      "attack": "texture_misalignment",
+      "level": "medium",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B413222108101063A0",
+      "attack": "texture_misalignment",
+      "level": "heavy",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B358071756501063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B358071756501063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B358071756501063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B360691741201063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B360691741201063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B360691741201063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B356011790001063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B356011790001063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B356011790001063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "test",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B343081788101063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B343081788101063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B343081788101063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B344001795901063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B344001795901063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B344001795901063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B344001795901063A0",
+      "attack": "texture_misalignment",
+      "level": "medium",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B344001795901063A0",
+      "attack": "texture_misalignment",
+      "level": "heavy",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B340891778901063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B340891778901063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B340891778901063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B342691783401063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B342691783401063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B342691783401063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B343341787401063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B343341787401063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B343341787401063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B359471729801063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B359471729801063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B359471729801063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B342961786501063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B342961786501063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    },
+    {
+      "asset_id": "B342961786501063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "split": "blind",
+      "exclusion_reason": "uv_invisible_objective_noop"
+    }
+  ]
+}

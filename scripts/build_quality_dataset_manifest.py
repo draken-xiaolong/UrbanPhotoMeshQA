@@ -36,9 +36,13 @@ def main() -> None:
     attacked = json.loads(args.attack_manifest.read_text(encoding="utf-8"))["records"]
     records = []
     for record in source:
-        gltf = (args.source_root / record["sheet"] / record.get("class_name", "BUILDING")
-                / record["asset_id"] / f"{record['asset_id']}.gltf")
-        records.append({"asset_id": record["asset_id"], "sheet": record["sheet"],
+        tile = record.get("sheet", record.get("tile"))
+        if record.get("source_gltf"):
+            gltf = args.source_root / record["source_gltf"]
+        else:
+            gltf = (args.source_root / tile / record.get("class_name", "BUILDING")
+                    / record["asset_id"] / f"{record['asset_id']}.gltf")
+        records.append({"asset_id": record["asset_id"], "sheet": tile, "tile": tile,
                         "class_name": "BUILDING", "split": record["split"], "attack": "clean",
                         "level": "clean", "parameters": {}, "gltf_path": str(gltf),
                         **targets("clean", "clean")})

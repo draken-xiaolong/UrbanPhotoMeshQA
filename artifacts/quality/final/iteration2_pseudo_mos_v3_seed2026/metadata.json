@@ -1,0 +1,50 @@
+{
+  "schema_version": 3,
+  "name": "Machine Pseudo-MOS v3",
+  "selection_protocol": "formula/scales frozen without Val/Test/Blind model results",
+  "config": {
+    "schema_version": 2,
+    "seed": 2026,
+    "status": "FROZEN_FORMAL",
+    "selection_protocol": "Constants inherited from the OQI v2 Train audit and fixed 18-case perceptual Pilot; no Val, Test, Blind model result or target distribution was used.",
+    "base_transform": "reciprocal burden: q = 1 / (1 - log(max(q_v2_raw, 1e-8)))",
+    "perceptual_burden": {
+      "feature_mean": {
+        "scale": 0.005,
+        "weight": 0.4
+      },
+      "feature_p95_mean": {
+        "scale": 0.02,
+        "weight": 0.4
+      },
+      "feature_worst_view_mean": {
+        "scale": 0.01,
+        "weight": 0.2
+      }
+    },
+    "perceptual_transform": "q = 1 / (1 + sum(weight * metric / scale))",
+    "component_fusion": {
+      "method": "normalized_soft_min",
+      "temperature": 0.15
+    },
+    "overall_candidates": {
+      "hard_min": "min(geometry, texture)",
+      "soft_min": {
+        "temperature": 0.1
+      },
+      "bounded_interaction": "0.6 * soft_min + 0.4 * geometry * texture"
+    },
+    "monotonic_policy": "Cumulative burden envelope within each building/attack sequence; raw teacher metrics remain stored separately.",
+    "ordinal_policy": "Five ordered bins over [0,1], continuous pseudo-MOS remains the primary target."
+  },
+  "records": 6289,
+  "groups": 1987,
+  "monotonic_before": 0.9899345747357826,
+  "monotonic_after": 1.0,
+  "counts": {
+    "train": 3903,
+    "val": 843,
+    "test": 825,
+    "blind": 718
+  }
+}

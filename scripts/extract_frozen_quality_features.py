@@ -44,7 +44,11 @@ def main() -> None:
     parser.add_argument("--skip-texture", action="store_true",
                         help="Emit a zero placeholder for geometry-only Base ablations")
     parser.add_argument("--device", default="cuda")
+    parser.add_argument("--shard-index", type=int, default=0)
+    parser.add_argument("--shard-count", type=int, default=1)
     args = parser.parse_args()
+    if args.shard_count < 1 or not 0 <= args.shard_index < args.shard_count:
+        raise ValueError("Require 0 <= shard-index < shard-count")
     device = torch.device(args.device)
     if device.type != "cuda" or not torch.cuda.is_available():
         raise RuntimeError("CUDA required for formal frozen feature extraction")
@@ -76,6 +80,7 @@ def main() -> None:
                 if key(record) in targets
                 and targets[key(record)]["split"] in selected_splits
                 and targets[key(record)]["attack"] in selected_attacks]
+    selected = selected[args.shard_index::args.shard_count]
     output = {split: [] for split in selected_splits}
     args.output_dir.mkdir(parents=True, exist_ok=True)
     cache_dir = args.feature_cache_dir or (args.output_dir / "per_asset_cache")
@@ -136,7 +141,9 @@ def main() -> None:
     metadata = {"schema_version": 2, "signature": signature, "signature_payload": signature_payload,
                 "counts": {split: len(rows) for split, rows in output.items()},
                 "selection": {"splits": list(selected_splits), "attacks": sorted(selected_attacks),
-                              "skip_texture": args.skip_texture},
+                              "skip_texture": args.skip_texture,
+                              "shard_index": args.shard_index,
+                              "shard_count": args.shard_count},
                 "dimensions": {branch: int(output["train"][0]["values"][branch].shape[-1]) for branch in BRANCHES},
                 "patch_shape": list(output["train"][0]["values"]["patches"].shape)}
     (args.output_dir / "metadata.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")

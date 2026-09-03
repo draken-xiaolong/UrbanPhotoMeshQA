@@ -147,6 +147,8 @@ class Store:
                     target_index = align_objective_targets(raw[split], objective, split)
                     for name in ("overall_quality", "geometry_quality", "texture_quality"):
                         raw[split][name] = objective[name][target_index].copy()
+                    if "ordinal_grade" in objective.files:
+                        raw[split]["ordinal_grade"] = objective["ordinal_grade"][target_index].copy()
                     if "patch_quality" in objective.files:
                         raw[split]["patch_quality"] = objective["patch_quality"][target_index].copy()
         self.has_patch_quality = all("patch_quality" in values for values in raw.values())
@@ -199,6 +201,9 @@ class Store:
                 "overall": torch.from_numpy(values["overall_quality"]).float().to(device),
                 "geometry": torch.from_numpy(values["geometry_quality"]).float().to(device),
                 "texture_quality": torch.from_numpy(values["texture_quality"]).float().to(device),
+                "ordinal_grade": torch.from_numpy(values.get(
+                    "ordinal_grade", np.clip(np.ceil(values["overall_quality"] * 5), 1, 5)
+                )).long().to(device),
                 "patch_quality": torch.from_numpy(values.get(
                     "patch_quality", np.ones_like(values["patch_mask"], dtype=np.float32))).float().to(device),
                 "asset_ids": values["asset_ids"].astype(str), "attacks": values["attacks"].astype(str),
@@ -240,6 +245,7 @@ class QualityHead(nn.Module):
         self.norm = nn.LayerNorm(128)
         self.shared = nn.Sequential(nn.Linear(128 * count, 256), nn.LayerNorm(256), nn.GELU(), nn.Dropout(0.1))
         self.attack = nn.Linear(256, len(ATTACKS))
+        self.ordinal = nn.Linear(256, 4)
         self.regression = nn.Sequential(nn.Linear(256, 128), nn.GELU(), nn.Linear(128, 4), nn.Sigmoid())
 
     def forward(self, branches, patches, patch_mask):
@@ -258,7 +264,8 @@ class QualityHead(nn.Module):
         attended, _ = self.attention(tokens, tokens, tokens, need_weights=False)
         shared = self.shared(self.norm(tokens + attended).flatten(1))
         regression = self.regression(shared)
-        return {"attack": self.attack(shared), "severity": regression[:, 0],
+        return {"attack": self.attack(shared), "ordinal": self.ordinal(shared),
+                "severity": regression[:, 0],
                 "overall": regression[:, 1], "geometry": regression[:, 2],
                 "texture": regression[:, 3], "patch_weights": patch_weights,
                 "patch_quality": patch_quality}
@@ -287,6 +294,11 @@ def evaluate(model, data):
     macro, class_f1 = macro_f1(predicted, truth)
     result = {"count": len(truth), "accuracy": float(np.mean(predicted == truth)), "macro_f1": macro,
               "per_class_f1": {name: float(value) for name, value in zip(ATTACKS, class_f1)}}
+    ordinal_prediction = 1 + (torch.sigmoid(out["ordinal"]) >= 0.5).sum(1)
+    result["ordinal"] = {
+        "accuracy": float((ordinal_prediction == data["ordinal_grade"]).float().mean().cpu()),
+        "mae_grades": float(torch.abs(ordinal_prediction - data["ordinal_grade"]).float().mean().cpu()),
+    }
     for key in ("severity", "overall", "geometry", "texture"):
         target_key = "texture_quality" if key == "texture" else key
         target = data[target_key].cpu().numpy(); estimate = out[key].cpu().numpy()
@@ -362,6 +374,10 @@ def train_variant(name, store, args, device):
                     out["severity"], train["severity"][index], reduction="none")
             per_sample += 3.0 * F.smooth_l1_loss(
                 out["overall"], train["overall"][index], reduction="none")
+            ordinal_truth = (train["ordinal_grade"][index, None]
+                             > torch.arange(1, 5, device=device)[None]).float()
+            per_sample += 0.3 * F.binary_cross_entropy_with_logits(
+                out["ordinal"], ordinal_truth, reduction="none").mean(1)
             per_sample += 1.5 * F.smooth_l1_loss(
                 out["geometry"], train["geometry"][index], reduction="none")
             per_sample += 1.5 * F.smooth_l1_loss(
@@ -476,7 +492,7 @@ def main():
                            "quality_only": args.quality_only,
                            "objective_supervision": args.objective_target_dir is not None,
                            "loaded_splits": list(loaded_splits),
-                           "splits": {"train": 80, "val": 40, "test": 32, "blind": 32},
+                           "splits": store.dataset_provenance["counts"] if store.dataset_provenance else None,
                            "dataset_provenance": store.dataset_provenance},
               "selected_variant": best, "variants": summaries}
     (args.output_dir / "results.json").write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
