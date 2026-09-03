@@ -1,0 +1,15 @@
+{
+  "status": "PASSED",
+  "counts": {
+    "train": 1518,
+    "val": 760,
+    "test": 607,
+    "blind": 608
+  },
+  "records": 3493,
+  "ordered_sample_key_sha256": "065fe44a9eff3d7410fde9e9dfce1a86041abbf99600b3c4969516bc2c5f1166",
+  "geometry_records": 1837,
+  "texture_records": 1840,
+  "formula": "Patch Overall Quality = min(Patch Geometry Quality, Patch Texture Quality)",
+  "protocol": "Clean/Attacked pairing only for offline targets; inference remains single-model no-reference"
+}

@@ -1,0 +1,1657 @@
+{
+  "schema_version": 1,
+  "assets": 184,
+  "component_count": {
+    "min": 1,
+    "median": 4.0,
+    "p90": 21.700000000000017,
+    "p95": 34.849999999999994,
+    "max": 1151,
+    "over_16": 28,
+    "over_32": 14,
+    "over_64": 4,
+    "over_128": 2
+  },
+  "face_count": {
+    "min": 22,
+    "median": 492.0,
+    "p95": 6108.549999999999,
+    "max": 42334
+  },
+  "largest_component_assets": [
+    {
+      "asset_id": "B354191720501063A0",
+      "sheet": "11-SW-4D",
+      "faces": 42334,
+      "edge_connected_components": 1151,
+      "largest_component_faces": 1942,
+      "singleton_components": 3
+    },
+    {
+      "asset_id": "B359321570101063A0",
+      "sheet": "11-SW-9D",
+      "faces": 11046,
+      "edge_connected_components": 130,
+      "largest_component_faces": 5124,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B356701722402063A0",
+      "sheet": "11-SW-4D",
+      "faces": 6124,
+      "edge_connected_components": 116,
+      "largest_component_faces": 2136,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "sheet": "11-SW-9D",
+      "faces": 4572,
+      "edge_connected_components": 108,
+      "largest_component_faces": 1104,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355041762402063A0",
+      "sheet": "11-SW-4B",
+      "faces": 12258,
+      "edge_connected_components": 63,
+      "largest_component_faces": 10126,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358611580502063A1",
+      "sheet": "11-SW-9D",
+      "faces": 3723,
+      "edge_connected_components": 57,
+      "largest_component_faces": 2317,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359621716601063A1",
+      "sheet": "11-SW-4D",
+      "faces": 1602,
+      "edge_connected_components": 48,
+      "largest_component_faces": 924,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B362591581601063A0",
+      "sheet": "11-SW-10C",
+      "faces": 692,
+      "edge_connected_components": 43,
+      "largest_component_faces": 258,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B352631575201063A0",
+      "sheet": "11-SW-9D",
+      "faces": 12274,
+      "edge_connected_components": 42,
+      "largest_component_faces": 8281,
+      "singleton_components": 3
+    },
+    {
+      "asset_id": "B354511570301063A0",
+      "sheet": "11-SW-9D",
+      "faces": 14462,
+      "edge_connected_components": 35,
+      "largest_component_faces": 5528,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B357261571601063A0",
+      "sheet": "11-SW-9D",
+      "faces": 2835,
+      "edge_connected_components": 34,
+      "largest_component_faces": 1437,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358561759502063A0",
+      "sheet": "11-SW-4B",
+      "faces": 6021,
+      "edge_connected_components": 34,
+      "largest_component_faces": 5099,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B359311774602063A0",
+      "sheet": "11-SW-4B",
+      "faces": 4413,
+      "edge_connected_components": 34,
+      "largest_component_faces": 3446,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B360191781702063A0",
+      "sheet": "11-SW-5A",
+      "faces": 1615,
+      "edge_connected_components": 34,
+      "largest_component_faces": 1227,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "sheet": "11-SW-15A",
+      "faces": 4405,
+      "edge_connected_components": 32,
+      "largest_component_faces": 908,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358891770102063A0",
+      "sheet": "11-SW-4B",
+      "faces": 1959,
+      "edge_connected_components": 28,
+      "largest_component_faces": 1149,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B359761718602063A1",
+      "sheet": "11-SW-4D",
+      "faces": 1929,
+      "edge_connected_components": 25,
+      "largest_component_faces": 1484,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B365571571301063A0",
+      "sheet": "11-SW-10C",
+      "faces": 980,
+      "edge_connected_components": 23,
+      "largest_component_faces": 790,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B415462100701063A0",
+      "sheet": "11-NE-13B",
+      "faces": 2195,
+      "edge_connected_components": 22,
+      "largest_component_faces": 1847,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B341581788502063A0",
+      "sheet": "11-SW-3B",
+      "faces": 4218,
+      "edge_connected_components": 21,
+      "largest_component_faces": 1894,
+      "singleton_components": 1
+    }
+  ],
+  "records": [
+    {
+      "asset_id": "B412542125301063A0",
+      "sheet": "11-NE-13B",
+      "faces": 30,
+      "edge_connected_components": 1,
+      "largest_component_faces": 30,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B412932132301063A0",
+      "sheet": "11-NE-13B",
+      "faces": 46,
+      "edge_connected_components": 3,
+      "largest_component_faces": 24,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B413082134001063A0",
+      "sheet": "11-NE-13B",
+      "faces": 86,
+      "edge_connected_components": 4,
+      "largest_component_faces": 44,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B413332153701063A0",
+      "sheet": "11-NE-13B",
+      "faces": 257,
+      "edge_connected_components": 1,
+      "largest_component_faces": 257,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B413652148901063A0",
+      "sheet": "11-NE-13B",
+      "faces": 260,
+      "edge_connected_components": 1,
+      "largest_component_faces": 260,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B413842149801063A0",
+      "sheet": "11-NE-13B",
+      "faces": 254,
+      "edge_connected_components": 1,
+      "largest_component_faces": 254,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B413902122002063A0",
+      "sheet": "11-NE-13B",
+      "faces": 56,
+      "edge_connected_components": 1,
+      "largest_component_faces": 56,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B414122143101063A0",
+      "sheet": "11-NE-13B",
+      "faces": 249,
+      "edge_connected_components": 1,
+      "largest_component_faces": 249,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B414372125401063A0",
+      "sheet": "11-NE-13B",
+      "faces": 546,
+      "edge_connected_components": 12,
+      "largest_component_faces": 416,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B414592139301063A0",
+      "sheet": "11-NE-13B",
+      "faces": 193,
+      "edge_connected_components": 4,
+      "largest_component_faces": 134,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B414702116301063A0",
+      "sheet": "11-NE-13B",
+      "faces": 34,
+      "edge_connected_components": 1,
+      "largest_component_faces": 34,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B415462100701063A0",
+      "sheet": "11-NE-13B",
+      "faces": 2195,
+      "edge_connected_components": 22,
+      "largest_component_faces": 1847,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B415722108801063A0",
+      "sheet": "11-NE-13B",
+      "faces": 2863,
+      "edge_connected_components": 17,
+      "largest_component_faces": 2681,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B416172103801063A0",
+      "sheet": "11-NE-13B",
+      "faces": 46,
+      "edge_connected_components": 1,
+      "largest_component_faces": 46,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B416352100801063A0",
+      "sheet": "11-NE-13B",
+      "faces": 26,
+      "edge_connected_components": 1,
+      "largest_component_faces": 26,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B419472155201062A0",
+      "sheet": "11-NE-13B",
+      "faces": 30,
+      "edge_connected_components": 1,
+      "largest_component_faces": 30,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359921765302063A0",
+      "sheet": "11-SW-5A",
+      "faces": 2558,
+      "edge_connected_components": 14,
+      "largest_component_faces": 2343,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B360101765701063A0",
+      "sheet": "11-SW-5A",
+      "faces": 559,
+      "edge_connected_components": 1,
+      "largest_component_faces": 559,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B360191781702063A0",
+      "sheet": "11-SW-5A",
+      "faces": 1615,
+      "edge_connected_components": 34,
+      "largest_component_faces": 1227,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B360321782401063A0",
+      "sheet": "11-SW-5A",
+      "faces": 1119,
+      "edge_connected_components": 9,
+      "largest_component_faces": 951,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B360441797001063A0",
+      "sheet": "11-SW-5A",
+      "faces": 1831,
+      "edge_connected_components": 1,
+      "largest_component_faces": 1831,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B360561789001063A0",
+      "sheet": "11-SW-5A",
+      "faces": 808,
+      "edge_connected_components": 7,
+      "largest_component_faces": 664,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B360691751802063A0",
+      "sheet": "11-SW-5A",
+      "faces": 566,
+      "edge_connected_components": 5,
+      "largest_component_faces": 531,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B360851795701063A0",
+      "sheet": "11-SW-5A",
+      "faces": 667,
+      "edge_connected_components": 5,
+      "largest_component_faces": 610,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "sheet": "11-SW-5A",
+      "faces": 1260,
+      "edge_connected_components": 4,
+      "largest_component_faces": 1028,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B361061766701063A0",
+      "sheet": "11-SW-5A",
+      "faces": 2526,
+      "edge_connected_components": 9,
+      "largest_component_faces": 2030,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B361251785501063A0",
+      "sheet": "11-SW-5A",
+      "faces": 5256,
+      "edge_connected_components": 13,
+      "largest_component_faces": 4607,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B361611792502063A0",
+      "sheet": "11-SW-5A",
+      "faces": 1873,
+      "edge_connected_components": 15,
+      "largest_component_faces": 1527,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B362381773802063A0",
+      "sheet": "11-SW-5A",
+      "faces": 715,
+      "edge_connected_components": 3,
+      "largest_component_faces": 643,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B363471792802063A0",
+      "sheet": "11-SW-5A",
+      "faces": 1085,
+      "edge_connected_components": 4,
+      "largest_component_faces": 1024,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B364891765801063A0",
+      "sheet": "11-SW-5A",
+      "faces": 64,
+      "edge_connected_components": 2,
+      "largest_component_faces": 50,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B367141793401063A0",
+      "sheet": "11-SW-5A",
+      "faces": 515,
+      "edge_connected_components": 1,
+      "largest_component_faces": 515,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B352631575201063A0",
+      "sheet": "11-SW-9D",
+      "faces": 12274,
+      "edge_connected_components": 42,
+      "largest_component_faces": 8281,
+      "singleton_components": 3
+    },
+    {
+      "asset_id": "B352821560001063A0",
+      "sheet": "11-SW-9D",
+      "faces": 40,
+      "edge_connected_components": 1,
+      "largest_component_faces": 40,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "sheet": "11-SW-9D",
+      "faces": 56,
+      "edge_connected_components": 4,
+      "largest_component_faces": 26,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B354071561701063A0",
+      "sheet": "11-SW-9D",
+      "faces": 46,
+      "edge_connected_components": 1,
+      "largest_component_faces": 46,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B354511570301063A0",
+      "sheet": "11-SW-9D",
+      "faces": 14462,
+      "edge_connected_components": 35,
+      "largest_component_faces": 5528,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355691583201063A0",
+      "sheet": "11-SW-9D",
+      "faces": 192,
+      "edge_connected_components": 4,
+      "largest_component_faces": 166,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355931574802063A0",
+      "sheet": "11-SW-9D",
+      "faces": 797,
+      "edge_connected_components": 4,
+      "largest_component_faces": 534,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "sheet": "11-SW-9D",
+      "faces": 4572,
+      "edge_connected_components": 108,
+      "largest_component_faces": 1104,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B357261571601063A0",
+      "sheet": "11-SW-9D",
+      "faces": 2835,
+      "edge_connected_components": 34,
+      "largest_component_faces": 1437,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B357721561601063A0",
+      "sheet": "11-SW-9D",
+      "faces": 42,
+      "edge_connected_components": 1,
+      "largest_component_faces": 42,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B357791617101063A0",
+      "sheet": "11-SW-9D",
+      "faces": 61,
+      "edge_connected_components": 1,
+      "largest_component_faces": 61,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358061571801063A0",
+      "sheet": "11-SW-9D",
+      "faces": 1577,
+      "edge_connected_components": 21,
+      "largest_component_faces": 871,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358611580502063A1",
+      "sheet": "11-SW-9D",
+      "faces": 3723,
+      "edge_connected_components": 57,
+      "largest_component_faces": 2317,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358831570501063A0",
+      "sheet": "11-SW-9D",
+      "faces": 121,
+      "edge_connected_components": 1,
+      "largest_component_faces": 121,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359321570101063A0",
+      "sheet": "11-SW-9D",
+      "faces": 11046,
+      "edge_connected_components": 130,
+      "largest_component_faces": 5124,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359591589601063A0",
+      "sheet": "11-SW-9D",
+      "faces": 313,
+      "edge_connected_components": 3,
+      "largest_component_faces": 289,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B360071615701063A0",
+      "sheet": "11-SW-10C",
+      "faces": 207,
+      "edge_connected_components": 11,
+      "largest_component_faces": 57,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B360751587001063A0",
+      "sheet": "11-SW-10C",
+      "faces": 68,
+      "edge_connected_components": 1,
+      "largest_component_faces": 68,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B361781561001063A0",
+      "sheet": "11-SW-10C",
+      "faces": 162,
+      "edge_connected_components": 1,
+      "largest_component_faces": 162,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B362591581601063A0",
+      "sheet": "11-SW-10C",
+      "faces": 692,
+      "edge_connected_components": 43,
+      "largest_component_faces": 258,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B363201580601063A0",
+      "sheet": "11-SW-10C",
+      "faces": 435,
+      "edge_connected_components": 5,
+      "largest_component_faces": 405,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B364061599601063A0",
+      "sheet": "11-SW-10C",
+      "faces": 105,
+      "edge_connected_components": 4,
+      "largest_component_faces": 69,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B364401564201063A0",
+      "sheet": "11-SW-10C",
+      "faces": 184,
+      "edge_connected_components": 3,
+      "largest_component_faces": 166,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B364731590701063A0",
+      "sheet": "11-SW-10C",
+      "faces": 503,
+      "edge_connected_components": 6,
+      "largest_component_faces": 453,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B365101588801063A0",
+      "sheet": "11-SW-10C",
+      "faces": 486,
+      "edge_connected_components": 16,
+      "largest_component_faces": 336,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B365571571301063A0",
+      "sheet": "11-SW-10C",
+      "faces": 980,
+      "edge_connected_components": 23,
+      "largest_component_faces": 790,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B365841572801063A0",
+      "sheet": "11-SW-10C",
+      "faces": 446,
+      "edge_connected_components": 1,
+      "largest_component_faces": 446,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B366231562301063A0",
+      "sheet": "11-SW-10C",
+      "faces": 268,
+      "edge_connected_components": 7,
+      "largest_component_faces": 220,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B366521560501063A0",
+      "sheet": "11-SW-10C",
+      "faces": 781,
+      "edge_connected_components": 17,
+      "largest_component_faces": 381,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B366831561701063A0",
+      "sheet": "11-SW-10C",
+      "faces": 188,
+      "edge_connected_components": 3,
+      "largest_component_faces": 172,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B367271571101063A0",
+      "sheet": "11-SW-10C",
+      "faces": 171,
+      "edge_connected_components": 1,
+      "largest_component_faces": 171,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B367481578701063A0",
+      "sheet": "11-SW-10C",
+      "faces": 3374,
+      "edge_connected_components": 7,
+      "largest_component_faces": 1228,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B360011502301063A0",
+      "sheet": "11-SW-15A",
+      "faces": 205,
+      "edge_connected_components": 2,
+      "largest_component_faces": 195,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B360251502401063A0",
+      "sheet": "11-SW-15A",
+      "faces": 231,
+      "edge_connected_components": 2,
+      "largest_component_faces": 225,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B360731545401063A0",
+      "sheet": "11-SW-15A",
+      "faces": 203,
+      "edge_connected_components": 2,
+      "largest_component_faces": 195,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B361331539301063A0",
+      "sheet": "11-SW-15A",
+      "faces": 775,
+      "edge_connected_components": 16,
+      "largest_component_faces": 635,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B361731543101063A0",
+      "sheet": "11-SW-15A",
+      "faces": 170,
+      "edge_connected_components": 2,
+      "largest_component_faces": 160,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B362151536301063A0",
+      "sheet": "11-SW-15A",
+      "faces": 133,
+      "edge_connected_components": 2,
+      "largest_component_faces": 121,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "sheet": "11-SW-15A",
+      "faces": 4405,
+      "edge_connected_components": 32,
+      "largest_component_faces": 908,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B363121555201063A0",
+      "sheet": "11-SW-15A",
+      "faces": 532,
+      "edge_connected_components": 1,
+      "largest_component_faces": 532,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B363751559401063A0",
+      "sheet": "11-SW-15A",
+      "faces": 714,
+      "edge_connected_components": 8,
+      "largest_component_faces": 578,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B364261532601063A0",
+      "sheet": "11-SW-15A",
+      "faces": 115,
+      "edge_connected_components": 5,
+      "largest_component_faces": 101,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B364781556701063A0",
+      "sheet": "11-SW-15A",
+      "faces": 121,
+      "edge_connected_components": 3,
+      "largest_component_faces": 101,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B365261551801063A0",
+      "sheet": "11-SW-15A",
+      "faces": 328,
+      "edge_connected_components": 3,
+      "largest_component_faces": 304,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B365861520901063A0",
+      "sheet": "11-SW-15A",
+      "faces": 323,
+      "edge_connected_components": 4,
+      "largest_component_faces": 283,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B366291535301063A0",
+      "sheet": "11-SW-15A",
+      "faces": 208,
+      "edge_connected_components": 3,
+      "largest_component_faces": 186,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B366791536102063A0",
+      "sheet": "11-SW-15A",
+      "faces": 111,
+      "edge_connected_components": 1,
+      "largest_component_faces": 111,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B367471542001063A0",
+      "sheet": "11-SW-15A",
+      "faces": 161,
+      "edge_connected_components": 4,
+      "largest_component_faces": 135,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B352941794301063A0",
+      "sheet": "11-SW-4B",
+      "faces": 1531,
+      "edge_connected_components": 6,
+      "largest_component_faces": 1106,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B353361775001063A0",
+      "sheet": "11-SW-4B",
+      "faces": 7136,
+      "edge_connected_components": 8,
+      "largest_component_faces": 7028,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B354381745901063A0",
+      "sheet": "11-SW-4B",
+      "faces": 10764,
+      "edge_connected_components": 12,
+      "largest_component_faces": 10114,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B354401777301063A0",
+      "sheet": "11-SW-4B",
+      "faces": 1386,
+      "edge_connected_components": 1,
+      "largest_component_faces": 1386,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B354901751101063A0",
+      "sheet": "11-SW-4B",
+      "faces": 639,
+      "edge_connected_components": 5,
+      "largest_component_faces": 491,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355041762402063A0",
+      "sheet": "11-SW-4B",
+      "faces": 12258,
+      "edge_connected_components": 63,
+      "largest_component_faces": 10126,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355181755401063A0",
+      "sheet": "11-SW-4B",
+      "faces": 3597,
+      "edge_connected_components": 5,
+      "largest_component_faces": 3463,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "sheet": "11-SW-4B",
+      "faces": 9522,
+      "edge_connected_components": 5,
+      "largest_component_faces": 9352,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355581770401063A0",
+      "sheet": "11-SW-4B",
+      "faces": 1587,
+      "edge_connected_components": 4,
+      "largest_component_faces": 1497,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355691764201063A0",
+      "sheet": "11-SW-4B",
+      "faces": 494,
+      "edge_connected_components": 2,
+      "largest_component_faces": 474,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355951758402063A0",
+      "sheet": "11-SW-4B",
+      "faces": 276,
+      "edge_connected_components": 3,
+      "largest_component_faces": 266,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355981761602063A0",
+      "sheet": "11-SW-4B",
+      "faces": 1559,
+      "edge_connected_components": 3,
+      "largest_component_faces": 1423,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B356071746901063A0",
+      "sheet": "11-SW-4B",
+      "faces": 324,
+      "edge_connected_components": 3,
+      "largest_component_faces": 288,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B356101753002063A0",
+      "sheet": "11-SW-4B",
+      "faces": 921,
+      "edge_connected_components": 6,
+      "largest_component_faces": 842,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B356151750402063A0",
+      "sheet": "11-SW-4B",
+      "faces": 1151,
+      "edge_connected_components": 2,
+      "largest_component_faces": 1148,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B356381770501063A0",
+      "sheet": "11-SW-4B",
+      "faces": 122,
+      "edge_connected_components": 1,
+      "largest_component_faces": 122,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B356391745102063A0",
+      "sheet": "11-SW-4B",
+      "faces": 5978,
+      "edge_connected_components": 8,
+      "largest_component_faces": 5502,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B356441762201063A0",
+      "sheet": "11-SW-4B",
+      "faces": 499,
+      "edge_connected_components": 2,
+      "largest_component_faces": 498,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B356931767301063A0",
+      "sheet": "11-SW-4B",
+      "faces": 700,
+      "edge_connected_components": 12,
+      "largest_component_faces": 479,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B357071761401063A0",
+      "sheet": "11-SW-4B",
+      "faces": 1450,
+      "edge_connected_components": 20,
+      "largest_component_faces": 1213,
+      "singleton_components": 4
+    },
+    {
+      "asset_id": "B357131745501063A0",
+      "sheet": "11-SW-4B",
+      "faces": 720,
+      "edge_connected_components": 4,
+      "largest_component_faces": 558,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B357421764801063A0",
+      "sheet": "11-SW-4B",
+      "faces": 3866,
+      "edge_connected_components": 20,
+      "largest_component_faces": 3321,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B357761758301063A0",
+      "sheet": "11-SW-4B",
+      "faces": 322,
+      "edge_connected_components": 7,
+      "largest_component_faces": 145,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B357851797001063A0",
+      "sheet": "11-SW-4B",
+      "faces": 5082,
+      "edge_connected_components": 17,
+      "largest_component_faces": 4309,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B358001776702063A0",
+      "sheet": "11-SW-4B",
+      "faces": 4465,
+      "edge_connected_components": 13,
+      "largest_component_faces": 2523,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358381771601063A0",
+      "sheet": "11-SW-4B",
+      "faces": 607,
+      "edge_connected_components": 16,
+      "largest_component_faces": 385,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358531771801063A0",
+      "sheet": "11-SW-4B",
+      "faces": 828,
+      "edge_connected_components": 8,
+      "largest_component_faces": 642,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358531782401063A0",
+      "sheet": "11-SW-4B",
+      "faces": 41,
+      "edge_connected_components": 1,
+      "largest_component_faces": 41,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358561759502063A0",
+      "sheet": "11-SW-4B",
+      "faces": 6021,
+      "edge_connected_components": 34,
+      "largest_component_faces": 5099,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B358781772601063A0",
+      "sheet": "11-SW-4B",
+      "faces": 1443,
+      "edge_connected_components": 13,
+      "largest_component_faces": 1144,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358891770102063A0",
+      "sheet": "11-SW-4B",
+      "faces": 1959,
+      "edge_connected_components": 28,
+      "largest_component_faces": 1149,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B359061766501063A0",
+      "sheet": "11-SW-4B",
+      "faces": 766,
+      "edge_connected_components": 7,
+      "largest_component_faces": 582,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359191789701063A0",
+      "sheet": "11-SW-4B",
+      "faces": 689,
+      "edge_connected_components": 2,
+      "largest_component_faces": 684,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359301789501063A0",
+      "sheet": "11-SW-4B",
+      "faces": 743,
+      "edge_connected_components": 5,
+      "largest_component_faces": 721,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B359311774602063A0",
+      "sheet": "11-SW-4B",
+      "faces": 4413,
+      "edge_connected_components": 34,
+      "largest_component_faces": 3446,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359461791501063A0",
+      "sheet": "11-SW-4B",
+      "faces": 41,
+      "edge_connected_components": 1,
+      "largest_component_faces": 41,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359531768001063A0",
+      "sheet": "11-SW-4B",
+      "faces": 1588,
+      "edge_connected_components": 4,
+      "largest_component_faces": 1502,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359551793802063A0",
+      "sheet": "11-SW-4B",
+      "faces": 3720,
+      "edge_connected_components": 18,
+      "largest_component_faces": 2787,
+      "singleton_components": 2
+    },
+    {
+      "asset_id": "B359651791902063A0",
+      "sheet": "11-SW-4B",
+      "faces": 1242,
+      "edge_connected_components": 8,
+      "largest_component_faces": 1005,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B359911792301063A0",
+      "sheet": "11-SW-4B",
+      "faces": 1961,
+      "edge_connected_components": 4,
+      "largest_component_faces": 1880,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B352621500301063A0",
+      "sheet": "11-SW-14B",
+      "faces": 545,
+      "edge_connected_components": 18,
+      "largest_component_faces": 396,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B353931519401063A0",
+      "sheet": "11-SW-14B",
+      "faces": 32,
+      "edge_connected_components": 1,
+      "largest_component_faces": 32,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B354301525001063A0",
+      "sheet": "11-SW-14B",
+      "faces": 271,
+      "edge_connected_components": 1,
+      "largest_component_faces": 271,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B354561521002063A0",
+      "sheet": "11-SW-14B",
+      "faces": 363,
+      "edge_connected_components": 3,
+      "largest_component_faces": 357,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355381503802063A0",
+      "sheet": "11-SW-14B",
+      "faces": 295,
+      "edge_connected_components": 1,
+      "largest_component_faces": 295,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355381529401063A0",
+      "sheet": "11-SW-14B",
+      "faces": 159,
+      "edge_connected_components": 2,
+      "largest_component_faces": 135,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355441528201063A0",
+      "sheet": "11-SW-14B",
+      "faces": 317,
+      "edge_connected_components": 3,
+      "largest_component_faces": 287,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355451536301063A0",
+      "sheet": "11-SW-14B",
+      "faces": 244,
+      "edge_connected_components": 1,
+      "largest_component_faces": 244,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B355581524101063A0",
+      "sheet": "11-SW-14B",
+      "faces": 84,
+      "edge_connected_components": 1,
+      "largest_component_faces": 84,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B356401531101063A0",
+      "sheet": "11-SW-14B",
+      "faces": 437,
+      "edge_connected_components": 3,
+      "largest_component_faces": 407,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B356581523802063A0",
+      "sheet": "11-SW-14B",
+      "faces": 237,
+      "edge_connected_components": 1,
+      "largest_component_faces": 237,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B356681521902063A0",
+      "sheet": "11-SW-14B",
+      "faces": 118,
+      "edge_connected_components": 1,
+      "largest_component_faces": 118,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B357031537401063A0",
+      "sheet": "11-SW-14B",
+      "faces": 154,
+      "edge_connected_components": 3,
+      "largest_component_faces": 134,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358071501801063A0",
+      "sheet": "11-SW-14B",
+      "faces": 881,
+      "edge_connected_components": 7,
+      "largest_component_faces": 417,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358221500501063A0",
+      "sheet": "11-SW-14B",
+      "faces": 331,
+      "edge_connected_components": 7,
+      "largest_component_faces": 246,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358391501702063A1",
+      "sheet": "11-SW-14B",
+      "faces": 495,
+      "edge_connected_components": 8,
+      "largest_component_faces": 425,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358651528101063A0",
+      "sheet": "11-SW-14B",
+      "faces": 208,
+      "edge_connected_components": 1,
+      "largest_component_faces": 208,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358681546601063A0",
+      "sheet": "11-SW-14B",
+      "faces": 318,
+      "edge_connected_components": 1,
+      "largest_component_faces": 318,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358811508201063A0",
+      "sheet": "11-SW-14B",
+      "faces": 112,
+      "edge_connected_components": 1,
+      "largest_component_faces": 112,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358851523302063A0",
+      "sheet": "11-SW-14B",
+      "faces": 168,
+      "edge_connected_components": 1,
+      "largest_component_faces": 168,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359291501601063A0",
+      "sheet": "11-SW-14B",
+      "faces": 387,
+      "edge_connected_components": 8,
+      "largest_component_faces": 295,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359591520401063A0",
+      "sheet": "11-SW-14B",
+      "faces": 190,
+      "edge_connected_components": 5,
+      "largest_component_faces": 142,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359651553202063A0",
+      "sheet": "11-SW-14B",
+      "faces": 171,
+      "edge_connected_components": 1,
+      "largest_component_faces": 171,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359851535601063A0",
+      "sheet": "11-SW-14B",
+      "faces": 378,
+      "edge_connected_components": 1,
+      "largest_component_faces": 378,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359901504801063A0",
+      "sheet": "11-SW-14B",
+      "faces": 186,
+      "edge_connected_components": 1,
+      "largest_component_faces": 186,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B423322148601062A0",
+      "sheet": "11-NE-14A",
+      "faces": 70,
+      "edge_connected_components": 1,
+      "largest_component_faces": 70,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B424212142801062A0",
+      "sheet": "11-NE-14A",
+      "faces": 35,
+      "edge_connected_components": 1,
+      "largest_component_faces": 35,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B424942128301062A0",
+      "sheet": "11-NE-14A",
+      "faces": 32,
+      "edge_connected_components": 1,
+      "largest_component_faces": 32,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B426802141101062A0",
+      "sheet": "11-NE-14A",
+      "faces": 35,
+      "edge_connected_components": 1,
+      "largest_component_faces": 35,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B427192153401062A0",
+      "sheet": "11-NE-14A",
+      "faces": 54,
+      "edge_connected_components": 1,
+      "largest_component_faces": 54,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B427402146801062A0",
+      "sheet": "11-NE-14A",
+      "faces": 22,
+      "edge_connected_components": 1,
+      "largest_component_faces": 22,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B427492138401062A0",
+      "sheet": "11-NE-14A",
+      "faces": 45,
+      "edge_connected_components": 1,
+      "largest_component_faces": 45,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B340741780701063A0",
+      "sheet": "11-SW-3B",
+      "faces": 490,
+      "edge_connected_components": 5,
+      "largest_component_faces": 374,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B341241778301063A0",
+      "sheet": "11-SW-3B",
+      "faces": 364,
+      "edge_connected_components": 2,
+      "largest_component_faces": 326,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B341581788502063A0",
+      "sheet": "11-SW-3B",
+      "faces": 4218,
+      "edge_connected_components": 21,
+      "largest_component_faces": 1894,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B341581788801063A0",
+      "sheet": "11-SW-3B",
+      "faces": 4086,
+      "edge_connected_components": 10,
+      "largest_component_faces": 3880,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B342151781501063A0",
+      "sheet": "11-SW-3B",
+      "faces": 2107,
+      "edge_connected_components": 3,
+      "largest_component_faces": 2057,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B342351793101063A0",
+      "sheet": "11-SW-3B",
+      "faces": 1221,
+      "edge_connected_components": 3,
+      "largest_component_faces": 1177,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B342841785101063A0",
+      "sheet": "11-SW-3B",
+      "faces": 337,
+      "edge_connected_components": 2,
+      "largest_component_faces": 279,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B343131781801063A0",
+      "sheet": "11-SW-3B",
+      "faces": 3661,
+      "edge_connected_components": 14,
+      "largest_component_faces": 3262,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B343341787401063A0",
+      "sheet": "11-SW-3B",
+      "faces": 236,
+      "edge_connected_components": 1,
+      "largest_component_faces": 236,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B343811783101062A0",
+      "sheet": "11-SW-3B",
+      "faces": 436,
+      "edge_connected_components": 15,
+      "largest_component_faces": 108,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B354191720501063A0",
+      "sheet": "11-SW-4D",
+      "faces": 42334,
+      "edge_connected_components": 1151,
+      "largest_component_faces": 1942,
+      "singleton_components": 3
+    },
+    {
+      "asset_id": "B355381731601063A0",
+      "sheet": "11-SW-4D",
+      "faces": 2385,
+      "edge_connected_components": 5,
+      "largest_component_faces": 960,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "sheet": "11-SW-4D",
+      "faces": 7047,
+      "edge_connected_components": 8,
+      "largest_component_faces": 5156,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B356701722402063A0",
+      "sheet": "11-SW-4D",
+      "faces": 6124,
+      "edge_connected_components": 116,
+      "largest_component_faces": 2136,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B357521725801063A1",
+      "sheet": "11-SW-4D",
+      "faces": 5247,
+      "edge_connected_components": 13,
+      "largest_component_faces": 3627,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358161715701063A0",
+      "sheet": "11-SW-4D",
+      "faces": 2571,
+      "edge_connected_components": 4,
+      "largest_component_faces": 2489,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358341716301063A0",
+      "sheet": "11-SW-4D",
+      "faces": 965,
+      "edge_connected_components": 1,
+      "largest_component_faces": 965,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358341727001063A0",
+      "sheet": "11-SW-4D",
+      "faces": 1792,
+      "edge_connected_components": 3,
+      "largest_component_faces": 1736,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358411737101063A1",
+      "sheet": "11-SW-4D",
+      "faces": 1872,
+      "edge_connected_components": 15,
+      "largest_component_faces": 1617,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358471720201063A0",
+      "sheet": "11-SW-4D",
+      "faces": 2488,
+      "edge_connected_components": 4,
+      "largest_component_faces": 1494,
+      "singleton_components": 2
+    },
+    {
+      "asset_id": "B358631736902063A1",
+      "sheet": "11-SW-4D",
+      "faces": 1906,
+      "edge_connected_components": 10,
+      "largest_component_faces": 1560,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358651726301063A0",
+      "sheet": "11-SW-4D",
+      "faces": 650,
+      "edge_connected_components": 2,
+      "largest_component_faces": 470,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358681737301063A0",
+      "sheet": "11-SW-4D",
+      "faces": 280,
+      "edge_connected_components": 2,
+      "largest_component_faces": 279,
+      "singleton_components": 1
+    },
+    {
+      "asset_id": "B358801736201063A0",
+      "sheet": "11-SW-4D",
+      "faces": 321,
+      "edge_connected_components": 1,
+      "largest_component_faces": 321,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358881720201063A0",
+      "sheet": "11-SW-4D",
+      "faces": 50,
+      "edge_connected_components": 1,
+      "largest_component_faces": 50,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358951724501063A0",
+      "sheet": "11-SW-4D",
+      "faces": 322,
+      "edge_connected_components": 1,
+      "largest_component_faces": 322,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358971725201063A0",
+      "sheet": "11-SW-4D",
+      "faces": 30,
+      "edge_connected_components": 1,
+      "largest_component_faces": 30,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B358971737901063A0",
+      "sheet": "11-SW-4D",
+      "faces": 1592,
+      "edge_connected_components": 4,
+      "largest_component_faces": 1510,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359021721701063A0",
+      "sheet": "11-SW-4D",
+      "faces": 151,
+      "edge_connected_components": 1,
+      "largest_component_faces": 151,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359531738801063A0",
+      "sheet": "11-SW-4D",
+      "faces": 258,
+      "edge_connected_components": 2,
+      "largest_component_faces": 236,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359621716601063A1",
+      "sheet": "11-SW-4D",
+      "faces": 1602,
+      "edge_connected_components": 48,
+      "largest_component_faces": 924,
+      "singleton_components": 0
+    },
+    {
+      "asset_id": "B359761718602063A1",
+      "sheet": "11-SW-4D",
+      "faces": 1929,
+      "edge_connected_components": 25,
+      "largest_component_faces": 1484,
+      "singleton_components": 0
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PASSED",
+  "counts": {
+    "train": 800,
+    "val": 400,
+    "test": 320,
+    "blind": 320
+  },
+  "records": 1840,
+  "assets": 184,
+  "clean_quality_one": true,
+  "finite_quality": true,
+  "texture_supervision_patch_fraction": 1.0,
+  "all_assets_have_texture_supervision": true,
+  "observable_monotonic_patch_sequences": {
+    "passed": 5656,
+    "total": 5656,
+    "rate": 1.0
+  }
+}

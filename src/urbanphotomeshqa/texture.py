@@ -228,7 +228,8 @@ def render_textured_view_with_masks(
     direction: tuple[float, float, float] = (1.0, 1.0, 0.7),
     size: int = 192,
     background: tuple[int, int, int] = (245, 245, 245),
-) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    return_face_ids: bool = False,
+) -> tuple[np.ndarray, ...]:
     """Render a material-aware RGB view and explicit visible-region masks.
 
     Returns ``(rgb, foreground_mask, textured_mask)``.  The masks are derived
@@ -251,6 +252,7 @@ def render_textured_view_with_masks(
     zbuffer = np.full((size, size), -np.inf, dtype=np.float64)
     foreground = np.zeros((size, size), dtype=bool)
     textured = np.zeros((size, size), dtype=bool)
+    face_ids = np.full((size, size), -1, dtype=np.int64)
     textures = _load_textures(asset)
     texcoords = np.asarray(asset.texcoords, dtype=np.float64)
 
@@ -332,6 +334,11 @@ def render_textured_view_with_masks(
         else:
             textured_region[accepted] = False
         textured[ys, xs] = textured_region
+        face_region = face_ids[ys, xs]
+        face_region[accepted] = face_index
+        face_ids[ys, xs] = face_region
+    if return_face_ids:
+        return image, foreground, textured, face_ids
     return image, foreground, textured
 
 

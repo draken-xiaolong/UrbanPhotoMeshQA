@@ -1,0 +1,14 @@
+{
+  "status": "PASSED",
+  "counts": {
+    "train": 798,
+    "val": 400,
+    "test": 319,
+    "blind": 320
+  },
+  "records": 1837,
+  "assets": 184,
+  "clean_quality_one": true,
+  "finite_quality": true,
+  "local_monotonic_envelope": "not applied because independently partitioned attacked meshes do not preserve Patch-index correspondence across severity"
+}

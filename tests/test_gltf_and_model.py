@@ -1,9 +1,11 @@
 from pathlib import Path
+from types import SimpleNamespace
 
 import numpy as np
 
 from urbanphotomeshqa.gltf import GltfReader, sample_surface
-from urbanphotomeshqa.patches import patch_layout
+from urbanphotomeshqa.patches import patch_layout, topological_patch_layout
+from urbanphotomeshqa.texture import render_textured_view_with_masks
 
 
 FIXTURE = Path(__file__).parent / "fixtures" / "B360011502301063A0" / "B360011502301063A0.gltf"
@@ -31,6 +33,16 @@ def test_load_textured_real_gltf():
     assert paths and all(Path(path).exists() for path in paths if path is not None)
 
 
+def test_texture_renderer_can_return_visible_face_ids():
+    asset = GltfReader(first_gltf()).load_mesh(include_texture=True)
+    rgb, foreground, textured, face_ids = render_textured_view_with_masks(
+        asset, size=32, return_face_ids=True)
+    assert rgb.shape == (32, 32, 3)
+    assert foreground.shape == textured.shape == face_ids.shape == (32, 32)
+    assert np.all(face_ids[foreground] >= 0)
+    assert np.all(face_ids[foreground] < len(asset.faces))
+
+
 def test_patch_layout_preserves_exact_face_membership():
     mesh = GltfReader(first_gltf()).load_mesh(include_texture=True)
     descriptors, patch_mask, face_indices, face_mask = patch_layout(mesh, 16, 32)
@@ -40,6 +52,35 @@ def test_patch_layout_preserves_exact_face_membership():
     assert np.all(face_indices[face_mask] < len(mesh.faces))
     assert np.all(face_indices[~face_mask] == -1)
     assert np.array_equal(patch_mask, face_mask.any(axis=1))
+
+
+def test_topological_patch_layout_is_deterministic_complete_partition():
+    mesh = GltfReader(first_gltf()).load_mesh(include_texture=True)
+    first = topological_patch_layout(mesh, 16)
+    second = topological_patch_layout(mesh, 16)
+    assert np.array_equal(first["face_patch"], second["face_patch"])
+    assert np.array_equal(np.sort(first["patch_face_indices"]), np.arange(len(mesh.faces)))
+    assert len(first["face_patch"]) == len(mesh.faces)
+    assert np.all(first["face_patch"] >= 0)
+    assert np.isclose(first["patch_area"].sum(), first["patch_area"][first["patch_mask"]].sum())
+    assert np.array_equal(first["patch_mask"], first["patch_area"] > 0)
+    for patch in np.flatnonzero(first["patch_mask"]):
+        start, stop = first["patch_offsets"][patch:patch + 2]
+        members = first["patch_face_indices"][start:stop]
+        assert len(members) == np.sum(first["face_patch"] == patch)
+
+
+def test_topological_patch_layout_bridges_disconnected_components():
+    vertices = [point for i in range(3)
+                for point in ([3 * i, 0, 0], [3 * i + 1, 0, 0], [3 * i, 1, 0])]
+    mesh = SimpleNamespace(
+        vertices=np.asarray(vertices, dtype=np.float64).reshape(-1, 3),
+        faces=np.arange(9, dtype=np.int64).reshape(-1, 3))
+    layout = topological_patch_layout(mesh, patch_count=2)
+    assert int(layout["connected_components"]) == 3
+    assert int(layout["virtual_bridge_count"]) == 2
+    assert int(layout["patch_mask"].sum()) == 2
+    assert sorted(np.unique(layout["face_patch"]).tolist()) == [0, 1]
 
 
 def test_model_forward_if_torch_available():
