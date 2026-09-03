@@ -1,0 +1,465 @@
+{
+  "status": "PASSED",
+  "records": 19,
+  "maximum_prediction_absolute_difference": 0.0,
+  "details": [
+    {
+      "key": [
+        "B412542125301063A0",
+        "clean",
+        "clean"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "geometry_hole",
+        "light"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "geometry_hole",
+        "medium"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "geometry_hole",
+        "heavy"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "mesh_simplification_qem",
+        "light"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "mesh_simplification_qem",
+        "medium"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "mesh_simplification_qem",
+        "heavy"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "geometry_noise_spike",
+        "light"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "geometry_noise_spike",
+        "medium"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "geometry_noise_spike",
+        "heavy"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "texture_detail_loss",
+        "light"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "texture_detail_loss",
+        "medium"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "texture_detail_loss",
+        "heavy"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "texture_region_missing",
+        "light"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "texture_region_missing",
+        "medium"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "texture_region_missing",
+        "heavy"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "texture_misalignment",
+        "light"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "texture_misalignment",
+        "medium"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    },
+    {
+      "key": [
+        "B412542125301063A0",
+        "texture_misalignment",
+        "heavy"
+      ],
+      "array_max_absolute_difference": {
+        "patch_descriptors": 0.0,
+        "patch_mask": 0.0,
+        "patch_area": 0.0,
+        "patch_center": 0.0,
+        "patch_view_tokens": 0.0,
+        "patch_view_mask": 0.0,
+        "patch_view_stats": 0.0,
+        "patch_atlas_tokens": 0.0,
+        "patch_atlas_mask": 0.0,
+        "patch_atlas_stats": 0.0
+      },
+      "prediction_max_absolute_difference": {
+        "geometry": 0.0,
+        "texture": 0.0,
+        "overall": 0.0
+      }
+    }
+  ],
+  "test_blind_loaded": false,
+  "checkpoint_sha256": "3a94425fc791987db1d1c7cf3843a4be15e6acb48a3a7629c16ddf9bf38bb8ef"
+}

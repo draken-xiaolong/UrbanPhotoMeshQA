@@ -113,6 +113,56 @@ def texture_asset_statistics(asset, raster_size: int = 512) -> np.ndarray:
     return result
 
 
+def patch_texture_atlases(asset, face_patch: np.ndarray, size: int = 224):
+    """Rasterize each Patch's own UV-used texels into a deterministic material grid."""
+    from .texture import _load_textures, _material_render_profile, _wrap_texture_coordinate
+
+    textures = _load_textures(asset)
+    usable = [index for index, texture in enumerate(textures) if texture is not None]
+    columns = max(1, int(np.ceil(np.sqrt(len(usable))))); rows = max(1, int(np.ceil(len(usable) / columns)))
+    material_cell = {material: (position // columns, position % columns)
+                     for position, material in enumerate(usable)}
+    texcoords = np.asarray(asset.texcoords, np.float64)
+    images = np.full((int(face_patch.max()) + 1, size, size, 3), 245, np.uint8)
+    masks = np.zeros(images.shape[:3], bool)
+    for patch in range(len(images)):
+        for material in usable:
+            face_ids = np.flatnonzero((face_patch == patch) &
+                                      (np.asarray(asset.face_materials) == material))
+            if not len(face_ids):
+                continue
+            row, column = material_cell[material]
+            x0, x1 = column * size // columns, (column + 1) * size // columns
+            y0, y1 = row * size // rows, (row + 1) * size // rows
+            texture = textures[material]
+            profile = _material_render_profile(asset, material)
+            resized = np.asarray(Image.fromarray(texture).resize((x1 - x0, y1 - y0), Image.Resampling.BILINEAR))
+            factor = profile["factor"]
+            rgb = np.clip(resized[..., :3].astype(np.float64) * factor[:3], 0, 255).astype(np.uint8)
+            alpha = resized[..., 3].astype(np.float64) / 255.0 * factor[3]
+            material_mask = Image.new("1", (size, size), 0); draw = ImageDraw.Draw(material_mask)
+            for face_id in face_ids:
+                uv = texcoords[np.asarray(asset.faces[face_id], np.int64)]
+                if not np.isfinite(uv).all():
+                    continue
+                u = _wrap_texture_coordinate(uv[:, 0], profile["wrap_s"])
+                v = _wrap_texture_coordinate(uv[:, 1], profile["wrap_t"])
+                draw.polygon([(x0 + float(value_u) * max(x1-x0-1, 1),
+                               y0 + (1-float(value_v)) * max(y1-y0-1, 1))
+                              for value_u, value_v in zip(u, v)], fill=1)
+            current = np.asarray(material_mask, bool)
+            if profile["alpha_mode"] == "MASK":
+                alpha_valid = alpha >= profile["alpha_cutoff"]
+            elif profile["alpha_mode"] == "OPAQUE":
+                alpha_valid = np.ones_like(alpha, dtype=bool)
+            else:
+                alpha_valid = alpha > 0.0
+            cell_mask = current[y0:y1, x0:x1] & alpha_valid
+            images[patch, y0:y1, x0:x1][cell_mask] = rgb[cell_mask]
+            masks[patch, y0:y1, x0:x1] |= cell_mask
+    return images, masks
+
+
 class SpatialImageEncoder:
     """Frozen MobileNet feature maps retained as foreground-aware multi-view tokens."""
 
@@ -148,3 +198,31 @@ class SpatialImageEncoder:
         valid_tensor = torch.stack(valid, dim=1)
         return {"tokens": token_tensor.cpu().numpy().astype(np.float16),
                 "token_mask": valid_tensor.cpu().numpy()}
+
+    @torch.no_grad()
+    def patch_tokens(self, views: np.ndarray, patch_masks: np.ndarray) -> dict[str, np.ndarray]:
+        """Pool one frozen feature token per Patch and camera view."""
+        images = torch.from_numpy(np.asarray(views)).to(self.device).permute(0, 3, 1, 2).float() / 255.0
+        feature_map = self.features((images - self.mean) / self.std)
+        masks = torch.from_numpy(np.asarray(patch_masks)).to(self.device).float()
+        patch_count, view_count = masks.shape[:2]
+        resized = F.interpolate(masks.reshape(-1, 1, *masks.shape[-2:]),
+                                size=feature_map.shape[-2:], mode="area")
+        resized = resized.reshape(patch_count, view_count, 1, *feature_map.shape[-2:])
+        expanded = feature_map[None].expand(patch_count, -1, -1, -1, -1)
+        denominator = resized.sum(dim=(-2, -1)).clamp_min(1e-6)
+        pooled = (expanded * resized).sum(dim=(-2, -1)) / denominator
+        valid = resized.sum(dim=(2, 3, 4)) > 0.05
+        return {"patch_view_tokens": pooled.cpu().numpy().astype(np.float16),
+                "patch_view_mask": valid.cpu().numpy()}
+
+    @torch.no_grad()
+    def masked_global_tokens(self, images: np.ndarray, masks: np.ndarray) -> dict[str, np.ndarray]:
+        values = torch.from_numpy(np.asarray(images)).to(self.device).permute(0, 3, 1, 2).float() / 255.0
+        feature_map = self.features((values - self.mean) / self.std)
+        weights = torch.from_numpy(np.asarray(masks)).to(self.device).float()[:, None]
+        weights = F.interpolate(weights, size=feature_map.shape[-2:], mode="area")
+        denominator = weights.sum(dim=(2, 3)).clamp_min(1e-6)
+        tokens = (feature_map * weights).sum(dim=(2, 3)) / denominator
+        return {"tokens": tokens.cpu().numpy().astype(np.float16),
+                "mask": np.asarray(masks, dtype=bool).any(axis=(1, 2))}

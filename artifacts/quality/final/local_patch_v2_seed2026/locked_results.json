@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "checkpoint_sha256": "3a94425fc791987db1d1c7cf3843a4be15e6acb48a3a7629c16ddf9bf38bb8ef",
+  "protocol": "one-time locked evaluation after Val selection; no further model changes",
+  "results": {
+    "test": {
+      "geometry": {
+        "count": 5103,
+        "mae": 0.18550080060958862,
+        "plcc": 0.40792871947148224,
+        "srcc": 0.4328072518164288
+      },
+      "texture": {
+        "count": 5120,
+        "mae": 0.1374700516462326,
+        "plcc": 0.6824627862294377,
+        "srcc": 0.6232164555602879
+      },
+      "overall": {
+        "count": 9711,
+        "mae": 0.19605553150177002,
+        "plcc": 0.46983176712375524,
+        "srcc": 0.4457069694996245
+      }
+    },
+    "blind": {
+      "geometry": {
+        "count": 5120,
+        "mae": 0.15530675649642944,
+        "plcc": 0.3157406062173512,
+        "srcc": 0.4680417718200253
+      },
+      "texture": {
+        "count": 5120,
+        "mae": 0.17973697185516357,
+        "plcc": 0.5626019641175789,
+        "srcc": 0.5778420512270044
+      },
+      "overall": {
+        "count": 9728,
+        "mae": 0.21429139375686646,
+        "plcc": 0.3903956773192672,
+        "srcc": 0.43153757427749384
+      }
+    }
+  }
+}

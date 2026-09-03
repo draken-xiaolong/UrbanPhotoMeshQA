@@ -13,10 +13,14 @@ import torch.nn.functional as F
 
 from extract_real_gltf_cache import extract
 from train_real_gltf_quality import ATTACKS, BRANCHES, QualityHead
+from train_local_patch_quality import LocalPatchHead, tensorize_features
 from urbanphotomeshqa.data import pad_mesh_graphs
+from urbanphotomeshqa.gltf import GltfReader
+from urbanphotomeshqa.local_features import extract_local_features
 from urbanphotomeshqa.model import BuildingInvariantEncoder, MeshFaceEncoder
 from urbanphotomeshqa.morphology import global_morphology_targets
 from urbanphotomeshqa.render_features import ImageEncoder
+from urbanphotomeshqa.texture_features import SpatialImageEncoder
 
 
 def load_quality_head(path: Path, device: torch.device):
@@ -56,6 +60,8 @@ def main():
     parser.add_argument("--mesh-checkpoint", type=Path, required=True)
     parser.add_argument("--quality-checkpoint", type=Path, required=True)
     parser.add_argument("--patch-checkpoint", type=Path)
+    parser.add_argument("--local-v2-checkpoint", type=Path,
+                        help="Topology/Face-UV local Geometry/Texture/Overall Patch head")
     parser.add_argument("--calibration", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--device", default="cuda")
@@ -119,6 +125,38 @@ def main():
             "scores": patch_prediction["patch_quality"][0].cpu().numpy()[valid].astype(float).tolist(),
             "attention": patch_prediction["patch_weights"][0].cpu().numpy()[valid].astype(float).tolist(),
             "interpretation": "lower quality means a more suspicious local geometric patch",
+        }
+    if args.local_v2_checkpoint:
+        local_state = torch.load(args.local_v2_checkpoint, map_location=device, weights_only=False)
+        local_model = LocalPatchHead(
+            bool(local_state.get("use_atlas", True)),
+            bool(local_state.get("geometry_context", False)),
+        ).to(device).eval()
+        local_model.load_state_dict(local_state["model"])
+        local_mesh = GltfReader(args.gltf).load_mesh(include_texture=True)
+        local_values = extract_local_features(local_mesh, SpatialImageEncoder(device), render_size=224)
+        local_batch = {name: value[None] for name, value in local_values.items()}
+        local_normalization = {
+            name: tuple(np.asarray(value, np.float32) for value in values)
+            for name, values in local_state["normalization"].items()
+        }
+        local_data = tensorize_features(local_batch, local_normalization, device)
+        local_prediction = local_model(local_data)
+        valid = np.flatnonzero(local_values["patch_mask"])
+        area = local_values["patch_area"] / max(float(local_values["patch_area"].sum()), 1e-12)
+        report["local_patch_quality_v2"] = {
+            "layout": "fixed 16 spatial-geodesic patches with audited component bridges",
+            "patches": [{
+                "patch_index": int(index),
+                "center": local_values["patch_center"][index].astype(float).tolist(),
+                "surface_area_fraction": float(area[index]),
+                "geometry_quality": float(local_prediction["geometry"][0, index]),
+                "texture_quality": float(local_prediction["texture"][0, index]),
+                "overall_quality": float(local_prediction["overall"][0, index]),
+                "visible_view_count": int(local_values["patch_view_mask"][index].sum()),
+                "uv_atlas_available": bool(local_values["patch_atlas_mask"][index]),
+            } for index in valid],
+            "protocol": "single-model no-reference local inference; no Clean asset or attack label input",
         }
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)

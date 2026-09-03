@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "model": "UrbanPhotoMeshQA local Patch quality v2",
+  "seed": 2026,
+  "patches": 16,
+  "outputs": [
+    "geometry_quality",
+    "texture_quality",
+    "overall_quality"
+  ],
+  "checkpoint_sha256": "3a94425fc791987db1d1c7cf3843a4be15e6acb48a3a7629c16ddf9bf38bb8ef",
+  "formal_ordered_sample_key_sha256": "065fe44a9eff3d7410fde9e9dfce1a86041abbf99600b3c4969516bc2c5f1166",
+  "selection_protocol": "All candidates and the hybrid composition were selected with Train/Val only. Test and Blind were evaluated once after freezing the checkpoint hash; no subsequent model changes are permitted for this release.",
+  "metrics": {
+    "val": {
+      "geometry": {"count": 6400, "mae": 0.1553154141, "plcc": 0.2698688530, "srcc": 0.3812974004},
+      "texture": {"count": 6400, "mae": 0.1653298885, "plcc": 0.5960174342, "srcc": 0.6022321339},
+      "overall": {"count": 12160, "mae": 0.2031972557, "plcc": 0.3941955013, "srcc": 0.4219284390}
+    },
+    "test": {
+      "geometry": {"count": 5103, "mae": 0.1855008006, "plcc": 0.4079287195, "srcc": 0.4328072518},
+      "texture": {"count": 5120, "mae": 0.1374700516, "plcc": 0.6824627862, "srcc": 0.6232164556},
+      "overall": {"count": 9711, "mae": 0.1960555315, "plcc": 0.4698317671, "srcc": 0.4457069695}
+    },
+    "blind": {
+      "geometry": {"count": 5120, "mae": 0.1553067565, "plcc": 0.3157406062, "srcc": 0.4680417718},
+      "texture": {"count": 5120, "mae": 0.1797369719, "plcc": 0.5626019641, "srcc": 0.5778420512},
+      "overall": {"count": 9728, "mae": 0.2142913938, "plcc": 0.3903956773, "srcc": 0.4315375743}
+    }
+  },
+  "cache_live_equivalence": {
+    "records": 19,
+    "passed": 19,
+    "max_prediction_absolute_difference": 0.0
+  }
+}

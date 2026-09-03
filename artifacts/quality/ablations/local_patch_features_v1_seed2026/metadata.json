@@ -1,0 +1,418 @@
+{
+  "status": "PASSED",
+  "counts": {
+    "train": 1518,
+    "val": 760
+  },
+  "records": 2278,
+  "finite": true,
+  "test_blind_loaded": false,
+  "shards": 15,
+  "shard_metadata": [
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 190,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 0,
+      "shard_count": 12,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "6935d1c8df2aedcbad91babe53fc50e9fa00a2e088b0976ecb0549b32625344a",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    },
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 190,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 1,
+      "shard_count": 12,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "9d014135a1d83fdf13137c7299efa33fbcc043f15326c325d439bf3f4a8c7349",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    },
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 190,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 2,
+      "shard_count": 12,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "d8bfb7374851fb928adb64592c39d8e155d8d2282d3724cb2659f3421848ce95",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    },
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 190,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 3,
+      "shard_count": 12,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "f0cc6e35ae3d09e494e63f1b6a4f5f61e5e209b386fc7ad4bbd0da491fcd2979",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    },
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 190,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 4,
+      "shard_count": 12,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "9fbc0347f9f354a3e5a52bf58ae014a4243383fac3b113ee019a11348b6224f1",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    },
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 188,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 5,
+      "shard_count": 12,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "c1bade88b9a1984f7a07baa31bd077713d4b36d28979c625cbfa1a40e00bfdd4",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    },
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 190,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 6,
+      "shard_count": 12,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "8f962861aa6525c75c7031a237c08edee74b5b4adce5d68ee26df2f2af678f0d",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    },
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 190,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 7,
+      "shard_count": 12,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "1c5e362d71ace9227e751320994a1dabd5839b9a996ce159802d96b7bf4e0bcb",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    },
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 190,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 9,
+      "shard_count": 12,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "a72e6bc0b83f4ab6951e07292d3e9e6dcefaa6de90150181f45c09ef5a762340",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    },
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 190,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 10,
+      "shard_count": 12,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "c5106c9fdc88cbb6a663985c254fcc21ac223d5fa38fd955d55c0c16c445ce6a",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    },
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 190,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 11,
+      "shard_count": 12,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "1376b321f0d7d7f5d5ecbb95b3b8416db85a696655621550628f5186366623c1",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    },
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 57,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 0,
+      "shard_count": 4,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "baa27ca4b893ac6411e7ab56ac97a7204fff8a04a5fef74159cb281fd88b0343",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    },
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 57,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 1,
+      "shard_count": 4,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "1e617db3d8ebcc3e2bd01c3b0ab19dd4f831d9f6f0abcd40331fcc2ff1a13e14",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    },
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 38,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 2,
+      "shard_count": 4,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "1d74a1136b6c497c057cb301d452b609f59e9aae01e26d94e4fb4b12446a413e",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    },
+    {
+      "schema_version": 1,
+      "splits": [
+        "train",
+        "val"
+      ],
+      "records": 38,
+      "render_size": 224,
+      "patches": 16,
+      "views": 6,
+      "texture_encoder": "MobileNet_V3_Small frozen",
+      "shard_index": 3,
+      "shard_count": 4,
+      "test_blind_loaded": false,
+      "sharding": "asset-level; clean topology reused only for file-native texture attacks",
+      "manifest_sha256": "ddefdf5e5235d7f4ec4b1afa649d59a19bafc4021cd3bac148fa53c164d2e02d",
+      "ordered_sample_key_sha256": "5d400381a3fc8e0cc7abe18db0c258638e011b76ff4d25776a0d3e592c68f024",
+      "source_sha256": {
+        "scripts/extract_local_patch_features.py": "4c03adf55f193853b7b7dbbc6a72b6413b6543df7c6d04709ae58002d5529c61",
+        "src/urbanphotomeshqa/texture_features.py": "2c05c509a76b24714060ee577a1054946b299237e29d364a04411992e353d079",
+        "src/urbanphotomeshqa/texture.py": "5220abfa53f68f11d44e922f0ab47ff41f61e144abdefbefe8917d308642f856",
+        "src/urbanphotomeshqa/patches.py": "1430efbf2365cde83b2bb5f13c9a04f077931cb6fd7d152a59c137ca27a61910",
+        "src/urbanphotomeshqa/gltf.py": "65ca85a5c66641062f00b301a2473481caccdd808d27b14d60b644d1ed78cb68",
+        "src/urbanphotomeshqa/local_features.py": "6d95c44d4f905ffa8203c745f74b6cd41a5bcaada6728c25654206cbe1d7d18b"
+      },
+      "implementation_sha256": "70b012f1fa3dadabbc98c0122340fc712f0c55694f2eaa04ce4cbb0967045464"
+    }
+  ]
+}

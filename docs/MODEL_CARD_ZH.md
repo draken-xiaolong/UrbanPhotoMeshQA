@@ -2,7 +2,7 @@
 
 ## 用途
 
-输入一个完整的香港 Individualised `.gltf + .bin + textures` 建筑资产包，在无原始参考模型的条件下预测 Overall OQI、几何质量、纹理质量和局部几何 Patch 质量。
+输入一个完整的香港 Individualised `.gltf + .bin + textures` 建筑资产包，在无原始参考模型的条件下预测 Overall OQI、几何质量、纹理质量和局部 Patch 质量。
 
 ## 发布组成
 
@@ -15,7 +15,8 @@
 
 - OQI 越高代表质量越好，输出范围 `[0,1]`，界面可乘100显示。
 - 模型只在当前香港建筑数据域内验证，不应直接宣称对所有 Mesh 或所有摄影测量场景泛化。
-- 局部 Patch 输出目前主要针对几何缺陷，不应解读为像素级纹理缺陷定位。
+- 原`release_seed2026_v1/local_patch_head.pt`仍是仅针对几何的v1；新增的`artifacts/quality/final/local_patch_v2_seed2026/`才同时输出局部几何、纹理和综合质量，二者不得混用。
+- 局部v2通过Face—UV区域建立纹理监督，但Patch分数仍不应解读为像素级缺陷分割或人工MOS。
 - `release_seed2026_v1` 的权重来自 QEM 重复项正式剔除之前的训练流程；其正式
   指标已在 3493 条清单上重算，但训练集中曾包含两条后来剔除的记录。后续实验
   必须使用 `--require-formal` 并保存数据有序样本指纹。

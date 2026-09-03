@@ -4,8 +4,10 @@ from types import SimpleNamespace
 import numpy as np
 
 from urbanphotomeshqa.gltf import GltfReader, sample_surface
+from urbanphotomeshqa.local_features import extract_local_features
 from urbanphotomeshqa.patches import patch_layout, topological_patch_layout
 from urbanphotomeshqa.texture import render_textured_view_with_masks
+from urbanphotomeshqa.texture_features import patch_texture_atlases
 
 
 FIXTURE = Path(__file__).parent / "fixtures" / "B360011502301063A0" / "B360011502301063A0.gltf"
@@ -41,6 +43,33 @@ def test_texture_renderer_can_return_visible_face_ids():
     assert foreground.shape == textured.shape == face_ids.shape == (32, 32)
     assert np.all(face_ids[foreground] >= 0)
     assert np.all(face_ids[foreground] < len(asset.faces))
+
+
+def test_patch_texture_atlases_cover_uv_regions():
+    asset = GltfReader(first_gltf()).load_mesh(include_texture=True)
+    layout = topological_patch_layout(asset, 16)
+    images, masks = patch_texture_atlases(asset, layout["face_patch"], size=32)
+    assert images.shape == (16, 32, 32, 3)
+    assert masks.shape == (16, 32, 32)
+    assert masks.any(axis=(1, 2)).all()
+
+
+def test_shared_local_feature_extractor_shapes():
+    class FakeEncoder:
+        def patch_tokens(self, views, masks):
+            return {"patch_view_tokens": np.zeros((*masks.shape[:2], 576), np.float16),
+                    "patch_view_mask": masks.any(axis=(2, 3))}
+
+        def masked_global_tokens(self, images, masks):
+            return {"tokens": np.zeros((len(images), 576), np.float16),
+                    "mask": masks.any(axis=(1, 2))}
+
+    asset = GltfReader(first_gltf()).load_mesh(include_texture=True)
+    values = extract_local_features(asset, FakeEncoder(), render_size=24)
+    assert values["patch_descriptors"].shape == (16, 58)
+    assert values["patch_view_tokens"].shape == (16, 6, 576)
+    assert values["patch_atlas_tokens"].shape == (16, 576)
+    assert values["patch_mask"].all()
 
 
 def test_patch_layout_preserves_exact_face_membership():

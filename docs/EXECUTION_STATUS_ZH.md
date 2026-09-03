@@ -40,7 +40,8 @@
              ↓
   Overall OQI + Geometry Quality + Texture Quality
 
-另一个独立 Patch Head：16×32个局部表面点 → 16个局部几何质量分数
+独立局部v2：拓扑划分16个Patch → Face可见视图 + UV纹理atlas + 几何描述
+             → 每Patch的Geometry、Texture和Overall Quality
 ```
 
 推理阶段只读取一个待评估 glTF，不使用 clean reference、ICP配准或差值特征。clean/attacked 配对只用于训练真值构建。
@@ -70,7 +71,7 @@
 
 1. Blind OQI SRCC `0.444` 属于已验证可行但还不是成熟发表结果；
 2. 只使用香港 Individualised Building，尚未验证其他城市对象或真实人工 MOS；
-3. Patch Head 第一版主要学习几何局部质量，贴图局部热力图需在下一轮增加 UV/图像 Patch 对应监督；
+3. 局部v2已增加Face—UV—Texture监督，但Geometry与Overall排序仍为中等水平，需要在新的Train/Val实验版本中继续提高；
 4. 当前 OQI 是客观全参考指标合成的训练目标，还不等同于人的主观质量感知。
 
 ## 8. 关键入口
@@ -80,6 +81,21 @@
 - 客观真值：`scripts/build_objective_quality_targets_real.py`
 - 质量模型训练：`scripts/train_real_gltf_quality.py`
 - 缓存与最终输出等价审计：`scripts/validate_cache_neural_equivalence.py`
+- 局部v2特征：`scripts/extract_local_patch_features.py`
+- 局部v2训练：`scripts/train_local_patch_quality.py`
+- 局部v2缓存/在线等价审计：`scripts/audit_local_cache_equivalence.py`
+
+## 8.1 局部质量v2（已冻结）
+
+局部v2只用Train/Val选择，Checkpoint SHA256为`3a94425fc791987db1d1c7cf3843a4be15e6acb48a3a7629c16ddf9bf38bb8ef`。冻结后一次性解锁Test/Blind，未再调参：
+
+| Split | Geometry SRCC | Texture SRCC | Overall SRCC |
+|---|---:|---:|---:|
+| Val | 0.381 | 0.602 | 0.422 |
+| Test | 0.433 | 0.623 | 0.446 |
+| Blind | 0.468 | 0.578 | 0.432 |
+
+19条同一建筑Clean及全部攻击记录的缓存/单glTF在线推理完全一致，三输出最大绝对差为`0.0`。发布目录为`artifacts/quality/final/local_patch_v2_seed2026/`。
 
 ## 9. 冻结 Base 泛化筛选（已完成）
 
