@@ -1,0 +1,51 @@
+{
+  "schema_version": 2,
+  "status": "PASSED",
+  "records": 3493,
+  "all_finite": true,
+  "all_quality_values_bounded_0_1": true,
+  "split_order_checks": {
+    "train": true,
+    "val": true,
+    "test": true,
+    "blind": true
+  },
+  "clean_targets_all_one": true,
+  "geometry_attacks_leave_texture_quality_one": true,
+  "texture_attacks_leave_geometry_quality_one": true,
+  "objective_noops_remain_quality_one": true,
+  "observable_monotonicity_passed": true,
+  "objective_noop_records": 90,
+  "observable_monotonicity_after_envelope": {
+    "geometry_hole": {
+      "passed": 184,
+      "total": 184,
+      "rate": 1.0
+    },
+    "geometry_noise_spike": {
+      "passed": 184,
+      "total": 184,
+      "rate": 1.0
+    },
+    "mesh_simplification_qem": {
+      "passed": 184,
+      "total": 184,
+      "rate": 1.0
+    },
+    "texture_detail_loss": {
+      "passed": 169,
+      "total": 169,
+      "rate": 1.0
+    },
+    "texture_misalignment": {
+      "passed": 170,
+      "total": 170,
+      "rate": 1.0
+    },
+    "texture_region_missing": {
+      "passed": 184,
+      "total": 184,
+      "rate": 1.0
+    }
+  }
+}

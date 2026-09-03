@@ -1,0 +1,64 @@
+{
+  "schema_version": 2,
+  "method": "six aligned material-aware orthographic views with explicit textured masks, plus deterministic area-weighted triangle-to-UV surface samples",
+  "surface_uv_samples_per_asset": 65536,
+  "render_size": 224,
+  "directions": [
+    [
+      1.0,
+      0.0,
+      0.35
+    ],
+    [
+      0.0,
+      1.0,
+      0.35
+    ],
+    [
+      -1.0,
+      0.0,
+      0.35
+    ],
+    [
+      0.0,
+      -1.0,
+      0.35
+    ],
+    [
+      1.0,
+      1.0,
+      0.7
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "metric_names": [
+    "masked_rgb_mae",
+    "masked_rgb_rmse",
+    "masked_luma_mae",
+    "masked_gradient_mae",
+    "masked_one_minus_ssim",
+    "masked_color_mean_shift",
+    "masked_detail_energy_relative_change",
+    "visible_changed_fraction_1_255",
+    "surface_rgb_mae",
+    "surface_rgb_rmse",
+    "surface_changed_fraction_1_255"
+  ],
+  "scope": "pilot",
+  "shard_index": 0,
+  "shard_count": 1,
+  "assets": 3,
+  "records": 30,
+  "dataset_manifest": "/root/autodl-tmp/UrbanPhotoMeshQA/data/Manifests/quality_dataset_texture_uv_counterpilot_v2_seed2026.json",
+  "implementation_sha256": "a8f38a9dced45702df47226f862ef47dacc9d6b2fa321dd24a003c160784ea5c",
+  "dependencies": {
+    "SSIM": "Wang et al., IEEE TIP 2004; local implementation",
+    "SciPy": "BSD-3-Clause",
+    "NumPy": "BSD-3-Clause",
+    "Pillow": "HPND"
+  }
+}

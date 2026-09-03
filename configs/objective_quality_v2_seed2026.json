@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "seed": 2026,
+  "selection_protocol": "Formula and constants frozen using the geometry Train split and the 3-asset texture resolution pilot only; Val, Test and Blind were not inspected.",
+  "transform": "Each component is exp(-sum(weight * raw_metric / fixed_scale)); lower raw distortion and higher quality are better.",
+  "geometry_fidelity": {
+    "symmetric_chamfer_l1": {"scale": 0.002, "weight": 0.25},
+    "symmetric_distance_p99": {"scale": 0.015, "weight": 0.25},
+    "symmetric_hausdorff": {"scale": 0.04, "weight": 0.15},
+    "symmetric_normal_error": {"scale": 0.05, "weight": 0.35}
+  },
+  "completeness": {
+    "clean_missing_fraction_0p005": {"scale": 0.15, "weight": 0.6},
+    "clean_missing_fraction_0p01": {"scale": 0.10, "weight": 0.4}
+  },
+  "topology_health": {
+    "boundary_edge_ratio_delta": {"scale": 0.15, "weight": 0.35},
+    "nonmanifold_edge_ratio_delta": {"scale": 0.01, "weight": 0.2},
+    "component_log_delta": {"scale": 2.0, "weight": 0.45}
+  },
+  "texture_fidelity": {
+    "masked_rgb_rmse": {"scale": 0.08, "weight": 0.15},
+    "masked_gradient_mae": {"scale": 0.03, "weight": 0.2},
+    "masked_one_minus_ssim": {"scale": 0.15, "weight": 0.25},
+    "masked_color_mean_shift": {"scale": 0.05, "weight": 0.05},
+    "surface_rgb_rmse": {"scale": 0.08, "weight": 0.25},
+    "surface_changed_fraction_1_255": {"scale": 0.5, "weight": 0.1}
+  },
+  "geometry_quality": "minimum of geometry_fidelity, completeness and topology_health",
+  "overall_quality": "minimum of geometry_quality and texture_fidelity",
+  "monotonic_policy": "Retain raw metrics and raw component scores. Apply cumulative burden only within observable light-medium-heavy records of the same asset and attack. An objective no-op remains quality 1 and is excluded from contradictory ranking pairs."
+}

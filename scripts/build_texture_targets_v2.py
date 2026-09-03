@@ -64,8 +64,10 @@ def render_asset(path: Path, size: int):
     )
 
 
-def stable_seed(asset_id: str) -> int:
-    return int.from_bytes(hashlib.sha256(f"2026|{asset_id}|surface-uv".encode()).digest()[:8], "little")
+def stable_seed(seed: int, asset_id: str) -> int:
+    return int.from_bytes(
+        hashlib.sha256(f"{seed}|{asset_id}|surface-uv".encode()).digest()[:8], "little"
+    )
 
 
 def sample_surface_uv(mesh, count: int, seed: int):
@@ -230,6 +232,8 @@ def main() -> None:
     parser.add_argument("--data-root", type=Path)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--render-size", type=int, default=224)
+    parser.add_argument("--surface-samples", type=int, default=65536)
+    parser.add_argument("--seed", type=int, default=2026)
     parser.add_argument("--asset-ids", nargs="*")
     parser.add_argument("--shard-index", type=int, default=0)
     parser.add_argument("--shard-count", type=int, default=1)
@@ -259,7 +263,9 @@ def main() -> None:
         for asset_id, row in clean_records.items()
     }
     surface_samples = {
-        asset_id: sample_surface_uv(clean[0], 65536, stable_seed(asset_id))
+        asset_id: sample_surface_uv(
+            clean[0], args.surface_samples, stable_seed(args.seed, asset_id)
+        )
         for asset_id, clean in clean_renders.items()
     }
 
@@ -332,7 +338,8 @@ def main() -> None:
             "six aligned material-aware orthographic views with explicit textured masks, "
             "plus deterministic area-weighted triangle-to-UV surface samples"
         ),
-        "surface_uv_samples_per_asset": 65536,
+        "surface_uv_samples_per_asset": args.surface_samples,
+        "seed": args.seed,
         "render_size": args.render_size,
         "directions": STANDARD_DIRECTIONS,
         "metric_names": METRIC_NAMES,

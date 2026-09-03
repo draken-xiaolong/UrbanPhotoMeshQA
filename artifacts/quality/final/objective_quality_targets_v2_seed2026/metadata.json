@@ -1,0 +1,155 @@
+{
+  "schema_version": 2,
+  "supervision": "full-reference objective target generation; deployed inference remains no-reference",
+  "configuration": {
+    "schema_version": 2,
+    "seed": 2026,
+    "selection_protocol": "Formula and constants frozen using the geometry Train split and the 3-asset texture resolution pilot only; Val, Test and Blind were not inspected.",
+    "transform": "Each component is exp(-sum(weight * raw_metric / fixed_scale)); lower raw distortion and higher quality are better.",
+    "geometry_fidelity": {
+      "symmetric_chamfer_l1": {
+        "scale": 0.002,
+        "weight": 0.25
+      },
+      "symmetric_distance_p99": {
+        "scale": 0.015,
+        "weight": 0.25
+      },
+      "symmetric_hausdorff": {
+        "scale": 0.04,
+        "weight": 0.15
+      },
+      "symmetric_normal_error": {
+        "scale": 0.05,
+        "weight": 0.35
+      }
+    },
+    "completeness": {
+      "clean_missing_fraction_0p005": {
+        "scale": 0.15,
+        "weight": 0.6
+      },
+      "clean_missing_fraction_0p01": {
+        "scale": 0.1,
+        "weight": 0.4
+      }
+    },
+    "topology_health": {
+      "boundary_edge_ratio_delta": {
+        "scale": 0.15,
+        "weight": 0.35
+      },
+      "nonmanifold_edge_ratio_delta": {
+        "scale": 0.01,
+        "weight": 0.2
+      },
+      "component_log_delta": {
+        "scale": 2.0,
+        "weight": 0.45
+      }
+    },
+    "texture_fidelity": {
+      "masked_rgb_rmse": {
+        "scale": 0.08,
+        "weight": 0.15
+      },
+      "masked_gradient_mae": {
+        "scale": 0.03,
+        "weight": 0.2
+      },
+      "masked_one_minus_ssim": {
+        "scale": 0.15,
+        "weight": 0.25
+      },
+      "masked_color_mean_shift": {
+        "scale": 0.05,
+        "weight": 0.05
+      },
+      "surface_rgb_rmse": {
+        "scale": 0.08,
+        "weight": 0.25
+      },
+      "surface_changed_fraction_1_255": {
+        "scale": 0.5,
+        "weight": 0.1
+      }
+    },
+    "geometry_quality": "minimum of geometry_fidelity, completeness and topology_health",
+    "overall_quality": "minimum of geometry_quality and texture_fidelity",
+    "monotonic_policy": "Retain raw metrics and raw component scores. Apply cumulative burden only within observable light-medium-heavy records of the same asset and attack. An objective no-op remains quality 1 and is excluded from contradictory ranking pairs."
+  },
+  "counts": {
+    "train": 1518,
+    "val": 760,
+    "test": 607,
+    "blind": 608
+  },
+  "monotonicity_before_envelope_observable_records": {
+    "geometry_hole": {
+      "passed": 181,
+      "total": 184,
+      "rate": 0.9836956521739131
+    },
+    "geometry_noise_spike": {
+      "passed": 184,
+      "total": 184,
+      "rate": 1.0
+    },
+    "mesh_simplification_qem": {
+      "passed": 165,
+      "total": 184,
+      "rate": 0.8967391304347826
+    },
+    "texture_detail_loss": {
+      "passed": 183,
+      "total": 184,
+      "rate": 0.9945652173913043
+    },
+    "texture_misalignment": {
+      "passed": 184,
+      "total": 184,
+      "rate": 1.0
+    },
+    "texture_region_missing": {
+      "passed": 184,
+      "total": 184,
+      "rate": 1.0
+    }
+  },
+  "monotonicity_after_envelope_observable_records": {
+    "geometry_hole": {
+      "passed": 184,
+      "total": 184,
+      "rate": 1.0
+    },
+    "geometry_noise_spike": {
+      "passed": 184,
+      "total": 184,
+      "rate": 1.0
+    },
+    "mesh_simplification_qem": {
+      "passed": 184,
+      "total": 184,
+      "rate": 1.0
+    },
+    "texture_detail_loss": {
+      "passed": 184,
+      "total": 184,
+      "rate": 1.0
+    },
+    "texture_misalignment": {
+      "passed": 184,
+      "total": 184,
+      "rate": 1.0
+    },
+    "texture_region_missing": {
+      "passed": 184,
+      "total": 184,
+      "rate": 1.0
+    }
+  },
+  "objective_noop_records": 90,
+  "dataset_manifest": "/root/autodl-tmp/UrbanPhotoMeshQA/data/Manifests/quality_dataset_formal_v3_seed2026.json",
+  "geometry_target_dir": "/root/autodl-tmp/UrbanPhotoMeshQA/data/Targets/geometry_targets_v2_formal_seed2026",
+  "texture_target_dir": "/root/autodl-tmp/UrbanPhotoMeshQA/data/Targets/texture_targets_v2_final_seed2026"
+}

@@ -24,13 +24,16 @@ def main() -> None:
     parser.add_argument("--texture-replacements", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--allow-partial", action="store_true")
+    parser.add_argument("--attacks", nargs="+", choices=sorted(TEXTURE_ATTACKS),
+                        default=sorted(TEXTURE_ATTACKS))
     args = parser.parse_args()
 
     base = json.loads(args.formal_base.read_text(encoding="utf-8"))
     replacement_payload = json.loads(args.texture_replacements.read_text(encoding="utf-8"))
+    selected_attacks = set(args.attacks)
     replacements = {
         key(row): row for row in replacement_payload["records"]
-        if row["attack"] in TEXTURE_ATTACKS
+        if row["attack"] in selected_attacks
     }
     unknown = set(replacements) - {key(row) for row in base["records"]}
     if unknown:
@@ -53,7 +56,7 @@ def main() -> None:
         replaced += 1
     if replaced != len(replacements):
         raise ValueError(f"Expected {len(replacements)} replacements, got {replaced}")
-    expected_full = sum(row["attack"] in TEXTURE_ATTACKS for row in base["records"])
+    expected_full = sum(row["attack"] in selected_attacks for row in base["records"])
     if not args.allow_partial and replaced != expected_full:
         raise ValueError(f"Full replacement requires {expected_full} records, got {replaced}")
     counts = {split: sum(row["split"] == split for row in records) for split in FORMAL_COUNTS}
@@ -65,6 +68,7 @@ def main() -> None:
         "schema_version": max(int(base.get("schema_version", 1)), 2),
         "records": records,
         "texture_data_version": "UV-usage-aware local texture attacks v2",
+        "texture_attacks_replaced": sorted(selected_attacks),
         "texture_generator_signature": replacement_payload.get("generator_signature"),
         "lineage": {
             **base.get("lineage", {}),
