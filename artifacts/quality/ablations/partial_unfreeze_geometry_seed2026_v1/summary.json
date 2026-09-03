@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "status": "GEOMETRY_STAGE_COMPLETE",
+  "seed": 2026,
+  "protocol": {
+    "train_count": 798,
+    "val_count": 400,
+    "loaded_splits": [
+      "train",
+      "val"
+    ],
+    "test_blind_loaded": false,
+    "head_lr": 0.0002,
+    "base_lr": 0.00001,
+    "gradient_clip": 1.0,
+    "early_stopping_patience": 15
+  },
+  "frozen_global_reference": {
+    "val_oqi_mae": 0.20849083364009857,
+    "val_oqi_plcc": 0.5934659125015995,
+    "val_oqi_srcc": 0.6047380207347457
+  },
+  "frozen_control_same_schedule": {
+    "best_epoch": 27,
+    "val_oqi_mae": 0.20734691619873047,
+    "val_oqi_plcc": 0.5839555214850292,
+    "val_oqi_srcc": 0.5903663694122443,
+    "decision": "control only: the smaller-batch warm-start schedule does not explain the gain"
+  },
+  "mesh_fuse": {
+    "best_epoch": 6,
+    "val_oqi_mae": 0.2053910791873932,
+    "val_oqi_plcc": 0.5877403987651254,
+    "val_oqi_srcc": 0.5991572577117318,
+    "decision": "reject: SRCC regressed"
+  },
+  "last_blocks": {
+    "best_epoch": 7,
+    "val_oqi_mae": 0.20383232831954956,
+    "val_oqi_plcc": 0.6143028404872394,
+    "val_oqi_srcc": 0.6217063617531885,
+    "val_geometry_srcc": 0.6177922863189328,
+    "decision": "advance to full multimodal validation after the spatial texture branch is available"
+  }
+}
