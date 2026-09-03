@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "selection": "closest complete asset sequence to per-level attack medians",
+  "cases": [
+    {
+      "attack": "geometry_hole",
+      "asset_id": "B356391745102063A0",
+      "levels": {
+        "light": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4B/BUILDING/B356391745102063A0/geometry_hole/light/B356391745102063A0.gltf",
+          "geometry_quality": 0.6166530251502991,
+          "texture_quality": 1.0,
+          "overall_quality": 0.6166530251502991
+        },
+        "medium": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4B/BUILDING/B356391745102063A0/geometry_hole/medium/B356391745102063A0.gltf",
+          "geometry_quality": 0.1299542635679245,
+          "texture_quality": 1.0,
+          "overall_quality": 0.1299542635679245
+        },
+        "heavy": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4B/BUILDING/B356391745102063A0/geometry_hole/heavy/B356391745102063A0.gltf",
+          "geometry_quality": 0.018766241148114204,
+          "texture_quality": 1.0,
+          "overall_quality": 0.018766241148114204
+        }
+      }
+    },
+    {
+      "attack": "geometry_noise_spike",
+      "asset_id": "B358781772601063A0",
+      "levels": {
+        "light": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4B/BUILDING/B358781772601063A0/geometry_noise_spike/light/B358781772601063A0.gltf",
+          "geometry_quality": 0.6361173987388611,
+          "texture_quality": 1.0,
+          "overall_quality": 0.6361173987388611
+        },
+        "medium": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4B/BUILDING/B358781772601063A0/geometry_noise_spike/medium/B358781772601063A0.gltf",
+          "geometry_quality": 0.4614911675453186,
+          "texture_quality": 1.0,
+          "overall_quality": 0.4614911675453186
+        },
+        "heavy": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4B/BUILDING/B358781772601063A0/geometry_noise_spike/heavy/B358781772601063A0.gltf",
+          "geometry_quality": 0.34276247024536133,
+          "texture_quality": 1.0,
+          "overall_quality": 0.34276247024536133
+        }
+      }
+    },
+    {
+      "attack": "mesh_simplification_qem",
+      "asset_id": "B355451536301063A0",
+      "levels": {
+        "light": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-14B/BUILDING/B355451536301063A0/mesh_simplification_qem/light/B355451536301063A0.gltf",
+          "geometry_quality": 0.8957325220108032,
+          "texture_quality": 1.0,
+          "overall_quality": 0.8957325220108032
+        },
+        "medium": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-14B/BUILDING/B355451536301063A0/mesh_simplification_qem/medium/B355451536301063A0.gltf",
+          "geometry_quality": 0.7577918171882629,
+          "texture_quality": 1.0,
+          "overall_quality": 0.7577918171882629
+        },
+        "heavy": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-14B/BUILDING/B355451536301063A0/mesh_simplification_qem/heavy/B355451536301063A0.gltf",
+          "geometry_quality": 0.5694990754127502,
+          "texture_quality": 1.0,
+          "overall_quality": 0.5694990754127502
+        }
+      }
+    },
+    {
+      "attack": "texture_detail_loss",
+      "asset_id": "B360971757901063A0",
+      "levels": {
+        "light": {
+          "gltf_path": "HK3D-Individualised-Attack/11-SW-5A/BUILDING/B360971757901063A0/texture_detail_loss/light/B360971757901063A0.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.8822148442268372,
+          "overall_quality": 0.8822148442268372
+        },
+        "medium": {
+          "gltf_path": "HK3D-Individualised-Attack/11-SW-5A/BUILDING/B360971757901063A0/texture_detail_loss/medium/B360971757901063A0.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.7397370338439941,
+          "overall_quality": 0.7397370338439941
+        },
+        "heavy": {
+          "gltf_path": "HK3D-Individualised-Attack/11-SW-5A/BUILDING/B360971757901063A0/texture_detail_loss/heavy/B360971757901063A0.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.6326341032981873,
+          "overall_quality": 0.6326341032981873
+        }
+      }
+    },
+    {
+      "attack": "texture_misalignment",
+      "asset_id": "B358611580502063A1",
+      "levels": {
+        "light": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-9D/BUILDING/B358611580502063A1/texture_misalignment/light/B358611580502063A1.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.9431618452072144,
+          "overall_quality": 0.9431618452072144
+        },
+        "medium": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-9D/BUILDING/B358611580502063A1/texture_misalignment/medium/B358611580502063A1.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.8452180624008179,
+          "overall_quality": 0.8452180624008179
+        },
+        "heavy": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-9D/BUILDING/B358611580502063A1/texture_misalignment/heavy/B358611580502063A1.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.7156598567962646,
+          "overall_quality": 0.7156598567962646
+        }
+      }
+    },
+    {
+      "attack": "texture_region_missing",
+      "asset_id": "B357521725801063A1",
+      "levels": {
+        "light": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4D/BUILDING/B357521725801063A1/texture_region_missing/light/B357521725801063A1.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.607348620891571,
+          "overall_quality": 0.607348620891571
+        },
+        "medium": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4D/BUILDING/B357521725801063A1/texture_region_missing/medium/B357521725801063A1.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.3780193626880646,
+          "overall_quality": 0.3780193626880646
+        },
+        "heavy": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4D/BUILDING/B357521725801063A1/texture_region_missing/heavy/B357521725801063A1.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.2269841581583023,
+          "overall_quality": 0.2269841581583023
+        }
+      }
+    }
+  ]
+}
