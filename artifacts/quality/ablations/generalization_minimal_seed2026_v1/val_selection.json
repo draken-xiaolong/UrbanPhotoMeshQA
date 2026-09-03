@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "status": "VAL_SELECTION_COMPLETE",
+  "seed": 2026,
+  "protocol": {
+    "selection_data": "Val only",
+    "test_blind_evaluated": false,
+    "ordered_sample_sha256": "c81695427ad1e3019812a16dbdf93abd09523888568e24c1ca000dc7275d6276",
+    "promotion_gate": {
+      "minimum_val_oqi_srcc_gain_over_reference": 0.01,
+      "maximum_allowed_val_geometry_srcc_drop": 0.02,
+      "maximum_allowed_val_texture_srcc_drop": 0.02
+    }
+  },
+  "selected_id": "release_seed2026_v1",
+  "selected_checkpoint": "artifacts/quality/final/release_seed2026_v1/global_quality_head.pt",
+  "promoted_over_baseline": false,
+  "promotion_reference": {
+    "id": "release_seed2026_v1",
+    "checkpoint": "artifacts/quality/final/release_seed2026_v1/global_quality_head.pt",
+    "val_oqi_srcc": 0.5195598949653732,
+    "val_oqi_plcc": 0.5424767876992705,
+    "val_oqi_mae": 0.2149888277053833,
+    "val_geometry_srcc": 0.6261664873836529,
+    "val_texture_srcc": 0.5929677464915186
+  },
+  "candidates": [
+    {
+      "id": "B0_formal_frozen",
+      "checkpoint": "B0_formal_frozen/four_branch.pt",
+      "best_epoch": 9,
+      "val_oqi_srcc": 0.49956059574291156,
+      "val_oqi_plcc": 0.5162342358814624,
+      "val_oqi_mae": 0.23350951075553894,
+      "val_geometry_srcc": 0.6039158236747205,
+      "val_texture_srcc": 0.6047621599602875,
+      "val_worst_tile_srcc": 0.49956059574291156,
+      "gain_over_reference": -0.019999299222461686,
+      "geometry_drop_from_reference": 0.02225066370893236,
+      "texture_drop_from_reference": -0.01179441346876886,
+      "passes_promotion_gate": false
+    },
+    {
+      "id": "B1_robust_norm",
+      "checkpoint": "B1_robust_norm/four_branch.pt",
+      "best_epoch": 8,
+      "val_oqi_srcc": 0.4904081218165355,
+      "val_oqi_plcc": 0.5035526112321896,
+      "val_oqi_mae": 0.23780329525470734,
+      "val_geometry_srcc": 0.6441051112175756,
+      "val_texture_srcc": 0.5872577287031532,
+      "val_worst_tile_srcc": 0.4904081218165355,
+      "gain_over_reference": -0.029151773148837767,
+      "geometry_drop_from_reference": -0.01793862383392275,
+      "texture_drop_from_reference": 0.00571001778836544,
+      "passes_promotion_gate": false
+    },
+    {
+      "id": "B2_robust_tile_balanced",
+      "checkpoint": "B2_robust_tile_balanced/four_branch.pt",
+      "best_epoch": 4,
+      "val_oqi_srcc": 0.5024109377791705,
+      "val_oqi_plcc": 0.5176297377060115,
+      "val_oqi_mae": 0.20274092257022858,
+      "val_geometry_srcc": 0.5864885696054539,
+      "val_texture_srcc": 0.6391038704917072,
+      "val_worst_tile_srcc": 0.5024109377791705,
+      "gain_over_reference": -0.017148957186202796,
+      "geometry_drop_from_reference": 0.03967791777819896,
+      "texture_drop_from_reference": -0.04613612400018863,
+      "passes_promotion_gate": false
+    },
+    {
+      "id": "B3_robust_tile_worst",
+      "checkpoint": "B3_robust_tile_worst/four_branch.pt",
+      "best_epoch": 4,
+      "val_oqi_srcc": 0.5492947861977799,
+      "val_oqi_plcc": 0.5406962501566757,
+      "val_oqi_mae": 0.20586355030536652,
+      "val_geometry_srcc": 0.5860829437980233,
+      "val_texture_srcc": 0.6531741123846078,
+      "val_worst_tile_srcc": 0.5492947861977799,
+      "gain_over_reference": 0.02973489123240669,
+      "geometry_drop_from_reference": 0.0400835435856296,
+      "texture_drop_from_reference": -0.06020636589308914,
+      "passes_promotion_gate": false
+    },
+    {
+      "id": "B4_release_warmstart_tile_worst",
+      "checkpoint": "B4_release_warmstart_tile_worst/four_branch.pt",
+      "best_epoch": 4,
+      "val_oqi_srcc": 0.49299983677718767,
+      "val_oqi_plcc": 0.5115379263539467,
+      "val_oqi_mae": 0.22184042632579803,
+      "val_geometry_srcc": 0.6316700168008428,
+      "val_texture_srcc": 0.5941812296838618,
+      "val_worst_tile_srcc": 0.49299983677718767,
+      "gain_over_reference": -0.026560058188185576,
+      "geometry_drop_from_reference": -0.005503529417189901,
+      "texture_drop_from_reference": -0.0012134831923431566,
+      "passes_promotion_gate": false
+    }
+  ],
+  "next_step": "Freeze this selection, then run calibration/evaluation exactly once on Test and Blind."
+}

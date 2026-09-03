@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "seed": 2026,
+  "python": "3.12.3",
+  "platform": "Linux-5.15.0-78-generic-x86_64-with-glibc2.35",
+  "manifest": "/root/autodl-tmp/UrbanPhotoMeshQA/repo/artifacts/manifests/quality_dataset_formal_seed2026.json",
+  "ordered_sample_sha256": "c81695427ad1e3019812a16dbdf93abd09523888568e24c1ca000dc7275d6276",
+  "formal_counts": {
+    "train": 1518,
+    "val": 760,
+    "test": 607,
+    "blind": 608
+  },
+  "formal_exclusions": 3,
+  "arrays": {
+    "train": {
+      "records": 1518,
+      "point_dim": 256,
+      "mesh_dim": 256,
+      "morphology_dim": 13,
+      "texture_dim": 576,
+      "patch_shape": [
+        16,
+        58
+      ]
+    },
+    "val": {
+      "records": 760,
+      "point_dim": 256,
+      "mesh_dim": 256,
+      "morphology_dim": 13,
+      "texture_dim": 576,
+      "patch_shape": [
+        16,
+        58
+      ]
+    },
+    "test": {
+      "records": 607,
+      "point_dim": 256,
+      "mesh_dim": 256,
+      "morphology_dim": 13,
+      "texture_dim": 576,
+      "patch_shape": [
+        16,
+        58
+      ]
+    },
+    "blind": {
+      "records": 608,
+      "point_dim": 256,
+      "mesh_dim": 256,
+      "morphology_dim": 13,
+      "texture_dim": 576,
+      "patch_shape": [
+        16,
+        58
+      ]
+    }
+  },
+  "checkpoints": {
+    "point": {
+      "path": "/root/autodl-tmp/UrbanPhotoMeshQA/repo/artifacts/pretrained_backbone/formal_invariant_seed2026_v1/best.pt",
+      "sha256": "29d6a7513a6a30089db0265b0c1c2ee3f8addd0f0b97de1d1deba9d97dd596ec"
+    },
+    "mesh": {
+      "path": "/root/autodl-tmp/UrbanPhotoMeshQA/repo/artifacts/pretrained_backbone/native_mesh_v1/best.pt",
+      "sha256": "62b1486221b3ef7b1a0e6bde84290944c7b99dcf3376fd277fdbf400c597dded"
+    }
+  },
+  "release_checksums": {
+    "global_quality_head.pt": true,
+    "local_patch_head.pt": true,
+    "calibration.json": true,
+    "example_blind_inference.json": true,
+    "results_summary.json": true,
+    "MODEL_CARD_ZH.md": true,
+    "PROVENANCE_AUDIT_ZH.md": true
+  },
+  "data_paths": {
+    "source": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised",
+    "attacks": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack",
+    "raw_cache": "/root/autodl-tmp/UrbanPhotoMeshQA/data/Feature-Cache/Full"
+  },
+  "cuda": {
+    "required": true,
+    "available": true,
+    "torch": "2.8.0+cu128",
+    "device_count": 1,
+    "device_0": "NVIDIA GeForce RTX 4090"
+  }
+}

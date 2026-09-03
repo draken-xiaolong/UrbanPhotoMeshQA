@@ -81,7 +81,7 @@
 - 质量模型训练：`scripts/train_real_gltf_quality.py`
 - 缓存与最终输出等价审计：`scripts/validate_cache_neural_equivalence.py`
 
-## 9. 下一轮 GPU 工作流（已准备，尚未运行）
+## 9. 冻结 Base 泛化筛选（已完成）
 
 - 环境审计：`scripts/audit_gpu_quality_environment.py`；
 - 四组冻结 Base 泛化筛选：`scripts/run_quality_generalization_minimal.py`；
@@ -92,3 +92,18 @@
 候选训练只加载 Train/Val NPZ；Test/Blind 在唯一候选冻结前不加载、不评测。部分解冻与
 端到端微调需要接入原始缓存和实际 Encoder 反向传播，不能由冻结特征训练替代，因此仅在
 第一阶段未达到 Val promotion gate 时进入第二阶段。
+
+seed=2026 的 Val-only 结果如下：
+
+| 候选 | OQI SRCC | Geometry SRCC | Texture SRCC | 相对release晋级 |
+|---|---:|---:|---:|---:|
+| release_seed2026_v1 | 0.520 | 0.626 | 0.593 | reference |
+| B0 mean/std | 0.500 | 0.604 | 0.605 | 否 |
+| B1 robust norm | 0.490 | 0.644 | 0.587 | 否 |
+| B2 robust + tile balance | 0.502 | 0.586 | 0.639 | 否 |
+| B3 robust + tile + worst | 0.549 | 0.586 | 0.653 | 否（几何下降0.040） |
+| B4 release warm-start | 0.493 | 0.632 | 0.594 | 否 |
+
+B3证明图幅鲁棒损失能提高整体和纹理排序，但相对正式release的几何SRCC下降超过0.02
+门限；B4保住几何却没有保住整体排序。因此保持原release，不解锁Test/Blind，下一阶段
+进入真实Encoder部分解冻，而不是继续搜索冻结Head超参数。
