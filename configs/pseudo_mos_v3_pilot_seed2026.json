@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "seed": 2026,
+  "status": "PILOT_ONLY",
+  "selection_protocol": "Constants fixed from OQI v2 Train audit and the 18-case visual/perceptual Pilot; no Val, Test or Blind model result is used.",
+  "base_transform": "reciprocal burden: q = 1 / (1 - log(max(q_v2_raw, 1e-8)))",
+  "perceptual_burden": {
+    "feature_mean": {"scale": 0.005, "weight": 0.4},
+    "feature_p95_mean": {"scale": 0.02, "weight": 0.4},
+    "feature_worst_view_mean": {"scale": 0.01, "weight": 0.2}
+  },
+  "perceptual_transform": "q = 1 / (1 + sum(weight * metric / scale))",
+  "component_fusion": {"method": "normalized_soft_min", "temperature": 0.15},
+  "overall_candidates": {
+    "hard_min": "min(geometry, texture)",
+    "soft_min": {"temperature": 0.1},
+    "bounded_interaction": "0.6 * soft_min + 0.4 * geometry * texture"
+  }
+}

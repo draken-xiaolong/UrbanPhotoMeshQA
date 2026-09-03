@@ -1,0 +1,36 @@
+{
+  "schema_version": 2,
+  "seed": 2026,
+  "source_assets": 340,
+  "main_assets": 300,
+  "blind_assets": 40,
+  "levels": ["light", "medium", "heavy"],
+  "severity_seed_policy": "fixed per asset and attack; shared across light/medium/heavy",
+  "attacks": {
+    "geometry_hole": {"removed_face_fraction": [0.05, 0.15, 0.30]},
+    "mesh_simplification_qem": {"retained_face_fraction": [0.85, 0.70, 0.55]},
+    "geometry_noise_spike": {
+      "bbox_diagonal_fraction": [0.001, 0.003, 0.006],
+      "affected_face_fraction": [0.03, 0.07, 0.12]
+    },
+    "texture_detail_loss": {
+      "coarse_label": "texture_detail_loss",
+      "subtypes": ["gaussian_blur", "texture_downsample"],
+      "assignment": "sha256(asset_id) parity, fixed across levels",
+      "gaussian_blur_radius": [0.8, 2.0, 4.0],
+      "texture_resolution_fraction": [0.50, 0.25, 0.125]
+    },
+    "texture_region_missing": {"missing_pixel_fraction": [0.05, 0.15, 0.30]},
+    "texture_misalignment": {
+      "texture_width_shift_fraction": [0.01, 0.03, 0.06],
+      "ghost_alpha": [0.15, 0.30, 0.50]
+    }
+  },
+  "excluded": [
+    "retriangulate",
+    "background_shift",
+    "camera_jitter",
+    "rendered_view_occlusion",
+    "rendered_view_jpeg"
+  ]
+}

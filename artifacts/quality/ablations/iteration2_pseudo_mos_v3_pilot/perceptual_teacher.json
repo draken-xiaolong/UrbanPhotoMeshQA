@@ -1,0 +1,320 @@
+{
+  "schema_version": 1,
+  "teacher": "ImageNet MobileNetV3-Small six-view aligned normalized feature distance",
+  "layers": [
+    1,
+    3,
+    8,
+    12
+  ],
+  "render_size": 224,
+  "views": 6,
+  "cases": [
+    {
+      "attack": "geometry_hole",
+      "asset_id": "B356391745102063A0",
+      "levels": {
+        "light": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4B/BUILDING/B356391745102063A0/geometry_hole/light/B356391745102063A0.gltf",
+          "geometry_quality": 0.6166530251502991,
+          "texture_quality": 1.0,
+          "overall_quality": 0.6166530251502991,
+          "feature_layer_mse": [
+            0.005201722960919142,
+            0.0041028764098882675,
+            0.0023981404956430197,
+            0.00013575085904449224
+          ],
+          "feature_mean": 0.0029596226813737303,
+          "rgb_rmse_union": 0.04596705734729767,
+          "silhouette_iou": 0.9990202685677388
+        },
+        "medium": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4B/BUILDING/B356391745102063A0/geometry_hole/medium/B356391745102063A0.gltf",
+          "geometry_quality": 0.1299542635679245,
+          "texture_quality": 1.0,
+          "overall_quality": 0.1299542635679245,
+          "feature_layer_mse": [
+            0.014027784578502178,
+            0.009656397625803947,
+            0.004972563125193119,
+            0.0002635238924995065
+          ],
+          "feature_mean": 0.007230067305499688,
+          "rgb_rmse_union": 0.09538763761520386,
+          "silhouette_iou": 0.996632369650834
+        },
+        "heavy": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4B/BUILDING/B356391745102063A0/geometry_hole/heavy/B356391745102063A0.gltf",
+          "geometry_quality": 0.018766241148114204,
+          "texture_quality": 1.0,
+          "overall_quality": 0.018766241148114204,
+          "feature_layer_mse": [
+            0.028974533081054688,
+            0.019690442830324173,
+            0.008615031838417053,
+            0.0005306963576003909
+          ],
+          "feature_mean": 0.014452676026849076,
+          "rgb_rmse_union": 0.13892090320587158,
+          "silhouette_iou": 0.9929407443518458
+        }
+      }
+    },
+    {
+      "attack": "geometry_noise_spike",
+      "asset_id": "B358781772601063A0",
+      "levels": {
+        "light": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4B/BUILDING/B358781772601063A0/geometry_noise_spike/light/B358781772601063A0.gltf",
+          "geometry_quality": 0.6361173987388611,
+          "texture_quality": 1.0,
+          "overall_quality": 0.6361173987388611,
+          "feature_layer_mse": [
+            0.003809520974755287,
+            0.0025539870839565992,
+            0.0008648770744912326,
+            4.697391341323964e-05
+          ],
+          "feature_mean": 0.0018188397616540897,
+          "rgb_rmse_union": 0.047813013195991516,
+          "silhouette_iou": 0.997045648845547
+        },
+        "medium": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4B/BUILDING/B358781772601063A0/geometry_noise_spike/medium/B358781772601063A0.gltf",
+          "geometry_quality": 0.4614911675453186,
+          "texture_quality": 1.0,
+          "overall_quality": 0.4614911675453186,
+          "feature_layer_mse": [
+            0.007957431487739086,
+            0.005470182280987501,
+            0.0015737961512058973,
+            8.077151142060757e-05
+          ],
+          "feature_mean": 0.003770545357838273,
+          "rgb_rmse_union": 0.06346020847558975,
+          "silhouette_iou": 0.9947152209289735
+        },
+        "heavy": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4B/BUILDING/B358781772601063A0/geometry_noise_spike/heavy/B358781772601063A0.gltf",
+          "geometry_quality": 0.34276247024536133,
+          "texture_quality": 1.0,
+          "overall_quality": 0.34276247024536133,
+          "feature_layer_mse": [
+            0.017937716096639633,
+            0.009079049341380596,
+            0.0028738765977323055,
+            0.0001634497893974185
+          ],
+          "feature_mean": 0.007513522956287488,
+          "rgb_rmse_union": 0.10878371447324753,
+          "silhouette_iou": 0.9842595293143378
+        }
+      }
+    },
+    {
+      "attack": "mesh_simplification_qem",
+      "asset_id": "B355451536301063A0",
+      "levels": {
+        "light": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-14B/BUILDING/B355451536301063A0/mesh_simplification_qem/light/B355451536301063A0.gltf",
+          "geometry_quality": 0.8957325220108032,
+          "texture_quality": 1.0,
+          "overall_quality": 0.8957325220108032,
+          "feature_layer_mse": [
+            0.0010358958970755339,
+            0.000875672500114888,
+            0.0006866669282317162,
+            4.859344335272908e-05
+          ],
+          "feature_mean": 0.0006617071921937168,
+          "rgb_rmse_union": 0.036895234137773514,
+          "silhouette_iou": 0.9973265529859034
+        },
+        "medium": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-14B/BUILDING/B355451536301063A0/mesh_simplification_qem/medium/B355451536301063A0.gltf",
+          "geometry_quality": 0.7577918171882629,
+          "texture_quality": 1.0,
+          "overall_quality": 0.7577918171882629,
+          "feature_layer_mse": [
+            0.007249611895531416,
+            0.0042250556871294975,
+            0.0016897011082619429,
+            0.0001241116551682353
+          ],
+          "feature_mean": 0.003322120086522773,
+          "rgb_rmse_union": 0.07420697063207626,
+          "silhouette_iou": 0.9903216649026033
+        },
+        "heavy": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-14B/BUILDING/B355451536301063A0/mesh_simplification_qem/heavy/B355451536301063A0.gltf",
+          "geometry_quality": 0.5694990754127502,
+          "texture_quality": 1.0,
+          "overall_quality": 0.5694990754127502,
+          "feature_layer_mse": [
+            0.013635548762977123,
+            0.008725708350539207,
+            0.0030912808142602444,
+            0.00021589765674434602
+          ],
+          "feature_mean": 0.00641710889613023,
+          "rgb_rmse_union": 0.11197879165410995,
+          "silhouette_iou": 0.977751867077641
+        }
+      }
+    },
+    {
+      "attack": "texture_detail_loss",
+      "asset_id": "B360971757901063A0",
+      "levels": {
+        "light": {
+          "gltf_path": "HK3D-Individualised-Attack/11-SW-5A/BUILDING/B360971757901063A0/texture_detail_loss/light/B360971757901063A0.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.8822148442268372,
+          "overall_quality": 0.8822148442268372,
+          "feature_layer_mse": [
+            0.001056591747328639,
+            0.0006479596486315131,
+            0.0002219751477241516,
+            1.6792559108580463e-05
+          ],
+          "feature_mean": 0.00048582977569822106,
+          "rgb_rmse_union": 0.01163258496671915,
+          "silhouette_iou": 1.0
+        },
+        "medium": {
+          "gltf_path": "HK3D-Individualised-Attack/11-SW-5A/BUILDING/B360971757901063A0/texture_detail_loss/medium/B360971757901063A0.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.7397370338439941,
+          "overall_quality": 0.7397370338439941,
+          "feature_layer_mse": [
+            0.0049003842286765575,
+            0.002861490473151207,
+            0.001001283060759306,
+            8.46508119138889e-05
+          ],
+          "feature_mean": 0.00221195214362524,
+          "rgb_rmse_union": 0.024152783676981926,
+          "silhouette_iou": 1.0
+        },
+        "heavy": {
+          "gltf_path": "HK3D-Individualised-Attack/11-SW-5A/BUILDING/B360971757901063A0/texture_detail_loss/heavy/B360971757901063A0.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.6326341032981873,
+          "overall_quality": 0.6326341032981873,
+          "feature_layer_mse": [
+            0.009731685742735863,
+            0.006037737242877483,
+            0.0022312169894576073,
+            0.00019910784612875432
+          ],
+          "feature_mean": 0.004549936955299927,
+          "rgb_rmse_union": 0.03388955816626549,
+          "silhouette_iou": 1.0
+        }
+      }
+    },
+    {
+      "attack": "texture_misalignment",
+      "asset_id": "B358611580502063A1",
+      "levels": {
+        "light": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-9D/BUILDING/B358611580502063A1/texture_misalignment/light/B358611580502063A1.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.9431618452072144,
+          "overall_quality": 0.9431618452072144,
+          "feature_layer_mse": [
+            0.00020359577320050448,
+            0.00014263371122069657,
+            6.993497663643211e-05,
+            4.635210643755272e-06
+          ],
+          "feature_mean": 0.00010519991792534711,
+          "rgb_rmse_union": 0.00772187439724803,
+          "silhouette_iou": 0.9999388867968245
+        },
+        "medium": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-9D/BUILDING/B358611580502063A1/texture_misalignment/medium/B358611580502063A1.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.8452180624008179,
+          "overall_quality": 0.8452180624008179,
+          "feature_layer_mse": [
+            0.0016808015061542392,
+            0.0009373417124152184,
+            0.0003590543055906892,
+            1.878914554254152e-05
+          ],
+          "feature_mean": 0.0007489966674256721,
+          "rgb_rmse_union": 0.022172143682837486,
+          "silhouette_iou": 0.9999619173049387
+        },
+        "heavy": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-9D/BUILDING/B358611580502063A1/texture_misalignment/heavy/B358611580502063A1.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.7156598567962646,
+          "overall_quality": 0.7156598567962646,
+          "feature_layer_mse": [
+            0.0039042718708515167,
+            0.0025930446572601795,
+            0.0009866023901849985,
+            4.661100683733821e-05
+          ],
+          "feature_mean": 0.0018826324812835082,
+          "rgb_rmse_union": 0.043264225125312805,
+          "silhouette_iou": 0.9999702221428146
+        }
+      }
+    },
+    {
+      "attack": "texture_region_missing",
+      "asset_id": "B357521725801063A1",
+      "levels": {
+        "light": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4D/BUILDING/B357521725801063A1/texture_region_missing/light/B357521725801063A1.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.607348620891571,
+          "overall_quality": 0.607348620891571,
+          "feature_layer_mse": [
+            0.006362941116094589,
+            0.003980962559580803,
+            0.0017926022410392761,
+            6.755482172593474e-05
+          ],
+          "feature_mean": 0.0030510151846101508,
+          "rgb_rmse_union": 0.07285024225711823,
+          "silhouette_iou": 0.9999416943618448
+        },
+        "medium": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4D/BUILDING/B357521725801063A1/texture_region_missing/medium/B357521725801063A1.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.3780193626880646,
+          "overall_quality": 0.3780193626880646,
+          "feature_layer_mse": [
+            0.020244166254997253,
+            0.012700557708740234,
+            0.0059051066637039185,
+            0.00026985828299075365
+          ],
+          "feature_mean": 0.00977992222760804,
+          "rgb_rmse_union": 0.12167644500732422,
+          "silhouette_iou": 0.9999416943618448
+        },
+        "heavy": {
+          "gltf_path": "HK3D-Individualised-Attack-v2/11-SW-4D/BUILDING/B357521725801063A1/texture_region_missing/heavy/B357521725801063A1.gltf",
+          "geometry_quality": 1.0,
+          "texture_quality": 0.2269841581583023,
+          "overall_quality": 0.2269841581583023,
+          "feature_layer_mse": [
+            0.04069211333990097,
+            0.026462269946932793,
+            0.010547931306064129,
+            0.0005830003647133708
+          ],
+          "feature_mean": 0.019571328739402816,
+          "rgb_rmse_union": 0.16746698319911957,
+          "silhouette_iou": 0.9999416943618448
+        }
+      }
+    }
+  ]
+}

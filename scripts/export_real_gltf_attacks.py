@@ -40,7 +40,12 @@ def texture_subtype(asset_id: str) -> str:
 
 
 def locate_source(source_root: Path, record: dict) -> Path:
-    return source_root / record["sheet"] / record.get("class_name", "BUILDING") / record["asset_id"] / f"{record['asset_id']}.gltf"
+    if record.get("source_gltf"):
+        return source_root / record["source_gltf"]
+    tile = record.get("sheet", record.get("tile"))
+    if not tile:
+        raise KeyError("source record requires source_gltf, sheet, or tile")
+    return source_root / tile / record.get("class_name", "BUILDING") / record["asset_id"] / f"{record['asset_id']}.gltf"
 
 
 def load_records(paths: list[Path]) -> list[dict]:
@@ -271,6 +276,9 @@ def main() -> None:
     attacks = tuple(args.attacks or config["attacks"])
     for record in records:
         source = locate_source(args.source_root, record)
+        tile = record.get("sheet", record.get("tile"))
+        if not tile:
+            raise KeyError(f"Missing tile/sheet for {record['asset_id']}")
         source_digest, _ = asset_digest(source)
         for attack in attacks:
             for level_index, level in enumerate(LEVELS):
@@ -279,7 +287,7 @@ def main() -> None:
                 # levels; only the magnitude changes. This prevents severity
                 # supervision from being confounded by random spatial changes.
                 seed = stable_seed(config["seed"], record["asset_id"], attack)
-                output_dir = args.output_root / record["sheet"] / record.get("class_name", "BUILDING") / record["asset_id"] / attack / level
+                output_dir = args.output_root / tile / record.get("class_name", "BUILDING") / record["asset_id"] / attack / level
                 output = output_dir / f"{record['asset_id']}.gltf"
                 metadata_file = output_dir / "metadata.json"
                 if output.is_file() and metadata_file.is_file():
@@ -307,7 +315,7 @@ def main() -> None:
                 validation = validate_output(output, source, attack)
                 metadata = {
                     "schema_version": 2, "generator_signature": generator_signature,
-                    "asset_id": record["asset_id"], "sheet": record["sheet"],
+                    "asset_id": record["asset_id"], "sheet": tile, "tile": tile,
                     "split": record["split"], "attack": attack, "level": level, "parameters": params,
                     "seed": seed, "source_gltf": str(source), "source_asset_digest": source_digest,
                     **generation, **validation,

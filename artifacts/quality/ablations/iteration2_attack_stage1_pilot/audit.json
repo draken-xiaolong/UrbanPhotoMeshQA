@@ -1,0 +1,1270 @@
+{
+  "schema_version": 1,
+  "variants": 108,
+  "errors": [],
+  "passed": true,
+  "monotonic": {
+    "B353291597201063A0/geometry_hole": {
+      "values": [
+        0.0535714285714286,
+        0.1428571428571429,
+        0.3035714285714286
+      ],
+      "ok": true
+    },
+    "B353291597201063A0/mesh_simplification_qem": {
+      "values": [
+        0.1428571428571429,
+        0.3035714285714286,
+        0.4464285714285714
+      ],
+      "ok": true
+    },
+    "B353291597201063A0/geometry_noise_spike": {
+      "values": [
+        0.014291048049926758,
+        0.042873300615374824,
+        0.08574701153685642
+      ],
+      "ok": true
+    },
+    "B353291597201063A0/texture_detail_loss": {
+      "values": [
+        0.8,
+        2.0,
+        4.0
+      ],
+      "ok": true
+    },
+    "B353291597201063A0/texture_region_missing": {
+      "values": [
+        0.04997444152832031,
+        0.1499185562133789,
+        0.30016517639160156
+      ],
+      "ok": true
+    },
+    "B353291597201063A0/texture_misalignment": {
+      "values": [
+        0.16,
+        0.32999999999999996,
+        0.56
+      ],
+      "ok": true
+    },
+    "B356271566701063A0/geometry_hole": {
+      "values": [
+        0.05008748906386706,
+        0.15004374453193348,
+        0.30008748906386706
+      ],
+      "ok": true
+    },
+    "B356271566701063A0/mesh_simplification_qem": {
+      "values": [
+        0.15004374453193348,
+        0.30030621172353456,
+        0.45013123359580054
+      ],
+      "ok": true
+    },
+    "B356271566701063A0/geometry_noise_spike": {
+      "values": [
+        0.15885915671261291,
+        0.48247003122294935,
+        0.9861373901367188
+      ],
+      "ok": true
+    },
+    "B356271566701063A0/texture_detail_loss": {
+      "values": [
+        0.8,
+        2.0,
+        4.0
+      ],
+      "ok": true
+    },
+    "B356271566701063A0/texture_region_missing": {
+      "values": [
+        0.04994465410709381,
+        0.14998452365398407,
+        0.3001541346311569
+      ],
+      "ok": true
+    },
+    "B356271566701063A0/texture_misalignment": {
+      "values": [
+        0.16,
+        0.32999999999999996,
+        0.56
+      ],
+      "ok": true
+    },
+    "B360971757901063A0/geometry_hole": {
+      "values": [
+        0.050000000000000044,
+        0.15000000000000002,
+        0.30000000000000004
+      ],
+      "ok": true
+    },
+    "B360971757901063A0/mesh_simplification_qem": {
+      "values": [
+        0.1515873015873016,
+        0.30079365079365084,
+        0.45079365079365075
+      ],
+      "ok": true
+    },
+    "B360971757901063A0/geometry_noise_spike": {
+      "values": [
+        0.08044242858886719,
+        0.24299425586244244,
+        0.4859886169433594
+      ],
+      "ok": true
+    },
+    "B360971757901063A0/texture_detail_loss": {
+      "values": [
+        0.8,
+        2.0,
+        4.0
+      ],
+      "ok": true
+    },
+    "B360971757901063A0/texture_region_missing": {
+      "values": [
+        0.04996657371520996,
+        0.1499950885772705,
+        0.2998847961425781
+      ],
+      "ok": true
+    },
+    "B360971757901063A0/texture_misalignment": {
+      "values": [
+        0.16,
+        0.32999999999999996,
+        0.56
+      ],
+      "ok": true
+    },
+    "B362221753202063A0/geometry_hole": {
+      "values": [
+        0.05061082024432806,
+        0.15008726003490402,
+        0.30017452006980805
+      ],
+      "ok": true
+    },
+    "B362221753202063A0/mesh_simplification_qem": {
+      "values": [
+        0.1518324607329843,
+        0.3019197207678883,
+        0.4258289703315882
+      ],
+      "ok": true
+    },
+    "B362221753202063A0/geometry_noise_spike": {
+      "values": [
+        0.11349204829006947,
+        0.3494314242229647,
+        0.6988643743709357
+      ],
+      "ok": true
+    },
+    "B362221753202063A0/texture_detail_loss": {
+      "values": [
+        0.5,
+        0.75,
+        0.875
+      ],
+      "ok": true
+    },
+    "B362221753202063A0/texture_region_missing": {
+      "values": [
+        0.049995288252830505,
+        0.14999060332775116,
+        0.30003009736537933
+      ],
+      "ok": true
+    },
+    "B362221753202063A0/texture_misalignment": {
+      "values": [
+        0.16,
+        0.32999999999999996,
+        0.56
+      ],
+      "ok": true
+    },
+    "B364971561001063A0/geometry_hole": {
+      "values": [
+        0.052631578947368474,
+        0.15204678362573099,
+        0.29824561403508776
+      ],
+      "ok": true
+    },
+    "B364971561001063A0/mesh_simplification_qem": {
+      "values": [
+        0.15204678362573099,
+        0.30409356725146197,
+        0.45029239766081874
+      ],
+      "ok": true
+    },
+    "B364971561001063A0/geometry_noise_spike": {
+      "values": [
+        0.07820202974529003,
+        0.23460634630993027,
+        0.46921307404453794
+      ],
+      "ok": true
+    },
+    "B364971561001063A0/texture_detail_loss": {
+      "values": [
+        0.5,
+        0.75,
+        0.875
+      ],
+      "ok": true
+    },
+    "B364971561001063A0/texture_region_missing": {
+      "values": [
+        0.04999852180480957,
+        0.14997035264968872,
+        0.30001604557037354
+      ],
+      "ok": true
+    },
+    "B364971561001063A0/texture_misalignment": {
+      "values": [
+        0.16,
+        0.32999999999999996,
+        0.56
+      ],
+      "ok": true
+    },
+    "B413202147301063A0/geometry_hole": {
+      "values": [
+        0.050000000000000044,
+        0.15000000000000002,
+        0.30000000000000004
+      ],
+      "ok": true
+    },
+    "B413202147301063A0/mesh_simplification_qem": {
+      "values": [
+        0.15384615384615385,
+        0.30000000000000004,
+        0.44999999999999996
+      ],
+      "ok": true
+    },
+    "B413202147301063A0/geometry_noise_spike": {
+      "values": [
+        0.06386461378726566,
+        0.19159317016601562,
+        0.447723388671875
+      ],
+      "ok": true
+    },
+    "B413202147301063A0/texture_detail_loss": {
+      "values": [
+        0.8,
+        2.0,
+        4.0
+      ],
+      "ok": true
+    },
+    "B413202147301063A0/texture_region_missing": {
+      "values": [
+        0.050000667572021484,
+        0.14994144439697266,
+        0.2999267578125
+      ],
+      "ok": true
+    },
+    "B413202147301063A0/texture_misalignment": {
+      "values": [
+        0.16,
+        0.32999999999999996,
+        0.56
+      ],
+      "ok": true
+    }
+  },
+  "records": [
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "geometry_hole",
+      "level": "light",
+      "effect_metric": 0.0535714285714286,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "effect_metric": 0.1428571428571429,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "effect_metric": 0.3035714285714286,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "effect_metric": 0.1428571428571429,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "effect_metric": 0.3035714285714286,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "effect_metric": 0.4464285714285714,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "effect_metric": 0.014291048049926758,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "effect_metric": 0.042873300615374824,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "effect_metric": 0.08574701153685642,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "effect_metric": 0.8,
+      "file_effect": 0.0031595826148986816,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "effect_metric": 2.0,
+      "file_effect": 0.009087770245969296,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "effect_metric": 4.0,
+      "file_effect": 0.015987081453204155,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "texture_region_missing",
+      "level": "light",
+      "effect_metric": 0.04997444152832031,
+      "file_effect": 0.012141149491071701,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "texture_region_missing",
+      "level": "medium",
+      "effect_metric": 0.1499185562133789,
+      "file_effect": 0.03681072220206261,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "texture_region_missing",
+      "level": "heavy",
+      "effect_metric": 0.30016517639160156,
+      "file_effect": 0.0753064751625061,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "texture_misalignment",
+      "level": "light",
+      "effect_metric": 0.16,
+      "file_effect": 0.0015631220303475857,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "texture_misalignment",
+      "level": "medium",
+      "effect_metric": 0.32999999999999996,
+      "file_effect": 0.0048340726643800735,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B353291597201063A0",
+      "attack": "texture_misalignment",
+      "level": "heavy",
+      "effect_metric": 0.56,
+      "file_effect": 0.010717150755226612,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "geometry_hole",
+      "level": "light",
+      "effect_metric": 0.05008748906386706,
+      "file_effect": null,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "effect_metric": 0.15004374453193348,
+      "file_effect": null,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "effect_metric": 0.30008748906386706,
+      "file_effect": null,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "effect_metric": 0.15004374453193348,
+      "file_effect": null,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "effect_metric": 0.30030621172353456,
+      "file_effect": null,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "effect_metric": 0.45013123359580054,
+      "file_effect": null,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "effect_metric": 0.15885915671261291,
+      "file_effect": null,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "effect_metric": 0.48247003122294935,
+      "file_effect": null,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "effect_metric": 0.9861373901367188,
+      "file_effect": null,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "effect_metric": 0.8,
+      "file_effect": 0.003831462876405567,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "effect_metric": 2.0,
+      "file_effect": 0.012296964530833066,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "effect_metric": 4.0,
+      "file_effect": 0.021229976089671254,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "texture_region_missing",
+      "level": "light",
+      "effect_metric": 0.04994465410709381,
+      "file_effect": 0.016055438900366426,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "texture_region_missing",
+      "level": "medium",
+      "effect_metric": 0.14998452365398407,
+      "file_effect": 0.04510996676981449,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "texture_region_missing",
+      "level": "heavy",
+      "effect_metric": 0.3001541346311569,
+      "file_effect": 0.08374116756021976,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "texture_misalignment",
+      "level": "light",
+      "effect_metric": 0.16,
+      "file_effect": 0.0015802391317265574,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "texture_misalignment",
+      "level": "medium",
+      "effect_metric": 0.32999999999999996,
+      "file_effect": 0.004561536014080048,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "attack": "texture_misalignment",
+      "level": "heavy",
+      "effect_metric": 0.56,
+      "file_effect": 0.009133421845035627,
+      "dependencies": 6,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "geometry_hole",
+      "level": "light",
+      "effect_metric": 0.050000000000000044,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "effect_metric": 0.15000000000000002,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "effect_metric": 0.30000000000000004,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "effect_metric": 0.1515873015873016,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "effect_metric": 0.30079365079365084,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "effect_metric": 0.45079365079365075,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "effect_metric": 0.08044242858886719,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "effect_metric": 0.24299425586244244,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "effect_metric": 0.4859886169433594,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "effect_metric": 0.8,
+      "file_effect": 0.004606278147548437,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "effect_metric": 2.0,
+      "file_effect": 0.011262812651693821,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "effect_metric": 4.0,
+      "file_effect": 0.01691368781030178,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "texture_region_missing",
+      "level": "light",
+      "effect_metric": 0.04996657371520996,
+      "file_effect": 0.014576218090951443,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "texture_region_missing",
+      "level": "medium",
+      "effect_metric": 0.1499950885772705,
+      "file_effect": 0.037672270089387894,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "texture_region_missing",
+      "level": "heavy",
+      "effect_metric": 0.2998847961425781,
+      "file_effect": 0.06515739113092422,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "texture_misalignment",
+      "level": "light",
+      "effect_metric": 0.16,
+      "file_effect": 0.0010680732084438205,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "texture_misalignment",
+      "level": "medium",
+      "effect_metric": 0.32999999999999996,
+      "file_effect": 0.0037460762541741133,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "attack": "texture_misalignment",
+      "level": "heavy",
+      "effect_metric": 0.56,
+      "file_effect": 0.008357248269021511,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "geometry_hole",
+      "level": "light",
+      "effect_metric": 0.05061082024432806,
+      "file_effect": null,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "effect_metric": 0.15008726003490402,
+      "file_effect": null,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "effect_metric": 0.30017452006980805,
+      "file_effect": null,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "effect_metric": 0.1518324607329843,
+      "file_effect": null,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "effect_metric": 0.3019197207678883,
+      "file_effect": null,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "effect_metric": 0.4258289703315882,
+      "file_effect": null,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "effect_metric": 0.11349204829006947,
+      "file_effect": null,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "effect_metric": 0.3494314242229647,
+      "file_effect": null,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "effect_metric": 0.6988643743709357,
+      "file_effect": null,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "effect_metric": 0.5,
+      "file_effect": 0.0029251191963339807,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "effect_metric": 0.75,
+      "file_effect": 0.0054103661750559695,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "effect_metric": 0.875,
+      "file_effect": 0.008498154245899059,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "texture_region_missing",
+      "level": "light",
+      "effect_metric": 0.049995288252830505,
+      "file_effect": 0.012582369614392519,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "texture_region_missing",
+      "level": "medium",
+      "effect_metric": 0.14999060332775116,
+      "file_effect": 0.03758895362261683,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "texture_region_missing",
+      "level": "heavy",
+      "effect_metric": 0.30003009736537933,
+      "file_effect": 0.07606440014205873,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "texture_misalignment",
+      "level": "light",
+      "effect_metric": 0.16,
+      "file_effect": 0.000995840625364508,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "texture_misalignment",
+      "level": "medium",
+      "effect_metric": 0.32999999999999996,
+      "file_effect": 0.00304837282965309,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B362221753202063A0",
+      "attack": "texture_misalignment",
+      "level": "heavy",
+      "effect_metric": 0.56,
+      "file_effect": 0.005959088201052509,
+      "dependencies": 18,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "geometry_hole",
+      "level": "light",
+      "effect_metric": 0.052631578947368474,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "effect_metric": 0.15204678362573099,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "effect_metric": 0.29824561403508776,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "effect_metric": 0.15204678362573099,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "effect_metric": 0.30409356725146197,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "effect_metric": 0.45029239766081874,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "effect_metric": 0.07820202974529003,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "effect_metric": 0.23460634630993027,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "effect_metric": 0.46921307404453794,
+      "file_effect": null,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "effect_metric": 0.5,
+      "file_effect": 0.004054844379425049,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "effect_metric": 0.75,
+      "file_effect": 0.007635144982486963,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "effect_metric": 0.875,
+      "file_effect": 0.012011886574327946,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "texture_region_missing",
+      "level": "light",
+      "effect_metric": 0.04999852180480957,
+      "file_effect": 0.020121391862630844,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "texture_region_missing",
+      "level": "medium",
+      "effect_metric": 0.14997035264968872,
+      "file_effect": 0.054087746888399124,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "texture_region_missing",
+      "level": "heavy",
+      "effect_metric": 0.30001604557037354,
+      "file_effect": 0.10317781567573547,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "texture_misalignment",
+      "level": "light",
+      "effect_metric": 0.16,
+      "file_effect": 0.0016572242602705956,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "texture_misalignment",
+      "level": "medium",
+      "effect_metric": 0.32999999999999996,
+      "file_effect": 0.00453534908592701,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B364971561001063A0",
+      "attack": "texture_misalignment",
+      "level": "heavy",
+      "effect_metric": 0.56,
+      "file_effect": 0.008140722289681435,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "geometry_hole",
+      "level": "light",
+      "effect_metric": 0.050000000000000044,
+      "file_effect": null,
+      "dependencies": 4,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "effect_metric": 0.15000000000000002,
+      "file_effect": null,
+      "dependencies": 4,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "effect_metric": 0.30000000000000004,
+      "file_effect": null,
+      "dependencies": 4,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "effect_metric": 0.15384615384615385,
+      "file_effect": null,
+      "dependencies": 4,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "effect_metric": 0.30000000000000004,
+      "file_effect": null,
+      "dependencies": 4,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "effect_metric": 0.44999999999999996,
+      "file_effect": null,
+      "dependencies": 4,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "effect_metric": 0.06386461378726566,
+      "file_effect": null,
+      "dependencies": 4,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "effect_metric": 0.19159317016601562,
+      "file_effect": null,
+      "dependencies": 4,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "effect_metric": 0.447723388671875,
+      "file_effect": null,
+      "dependencies": 4,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "effect_metric": 0.8,
+      "file_effect": 0.005032165441662073,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "effect_metric": 2.0,
+      "file_effect": 0.015667175874114037,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "effect_metric": 4.0,
+      "file_effect": 0.026182100176811218,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "texture_region_missing",
+      "level": "light",
+      "effect_metric": 0.050000667572021484,
+      "file_effect": 0.02093694359064102,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "texture_region_missing",
+      "level": "medium",
+      "effect_metric": 0.14994144439697266,
+      "file_effect": 0.05862409248948097,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "texture_region_missing",
+      "level": "heavy",
+      "effect_metric": 0.2999267578125,
+      "file_effect": 0.10057217627763748,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "texture_misalignment",
+      "level": "light",
+      "effect_metric": 0.16,
+      "file_effect": 0.002826441777870059,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "texture_misalignment",
+      "level": "medium",
+      "effect_metric": 0.32999999999999996,
+      "file_effect": 0.01034568715840578,
+      "dependencies": 3,
+      "digest_ok": true
+    },
+    {
+      "asset_id": "B413202147301063A0",
+      "attack": "texture_misalignment",
+      "level": "heavy",
+      "effect_metric": 0.56,
+      "file_effect": 0.025393245741724968,
+      "dependencies": 3,
+      "digest_ok": true
+    }
+  ]
+}
