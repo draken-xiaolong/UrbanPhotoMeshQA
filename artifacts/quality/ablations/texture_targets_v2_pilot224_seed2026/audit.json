@@ -1,0 +1,75 @@
+{
+  "schema_version": 2,
+  "status": "PASSED",
+  "records": 30,
+  "all_finite": true,
+  "split_order_checks": {
+    "train": true,
+    "val": true,
+    "test": true,
+    "blind": true
+  },
+  "visible_mask_checks_passed": true,
+  "minimum_common_textured_pixels": 22721,
+  "objective_noops_by_attack_level": {
+    "texture_detail_loss": {
+      "light": 0,
+      "medium": 0,
+      "heavy": 0
+    },
+    "texture_misalignment": {
+      "light": 0,
+      "medium": 0,
+      "heavy": 0
+    },
+    "texture_region_missing": {
+      "light": 1,
+      "medium": 0,
+      "heavy": 0
+    }
+  },
+  "raw_primary_metric_monotonicity": {
+    "texture_detail_loss": {
+      "metric": "masked_gradient_mae",
+      "passed": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "texture_region_missing": {
+      "metric": "visible_changed_fraction_1_255",
+      "passed": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "texture_misalignment": {
+      "metric": "masked_one_minus_ssim",
+      "passed": 3,
+      "total": 3,
+      "rate": 1.0
+    }
+  },
+  "raw_monotonicity_failures": [],
+  "repeatability": {
+    "records": 10,
+    "maximum_absolute_metric_difference": 0.0,
+    "noop_flags_equal": true,
+    "tolerance": 1e-07,
+    "passed": true
+  },
+  "resolution_comparison": {
+    "records": 27,
+    "metric_spearman": {
+      "masked_rgb_mae": 0.9784765798628403,
+      "masked_rgb_rmse": 0.9766447984340799,
+      "masked_luma_mae": 0.9754236108149064,
+      "masked_gradient_mae": 0.9790871736724271,
+      "masked_one_minus_ssim": 0.9760342046244931,
+      "masked_color_mean_shift": 0.8639902405653161,
+      "masked_detail_energy_relative_change": 0.9204701679520947,
+      "visible_changed_fraction_1_255": 0.9986261755792046
+    },
+    "target_noops": 1,
+    "comparison_noops": 2
+  },
+  "monotonicity_policy": "Raw metrics and objective no-op flags remain unmodified; scalar quality may apply a cumulative severity envelope within each asset and attack."
+}

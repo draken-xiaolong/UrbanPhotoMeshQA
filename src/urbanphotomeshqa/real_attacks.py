@@ -149,15 +149,73 @@ def texture_detail_loss(image: Image.Image, subtype: str, value: float) -> Image
     raise ValueError(subtype)
 
 
-def texture_region_missing(image: Image.Image, fraction: float, seed: int) -> tuple[Image.Image, float]:
+def _importance_center(
+    image: Image.Image,
+    importance_mask: np.ndarray | None,
+    seed: int,
+    mode: str,
+) -> tuple[float, float] | None:
+    if importance_mask is None or not np.asarray(importance_mask, bool).any():
+        return None
+    mask = np.asarray(importance_mask, bool)
+    thumbnail = np.asarray(
+        image.convert("RGB").resize((mask.shape[1], mask.shape[0]), Image.Resampling.BILINEAR),
+        dtype=np.float32,
+    )
+    if mode == "missing":
+        signal = np.mean(np.abs(thumbnail - 128.0), axis=2)
+    elif mode == "misalignment":
+        signal = np.mean(np.abs(thumbnail - np.roll(thumbnail, 1, axis=1)), axis=2)
+    else:
+        raise ValueError(mode)
+    scores = np.where(mask, signal, -np.inf).reshape(-1)
+    maximum = float(np.max(scores))
+    if not np.isfinite(maximum):
+        return None
+    # Select among near-equal maxima rather than sampling the whole UV mask:
+    # large atlas padding otherwise dominates sparse facade edges.
+    candidates = np.flatnonzero(scores >= maximum - 1e-6)
+    selected = int(np.random.default_rng(seed).choice(candidates))
+    row, column = divmod(selected, mask.shape[1])
+    return ((row + 0.5) / mask.shape[0], (column + 0.5) / mask.shape[1])
+
+
+def _window_from_center(
+    image_height: int,
+    image_width: int,
+    region_height: int,
+    region_width: int,
+    center: tuple[float, float],
+) -> tuple[int, int]:
+    center_y, center_x = center
+    top = int(round(center_y * image_height - region_height * 0.5))
+    left = int(round(center_x * image_width - region_width * 0.5))
+    return (
+        int(np.clip(top, 0, max(0, image_height - region_height))),
+        int(np.clip(left, 0, max(0, image_width - region_width))),
+    )
+
+
+def texture_region_missing(
+    image: Image.Image,
+    fraction: float,
+    seed: int,
+    importance_mask: np.ndarray | None = None,
+) -> tuple[Image.Image, float]:
     rng = np.random.default_rng(seed)
     array = np.asarray(image.convert("RGBA"), dtype=np.uint8).copy()
     target = max(1, int(round(fraction * array.shape[0] * array.shape[1])))
     aspect = float(rng.uniform(0.65, 1.55))
     height = min(array.shape[0], max(1, int(round(np.sqrt(target / aspect)))))
     width = min(array.shape[1], max(1, int(round(target / height))))
-    top = int(rng.integers(0, max(1, array.shape[0] - height + 1)))
-    left = int(rng.integers(0, max(1, array.shape[1] - width + 1)))
+    center = _importance_center(image, importance_mask, seed, "missing")
+    if center is None:
+        top = int(rng.integers(0, max(1, array.shape[0] - height + 1)))
+        left = int(rng.integers(0, max(1, array.shape[1] - width + 1)))
+    else:
+        top, left = _window_from_center(
+            array.shape[0], array.shape[1], height, width, center
+        )
     array[top : top + height, left : left + width, :3] = 128
     array[top : top + height, left : left + width, 3] = 255
     actual = (height * width) / (array.shape[0] * array.shape[1])
@@ -169,24 +227,27 @@ def texture_misalignment(
     shift_fraction: float,
     ghost_alpha: float,
     seed: int,
+    importance_mask: np.ndarray | None = None,
 ) -> Image.Image:
     rng = np.random.default_rng(seed)
     array = np.asarray(image.convert("RGBA"), dtype=np.uint8).copy()
     height, width = array.shape[:2]
     region_width = max(2, int(round(width * 0.55)))
     region_height = max(2, int(round(height * 0.45)))
-    # Photogrammetric atlases often contain large constant padding. Pick a
-    # content-rich window so the requested degradation cannot silently become
-    # a no-op, while seeded jitter resolves near-ties deterministically.
-    candidates = []
-    for top_fraction in np.linspace(0.0, 1.0, 5):
-        for left_fraction in np.linspace(0.0, 1.0, 5):
-            top = int(round(top_fraction * max(0, height - region_height)))
-            left = int(round(left_fraction * max(0, width - region_width)))
-            sample = array[top : top + region_height : 8, left : left + region_width : 8, :3]
-            score = float(np.var(sample.astype(np.float32))) + float(rng.uniform(0.0, 1e-6))
-            candidates.append((score, top, left))
-    _, top, left = max(candidates)
+    center = _importance_center(image, importance_mask, seed, "misalignment")
+    if center is not None:
+        top, left = _window_from_center(height, width, region_height, region_width, center)
+    else:
+        # Legacy fallback for assets without a valid UV-usage mask.
+        candidates = []
+        for top_fraction in np.linspace(0.0, 1.0, 5):
+            for left_fraction in np.linspace(0.0, 1.0, 5):
+                top = int(round(top_fraction * max(0, height - region_height)))
+                left = int(round(left_fraction * max(0, width - region_width)))
+                sample = array[top : top + region_height : 8, left : left + region_width : 8, :3]
+                score = float(np.var(sample.astype(np.float32))) + float(rng.uniform(0.0, 1e-6))
+                candidates.append((score, top, left))
+        _, top, left = max(candidates)
     region = array[top : top + region_height, left : left + region_width].copy()
     shift = max(1, int(round(width * shift_fraction)))
     shifted = np.roll(region, shift=shift, axis=1)

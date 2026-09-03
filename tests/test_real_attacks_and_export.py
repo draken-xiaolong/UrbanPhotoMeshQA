@@ -95,3 +95,21 @@ def test_source_texture_attacks_have_expected_effects():
     assert 0.13 <= actual <= 0.17
     assert not np.array_equal(np.asarray(missing.convert("RGB")), np.asarray(image.convert("RGB")))
     assert not np.array_equal(np.asarray(shifted.convert("RGB")), np.asarray(image.convert("RGB")))
+
+
+def test_texture_local_attacks_use_uv_importance_mask():
+    rng = np.random.default_rng(7)
+    array = np.full((128, 128, 4), 245, dtype=np.uint8)
+    array[8:40, 8:40, :3] = rng.integers(0, 255, size=(32, 32, 3), dtype=np.uint8)
+    array[..., 3] = 255
+    image = Image.fromarray(array)
+    importance = np.zeros((64, 64), dtype=bool)
+    importance[4:20, 4:20] = True
+
+    missing, _ = texture_region_missing(image, 0.05, 2026, importance)
+    shifted = texture_misalignment(image, 0.03, 0.3, 2026, importance)
+    missing_difference = np.any(np.asarray(missing) != array, axis=2)
+    shifted_difference = np.any(np.asarray(shifted) != array, axis=2)
+
+    assert missing_difference[:48, :48].any()
+    assert shifted_difference[:64, :64].any()

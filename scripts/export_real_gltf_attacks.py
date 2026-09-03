@@ -7,10 +7,11 @@ import argparse
 import hashlib
 import json
 import shutil
+from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageDraw
 from dataclasses import replace
 
 from urbanphotomeshqa.gltf import GltfReader
@@ -73,6 +74,39 @@ def prepare_textures(asset, destination: Path) -> list[str]:
     return names
 
 
+@lru_cache(maxsize=16)
+def uv_importance_masks(source_value: str, size: int = 512) -> tuple[np.ndarray, ...]:
+    """Rasterize material-specific TEXCOORD_0 usage into a small image-space mask."""
+    source = Path(source_value)
+    root = json.loads(source.read_text(encoding="utf-8"))
+    asset = GltfReader(source).load_mesh(include_texture=True)
+    material_images = {}
+    textures = root.get("textures", [])
+    for material_index, material in enumerate(root.get("materials", [])):
+        texture_info = material.get("pbrMetallicRoughness", {}).get("baseColorTexture")
+        if texture_info is None:
+            continue
+        texture_index = int(texture_info.get("index", -1))
+        if 0 <= texture_index < len(textures):
+            material_images[material_index] = int(textures[texture_index].get("source", -1))
+    canvases = [Image.new("1", (size, size), 0) for _ in root.get("images", [])]
+    draws = [ImageDraw.Draw(canvas) for canvas in canvases]
+    texcoords = np.asarray(asset.texcoords, np.float64)
+    for face_index, face in enumerate(np.asarray(asset.faces, np.int64)):
+        image_index = material_images.get(int(asset.face_materials[face_index]), -1)
+        if not 0 <= image_index < len(draws) or not np.isfinite(texcoords[face]).all():
+            continue
+        # Source data has no texture-transform extension or alternate texcoord
+        # set. Tiny accessor noise around [0, 1] is clipped at atlas borders.
+        uv = np.clip(texcoords[face], 0.0, 1.0)
+        polygon = [
+            (float(point[0] * (size - 1)), float((1.0 - point[1]) * (size - 1)))
+            for point in uv
+        ]
+        draws[image_index].polygon(polygon, fill=1)
+    return tuple(np.asarray(canvas, dtype=bool) for canvas in canvases)
+
+
 def export_geometry(source: Path, output: Path, attack: str, params: dict, seed: int) -> dict:
     source_asset = GltfReader(source).load_mesh(include_texture=True)
     coordinate_origin = 0.5 * (
@@ -104,6 +138,7 @@ def export_geometry(source: Path, output: Path, attack: str, params: dict, seed:
 
 def export_texture(source: Path, output: Path, attack: str, params: dict, seed: int) -> dict:
     root = json.loads(source.read_text(encoding="utf-8"))
+    importance_masks = uv_importance_masks(str(source.resolve()))
     output.parent.mkdir(parents=True, exist_ok=True)
     for buffer in root.get("buffers", []):
         uri = buffer.get("uri")
@@ -119,14 +154,21 @@ def export_texture(source: Path, output: Path, attack: str, params: dict, seed: 
             raise ValueError(f"Unsupported embedded image: {source}")
         image = Image.open((source.parent / uri).resolve())
         image_seed = stable_seed(seed, index)
+        importance_mask = importance_masks[index] if index < len(importance_masks) else None
         if attack == "texture_detail_loss":
             degraded = texture_detail_loss(image, params["subtype"], params["value"])
         elif attack == "texture_region_missing":
-            degraded, actual = texture_region_missing(image, params["missing_pixel_fraction"], image_seed)
+            degraded, actual = texture_region_missing(
+                image, params["missing_pixel_fraction"], image_seed, importance_mask
+            )
             actual_values.append(actual)
         elif attack == "texture_misalignment":
             degraded = texture_misalignment(
-                image, params["texture_width_shift_fraction"], params["ghost_alpha"], image_seed
+                image,
+                params["texture_width_shift_fraction"],
+                params["ghost_alpha"],
+                image_seed,
+                importance_mask,
             )
         else:
             raise ValueError(attack)
@@ -197,7 +239,11 @@ def main() -> None:
         "texture_detail_loss", "texture_region_missing", "texture_misalignment",
     ))
     parser.add_argument("--manifest-output", type=Path, required=True)
+    parser.add_argument("--shard-index", type=int, default=0)
+    parser.add_argument("--shard-count", type=int, default=1)
     args = parser.parse_args()
+    if args.shard_count < 1 or not 0 <= args.shard_index < args.shard_count:
+        raise ValueError("Require 0 <= shard-index < shard-count")
     config = json.loads(args.config.read_text(encoding="utf-8"))
     project = Path(__file__).resolve().parents[1]
     generator_signature = extractor_signature({
@@ -219,6 +265,8 @@ def main() -> None:
         missing = requested - {record["asset_id"] for record in records}
         if missing:
             raise SystemExit(f"Unknown asset ids: {sorted(missing)}")
+    records = sorted(records, key=lambda record: record["asset_id"])
+    records = records[args.shard_index::args.shard_count]
     output_records = []
     attacks = tuple(args.attacks or config["attacks"])
     for record in records:
@@ -268,6 +316,7 @@ def main() -> None:
                 output_records.append({**metadata, "gltf_path": str(output)})
                 print(f"ok {record['asset_id']} {attack} {level}", flush=True)
     payload = {"schema_version": 2, "seed": config["seed"],
+               "shard_index": args.shard_index, "shard_count": args.shard_count,
                "generator_signature": generator_signature, "records": output_records}
     args.manifest_output.parent.mkdir(parents=True, exist_ok=True)
     args.manifest_output.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")

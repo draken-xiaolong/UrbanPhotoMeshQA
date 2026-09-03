@@ -1,0 +1,92 @@
+{
+  "schema_version": 2,
+  "status": "PASSED",
+  "records": 1840,
+  "all_finite": true,
+  "split_order_checks": {
+    "train": true,
+    "val": true,
+    "test": true,
+    "blind": true
+  },
+  "visible_mask_checks_passed": true,
+  "minimum_common_textured_pixels": 15173,
+  "objective_noops_by_attack_level": {
+    "texture_detail_loss": {
+      "light": 15,
+      "medium": 16,
+      "heavy": 16
+    },
+    "texture_misalignment": {
+      "light": 35,
+      "medium": 35,
+      "heavy": 34
+    },
+    "texture_region_missing": {
+      "light": 41,
+      "medium": 23,
+      "heavy": 12
+    }
+  },
+  "raw_primary_metric_monotonicity": {
+    "texture_detail_loss": {
+      "metric": "masked_gradient_mae",
+      "passed": 182,
+      "total": 184,
+      "rate": 0.9891304347826086
+    },
+    "texture_region_missing": {
+      "metric": "visible_changed_fraction_1_255",
+      "passed": 184,
+      "total": 184,
+      "rate": 1.0
+    },
+    "texture_misalignment": {
+      "metric": "masked_one_minus_ssim",
+      "passed": 183,
+      "total": 184,
+      "rate": 0.9945652173913043
+    }
+  },
+  "raw_monotonicity_failures": [
+    {
+      "asset_id": "B355691764201063A0",
+      "attack": "texture_detail_loss",
+      "metric": "masked_gradient_mae",
+      "values": [
+        1.2118341885525297e-07,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "asset_id": "B359901504801063A0",
+      "attack": "texture_detail_loss",
+      "metric": "masked_gradient_mae",
+      "values": [
+        2.7192611014470458e-05,
+        4.9698286602506414e-05,
+        4.788897786056623e-05
+      ]
+    },
+    {
+      "asset_id": "B357791617101063A0",
+      "attack": "texture_misalignment",
+      "metric": "masked_one_minus_ssim",
+      "values": [
+        0.0017685790080577135,
+        0.007834218442440033,
+        0.007668637670576572
+      ]
+    }
+  ],
+  "repeatability": {
+    "records": 10,
+    "maximum_absolute_metric_difference": 0.0,
+    "noop_flags_equal": true,
+    "tolerance": 1e-07,
+    "passed": true
+  },
+  "resolution_comparison": null,
+  "monotonicity_policy": "Raw metrics and objective no-op flags remain unmodified; scalar quality may apply a cumulative severity envelope within each asset and attack."
+}

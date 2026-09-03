@@ -131,6 +131,33 @@ def _load_texture_path(value: str) -> np.ndarray:
     return np.asarray(Image.open(value).convert("RGBA"), dtype=np.uint8)
 
 
+def _wrap_texture_coordinate(values: np.ndarray, mode: int) -> np.ndarray:
+    """Apply the glTF sampler wrap mode to one normalized UV component."""
+    if mode == 33071:  # CLAMP_TO_EDGE
+        return np.clip(values, 0.0, 1.0)
+    if mode == 33648:  # MIRRORED_REPEAT
+        period = np.mod(values, 2.0)
+        return np.where(period <= 1.0, period, 2.0 - period)
+    return values - np.floor(values)  # REPEAT (the glTF default)
+
+
+def _material_render_profile(asset: MeshAsset, material: int) -> dict:
+    profiles = asset.metadata.get("material_profiles", [])
+    profile = profiles[material] if 0 <= material < len(profiles) else {}
+    pbr = profile.get("pbrMetallicRoughness") or {}
+    factor = np.asarray(pbr.get("baseColorFactor", [1.0, 1.0, 1.0, 1.0]), dtype=np.float64)
+    if factor.shape != (4,):
+        factor = np.ones(4, dtype=np.float64)
+    sampler = profile.get("baseColorSampler") or {}
+    return {
+        "factor": np.clip(factor, 0.0, 1.0),
+        "alpha_mode": str(profile.get("alphaMode", "OPAQUE")).upper(),
+        "alpha_cutoff": float(profile.get("alphaCutoff") or 0.5),
+        "wrap_s": int(sampler.get("wrapS", 10497)),
+        "wrap_t": int(sampler.get("wrapT", 10497)),
+    }
+
+
 def render_textured_view(
     asset: MeshAsset,
     direction: tuple[float, float, float] = (1.0, 1.0, 0.7),
@@ -194,6 +221,118 @@ def render_textured_view(
         target_depth[visible] = interpolated_depth[visible]
         zbuffer[ys, xs] = target_depth
     return image
+
+
+def render_textured_view_with_masks(
+    asset: MeshAsset,
+    direction: tuple[float, float, float] = (1.0, 1.0, 0.7),
+    size: int = 192,
+    background: tuple[int, int, int] = (245, 245, 245),
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Render a material-aware RGB view and explicit visible-region masks.
+
+    Returns ``(rgb, foreground_mask, textured_mask)``.  The masks are derived
+    from rasterization rather than background color, so pale or missing texture
+    pixels cannot be mistaken for background.  This is the v2 target renderer;
+    :func:`render_textured_view` remains unchanged for v1 cache reproducibility.
+    """
+    if asset.texcoords is None or len(asset.texcoords) != len(asset.vertices):
+        raise ValueError("Mesh does not contain vertex-aligned TEXCOORD_0")
+    vertices = np.asarray(asset.vertices, dtype=np.float64)
+    center = (vertices.min(axis=0) + vertices.max(axis=0)) * 0.5
+    scale = max(float(np.max(vertices.max(axis=0) - vertices.min(axis=0))), 1e-12)
+    points = (vertices - center) / scale
+    right, up, camera = _camera_basis(np.asarray(direction, dtype=np.float64))
+    projected = np.column_stack([points @ right, points @ up, points @ camera])
+    xy = (projected[:, :2] * 0.82 + 0.5) * (size - 1)
+    depth = projected[:, 2]
+    image = np.empty((size, size, 3), dtype=np.uint8)
+    image[:] = background
+    zbuffer = np.full((size, size), -np.inf, dtype=np.float64)
+    foreground = np.zeros((size, size), dtype=bool)
+    textured = np.zeros((size, size), dtype=bool)
+    textures = _load_textures(asset)
+    texcoords = np.asarray(asset.texcoords, dtype=np.float64)
+
+    for face_index, face in enumerate(np.asarray(asset.faces, dtype=np.int64)):
+        triangle = xy[face]
+        minimum = np.maximum(np.floor(triangle.min(axis=0)).astype(int), 0)
+        maximum = np.minimum(np.ceil(triangle.max(axis=0)).astype(int), size - 1)
+        if np.any(maximum < minimum):
+            continue
+        x0, y0 = triangle[0]
+        x1, y1 = triangle[1]
+        x2, y2 = triangle[2]
+        denominator = (y1 - y2) * (x0 - x2) + (x2 - x1) * (y0 - y2)
+        if abs(float(denominator)) < 1e-10:
+            continue
+        xs, ys = np.meshgrid(
+            np.arange(minimum[0], maximum[0] + 1),
+            np.arange(minimum[1], maximum[1] + 1),
+        )
+        w0 = ((y1 - y2) * (xs - x2) + (x2 - x1) * (ys - y2)) / denominator
+        w1 = ((y2 - y0) * (xs - x2) + (x0 - x2) * (ys - y2)) / denominator
+        w2 = 1.0 - w0 - w1
+        inside = (w0 >= -1e-7) & (w1 >= -1e-7) & (w2 >= -1e-7)
+        interpolated_depth = w0 * depth[face[0]] + w1 * depth[face[1]] + w2 * depth[face[2]]
+        target_depth = zbuffer[ys, xs]
+        visible = inside & (interpolated_depth > target_depth)
+        if not np.any(visible):
+            continue
+
+        material = int(asset.face_materials[face_index])
+        texture = textures[material] if 0 <= material < len(textures) else None
+        profile = _material_render_profile(asset, material)
+        valid_texture = texture is not None and np.isfinite(texcoords[face]).all()
+        if valid_texture:
+            uv = (
+                w0[..., None] * texcoords[face[0]]
+                + w1[..., None] * texcoords[face[1]]
+                + w2[..., None] * texcoords[face[2]]
+            )
+            u = _wrap_texture_coordinate(uv[..., 0], profile["wrap_s"])
+            v = _wrap_texture_coordinate(uv[..., 1], profile["wrap_t"])
+            tx = np.clip(np.rint(u * (texture.shape[1] - 1)).astype(int), 0, texture.shape[1] - 1)
+            ty = np.clip(np.rint((1.0 - v) * (texture.shape[0] - 1)).astype(int), 0, texture.shape[0] - 1)
+            sampled = texture[ty, tx].astype(np.float64) / 255.0
+        else:
+            sampled = np.ones((*xs.shape, 4), dtype=np.float64)
+
+        factor = profile["factor"]
+        colors = np.clip(sampled[..., :3] * factor[:3], 0.0, 1.0)
+        source_alpha = np.clip(sampled[..., 3] * factor[3], 0.0, 1.0)
+        alpha_mode = profile["alpha_mode"]
+        if alpha_mode == "OPAQUE":
+            alpha = np.ones_like(source_alpha)
+            accepted = visible
+        elif alpha_mode == "MASK":
+            accepted = visible & (source_alpha >= profile["alpha_cutoff"])
+            alpha = np.ones_like(source_alpha)
+        else:  # BLEND and unknown extension modes
+            accepted = visible & (source_alpha > 0.0)
+            alpha = source_alpha
+        if not np.any(accepted):
+            continue
+
+        region = image[ys, xs].astype(np.float64) / 255.0
+        blended = np.clip(
+            colors * alpha[..., None] + region * (1.0 - alpha[..., None]), 0.0, 1.0
+        )
+        output = image[ys, xs]
+        output[accepted] = np.rint(blended[accepted] * 255.0).astype(np.uint8)
+        image[ys, xs] = output
+        target_depth[accepted] = interpolated_depth[accepted]
+        zbuffer[ys, xs] = target_depth
+        foreground_region = foreground[ys, xs]
+        foreground_region[accepted] = True
+        foreground[ys, xs] = foreground_region
+        textured_region = textured[ys, xs]
+        if valid_texture:
+            textured_region[accepted] = True
+        else:
+            textured_region[accepted] = False
+        textured[ys, xs] = textured_region
+    return image, foreground, textured
 
 
 STANDARD_DIRECTIONS = (

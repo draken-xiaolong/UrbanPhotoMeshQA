@@ -1,0 +1,303 @@
+{
+  "schema_version": 2,
+  "method": "six aligned material-aware orthographic views with explicit textured masks",
+  "render_size": 224,
+  "directions": [
+    [
+      1.0,
+      0.0,
+      0.35
+    ],
+    [
+      0.0,
+      1.0,
+      0.35
+    ],
+    [
+      -1.0,
+      0.0,
+      0.35
+    ],
+    [
+      0.0,
+      -1.0,
+      0.35
+    ],
+    [
+      1.0,
+      1.0,
+      0.7
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "metric_names": [
+    "masked_rgb_mae",
+    "masked_rgb_rmse",
+    "masked_luma_mae",
+    "masked_gradient_mae",
+    "masked_one_minus_ssim",
+    "masked_color_mean_shift",
+    "masked_detail_energy_relative_change",
+    "visible_changed_fraction_1_255"
+  ],
+  "scope": "formal",
+  "shard_index": 0,
+  "shard_count": 4,
+  "assets": 184,
+  "records": 1840,
+  "dataset_manifest": "/root/autodl-tmp/UrbanPhotoMeshQA/data/Manifests/quality_dataset_formal_v2_seed2026.json",
+  "implementation_sha256": "ba99e4b40958351f5fd8ed09d4ffbe4121a5d8bc0a6a89ecd038caf2f0cb851b",
+  "dependencies": {
+    "SSIM": "Wang et al., IEEE TIP 2004; local implementation",
+    "SciPy": "BSD-3-Clause",
+    "NumPy": "BSD-3-Clause",
+    "Pillow": "HPND"
+  },
+  "composed_from_shards": 4,
+  "shard_metadata": [
+    {
+      "schema_version": 2,
+      "method": "six aligned material-aware orthographic views with explicit textured masks",
+      "render_size": 224,
+      "directions": [
+        [
+          1.0,
+          0.0,
+          0.35
+        ],
+        [
+          0.0,
+          1.0,
+          0.35
+        ],
+        [
+          -1.0,
+          0.0,
+          0.35
+        ],
+        [
+          0.0,
+          -1.0,
+          0.35
+        ],
+        [
+          1.0,
+          1.0,
+          0.7
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "metric_names": [
+        "masked_rgb_mae",
+        "masked_rgb_rmse",
+        "masked_luma_mae",
+        "masked_gradient_mae",
+        "masked_one_minus_ssim",
+        "masked_color_mean_shift",
+        "masked_detail_energy_relative_change",
+        "visible_changed_fraction_1_255"
+      ],
+      "scope": "formal",
+      "shard_index": 0,
+      "shard_count": 4,
+      "assets": 46,
+      "records": 460,
+      "dataset_manifest": "/root/autodl-tmp/UrbanPhotoMeshQA/data/Manifests/quality_dataset_formal_v2_seed2026.json",
+      "implementation_sha256": "ba99e4b40958351f5fd8ed09d4ffbe4121a5d8bc0a6a89ecd038caf2f0cb851b",
+      "dependencies": {
+        "SSIM": "Wang et al., IEEE TIP 2004; local implementation",
+        "SciPy": "BSD-3-Clause",
+        "NumPy": "BSD-3-Clause",
+        "Pillow": "HPND"
+      }
+    },
+    {
+      "schema_version": 2,
+      "method": "six aligned material-aware orthographic views with explicit textured masks",
+      "render_size": 224,
+      "directions": [
+        [
+          1.0,
+          0.0,
+          0.35
+        ],
+        [
+          0.0,
+          1.0,
+          0.35
+        ],
+        [
+          -1.0,
+          0.0,
+          0.35
+        ],
+        [
+          0.0,
+          -1.0,
+          0.35
+        ],
+        [
+          1.0,
+          1.0,
+          0.7
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "metric_names": [
+        "masked_rgb_mae",
+        "masked_rgb_rmse",
+        "masked_luma_mae",
+        "masked_gradient_mae",
+        "masked_one_minus_ssim",
+        "masked_color_mean_shift",
+        "masked_detail_energy_relative_change",
+        "visible_changed_fraction_1_255"
+      ],
+      "scope": "formal",
+      "shard_index": 1,
+      "shard_count": 4,
+      "assets": 46,
+      "records": 460,
+      "dataset_manifest": "/root/autodl-tmp/UrbanPhotoMeshQA/data/Manifests/quality_dataset_formal_v2_seed2026.json",
+      "implementation_sha256": "ba99e4b40958351f5fd8ed09d4ffbe4121a5d8bc0a6a89ecd038caf2f0cb851b",
+      "dependencies": {
+        "SSIM": "Wang et al., IEEE TIP 2004; local implementation",
+        "SciPy": "BSD-3-Clause",
+        "NumPy": "BSD-3-Clause",
+        "Pillow": "HPND"
+      }
+    },
+    {
+      "schema_version": 2,
+      "method": "six aligned material-aware orthographic views with explicit textured masks",
+      "render_size": 224,
+      "directions": [
+        [
+          1.0,
+          0.0,
+          0.35
+        ],
+        [
+          0.0,
+          1.0,
+          0.35
+        ],
+        [
+          -1.0,
+          0.0,
+          0.35
+        ],
+        [
+          0.0,
+          -1.0,
+          0.35
+        ],
+        [
+          1.0,
+          1.0,
+          0.7
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "metric_names": [
+        "masked_rgb_mae",
+        "masked_rgb_rmse",
+        "masked_luma_mae",
+        "masked_gradient_mae",
+        "masked_one_minus_ssim",
+        "masked_color_mean_shift",
+        "masked_detail_energy_relative_change",
+        "visible_changed_fraction_1_255"
+      ],
+      "scope": "formal",
+      "shard_index": 2,
+      "shard_count": 4,
+      "assets": 46,
+      "records": 460,
+      "dataset_manifest": "/root/autodl-tmp/UrbanPhotoMeshQA/data/Manifests/quality_dataset_formal_v2_seed2026.json",
+      "implementation_sha256": "ba99e4b40958351f5fd8ed09d4ffbe4121a5d8bc0a6a89ecd038caf2f0cb851b",
+      "dependencies": {
+        "SSIM": "Wang et al., IEEE TIP 2004; local implementation",
+        "SciPy": "BSD-3-Clause",
+        "NumPy": "BSD-3-Clause",
+        "Pillow": "HPND"
+      }
+    },
+    {
+      "schema_version": 2,
+      "method": "six aligned material-aware orthographic views with explicit textured masks",
+      "render_size": 224,
+      "directions": [
+        [
+          1.0,
+          0.0,
+          0.35
+        ],
+        [
+          0.0,
+          1.0,
+          0.35
+        ],
+        [
+          -1.0,
+          0.0,
+          0.35
+        ],
+        [
+          0.0,
+          -1.0,
+          0.35
+        ],
+        [
+          1.0,
+          1.0,
+          0.7
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "metric_names": [
+        "masked_rgb_mae",
+        "masked_rgb_rmse",
+        "masked_luma_mae",
+        "masked_gradient_mae",
+        "masked_one_minus_ssim",
+        "masked_color_mean_shift",
+        "masked_detail_energy_relative_change",
+        "visible_changed_fraction_1_255"
+      ],
+      "scope": "formal",
+      "shard_index": 3,
+      "shard_count": 4,
+      "assets": 46,
+      "records": 460,
+      "dataset_manifest": "/root/autodl-tmp/UrbanPhotoMeshQA/data/Manifests/quality_dataset_formal_v2_seed2026.json",
+      "implementation_sha256": "ba99e4b40958351f5fd8ed09d4ffbe4121a5d8bc0a6a89ecd038caf2f0cb851b",
+      "dependencies": {
+        "SSIM": "Wang et al., IEEE TIP 2004; local implementation",
+        "SciPy": "BSD-3-Clause",
+        "NumPy": "BSD-3-Clause",
+        "Pillow": "HPND"
+      }
+    }
+  ]
+}

@@ -6,7 +6,12 @@ import torch
 from urbanphotomeshqa.gltf import GltfReader, sample_surface
 from urbanphotomeshqa.mesh_attacks import apply_mesh_attack, mesh_face_graph, topology_stats
 from urbanphotomeshqa.model import MeshFaceEncoder
-from urbanphotomeshqa.texture import apply_uv_preserving_attack, render_textured_view, simulate_camera_capture
+from urbanphotomeshqa.texture import (
+    apply_uv_preserving_attack,
+    render_textured_view,
+    render_textured_view_with_masks,
+    simulate_camera_capture,
+)
 
 
 FIXTURE = Path(__file__).parent / "fixtures" / "B360011502301063A0" / "B360011502301063A0.gltf"
@@ -57,6 +62,19 @@ def test_uv_attacks_and_cpu_rendering():
         rendered = render_textured_view(attacked, size=64)
         assert rendered.shape == (64, 64, 3)
         assert rendered.dtype == np.uint8
+
+
+def test_material_aware_rendering_returns_explicit_masks():
+    asset = _sample_asset(include_texture=True)
+    first = render_textured_view_with_masks(asset, size=64)
+    second = render_textured_view_with_masks(asset, size=64)
+    image, foreground, textured = first
+    assert image.shape == (64, 64, 3) and image.dtype == np.uint8
+    assert foreground.shape == (64, 64) and foreground.dtype == bool
+    assert textured.shape == (64, 64) and textured.dtype == bool
+    assert foreground.any() and textured.any()
+    assert np.all(textured <= foreground)
+    assert all(np.array_equal(left, right) for left, right in zip(first, second))
 
 
 def test_simulated_capture_is_deterministic_and_nontrivial():
