@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "seed": 2026,
+  "scope": "Frozen Point/Mesh Base representation ablation on geometry-only Train/Val subset",
+  "protocol": {
+    "train_count": 798,
+    "val_count": 400,
+    "loaded_splits": [
+      "train",
+      "val"
+    ],
+    "test_blind_loaded": false,
+    "selection": "Val only",
+    "controlled_variable": "Point/Mesh identity versus pre-head global representation"
+  },
+  "identity": {
+    "val_oqi_mae": 0.22352176904678345,
+    "val_oqi_plcc": 0.5445258535484567,
+    "val_oqi_srcc": 0.555845422814023,
+    "val_feature_distortion_srcc": 0.41541164650566786,
+    "val_severity_distance_monotonic_rate": 0.825
+  },
+  "global": {
+    "val_oqi_mae": 0.20849083364009857,
+    "val_oqi_plcc": 0.5934659125015995,
+    "val_oqi_srcc": 0.6047380207347457,
+    "val_feature_distortion_srcc": 0.5677272997629196,
+    "val_severity_distance_monotonic_rate": 0.9916666666666667
+  },
+  "decision": "Advance the global representation to partial Base fine-tuning; texture representation remains a separate P3 experiment."
+}

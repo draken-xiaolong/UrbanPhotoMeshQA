@@ -1,0 +1,54 @@
+{
+  "schema_version": 2,
+  "signature": "91317adee6db72eddc6073f5b40333c070c580d66a50636a68ac1100ccc6f34b",
+  "signature_payload": {
+    "schema_version": 2,
+    "point_checkpoint": "29d6a7513a6a30089db0265b0c1c2ee3f8addd0f0b97de1d1deba9d97dd596ec",
+    "mesh_checkpoint": "62b1486221b3ef7b1a0e6bde84290944c7b99dcf3376fd277fdbf400c597dded",
+    "texture_encoder": "skipped_geometry_only",
+    "branches": [
+      "point_identity",
+      "point_global",
+      "mesh_identity",
+      "mesh_global",
+      "morphology",
+      "texture"
+    ],
+    "source_sha256": {
+      "scripts/extract_frozen_quality_features.py": "b7462be55b7e165b685bea74fcb0636bd36418fd5413fd63e703d37efa122b1e",
+      "src/urbanphotomeshqa/model.py": "cbcc3a6bf7b6b23c21ec95a34e09ad3e45dc64b8b09c43c6fe159d0e94429b8a",
+      "src/urbanphotomeshqa/data.py": "02637f3dfaaab7c30119b0a16023d1769632d7f047f42eaba7a65697ff1dd207",
+      "src/urbanphotomeshqa/morphology.py": "5fd9412ea4a66b00901f9bbbdc5582789f382cb75b6360c7f94e26efd158d6fc",
+      "src/urbanphotomeshqa/render_features.py": "7cea9f94f258be9761b3b64e5e5a5a03ada7f25a65ffbcdff69f27ba61f1b53c"
+    }
+  },
+  "counts": {
+    "train": 798,
+    "val": 400
+  },
+  "selection": {
+    "splits": [
+      "train",
+      "val"
+    ],
+    "attacks": [
+      "clean",
+      "geometry_hole",
+      "geometry_noise_spike",
+      "mesh_simplification_qem"
+    ],
+    "skip_texture": true
+  },
+  "dimensions": {
+    "point_identity": 256,
+    "point_global": 521,
+    "mesh_identity": 256,
+    "mesh_global": 1032,
+    "morphology": 13,
+    "texture": 1
+  },
+  "patch_shape": [
+    16,
+    58
+  ]
+}

@@ -1,0 +1,518 @@
+{
+  "schema_version": 1,
+  "protocol": {
+    "splits": [
+      "train",
+      "val"
+    ],
+    "test_blind_loaded": false,
+    "reference_pairing": "diagnostic only; never used by inference or model input",
+    "standardization": "Train-clean mean/std"
+  },
+  "representations": {
+    "identity": {
+      "train": {
+        "point": {
+          "attacked_count": 718,
+          "distortion_plcc": 0.5233219568251785,
+          "distortion_srcc": 0.48120220299870214,
+          "per_attack": {
+            "geometry_hole": {
+              "count": 240,
+              "median_distance": 0.7331028769047852,
+              "distortion_srcc": 0.7727656552843192
+            },
+            "geometry_noise_spike": {
+              "count": 240,
+              "median_distance": 0.2571811598137781,
+              "distortion_srcc": 0.6239319744986983
+            },
+            "mesh_simplification_qem": {
+              "count": 238,
+              "median_distance": 0.655456130151595,
+              "distortion_srcc": 0.5453129725409047
+            }
+          },
+          "per_level": {
+            "light": {
+              "count": 240,
+              "median_distance": 0.4832810808072322
+            },
+            "medium": {
+              "count": 240,
+              "median_distance": 0.5782964313438523
+            },
+            "heavy": {
+              "count": 238,
+              "median_distance": 0.7056748546910034
+            }
+          },
+          "severity_monotonic": {
+            "passed": 154,
+            "total": 238,
+            "rate": 0.6470588235294118
+          }
+        },
+        "mesh": {
+          "attacked_count": 718,
+          "distortion_plcc": 0.2051238871547869,
+          "distortion_srcc": 0.22594096010494377,
+          "per_attack": {
+            "geometry_hole": {
+              "count": 240,
+              "median_distance": 0.33690932372772514,
+              "distortion_srcc": 0.3646840861066629
+            },
+            "geometry_noise_spike": {
+              "count": 240,
+              "median_distance": 0.553012495904797,
+              "distortion_srcc": 0.24381678584194433
+            },
+            "mesh_simplification_qem": {
+              "count": 238,
+              "median_distance": 0.5168375297479042,
+              "distortion_srcc": 0.5912273467416779
+            }
+          },
+          "per_level": {
+            "light": {
+              "count": 240,
+              "median_distance": 0.3826343952345248
+            },
+            "medium": {
+              "count": 240,
+              "median_distance": 0.49477296104605695
+            },
+            "heavy": {
+              "count": 238,
+              "median_distance": 0.5989717311316234
+            }
+          },
+          "severity_monotonic": {
+            "passed": 217,
+            "total": 238,
+            "rate": 0.9117647058823529
+          }
+        },
+        "joint": {
+          "attacked_count": 718,
+          "distortion_plcc": 0.5927806828142637,
+          "distortion_srcc": 0.5716212416212874,
+          "per_attack": {
+            "geometry_hole": {
+              "count": 240,
+              "median_distance": 0.6151155762528349,
+              "distortion_srcc": 0.7858353351418367
+            },
+            "geometry_noise_spike": {
+              "count": 240,
+              "median_distance": 0.46369516510771647,
+              "distortion_srcc": 0.5343414239703557
+            },
+            "mesh_simplification_qem": {
+              "count": 238,
+              "median_distance": 0.5985570425125253,
+              "distortion_srcc": 0.6523631357818922
+            }
+          },
+          "per_level": {
+            "light": {
+              "count": 240,
+              "median_distance": 0.4423760852494855
+            },
+            "medium": {
+              "count": 240,
+              "median_distance": 0.5563918608044831
+            },
+            "heavy": {
+              "count": 238,
+              "median_distance": 0.6780215483864644
+            }
+          },
+          "severity_monotonic": {
+            "passed": 190,
+            "total": 238,
+            "rate": 0.7983193277310925
+          }
+        }
+      },
+      "val": {
+        "point": {
+          "attacked_count": 360,
+          "distortion_plcc": 0.3694426040955839,
+          "distortion_srcc": 0.3416992484829176,
+          "per_attack": {
+            "geometry_hole": {
+              "count": 120,
+              "median_distance": 0.8320036214316922,
+              "distortion_srcc": 0.7023890547954719
+            },
+            "geometry_noise_spike": {
+              "count": 120,
+              "median_distance": 0.309751041401422,
+              "distortion_srcc": 0.6970345162858531
+            },
+            "mesh_simplification_qem": {
+              "count": 120,
+              "median_distance": 0.6171559125159343,
+              "distortion_srcc": 0.18429912059796313
+            }
+          },
+          "per_level": {
+            "light": {
+              "count": 120,
+              "median_distance": 0.5188157926920698
+            },
+            "medium": {
+              "count": 120,
+              "median_distance": 0.5901057985118794
+            },
+            "heavy": {
+              "count": 120,
+              "median_distance": 0.6875180888716058
+            }
+          },
+          "severity_monotonic": {
+            "passed": 77,
+            "total": 120,
+            "rate": 0.6416666666666667
+          }
+        },
+        "mesh": {
+          "attacked_count": 360,
+          "distortion_plcc": 0.07182006994483624,
+          "distortion_srcc": 0.03248508620343374,
+          "per_attack": {
+            "geometry_hole": {
+              "count": 120,
+              "median_distance": 0.24602092931667785,
+              "distortion_srcc": 0.4666574067643586
+            },
+            "geometry_noise_spike": {
+              "count": 120,
+              "median_distance": 0.4499730008898303,
+              "distortion_srcc": 0.3970275713591221
+            },
+            "mesh_simplification_qem": {
+              "count": 120,
+              "median_distance": 0.40274633791441833,
+              "distortion_srcc": 0.40637897059461175
+            }
+          },
+          "per_level": {
+            "light": {
+              "count": 120,
+              "median_distance": 0.2733270761507527
+            },
+            "medium": {
+              "count": 120,
+              "median_distance": 0.3907779952837761
+            },
+            "heavy": {
+              "count": 120,
+              "median_distance": 0.46176342922211444
+            }
+          },
+          "severity_monotonic": {
+            "passed": 110,
+            "total": 120,
+            "rate": 0.9166666666666666
+          }
+        },
+        "joint": {
+          "attacked_count": 360,
+          "distortion_plcc": 0.4500777125954856,
+          "distortion_srcc": 0.41541164650566786,
+          "per_attack": {
+            "geometry_hole": {
+              "count": 120,
+              "median_distance": 0.6168516382489351,
+              "distortion_srcc": 0.7270296548371413
+            },
+            "geometry_noise_spike": {
+              "count": 120,
+              "median_distance": 0.42663728485057906,
+              "distortion_srcc": 0.6761580665323981
+            },
+            "mesh_simplification_qem": {
+              "count": 120,
+              "median_distance": 0.5364126834805034,
+              "distortion_srcc": 0.35842036271545313
+            }
+          },
+          "per_level": {
+            "light": {
+              "count": 120,
+              "median_distance": 0.4097640910105973
+            },
+            "medium": {
+              "count": 120,
+              "median_distance": 0.5089716720471935
+            },
+            "heavy": {
+              "count": 120,
+              "median_distance": 0.6147097445087732
+            }
+          },
+          "severity_monotonic": {
+            "passed": 99,
+            "total": 120,
+            "rate": 0.825
+          }
+        }
+      }
+    },
+    "global": {
+      "train": {
+        "point": {
+          "attacked_count": 718,
+          "distortion_plcc": 0.5785539536169212,
+          "distortion_srcc": 0.5525559214252211,
+          "per_attack": {
+            "geometry_hole": {
+              "count": 240,
+              "median_distance": 0.6502619795329767,
+              "distortion_srcc": 0.8550410087683511
+            },
+            "geometry_noise_spike": {
+              "count": 240,
+              "median_distance": 0.18571370197836362,
+              "distortion_srcc": 0.5717474634428386
+            },
+            "mesh_simplification_qem": {
+              "count": 238,
+              "median_distance": 0.5363564477884848,
+              "distortion_srcc": 0.698220986015279
+            }
+          },
+          "per_level": {
+            "light": {
+              "count": 240,
+              "median_distance": 0.4015678760023712
+            },
+            "medium": {
+              "count": 240,
+              "median_distance": 0.49525593077448704
+            },
+            "heavy": {
+              "count": 238,
+              "median_distance": 0.5944877765404192
+            }
+          },
+          "severity_monotonic": {
+            "passed": 175,
+            "total": 238,
+            "rate": 0.7352941176470589
+          }
+        },
+        "mesh": {
+          "attacked_count": 718,
+          "distortion_plcc": 0.25004757803569844,
+          "distortion_srcc": 0.27626337995892175,
+          "per_attack": {
+            "geometry_hole": {
+              "count": 240,
+              "median_distance": 0.3938116123312747,
+              "distortion_srcc": 0.46258645717803765
+            },
+            "geometry_noise_spike": {
+              "count": 240,
+              "median_distance": 0.73983156505478,
+              "distortion_srcc": 0.7539889481564414
+            },
+            "mesh_simplification_qem": {
+              "count": 238,
+              "median_distance": 0.6238227914134675,
+              "distortion_srcc": 0.6113307410949739
+            }
+          },
+          "per_level": {
+            "light": {
+              "count": 240,
+              "median_distance": 0.4384756017638193
+            },
+            "medium": {
+              "count": 240,
+              "median_distance": 0.6307562871045291
+            },
+            "heavy": {
+              "count": 238,
+              "median_distance": 0.8350496768906457
+            }
+          },
+          "severity_monotonic": {
+            "passed": 232,
+            "total": 238,
+            "rate": 0.9747899159663865
+          }
+        },
+        "joint": {
+          "attacked_count": 718,
+          "distortion_plcc": 0.6460272453569661,
+          "distortion_srcc": 0.6839012958351076,
+          "per_attack": {
+            "geometry_hole": {
+              "count": 240,
+              "median_distance": 0.5723712586315706,
+              "distortion_srcc": 0.8571690852940355
+            },
+            "geometry_noise_spike": {
+              "count": 240,
+              "median_distance": 0.5478805201944461,
+              "distortion_srcc": 0.7878645436258938
+            },
+            "mesh_simplification_qem": {
+              "count": 238,
+              "median_distance": 0.5864360429728191,
+              "distortion_srcc": 0.740742141890441
+            }
+          },
+          "per_level": {
+            "light": {
+              "count": 240,
+              "median_distance": 0.4114337533041946
+            },
+            "medium": {
+              "count": 240,
+              "median_distance": 0.5620448834807825
+            },
+            "heavy": {
+              "count": 238,
+              "median_distance": 0.774462458562101
+            }
+          },
+          "severity_monotonic": {
+            "passed": 230,
+            "total": 238,
+            "rate": 0.9663865546218487
+          }
+        }
+      },
+      "val": {
+        "point": {
+          "attacked_count": 360,
+          "distortion_plcc": 0.44690600592486013,
+          "distortion_srcc": 0.42012901981274525,
+          "per_attack": {
+            "geometry_hole": {
+              "count": 120,
+              "median_distance": 0.6798000079927391,
+              "distortion_srcc": 0.8224043336342801
+            },
+            "geometry_noise_spike": {
+              "count": 120,
+              "median_distance": 0.2185675317150853,
+              "distortion_srcc": 0.7144315577470657
+            },
+            "mesh_simplification_qem": {
+              "count": 120,
+              "median_distance": 0.47499245367843856,
+              "distortion_srcc": 0.41158076587395287
+            }
+          },
+          "per_level": {
+            "light": {
+              "count": 120,
+              "median_distance": 0.4209630975654721
+            },
+            "medium": {
+              "count": 120,
+              "median_distance": 0.4718902632886007
+            },
+            "heavy": {
+              "count": 120,
+              "median_distance": 0.5246306742178446
+            }
+          },
+          "severity_monotonic": {
+            "passed": 91,
+            "total": 120,
+            "rate": 0.7583333333333333
+          }
+        },
+        "mesh": {
+          "attacked_count": 360,
+          "distortion_plcc": 0.14822731316174576,
+          "distortion_srcc": 0.10696009323635161,
+          "per_attack": {
+            "geometry_hole": {
+              "count": 120,
+              "median_distance": 0.31689504397323526,
+              "distortion_srcc": 0.5537190082644629
+            },
+            "geometry_noise_spike": {
+              "count": 120,
+              "median_distance": 0.7020772470443011,
+              "distortion_srcc": 0.7370789638169316
+            },
+            "mesh_simplification_qem": {
+              "count": 120,
+              "median_distance": 0.5346636033321035,
+              "distortion_srcc": 0.4643696122267855
+            }
+          },
+          "per_level": {
+            "light": {
+              "count": 120,
+              "median_distance": 0.34595430751477996
+            },
+            "medium": {
+              "count": 120,
+              "median_distance": 0.5427885696274337
+            },
+            "heavy": {
+              "count": 120,
+              "median_distance": 0.6934525171335366
+            }
+          },
+          "severity_monotonic": {
+            "passed": 119,
+            "total": 120,
+            "rate": 0.9916666666666667
+          }
+        },
+        "joint": {
+          "attacked_count": 360,
+          "distortion_plcc": 0.5555149600661392,
+          "distortion_srcc": 0.5677272997629196,
+          "per_attack": {
+            "geometry_hole": {
+              "count": 120,
+              "median_distance": 0.5280306045499417,
+              "distortion_srcc": 0.8218140148621431
+            },
+            "geometry_noise_spike": {
+              "count": 120,
+              "median_distance": 0.5417233534159208,
+              "distortion_srcc": 0.7972636988679769
+            },
+            "mesh_simplification_qem": {
+              "count": 120,
+              "median_distance": 0.5152499205613308,
+              "distortion_srcc": 0.5171897110212161
+            }
+          },
+          "per_level": {
+            "light": {
+              "count": 120,
+              "median_distance": 0.3801877541346226
+            },
+            "medium": {
+              "count": 120,
+              "median_distance": 0.5237493468263689
+            },
+            "heavy": {
+              "count": 120,
+              "median_distance": 0.7357203186591303
+            }
+          },
+          "severity_monotonic": {
+            "passed": 119,
+            "total": 120,
+            "rate": 0.9916666666666667
+          }
+        }
+      }
+    }
+  }
+}

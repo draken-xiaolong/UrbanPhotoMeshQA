@@ -66,7 +66,7 @@ def macro_f1(predicted, truth):
 FORMAL_COUNTS = {"train": 1518, "val": 760, "test": 607, "blind": 608}
 
 
-def dataset_provenance(manifest_path, raw, require_formal=False):
+def dataset_provenance(manifest_path, raw, require_formal=False, included_attacks=None):
     if manifest_path is None:
         if require_formal:
             raise ValueError("--require-formal requires --dataset-manifest")
@@ -74,8 +74,10 @@ def dataset_provenance(manifest_path, raw, require_formal=False):
     payload = json.loads(Path(manifest_path).read_text(encoding="utf-8"))
     records = payload.get("records", [])
     ordered = {}
+    included_attacks = set(included_attacks or ATTACKS)
     for split in ("train", "val", "test", "blind"):
-        manifest_rows = [row for row in records if row["split"] == split]
+        manifest_rows = [row for row in records
+                         if row["split"] == split and row["attack"] in included_attacks]
         expected = [(str(row["asset_id"]), str(row["attack"]), str(row["level"]))
                     for row in manifest_rows]
         if split in raw:
@@ -88,7 +90,8 @@ def dataset_provenance(manifest_path, raw, require_formal=False):
     counts = {split: len(rows) for split, rows in ordered.items()}
     exclusions = payload.get("quality_control", {}).get(
         "excluded_exact_duplicate_severity_packages", 0)
-    if require_formal and (counts != FORMAL_COUNTS or exclusions != 3):
+    full_dataset = included_attacks == set(ATTACKS)
+    if require_formal and (not full_dataset or counts != FORMAL_COUNTS or exclusions != 3):
         raise ValueError(
             f"Formal dataset required; got counts={counts}, exclusions={exclusions}"
         )
@@ -98,14 +101,40 @@ def dataset_provenance(manifest_path, raw, require_formal=False):
         "ordered_sample_sha256": hashlib.sha256(canonical.encode("utf-8")).hexdigest(),
         "counts": counts,
         "excluded_exact_duplicate_severity_packages": int(exclusions),
-        "formal": bool(counts == FORMAL_COUNTS and exclusions == 3),
+        "included_attacks": sorted(included_attacks),
+        "formal": bool(full_dataset and counts == FORMAL_COUNTS and exclusions == 3),
     }
+
+
+def objective_target_path(root, split):
+    candidates = [root / f"objective_targets_{split}.npz",
+                  root / f"objective_targets_v2_{split}.npz"]
+    matches = [path for path in candidates if path.is_file()]
+    if len(matches) != 1:
+        raise FileNotFoundError(
+            f"Expected exactly one objective target for {split}; checked {candidates}"
+        )
+    return matches[0]
+
+
+def align_objective_targets(features, objective, split):
+    names = ("asset_ids", "attacks", "levels")
+    feature_keys = list(zip(*(features[name].astype(str) for name in names)))
+    objective_keys = list(zip(*(objective[name].astype(str) for name in names)))
+    if len(set(objective_keys)) != len(objective_keys):
+        raise ValueError(f"Duplicate objective target keys: {split}")
+    lookup = {key: index for index, key in enumerate(objective_keys)}
+    missing = [key for key in feature_keys if key not in lookup]
+    if missing:
+        raise ValueError(f"Missing {len(missing)} objective targets for {split}: {missing[:3]}")
+    return np.asarray([lookup[key] for key in feature_keys], dtype=np.int64)
 
 
 class Store:
     def __init__(self, root, device, objective_target_dir=None, dataset_manifest=None,
                  require_formal=False, normalization="mean_std",
-                 splits=("train", "val", "test", "blind")):
+                 splits=("train", "val", "test", "blind"),
+                 base_representation="identity", included_attacks=None):
         self.splits = tuple(splits)
         if not {"train", "val"}.issubset(self.splits):
             raise ValueError("Store requires train and val splits")
@@ -114,16 +143,26 @@ class Store:
             with np.load(root / f"features_{split}.npz") as values:
                 raw[split] = {name: values[name].copy() for name in values.files}
             if objective_target_dir is not None:
-                with np.load(objective_target_dir / f"objective_targets_{split}.npz") as objective:
-                    if not (np.array_equal(raw[split]["asset_ids"].astype(str), objective["asset_ids"].astype(str))
-                            and np.array_equal(raw[split]["attacks"].astype(str), objective["attacks"].astype(str))
-                            and np.array_equal(raw[split]["levels"].astype(str), objective["levels"].astype(str))):
-                        raise ValueError(f"Objective target order mismatch: {split}")
+                with np.load(objective_target_path(objective_target_dir, split)) as objective:
+                    target_index = align_objective_targets(raw[split], objective, split)
                     for name in ("overall_quality", "geometry_quality", "texture_quality"):
-                        raw[split][name] = objective[name].copy()
-                    raw[split]["patch_quality"] = objective["patch_quality"].copy()
+                        raw[split][name] = objective[name][target_index].copy()
+                    if "patch_quality" in objective.files:
+                        raw[split]["patch_quality"] = objective["patch_quality"][target_index].copy()
+        self.has_patch_quality = all("patch_quality" in values for values in raw.values())
+        self.branch_keys = {}
+        for branch in BRANCHES:
+            key = branch
+            if branch in ("point", "mesh"):
+                represented = f"{branch}_{base_representation}"
+                if represented in raw["train"]:
+                    key = represented
+                elif base_representation != "identity":
+                    raise ValueError(f"Feature set has no {represented}")
+            self.branch_keys[branch] = key
         self.dataset_provenance = dataset_provenance(
-            dataset_manifest, raw, require_formal=require_formal)
+            dataset_manifest, raw, require_formal=require_formal,
+            included_attacks=included_attacks)
         tile_by_key = {}
         if dataset_manifest is not None:
             manifest = json.loads(Path(dataset_manifest).read_text(encoding="utf-8"))
@@ -136,7 +175,7 @@ class Store:
         tile_index = {name: index for index, name in enumerate(train_tiles)}
         branch_stats = {}
         for branch in BRANCHES:
-            value = raw["train"][branch].astype(np.float32)
+            value = raw["train"][self.branch_keys[branch]].astype(np.float32)
             if normalization == "robust":
                 center = np.median(value, axis=0)
                 scale = (np.quantile(value, 0.75, axis=0) - np.quantile(value, 0.25, axis=0)) / 1.349
@@ -147,7 +186,7 @@ class Store:
         patch_mean, patch_std = valid_patch.mean(0), np.maximum(valid_patch.std(0), 1e-5)
         self.data = {}
         for split, values in raw.items():
-            item = {branch: torch.from_numpy(((values[branch] - branch_stats[branch][0]) /
+            item = {branch: torch.from_numpy(((values[self.branch_keys[branch]] - branch_stats[branch][0]) /
                                               branch_stats[branch][1]).astype(np.float32)).to(device)
                     for branch in BRANCHES}
             patches = ((values["patches"] - patch_mean) / patch_std).astype(np.float32)
@@ -172,12 +211,15 @@ class Store:
                 item["tile_index"] = torch.tensor(
                     [tile_index.get(name, -1) for name in names], dtype=torch.long, device=device)
             self.data[split] = item
-        self.dims = [raw["train"][branch].shape[1] for branch in BRANCHES]
+        self.dims = [raw["train"][self.branch_keys[branch]].shape[1] for branch in BRANCHES]
         self.statistics = {"branches": {branch: {"mean": branch_stats[branch][0].tolist(),
                                                    "std": branch_stats[branch][1].tolist()}
                                                 for branch in BRANCHES},
                            "patch_mean": patch_mean.tolist(), "patch_std": patch_std.tolist(),
-                           "normalization": normalization, "train_tiles": train_tiles}
+                           "normalization": normalization, "train_tiles": train_tiles,
+                           "base_representation": base_representation,
+                           "branch_keys": self.branch_keys,
+                           "has_patch_quality": self.has_patch_quality}
 
 
 class QualityHead(nn.Module):
@@ -230,6 +272,8 @@ def forward(model, data, index=None):
 
 def regression_metrics(estimate, target):
     estimate, target = np.asarray(estimate), np.asarray(target)
+    if len(target) == 0:
+        return {"count": 0, "mae": None, "plcc": None, "srcc": None}
     return {"count": int(len(target)),
             "mae": float(np.mean(np.abs(estimate - target))),
             "plcc": correlation(estimate, target),
@@ -252,8 +296,9 @@ def evaluate(model, data):
     result["per_attack"] = {}
     for label, name in enumerate(ATTACKS):
         mask = truth == label
-        result["per_attack"][name] = regression_metrics(
-            overall_prediction[mask], overall_truth[mask])
+        if np.any(mask):
+            result["per_attack"][name] = regression_metrics(
+                overall_prediction[mask], overall_truth[mask])
     result["per_level_attacked_only"] = {}
     for level in ("light", "medium", "heavy"):
         mask = data["levels"] == level
@@ -266,7 +311,7 @@ def evaluate(model, data):
             mask = data["tiles"] == tile
             result["per_tile"][tile] = regression_metrics(
                 overall_prediction[mask], overall_truth[mask])
-    if out["patch_quality"] is not None:
+    if out["patch_quality"] is not None and data.get("has_patch_quality", False):
         local_mask = data["patch_mask"] & (
             (data["attack"] == 0) | (data["attack"] == 1) | (data["attack"] == 2) | (data["attack"] == 3)
         )[:, None]
@@ -340,7 +385,7 @@ def train_variant(name, store, args, device):
                 ranking = F.softplus(-5.0 * torch.sign(target_delta[valid_pairs])
                                      * prediction_delta[valid_pairs]).mean()
                 loss = loss + 0.2 * ranking
-            if out["patch_quality"] is not None:
+            if out["patch_quality"] is not None and store.has_patch_quality:
                 local_mask = train["patch_mask"][index] & (
                     (train["attack"][index] == 0) | (train["attack"][index] == 1)
                     | (train["attack"][index] == 2) | (train["attack"][index] == 3)
@@ -350,8 +395,8 @@ def train_variant(name, store, args, device):
             optimizer.zero_grad(set_to_none=True); loss.backward(); optimizer.step(); losses.append(float(loss.detach()))
         metrics = evaluate(model, val)
         history.append({"epoch": epoch, "loss": float(np.mean(losses)), "val": metrics})
-        key = (metrics["overall"]["srcc"], -metrics["overall"]["mae"],
-               metrics["macro_f1"], -epoch)
+        auxiliary = 0.0 if args.quality_only else metrics["macro_f1"]
+        key = (metrics["overall"]["srcc"], -metrics["overall"]["mae"], auxiliary, -epoch)
         if best_key is None or key > best_key:
             best_key, best_epoch = key, epoch
             best_state = {key: value.detach().cpu().clone() for key, value in model.state_dict().items()}
@@ -383,6 +428,10 @@ def main():
     parser.add_argument("--quality-only", action="store_true",
                         help="Remove auxiliary degradation classification/strength losses")
     parser.add_argument("--normalization", choices=("mean_std", "robust"), default="mean_std")
+    parser.add_argument("--base-representation", choices=("identity", "global"), default="identity",
+                        help="Select Point/Mesh identity embeddings or pre-head global features")
+    parser.add_argument("--attacks", nargs="+", choices=ATTACKS,
+                        help="Explicit attack subset when the feature files are filtered")
     parser.add_argument("--tile-balanced", action="store_true")
     parser.add_argument("--worst-tile", action="store_true",
                         help="Use smooth worst-Train-tile loss within each batch")
@@ -397,13 +446,17 @@ def main():
     loaded_splits = ("train", "val", "test", "blind") if args.evaluate_locked else ("train", "val")
     store = Store(args.feature_dir, device, args.objective_target_dir,
                   args.dataset_manifest, args.require_formal, args.normalization,
-                  splits=loaded_splits)
+                  splits=loaded_splits, base_representation=args.base_representation,
+                  included_attacks=args.attacks)
+    for item in store.data.values():
+        item["has_patch_quality"] = store.has_patch_quality
     args.output_dir.mkdir(parents=True, exist_ok=True)
     summaries = {}
     for variant in args.variants:
         model, summary = train_variant(variant, store, args, device)
         torch.save({"schema_version": 1, "seed": args.seed, "variant": variant,
                     "quality_only": args.quality_only,
+                    "base_representation": args.base_representation,
                     "initialization": str(args.init_checkpoint) if args.init_checkpoint else None,
                     "training_strategy": {"normalization": args.normalization,
                                           "tile_balanced": args.tile_balanced,
@@ -417,7 +470,7 @@ def main():
     best = max(summaries, key=lambda name: (
         summaries[name]["results"]["val"]["overall"]["srcc"],
         -summaries[name]["results"]["val"]["overall"]["mae"],
-        summaries[name]["results"]["val"]["macro_f1"]))
+        0.0 if args.quality_only else summaries[name]["results"]["val"]["macro_f1"]))
     output = {"schema_version": 1, "status": "COMPLETE", "seed": args.seed,
               "protocol": {"single_seed": True, "selection": "validation only; test/blind locked",
                            "quality_only": args.quality_only,
