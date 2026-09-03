@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "signature": "7f096b9dc258486729b1844254e21fbd5f1d925eac162c935bba4dd80354ae4a",
+  "counts": {
+    "train": 800,
+    "val": 400
+  },
+  "shapes": {
+    "tokens": [
+      6,
+      5,
+      576
+    ],
+    "token_mask": [
+      6,
+      5
+    ],
+    "view_stats": [
+      6,
+      12
+    ],
+    "asset_stats": [
+      8
+    ]
+  },
+  "loaded_splits": [
+    "train",
+    "val"
+  ],
+  "test_blind_loaded": false,
+  "attacks": [
+    "clean",
+    "texture_detail_loss",
+    "texture_misalignment",
+    "texture_region_missing"
+  ]
+}

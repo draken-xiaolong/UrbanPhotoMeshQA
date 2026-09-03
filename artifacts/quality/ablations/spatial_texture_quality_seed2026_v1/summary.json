@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "seed": 2026,
+  "protocol": {
+    "train_count": 800,
+    "val_count": 400,
+    "loaded_splits": [
+      "train",
+      "val"
+    ],
+    "test_blind_loaded": false,
+    "selection": "Val Texture SRCC then MAE"
+  },
+  "pooled": {
+    "val_mae": 0.15283431112766266,
+    "val_plcc": 0.6730652681606921,
+    "val_srcc": 0.6356877287728623,
+    "severity_monotonic_rate": 0.5583333333333333
+  },
+  "spatial": {
+    "val_mae": 0.1920512616634369,
+    "val_plcc": 0.6568499832315212,
+    "val_srcc": 0.6719616298224319,
+    "severity_monotonic_rate": 0.6333333333333333
+  },
+  "spatial_stats": {
+    "val_mae": 0.1664077639579773,
+    "val_plcc": 0.7149964161189113,
+    "val_srcc": 0.7254848106029166,
+    "severity_monotonic_rate": 0.8,
+    "per_attack_srcc": {
+      "texture_detail_loss": 0.6966133650771278,
+      "texture_region_missing": 0.781616778942982,
+      "texture_misalignment": 0.5733505280895912
+    }
+  },
+  "decision": "Use spatial_stats in the decoupled multimodal quality model; texture misalignment remains the hardest texture degradation."
+}
