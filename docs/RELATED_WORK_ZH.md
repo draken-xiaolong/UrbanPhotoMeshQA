@@ -8,6 +8,35 @@
 
 ## 可借鉴的公开工作
 
+### R3-PCQA（CVPR 2026）
+
+- 论文：[R3-PCQA: Ray-Reprojection-Reinforcement for No-Reference 3D Point Cloud Quality Assessment](https://openaccess.thecvf.com/content/CVPR2026/html/Seo_R3-PCQA_Ray-Reprojection-Reinforcement_for_No-Reference_3D_Point_Cloud_Quality_Assessment_CVPR_2026_paper.html)
+- 任务：无参考点云质量评估；论文报告在 SJTU-PCQA、WPC 和 WPC2.0 上验证。
+- 核心：几何感知 ray reprojection、质量显著 subcloud 选择、跨视角全局注意力。
+- 当前借鉴优先级：高。先借鉴“视角—三维区域显式对应”和显著局部区域聚合，不在
+  第一轮引入强化学习；已有 16 个 Mesh Patch 和 UV 映射足以构造更小、更可控的
+  deterministic salient-patch 版本。
+
+### HybridMQA（CVPR 2025）
+
+- 论文：[HybridMQA: Exploring Geometry-Texture Interactions for Colored Mesh Quality Assessment](https://openaccess.thecvf.com/content/CVPR2025/papers/Sarvestani_HybridMQA_Exploring_Geometry-Texture_Interactions_for_Colored_Mesh_Quality_Assessment_CVPR_2025_paper.pdf)
+- 代码：[arshafiee/hybridmqa](https://github.com/arshafiee/hybridmqa)
+- 任务：彩色 Mesh 全参考质量评估。
+- 核心：把 Mesh 表面图特征投影到与彩色渲染严格对齐的二维位置，再用 cross-attention
+  建模几何—纹理交互。
+- 当前借鉴优先级：局部纹理路线最高。它不能直接作为我们的部署模型，因为推理需要
+  reference；但其 feature projection/alignment 可改造成单模型 Patch Token，Clean 配对
+  只在离线阶段生成局部纹理监督。
+
+### QD-PCQA（CVPR 2026）
+
+- 论文：[QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_QD-PCQA_Quality-Aware_Domain_Adaptation_for_Point_Cloud_Quality_Assessment_CVPR_2026_paper.html)
+- 代码：[huhu-code/QD-PCQA](https://github.com/huhu-code/QD-PCQA)
+- 核心：rank-weighted conditional alignment 与 quality-guided style mixup，面向跨域 NR-PCQA。
+- 使用边界：不得把 Test/Blind 特征当无标签目标域参与适配，否则破坏锁定协议。第一阶段
+  只在五个 Train 图幅内部做 robust normalization、tile-balanced sampling 和
+  worst-tile 优化；若仍不足，第二阶段只允许 Train 图幅间的 style mixup/alignment。
+
 ### CoPA（CVPR 2024）
 
 - 论文：[Contrastive Pre-Training with Multi-View Fusion for No-Reference Point Cloud Quality Assessment](https://openaccess.thecvf.com/content/CVPR2024/html/Shan_Contrastive_Pre-Training_with_Multi-View_Fusion_for_No-Reference_Point_Cloud_Quality_CVPR_2024_paper.html)
@@ -49,6 +78,16 @@
 - 任务：有参考纹理 Mesh 质量评估。
 - 可借鉴点：多视角渲染、局部图像 Patch 感知距离和主观质量数据。
 - 使用边界：适合作为纹理教师或外部验证基线，不适合直接充当我们的无参考部署网络；公开数据约 76.9 GB，不符合当前“香港数据快速迭代”的优先级。
+
+## 对当前实验的直接决策
+
+1. 第一轮不堆叠前沿模块，只隔离验证 normalization、图幅均衡和 worst-tile 三个变量；
+2. Blind 绝不作为 QD-PCQA 式无标签目标域，任何域适配仅发生在 Train 图幅之间；
+3. 局部纹理真值采用 `Mesh face → UV triangle → texture region`，再考虑以
+   Graphics-LPIPS/LPIPS 类感知距离作为离线教师；
+4. 局部纹理模型优先实现 HybridMQA 式对齐 token 和轻量 cross-attention；
+5. R3-PCQA 的显著区域思想先以确定性 top-k Patch/attention 消融验证，通过 Val 后再
+   判断是否值得引入强化学习选择器。
 
 ### PointPCA
 

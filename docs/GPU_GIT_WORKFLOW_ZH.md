@@ -42,6 +42,9 @@ git lfs pull
 候选模型训练阶段不得使用 `--evaluate-locked`。只有 Val 选出的唯一胜者才能运行
 Test/Blind 校准与最终评测。
 
+当前四组最小泛化实验的完整命令和 promotion gate 见
+`docs/GENERALIZATION_EXPERIMENT_RUNBOOK_ZH.md`。
+
 ## 上传服务器结果
 
 结果只能写入新的 `artifacts/quality/final/` 或 `artifacts/quality/ablations/` 子目录，

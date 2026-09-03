@@ -80,3 +80,15 @@
 - 客观真值：`scripts/build_objective_quality_targets_real.py`
 - 质量模型训练：`scripts/train_real_gltf_quality.py`
 - 缓存与最终输出等价审计：`scripts/validate_cache_neural_equivalence.py`
+
+## 9. 下一轮 GPU 工作流（已准备，尚未运行）
+
+- 环境审计：`scripts/audit_gpu_quality_environment.py`；
+- 四组冻结 Base 泛化筛选：`scripts/run_quality_generalization_minimal.py`；
+- Val-only 汇总与 promotion gate：`scripts/summarize_quality_generalization_val.py`；
+- 固定配置：`configs/quality_generalization_minimal_seed2026.json`；
+- 运行说明：`docs/GENERALIZATION_EXPERIMENT_RUNBOOK_ZH.md`。
+
+候选训练只加载 Train/Val NPZ；Test/Blind 在唯一候选冻结前不加载、不评测。部分解冻与
+端到端微调需要接入原始缓存和实际 Encoder 反向传播，不能由冻结特征训练替代，因此仅在
+第一阶段未达到 Val promotion gate 时进入第二阶段。

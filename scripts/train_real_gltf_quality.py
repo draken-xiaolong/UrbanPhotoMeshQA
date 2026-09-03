@@ -28,11 +28,23 @@ VARIANTS = {
 
 def seed_all(seed):
     random.seed(seed); np.random.seed(seed); torch.manual_seed(seed); torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True
 
 
 def rankdata(values):
-    order = np.argsort(values)
-    ranks = np.empty(len(values), dtype=np.float64); ranks[order] = np.arange(len(values))
+    """Return average ranks so ties receive the same Spearman rank."""
+    values = np.asarray(values)
+    order = np.argsort(values, kind="mergesort")
+    sorted_values = values[order]
+    ranks = np.empty(len(values), dtype=np.float64)
+    start = 0
+    while start < len(values):
+        stop = start + 1
+        while stop < len(values) and sorted_values[stop] == sorted_values[start]:
+            stop += 1
+        ranks[order[start:stop]] = 0.5 * (start + stop - 1)
+        start = stop
     return ranks
 
 
@@ -66,11 +78,12 @@ def dataset_provenance(manifest_path, raw, require_formal=False):
         manifest_rows = [row for row in records if row["split"] == split]
         expected = [(str(row["asset_id"]), str(row["attack"]), str(row["level"]))
                     for row in manifest_rows]
-        observed = list(zip(raw[split]["asset_ids"].astype(str),
-                            raw[split]["attacks"].astype(str),
-                            raw[split]["levels"].astype(str)))
-        if expected != observed:
-            raise ValueError(f"Dataset manifest order mismatch: {split}")
+        if split in raw:
+            observed = list(zip(raw[split]["asset_ids"].astype(str),
+                                raw[split]["attacks"].astype(str),
+                                raw[split]["levels"].astype(str)))
+            if expected != observed:
+                raise ValueError(f"Dataset manifest order mismatch: {split}")
         ordered[split] = expected
     counts = {split: len(rows) for split, rows in ordered.items()}
     exclusions = payload.get("quality_control", {}).get(
@@ -91,9 +104,13 @@ def dataset_provenance(manifest_path, raw, require_formal=False):
 
 class Store:
     def __init__(self, root, device, objective_target_dir=None, dataset_manifest=None,
-                 require_formal=False, normalization="mean_std"):
+                 require_formal=False, normalization="mean_std",
+                 splits=("train", "val", "test", "blind")):
+        self.splits = tuple(splits)
+        if not {"train", "val"}.issubset(self.splits):
+            raise ValueError("Store requires train and val splits")
         raw = {}
-        for split in ("train", "val", "test", "blind"):
+        for split in self.splits:
             with np.load(root / f"features_{split}.npz") as values:
                 raw[split] = {name: values[name].copy() for name in values.files}
             if objective_target_dir is not None:
@@ -146,6 +163,7 @@ class Store:
                 "patch_quality": torch.from_numpy(values.get(
                     "patch_quality", np.ones_like(values["patch_mask"], dtype=np.float32))).float().to(device),
                 "asset_ids": values["asset_ids"].astype(str), "attacks": values["attacks"].astype(str),
+                "levels": values["levels"].astype(str),
             })
             if tile_by_key:
                 names = [tile_by_key[(str(a), str(b), str(c))] for a, b, c in zip(
@@ -210,6 +228,14 @@ def forward(model, data, index=None):
     return model([data[b][index] for b in BRANCHES], data["patches"][index], data["patch_mask"][index])
 
 
+def regression_metrics(estimate, target):
+    estimate, target = np.asarray(estimate), np.asarray(target)
+    return {"count": int(len(target)),
+            "mae": float(np.mean(np.abs(estimate - target))),
+            "plcc": correlation(estimate, target),
+            "srcc": correlation(rankdata(estimate), rankdata(target))}
+
+
 @torch.no_grad()
 def evaluate(model, data):
     model.eval(); out = forward(model, data)
@@ -220,15 +246,26 @@ def evaluate(model, data):
     for key in ("severity", "overall", "geometry", "texture"):
         target_key = "texture_quality" if key == "texture" else key
         target = data[target_key].cpu().numpy(); estimate = out[key].cpu().numpy()
-        result[key] = {"mae": float(np.mean(np.abs(estimate - target))),
-                       "plcc": correlation(estimate, target),
-                       "srcc": correlation(rankdata(estimate), rankdata(target))}
+        result[key] = regression_metrics(estimate, target)
+    overall_prediction = out["overall"].cpu().numpy()
+    overall_truth = data["overall"].cpu().numpy()
     result["per_attack"] = {}
     for label, name in enumerate(ATTACKS):
         mask = truth == label
-        result["per_attack"][name] = {"count": int(mask.sum()),
-                                      "severity_mae": float(np.mean(np.abs(
-                                          out["severity"].cpu().numpy()[mask] - data["severity"].cpu().numpy()[mask])))}
+        result["per_attack"][name] = regression_metrics(
+            overall_prediction[mask], overall_truth[mask])
+    result["per_level_attacked_only"] = {}
+    for level in ("light", "medium", "heavy"):
+        mask = data["levels"] == level
+        if np.any(mask):
+            result["per_level_attacked_only"][level] = regression_metrics(
+                overall_prediction[mask], overall_truth[mask])
+    if "tiles" in data:
+        result["per_tile"] = {}
+        for tile in sorted(np.unique(data["tiles"]).tolist()):
+            mask = data["tiles"] == tile
+            result["per_tile"][tile] = regression_metrics(
+                overall_prediction[mask], overall_truth[mask])
     if out["patch_quality"] is not None:
         local_mask = data["patch_mask"] & (
             (data["attack"] == 0) | (data["attack"] == 1) | (data["attack"] == 2) | (data["attack"] == 3)
@@ -283,8 +320,8 @@ def train_variant(name, store, args, device):
                     per_sample[batch_tiles == tile].mean() for tile in torch.unique(batch_tiles)
                     if int(tile) >= 0
                 ])
-                loss = torch.logsumexp(group_losses / args.worst_tile_temperature, 0) \
-                    * args.worst_tile_temperature
+                loss = (torch.logsumexp(group_losses / args.worst_tile_temperature, 0)
+                        - np.log(len(group_losses))) * args.worst_tile_temperature
             else:
                 loss = per_sample.mean()
             target_delta = train["overall"][index][:, None] - train["overall"][index][None, :]
@@ -345,8 +382,10 @@ def main():
     device = torch.device(args.device)
     if device.type != "cuda" or not torch.cuda.is_available():
         raise RuntimeError("CUDA required")
+    loaded_splits = ("train", "val", "test", "blind") if args.evaluate_locked else ("train", "val")
     store = Store(args.feature_dir, device, args.objective_target_dir,
-                  args.dataset_manifest, args.require_formal, args.normalization)
+                  args.dataset_manifest, args.require_formal, args.normalization,
+                  splits=loaded_splits)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     summaries = {}
     for variant in args.variants:
@@ -370,6 +409,7 @@ def main():
               "protocol": {"single_seed": True, "selection": "validation only; test/blind locked",
                            "quality_only": args.quality_only,
                            "objective_supervision": args.objective_target_dir is not None,
+                           "loaded_splits": list(loaded_splits),
                            "splits": {"train": 80, "val": 40, "test": 32, "blind": 32},
                            "dataset_provenance": store.dataset_provenance},
               "selected_variant": best, "variants": summaries}

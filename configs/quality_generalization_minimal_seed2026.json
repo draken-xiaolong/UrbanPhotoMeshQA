@@ -9,40 +9,54 @@
     "test_blind_policy": "evaluate only the single Val-selected winner",
     "train_tile_leave_one_out": "diagnostic only; never replaces Val selection"
   },
+  "common_training": {
+    "variant": "four_branch",
+    "epochs": 120,
+    "batch_size": 128,
+    "learning_rate": 0.0008,
+    "evaluate_locked": false
+  },
   "runs": [
     {
       "id": "B0_formal_frozen",
       "base": "frozen",
-      "normalization": "train_mean_std_plus_sample_layernorm",
+      "normalization": "mean_std",
       "sampler": "sample_uniform",
-      "domain_loss": "none"
+      "domain_loss": "none",
+      "cli_args": []
     },
     {
-      "id": "B1_formal_frozen_tile_dg",
+      "id": "B1_robust_norm",
       "base": "frozen",
-      "normalization": "train_robust_median_iqr_plus_sample_layernorm",
-      "sampler": "tile_balanced",
-      "domain_loss": "smooth_worst_tile_logsumexp_over_five_train_tiles",
-      "quality_style_mixup": {"enabled": false, "reason": "defer until the isolated GroupDRO result is known"}
+      "normalization": "robust",
+      "sampler": "sample_uniform",
+      "domain_loss": "none",
+      "cli_args": ["--normalization", "robust"]
     },
     {
-      "id": "B2_partial_unfreeze",
-      "base": "unfreeze_last_mesh_and_texture_blocks",
-      "head_lr": 0.0005,
-      "base_lr_ratio": 0.05,
+      "id": "B2_robust_tile_balanced",
+      "base": "frozen",
+      "normalization": "robust",
       "sampler": "tile_balanced",
-      "domain_loss": "smooth_worst_tile_logsumexp_over_five_train_tiles"
+      "domain_loss": "none",
+      "cli_args": ["--normalization", "robust", "--tile-balanced"]
     },
     {
-      "id": "B3_quality_e2e",
-      "base": "all_trainable",
-      "head_lr": 0.0003,
-      "base_lr_ratio": 0.01,
-      "max_epochs": 30,
+      "id": "B3_robust_tile_worst",
+      "base": "frozen",
+      "normalization": "robust",
       "sampler": "tile_balanced",
-      "domain_loss": "smooth_worst_tile_logsumexp_over_five_train_tiles"
+      "domain_loss": "smooth_worst_tile_logmeanexp_over_train_tiles",
+      "worst_tile_temperature": 0.1,
+      "cli_args": ["--normalization", "robust", "--tile-balanced", "--worst-tile",
+                   "--worst-tile-temperature", "0.1"]
     }
   ],
+  "deferred_stage_2": {
+    "partial_unfreeze": "requires raw-cache mini-batching through the actual Point/Mesh/Texture encoders",
+    "quality_e2e": "run only if the frozen-Base screen does not pass the Val promotion gate",
+    "reason": "cached neural features cannot support genuine Base backpropagation"
+  },
   "promotion_gate": {
     "minimum_val_oqi_srcc_gain_over_B0": 0.01,
     "maximum_allowed_val_geometry_srcc_drop": 0.02,
