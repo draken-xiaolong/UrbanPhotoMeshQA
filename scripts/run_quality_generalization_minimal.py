@@ -86,9 +86,9 @@ def main() -> None:
             "--dataset-manifest", str(args.manifest), "--require-formal",
             "--output-dir", str(output_dir),
             "--variants", common["variant"],
-            "--epochs", str(common["epochs"]),
-            "--batch-size", str(common["batch_size"]),
-            "--lr", str(common["learning_rate"]),
+            "--epochs", str(candidate.get("epochs", common["epochs"])),
+            "--batch-size", str(candidate.get("batch_size", common["batch_size"])),
+            "--lr", str(candidate.get("learning_rate", common["learning_rate"])),
             "--seed", str(config["seed"]), "--device", args.device,
             *candidate.get("cli_args", []),
         ])

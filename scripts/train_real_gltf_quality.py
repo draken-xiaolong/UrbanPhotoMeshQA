@@ -279,6 +279,15 @@ def train_variant(name, store, args, device):
     seed_all(args.seed)
     indices, patches = VARIANTS[name]
     model = QualityHead(store.dims, indices, patches).to(device)
+    initialization = None
+    if args.init_checkpoint is not None:
+        state = torch.load(args.init_checkpoint, map_location=device, weights_only=False)
+        expected = (list(store.dims), tuple(indices), bool(patches))
+        observed = (list(state["dims"]), tuple(state["branch_indices"]), bool(state["use_patches"]))
+        if observed != expected:
+            raise ValueError(f"Initialization checkpoint architecture mismatch: {observed} != {expected}")
+        model.load_state_dict(state["model"])
+        initialization = str(args.init_checkpoint)
     train, val = store.data["train"], store.data["val"]
     counts = torch.bincount(train["attack"], minlength=len(ATTACKS)).float()
     weights = counts.sum() / counts.clamp_min(1); weights /= weights.mean()
@@ -351,7 +360,8 @@ def train_variant(name, store, args, device):
     model.load_state_dict(best_state)
     evaluation_splits = ("val", "test", "blind") if args.evaluate_locked else ("val",)
     results = {split: evaluate(model, store.data[split]) for split in evaluation_splits}
-    return model, {"variant": name, "best_epoch": best_epoch, "results": results, "history": history}
+    return model, {"variant": name, "best_epoch": best_epoch, "initialization": initialization,
+                   "results": results, "history": history}
 
 
 def main():
@@ -367,6 +377,8 @@ def main():
     parser.add_argument("--epochs", type=int, default=120)
     parser.add_argument("--batch-size", type=int, default=128)
     parser.add_argument("--lr", type=float, default=8e-4)
+    parser.add_argument("--init-checkpoint", type=Path,
+                        help="Warm-start a matching QualityHead checkpoint")
     parser.add_argument("--seed", type=int, default=2026)
     parser.add_argument("--quality-only", action="store_true",
                         help="Remove auxiliary degradation classification/strength losses")
@@ -392,6 +404,7 @@ def main():
         model, summary = train_variant(variant, store, args, device)
         torch.save({"schema_version": 1, "seed": args.seed, "variant": variant,
                     "quality_only": args.quality_only,
+                    "initialization": str(args.init_checkpoint) if args.init_checkpoint else None,
                     "training_strategy": {"normalization": args.normalization,
                                           "tile_balanced": args.tile_balanced,
                                           "worst_tile": args.worst_tile,

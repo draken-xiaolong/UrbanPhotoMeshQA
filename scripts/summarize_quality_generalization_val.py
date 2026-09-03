@@ -43,7 +43,7 @@ def main() -> None:
         tile_srcc = [item["srcc"] for item in val.get("per_tile", {}).values()]
         rows.append({
             "id": run["id"],
-            "checkpoint": str((args.run_root / run["id"] / f"{variant}.pt").resolve()),
+            "checkpoint": f"{run['id']}/{variant}.pt",
             "best_epoch": payload["variants"][variant]["best_epoch"],
             "val_oqi_srcc": val["overall"]["srcc"],
             "val_oqi_plcc": val["overall"]["plcc"],
@@ -53,19 +53,30 @@ def main() -> None:
             "val_worst_tile_srcc": min(tile_srcc) if tile_srcc else None,
         })
 
-    baseline = next((row for row in rows if row["id"].startswith("B0_")), None)
-    if baseline is None:
-        raise ValueError("B0 baseline is required by the promotion gate")
+    release = config.get("release_val_reference")
+    if release:
+        baseline = {
+            "id": release["id"], "checkpoint": release["checkpoint"],
+            "val_oqi_srcc": release["overall"]["srcc"],
+            "val_oqi_plcc": release["overall"]["plcc"],
+            "val_oqi_mae": release["overall"]["mae"],
+            "val_geometry_srcc": release["geometry"]["srcc"],
+            "val_texture_srcc": release["texture"]["srcc"],
+        }
+    else:
+        baseline = next((row for row in rows if row["id"].startswith("B0_")), None)
+        if baseline is None:
+            raise ValueError("B0 baseline is required by the promotion gate")
     gate = config["promotion_gate"]
     for row in rows:
-        row["gain_over_B0"] = row["val_oqi_srcc"] - baseline["val_oqi_srcc"]
-        row["geometry_drop_from_B0"] = baseline["val_geometry_srcc"] - row["val_geometry_srcc"]
-        row["texture_drop_from_B0"] = baseline["val_texture_srcc"] - row["val_texture_srcc"]
+        row["gain_over_reference"] = row["val_oqi_srcc"] - baseline["val_oqi_srcc"]
+        row["geometry_drop_from_reference"] = baseline["val_geometry_srcc"] - row["val_geometry_srcc"]
+        row["texture_drop_from_reference"] = baseline["val_texture_srcc"] - row["val_texture_srcc"]
         row["passes_promotion_gate"] = (
             row["id"] != baseline["id"]
-            and row["gain_over_B0"] >= gate["minimum_val_oqi_srcc_gain_over_B0"]
-            and row["geometry_drop_from_B0"] <= gate["maximum_allowed_val_geometry_srcc_drop"]
-            and row["texture_drop_from_B0"] <= gate["maximum_allowed_val_texture_srcc_drop"]
+            and row["gain_over_reference"] >= gate["minimum_val_oqi_srcc_gain_over_reference"]
+            and row["geometry_drop_from_reference"] <= gate["maximum_allowed_val_geometry_srcc_drop"]
+            and row["texture_drop_from_reference"] <= gate["maximum_allowed_val_texture_srcc_drop"]
         )
 
     eligible = [row for row in rows if row["passes_promotion_gate"]]
@@ -85,6 +96,7 @@ def main() -> None:
         "selected_id": selected["id"],
         "selected_checkpoint": selected["checkpoint"],
         "promoted_over_baseline": selected["id"] != baseline["id"],
+        "promotion_reference": baseline,
         "candidates": rows,
         "next_step": "Freeze this selection, then run calibration/evaluation exactly once on Test and Blind.",
     }

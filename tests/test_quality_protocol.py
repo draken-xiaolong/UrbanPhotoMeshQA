@@ -35,6 +35,11 @@ def test_regression_metrics_returns_exact_perfect_spearman_with_ties():
 
 
 def test_val_summary_applies_gate_without_locked_metrics(tmp_path):
+    config = json.loads((ROOT / "configs/quality_generalization_minimal_seed2026.json").read_text())
+    config.pop("release_val_reference", None)
+    config["runs"] = config["runs"][:4]
+    config_path = tmp_path / "config.json"
+    config_path.write_text(json.dumps(config), encoding="utf-8")
     candidates = {
         "B0_formal_frozen": (0.50, 0.60, 0.60),
         "B1_robust_norm": (0.52, 0.59, 0.59),
@@ -60,7 +65,7 @@ def test_val_summary_applies_gate_without_locked_metrics(tmp_path):
         (directory / "four_branch.pt").write_bytes(b"checkpoint")
     subprocess.run([
         sys.executable, str(ROOT / "scripts/summarize_quality_generalization_val.py"),
-        "--run-root", str(tmp_path),
+        "--config", str(config_path), "--run-root", str(tmp_path),
     ], check=True, capture_output=True, text=True)
     selection = json.loads((tmp_path / "val_selection.json").read_text(encoding="utf-8"))
     assert selection["selected_id"] == "B1_robust_norm"

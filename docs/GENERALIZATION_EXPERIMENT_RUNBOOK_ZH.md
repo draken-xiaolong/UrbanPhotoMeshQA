@@ -1,7 +1,7 @@
 # Blind 泛化最小实验运行手册
 
 本轮目的不是在 Test/Blind 上搜索模型，而是用固定随机种子 `2026`，仅通过 Train/Val
-筛选四种冻结 Base 的轻量域泛化策略。只有 Val 选择完成并冻结唯一候选后，才允许对
+筛选冻结 Base 的轻量域泛化策略。只有 Val 选择完成并冻结唯一候选后，才允许对
 Test/Blind 做一次最终评测。
 
 ## 第一阶段候选
@@ -12,8 +12,11 @@ Test/Blind 做一次最终评测。
 | B1 | Train median/IQR | 样本均匀 | 无 |
 | B2 | Train median/IQR | Train 图幅均衡 | 无 |
 | B3 | Train median/IQR | Train 图幅均衡 | smooth worst-tile |
+| B4 | Train mean/std | Train 图幅均衡 | 从 release 低学习率 warm-start + smooth worst-tile |
 
-四组都只训练 `four_branch` Quality Head。部分解冻和端到端训练需要从原始缓存经过
+B0–B3用于隔离三个域泛化变量；B4仅在B3相对当前release出现几何退化后增加，用于验证
+低学习率warm-start能否保留已有几何能力。所有候选都只训练 `four_branch` Quality
+Head。部分解冻和端到端训练需要从原始缓存经过
 Point/Mesh/Texture Encoder 反向传播，不能使用已经冻结的特征 NPZ 冒充，因此推迟到
 第二阶段；只有第一阶段没有达到 Val promotion gate 时才实现。
 
@@ -62,6 +65,7 @@ artifacts/quality/ablations/generalization_minimal_seed2026_v1/
 ├── B1_robust_norm/
 ├── B2_robust_tile_balanced/
 ├── B3_robust_tile_worst/
+├── B4_release_warmstart_tile_worst/
 └── val_selection.json
 ```
 
@@ -70,7 +74,8 @@ Val；一旦发现锁定集指标便拒绝选择。
 
 ## Val 选择与解锁条件
 
-主指标为 Val OQI SRCC，MAE 和 PLCC 仅用于打破平局。相对 B0 的 promotion gate：
+主指标为 Val OQI SRCC，MAE 和 PLCC 仅用于打破平局。promotion reference 是当前正式
+`release_seed2026_v1`，而不是表现可能更低的重训B0。相对release的promotion gate：
 
 - OQI SRCC 至少提升 `0.01`；
 - Geometry SRCC 下降不超过 `0.02`；

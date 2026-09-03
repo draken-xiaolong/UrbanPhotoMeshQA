@@ -9,6 +9,14 @@
     "test_blind_policy": "evaluate only the single Val-selected winner",
     "train_tile_leave_one_out": "diagnostic only; never replaces Val selection"
   },
+  "release_val_reference": {
+    "id": "release_seed2026_v1",
+    "checkpoint": "artifacts/quality/final/release_seed2026_v1/global_quality_head.pt",
+    "metric_implementation": "average ranks for Spearman ties",
+    "overall": {"srcc": 0.5195598949653732, "plcc": 0.5424767876992705, "mae": 0.2149888277053833},
+    "geometry": {"srcc": 0.6261664873836529},
+    "texture": {"srcc": 0.5929677464915186}
+  },
   "common_training": {
     "variant": "four_branch",
     "epochs": 120,
@@ -50,6 +58,18 @@
       "worst_tile_temperature": 0.1,
       "cli_args": ["--normalization", "robust", "--tile-balanced", "--worst-tile",
                    "--worst-tile-temperature", "0.1"]
+    },
+    {
+      "id": "B4_release_warmstart_tile_worst",
+      "base": "frozen",
+      "normalization": "mean_std",
+      "sampler": "tile_balanced",
+      "domain_loss": "smooth_worst_tile_logmeanexp_over_train_tiles",
+      "initialization": "release_seed2026_v1",
+      "epochs": 30,
+      "learning_rate": 0.0002,
+      "cli_args": ["--tile-balanced", "--worst-tile", "--worst-tile-temperature", "0.1",
+                   "--init-checkpoint", "artifacts/quality/final/release_seed2026_v1/global_quality_head.pt"]
     }
   ],
   "deferred_stage_2": {
@@ -58,7 +78,7 @@
     "reason": "cached neural features cannot support genuine Base backpropagation"
   },
   "promotion_gate": {
-    "minimum_val_oqi_srcc_gain_over_B0": 0.01,
+    "minimum_val_oqi_srcc_gain_over_reference": 0.01,
     "maximum_allowed_val_geometry_srcc_drop": 0.02,
     "maximum_allowed_val_texture_srcc_drop": 0.02
   }
