@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "original_records": 3496,
+  "formal_records": 3493,
+  "excluded": 3,
+  "exclusions": [
+    {
+      "asset_id": "B362381773802063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy"
+    },
+    {
+      "asset_id": "B354071561701063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy"
+    },
+    {
+      "asset_id": "B427402146801062A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy"
+    }
+  ],
+  "splits": {
+    "train": {
+      "records": 1518,
+      "assets": 80
+    },
+    "val": {
+      "records": 760,
+      "assets": 40
+    },
+    "test": {
+      "records": 607,
+      "assets": 32
+    },
+    "blind": {
+      "records": 608,
+      "assets": 32
+    }
+  }
+}

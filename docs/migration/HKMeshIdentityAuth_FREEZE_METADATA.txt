@@ -1,0 +1,4 @@
+source=/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth
+frozen_at=2026-09-02 Asia/Shanghai
+file_count=8235
+total_size_bytes=836849664

@@ -1,0 +1,19 @@
+{
+  "status": "OBJECTIVE_GEOMETRY_QUALITY_TARGETS_COMPLETE",
+  "seed": 2026,
+  "points": 1024,
+  "metrics": [
+    "chamfer_l2",
+    "hausdorff",
+    "normal_error",
+    "missing_fraction",
+    "outlier_fraction",
+    "bbox_extent_relative_error"
+  ],
+  "attacks": [
+    "connected_crop",
+    "hole",
+    "retriangulate"
+  ],
+  "coordinate_frame": "both reference and degraded samples normalized by clean-object bbox frame"
+}

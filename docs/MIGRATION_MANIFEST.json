@@ -1,0 +1,519 @@
+{
+  "schema_version": 1,
+  "old_project_frozen": true,
+  "old_root": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth",
+  "new_root": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA",
+  "matched_migrated_files": 85,
+  "records": [
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/datasets/multibranch_source_seed2026/source_manifest.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/manifests/eval_source_manifest_seed2026.json",
+      "sha256": "b07edeb2a4e9511bf0461ef70bd93a3b7c34dc383cc5eb89fbed3ebaca6b5c7f",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/four_branch_fusion_seed2026_v1/source_manifest.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/manifests/source_manifest_seed2026.json",
+      "sha256": "0e8c8d25945b684ef95599cce5f83958b5608bb640567e92d5daad1d13ad4f4f",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/datasets/fusion_train_source_seed2026/train_manifest.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/manifests/train_source_manifest_seed2026.json",
+      "sha256": "91d08d3b16ee4abf84b44e7aefb4bdf85128c618ceac772e762584d09e2fa8a6",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/formal_invariant_seed2026_v1/best.pt",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/formal_invariant_seed2026_v1/best.pt",
+      "sha256": "29d6a7513a6a30089db0265b0c1c2ee3f8addd0f0b97de1d1deba9d97dd596ec",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/formal_invariant_seed2026_v1/blind_attacks.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/formal_invariant_seed2026_v1/blind_attacks.json",
+      "sha256": "2214a6128ab1045485abab5785655bb2c5997c7ddf7a9b0f4d32d21884276d6f",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/formal_invariant_seed2026_v1/history.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/formal_invariant_seed2026_v1/history.json",
+      "sha256": "a1207b8f27c8f6db633ab31c29de4dfb886e62ecfe8a07dfb21f8d387b94e493",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/formal_invariant_seed2026_v1/results.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/formal_invariant_seed2026_v1/results.json",
+      "sha256": "9c5d9fa49eb55fa334a710ab94ccee50f767830bcee5f983a996bad136fc6a9e",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/formal_invariant_seed2026_v1/test_attacks.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/formal_invariant_seed2026_v1/test_attacks.json",
+      "sha256": "342b290a8698bfd2b0b2994577163f2c25bb89f0eaac7bbfdbac66997d0652b6",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/four_branch_fusion_seed2026_v1/.DS_Store",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/four_branch_fusion_seed2026_v1/.DS_Store",
+      "sha256": "0fe7fc77c30daf281d92ef2e7965efc82d02a9eb99364452332cd4889268b0e1",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/four_branch_fusion_seed2026_v1/features/scores_blind.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/four_branch_fusion_seed2026_v1/features/scores_blind.npz",
+      "sha256": "496dcc44f49c9032a91bc946d3bfeabcbdd08d6cfb58a9667237c76016ba3eaa",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/four_branch_fusion_seed2026_v1/features/scores_test.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/four_branch_fusion_seed2026_v1/features/scores_test.npz",
+      "sha256": "051597c8931a9f3f1402451419bb98aa40b8f1f302679cfda74574ebc2e1d85f",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/four_branch_fusion_seed2026_v1/features/scores_train.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/four_branch_fusion_seed2026_v1/features/scores_train.npz",
+      "sha256": "0628040270090927309697dae47e7cfd0e342f8d69fd6dd181f588b54b380f68",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/four_branch_fusion_seed2026_v1/features/scores_val.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/four_branch_fusion_seed2026_v1/features/scores_val.npz",
+      "sha256": "ca045fe0e4ab57e8921497826bbb9cddad90e14f78f4e9e749111b242bb243fa",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/four_branch_fusion_seed2026_v1/source_manifest.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/four_branch_fusion_seed2026_v1/source_manifest.json",
+      "sha256": "0e8c8d25945b684ef95599cce5f83958b5608bb640567e92d5daad1d13ad4f4f",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/four_branch_fusion_seed2026_v1/training/concat_mlp.pt",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/four_branch_fusion_seed2026_v1/training/concat_mlp.pt",
+      "sha256": "6ee77d6bde9bf91827d202e81ac0b9bec815b19113cde7126d8787d6c4fb6f5f",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/four_branch_fusion_seed2026_v1/training/confidence_gated.pt",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/four_branch_fusion_seed2026_v1/training/confidence_gated.pt",
+      "sha256": "02414f26f5a5db93c7bf7ebcf16f712ea7eb99b80dacb63b7fcb327eb6a296d1",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/four_branch_fusion_seed2026_v1/training/results.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/four_branch_fusion_seed2026_v1/training/results.json",
+      "sha256": "ca6314edc2e9d3b7106d85f7e72301974d421f87c20c309d99546a3c9da9f023",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/native_mesh_v1/best.pt",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/native_mesh_v1/best.pt",
+      "sha256": "62b1486221b3ef7b1a0e6bde84290944c7b99dcf3376fd277fdbf400c597dded",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/native_mesh_v1/history.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/native_mesh_v1/history.json",
+      "sha256": "a6006ba54624e1fa539d32bd8a9a9303436b8215b1aa1f174600ea9476cf63b9",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/native_mesh_v1/results.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/native_mesh_v1/results.json",
+      "sha256": "ef9fdb7d1fb535319605fa1ab2157b7c1edc0844aa993d7a4e30c34746fbb3ef",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/native_mesh_v1/test_mesh_attacks.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/native_mesh_v1/test_mesh_attacks.json",
+      "sha256": "2fcc122f936db9fed2e2ae54e91a5a21c52d07bf338d9546246f855d207cf775",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/base/native_mesh_v1/train.log",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/pretrained_backbone/native_mesh_v1/train.log",
+      "sha256": "957d3e6de21b60f5d8d9a91d7d0447755e818741462d93d41721a5261752901a",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/mesh_patch_quality_seed2026_v1/metadata.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/mesh_patch_quality_seed2026_v1/metadata.json",
+      "sha256": "6ce4c78b6c88c2ca1cb93e2972279451df6f02b068a2aabd7aa0d02eaaa68ad7",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/mesh_patch_quality_seed2026_v1/patches_blind.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/mesh_patch_quality_seed2026_v1/patches_blind.npz",
+      "sha256": "43d1893d9ed176cfaabe66dbf94e6e9e2309c30bbf8eaa618d89613a9c043999",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/mesh_patch_quality_seed2026_v1/patches_test.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/mesh_patch_quality_seed2026_v1/patches_test.npz",
+      "sha256": "dd7e19c0e359f56812850f674f1a137e78ee3aac15e292244878d11cd0539015",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/mesh_patch_quality_seed2026_v1/patches_train.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/mesh_patch_quality_seed2026_v1/patches_train.npz",
+      "sha256": "2db02686f3618f896dbc314646b62d80f0fe0f9e6eddd077e8dab986df058f8c",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/mesh_patch_quality_seed2026_v1/patches_val.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/mesh_patch_quality_seed2026_v1/patches_val.npz",
+      "sha256": "8389ca3b79e36ff991b923e0625bdc45f44a3c43cfd364ef01034ce529597517",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/no_reference_patch_quality_seed2026_v3/quality_student.pt",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/no_reference_patch_quality_seed2026_v3/quality_student.pt",
+      "sha256": "96217788282b59c2dbaa8bd80823b6ac70dc6d1075a8b96ccd7fa1c310c25f8b",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/no_reference_patch_quality_seed2026_v3/results.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/no_reference_patch_quality_seed2026_v3/results.json",
+      "sha256": "1b3b462d5f68b3c1f0f44273926c51424973e7325f62e7aa2793a62556eb50bf",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/objective_geometry_quality_seed2026_v1/metadata.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/objective_geometry_quality_seed2026_v1/metadata.json",
+      "sha256": "e18a0965b64caf1e6882561260a4280e708c9614663f443e390dddbba3d26f17",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/objective_geometry_quality_seed2026_v1/targets_blind.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/objective_geometry_quality_seed2026_v1/targets_blind.npz",
+      "sha256": "dc10d2502932f6c046a42b75c904d6ffe72b3987aa5ae21184afe75984d5e57b",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/objective_geometry_quality_seed2026_v1/targets_test.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/objective_geometry_quality_seed2026_v1/targets_test.npz",
+      "sha256": "000aa943bda7eae8766dab3036f7b89904d3f0a191917f3cf911e6b07d76cac9",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/objective_geometry_quality_seed2026_v1/targets_train.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/objective_geometry_quality_seed2026_v1/targets_train.npz",
+      "sha256": "66865f5a4b8163e53092146dd77590a239e14271d91ed9e840fad8c4bceb504b",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/objective_geometry_quality_seed2026_v1/targets_val.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/objective_geometry_quality_seed2026_v1/targets_val.npz",
+      "sha256": "9897345950131eedab79a9b7c185a5cea4596439d7d1c2cba9d3c1c470f90454",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/objective_quality_index_seed2026_v2/quality_index_head.pt",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/objective_quality_index_seed2026_v2/quality_index_head.pt",
+      "sha256": "de2c8969c9dbd95d5294302e119e36ba9e508d0a6e16ba27b129748773a7d046",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/objective_quality_index_seed2026_v2/results.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/objective_quality_index_seed2026_v2/results.json",
+      "sha256": "342fcc2487a5f2170c1ebe509ac8ff6b04140dba1ff4799abf9c0749ff8593bf",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/objective_texture_quality_seed2026_v1/metadata.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/objective_texture_quality_seed2026_v1/metadata.json",
+      "sha256": "79d65466760f7f7e054486e65c0104cc134dcf0205e5a4578c437e980cde4bcc",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/objective_texture_quality_seed2026_v1/targets_blind.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/objective_texture_quality_seed2026_v1/targets_blind.npz",
+      "sha256": "32e6060c7344b9e0cd25db059dc4930ea69c04e96b778a9d784527ad673650b7",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/objective_texture_quality_seed2026_v1/targets_test.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/objective_texture_quality_seed2026_v1/targets_test.npz",
+      "sha256": "93947f3459f95942288cbda0d449d994e7a4f3e7a3d73c40f54b62d7ce77d7d7",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/objective_texture_quality_seed2026_v1/targets_train.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/objective_texture_quality_seed2026_v1/targets_train.npz",
+      "sha256": "98826548a7bea7864994af75ec886fd823ba41420390bf253b6b9b03dc70c4f8",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/objective_texture_quality_seed2026_v1/targets_val.npz",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/objective_texture_quality_seed2026_v1/targets_val.npz",
+      "sha256": "f4ebf93ebbc4cd8e1fc3cb88c7a2f9841adac75307ef300b08dd728f4e276551",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/quality_reports_seed2026_v1/example_B340741780701063A0_glb.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/quality_reports_seed2026_v1/example_B340741780701063A0_glb.json",
+      "sha256": "5440c8a1203cfcece9a5c5ed27bb939a15f0f451fb8620348218f9bc433b55be",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/quality_reports_seed2026_v1/example_B340741780701063A0_gltf.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/quality_reports_seed2026_v1/example_B340741780701063A0_gltf.json",
+      "sha256": "3bed42729b0d41e384d9c64e94c239424e063d49a567d37a9d409837ae4ee3e1",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/quality_reports_seed2026_v1/example_B340741780701063A0_obj.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/quality_reports_seed2026_v1/example_B340741780701063A0_obj.json",
+      "sha256": "c5e6870f8232a96697c10eb2b7ff86fe25abdd1b108a625de705d1572a1982fa",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/quality_reports_seed2026_v1/example_B412542125301063A0.csv",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/quality_reports_seed2026_v1/example_B412542125301063A0.csv",
+      "sha256": "b515dde11ae0dd2d01cc4397eac5994232f0607153d4acf89a57f3762b1e7135",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/quality_reports_seed2026_v1/example_B412542125301063A0.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/quality_reports_seed2026_v1/example_B412542125301063A0.json",
+      "sha256": "3e9096f7777472cde7f16277fd240e2a0b1c49e7792f809a3b600b8af330851d",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/quality_reports_seed2026_v1/monotonicity.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/quality_reports_seed2026_v1/monotonicity.json",
+      "sha256": "9135bb306ae5dcb273fa3ff87bb6956961c006b30ba19cf5bcca6c5661a7a723",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/quality_reports_seed2026_v1/quality_reports_blind.csv",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/quality_reports_seed2026_v1/quality_reports_blind.csv",
+      "sha256": "909984c5462cc26cbcd21026aec2166f673b3ac63251f8d96cb9eeb23a5c8b9b",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/quality_reports_seed2026_v1/quality_reports_test.csv",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/quality_reports_seed2026_v1/quality_reports_test.csv",
+      "sha256": "bd18439a4bd66c3ddc55154794bcd1647dbfa2c31e946bf2c00d4b9e56a090b7",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/quality_reports_seed2026_v2/example_B340741780701063A0_glb.csv",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/quality_reports_seed2026_v2/example_B340741780701063A0_glb.csv",
+      "sha256": "98e589363e02520eec68d5f3595a8b7c121b9ec2911c2fefbcb59f9583267493",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/quality_reports_seed2026_v2/example_B340741780701063A0_glb.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/quality_reports_seed2026_v2/example_B340741780701063A0_glb.json",
+      "sha256": "d279e0a2b70bd6554cccd267cbcd5fd9fde70dcacf0cea5a0b9a27cb0e5d5705",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/quality_reports_seed2026_v2/example_B340741780701063A0_gltf.csv",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/quality_reports_seed2026_v2/example_B340741780701063A0_gltf.csv",
+      "sha256": "a6112ffc4647173c8ccba73b9acda4445d5b5b55ca1286f28f9519f41276a09f",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/quality_reports_seed2026_v2/example_B340741780701063A0_gltf.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/quality_reports_seed2026_v2/example_B340741780701063A0_gltf.json",
+      "sha256": "1dd23f18755c7b1696cb92a10e99ad2929c302a0fe836591c7bed9c1cb71a23d",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/quality_reports_seed2026_v2/example_B340741780701063A0_obj.csv",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/quality_reports_seed2026_v2/example_B340741780701063A0_obj.csv",
+      "sha256": "6f3af30088284333c05185b8096a2e17a99ccd58326c3582eff426e3448ec559",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/artifacts/quality/Final/quality_reports_seed2026_v2/example_B340741780701063A0_obj.json",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/artifacts/quality/legacy_baseline/quality_reports_seed2026_v2/example_B340741780701063A0_obj.json",
+      "sha256": "62e3c3fa5b8a15a5c49b505968951c2760597fdf7ff2f6edde5bbc53f041edf8",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/docs/NO_REFERENCE_MESH_QUALITY_RELATED_WORK_ZH.md",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/docs/RELATED_WORK_ZH.md",
+      "sha256": "a172172a13d6abcd99d7ca2dc431c12071c6fb65139db1f1a35b230ebea96644",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/__pycache__/compare_quality_sensitive_sidepath.cpython-311.pyc",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/__pycache__/compare_quality_sensitive_sidepath.cpython-311.pyc",
+      "sha256": "c216384d1d6fd0a34ea18095f86182a9e6fef45c1d5981c7f54ce28e20292147",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/__pycache__/evaluate_missing_texture_quality.cpython-311.pyc",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/__pycache__/evaluate_missing_texture_quality.cpython-311.pyc",
+      "sha256": "9cfdbf717e6142ad199f9485e6f737866dfce2bb73d30e78d3766aa2428300bf",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/__pycache__/train_branch_aware_multitask_quality.cpython-311.pyc",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/__pycache__/train_branch_aware_multitask_quality.cpython-311.pyc",
+      "sha256": "4e88dbfee1e14df822e739b4aa409a0e44b4748dc7e2585184ffc7d2e2227bb4",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/__pycache__/train_four_branch_fusion.cpython-311.pyc",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/__pycache__/train_four_branch_fusion.cpython-311.pyc",
+      "sha256": "4daeec2f79b55248709424b982fa93db11361c33d2fbcde0bebde1c164850944",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/__pycache__/train_frozen_base_quality_head.cpython-311.pyc",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/__pycache__/train_frozen_base_quality_head.cpython-311.pyc",
+      "sha256": "3f49f5e9d4b64c01d1b6f0620e1aa8c5952ea68147c6911603810d6f557ab3e3",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/__pycache__/train_modality_aware_quality_student.cpython-311.pyc",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/__pycache__/train_modality_aware_quality_student.cpython-311.pyc",
+      "sha256": "b5163f89ee18e71e29e097f6948f97eaff75ec996caa5d397c3aeaa0fd7cf406",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/__pycache__/train_no_reference_quality_student.cpython-311.pyc",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/__pycache__/train_no_reference_quality_student.cpython-311.pyc",
+      "sha256": "0727366851ff51e437802b3149cb01de76a97613782f74ce70cd39d335eb5897",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/__pycache__/train_objective_geometry_quality_heads.cpython-311.pyc",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/__pycache__/train_objective_geometry_quality_heads.cpython-311.pyc",
+      "sha256": "b1d4bde1703cc0fa3da355b5f0bf24efebcde21a4df6a5405adec8bce8718dfc",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/__pycache__/train_objective_quality_index.cpython-311.pyc",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/__pycache__/train_objective_quality_index.cpython-311.pyc",
+      "sha256": "c5f6f09937a3fc08bda49bb5ec056d43f5a85131d25cc9791ca0a75d194ddf2b",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/compare_quality_sensitive_sidepath.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/compare_quality_sensitive_sidepath.py",
+      "sha256": "d96ea1e3fa8fe99924b991db13d48a96539367f481aab81aced0224cdb5660b9",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/evaluate_missing_texture_quality.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/evaluate_missing_texture_quality.py",
+      "sha256": "38e9d29bb2f71a871e0370c9593b51a7a12e44a9712c53cc608d7cce65923245",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/export_quality_reports.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/export_quality_reports.py",
+      "sha256": "36324027d02122d544bdf70ff2b2c3a3045e56dbda3cc88b00da0c5b7472623a",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/train_branch_aware_multitask_quality.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/train_branch_aware_multitask_quality.py",
+      "sha256": "b53d0293a30e89f937aef63cf71c24c51f05f724b1eda5164c55daffd2c12fc4",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/train_four_branch_fusion.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/train_four_branch_fusion.py",
+      "sha256": "b298d3fa027c031cc4cb2f4a0aea12e892464e7fb4069a4caa33d5c4ac837911",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/train_frozen_base_quality_head.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/train_frozen_base_quality_head.py",
+      "sha256": "65fd42a73e15c72556257f818859ee55a5bd0f1a84136b0468b0a48a3e6208ee",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/train_modality_aware_quality_student.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/train_modality_aware_quality_student.py",
+      "sha256": "831b61758d4759e16b1af88410f9976642a979cf73bf128aa8105f172047b2f9",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/train_no_reference_quality_student.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/train_no_reference_quality_student.py",
+      "sha256": "1ce1432249b4e60589cba701906a7c5b9c7dd5f965ea1635df9dd41fbb5bf0e2",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/train_objective_geometry_quality_heads.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/train_objective_geometry_quality_heads.py",
+      "sha256": "4ffd1871349fe9a779b768e5a07c811f7cef63df253deff8017e67c38d829111",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/scripts/train_objective_quality_index.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/scripts/train_objective_quality_index.py",
+      "sha256": "071cfc3133745f9905e43721bcf1d469c5ab7daaf2d5a18a4cb23d013781410f",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/src/hkmeshid/data.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/src/urbanphotomeshqa/data.py",
+      "sha256": "02637f3dfaaab7c30119b0a16023d1769632d7f047f42eaba7a65697ff1dd207",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/src/hkmeshid/gltf.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/src/urbanphotomeshqa/gltf.py",
+      "sha256": "68fc34b619e0ecf86d69f203963a9b8d601f20cc7f031475319e4e01c45610e1",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/src/hkmeshid/mesh_attacks.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/src/urbanphotomeshqa/mesh_attacks.py",
+      "sha256": "73e83b218762b3aef012b603328a63c6db629ab330b61a75f565109068ccd5d0",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/src/hkmeshid/model.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/src/urbanphotomeshqa/model.py",
+      "sha256": "cbcc3a6bf7b6b23c21ec95a34e09ad3e45dc64b8b09c43c6fe159d0e94429b8a",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/src/hkmeshid/morphology.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/src/urbanphotomeshqa/morphology.py",
+      "sha256": "5fd9412ea4a66b00901f9bbbdc5582789f382cb75b6360c7f94e26efd158d6fc",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/src/hkmeshid/quality.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/src/urbanphotomeshqa/quality.py",
+      "sha256": "2f4dbe6b9f1b1f176fe018a51602f0902fb5ec710afa4235c22bc0a06e707bb6",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/src/hkmeshid/texture.py",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/src/urbanphotomeshqa/texture.py",
+      "sha256": "06cb1a8f3bb1a4d6df136b6c5d67e5e7af689435e73f13e0b0df141256f9b3d8",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/tests/fixtures/B360011502301063A0/B360011502301063A0.bin",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/tests/fixtures/B360011502301063A0/B360011502301063A0.bin",
+      "sha256": "59e44653d89ee54e768c8b1fd2e12c1f7390515928378c8ce60db87328e90032",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/tests/fixtures/B360011502301063A0/B360011502301063A0.gltf",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/tests/fixtures/B360011502301063A0/B360011502301063A0.gltf",
+      "sha256": "c96958c55bd73ed6b9ada45464c358193caec3fa81ca48db1c9e781a386d408c",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    },
+    {
+      "old_path": "/Users/wangfugui/Paper/三维CIM水印/HKMeshIdentityAuth/tests/fixtures/B360011502301063A0/B360011502301063A0_001.jpg",
+      "new_path": "/Users/wangfugui/三维实景模型质量评估/UrbanPhotoMeshQA/tests/fixtures/B360011502301063A0/B360011502301063A0_001.jpg",
+      "sha256": "ce6133b5258ea65aded091cd2651e83ae88fe6df596d9294ed87e66c5cca9de2",
+      "reason": "quality-assessment dependency, pretrained backbone, baseline, or reproducibility artifact"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "signature": "ad7420424648a2954ad743b42968b4ef115f5ced1f4a6741c667ab214e9b9719",
+  "signature_payload": {
+    "schema_version": 1,
+    "point_checkpoint": "29d6a7513a6a30089db0265b0c1c2ee3f8addd0f0b97de1d1deba9d97dd596ec",
+    "mesh_checkpoint": "62b1486221b3ef7b1a0e6bde84290944c7b99dcf3376fd277fdbf400c597dded",
+    "texture_encoder": "torchvision_mobilenet_v3_small_default",
+    "branches": [
+      "point",
+      "mesh",
+      "morphology",
+      "texture"
+    ]
+  },
+  "counts": {
+    "train": 1520,
+    "val": 760,
+    "test": 608,
+    "blind": 608
+  },
+  "dimensions": {
+    "point": 256,
+    "mesh": 256,
+    "morphology": 13,
+    "texture": 576
+  },
+  "patch_shape": [
+    16,
+    58
+  ]
+}

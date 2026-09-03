@@ -1,0 +1,63 @@
+{
+  "schema_version": 2,
+  "status": "COMPLETE",
+  "seed": 2026,
+  "task": "no-reference quality assessment of individual photogrammetric glTF building meshes",
+  "selection_protocol": "global and local models selected using Val only; Test and Blind locked",
+  "dataset": {
+    "source_buildings": 184,
+    "generated_attack_packages": 3312,
+    "initial_samples": 3496,
+    "formal_evaluation_samples": 3493,
+    "formal_splits": {"train": 1518, "val": 760, "test": 607, "blind": 608},
+    "excluded_exact_duplicate_qem_records": 3
+  },
+  "global_model": "global_quality_head.pt",
+  "local_model": "local_patch_head.pt",
+  "calibration": "calibration.json",
+  "training_lineage": {
+    "status": "LEGACY_3496_TRAINING_LINEAGE",
+    "checkpoint_training_samples": 3496,
+    "checkpoint_train_records": 1520,
+    "formal_train_records": 1518,
+    "duplicate_qem_records_present_during_training": 2,
+    "formal_metrics_recomputed_after_exclusions": true,
+    "audit": "PROVENANCE_AUDIT_ZH.md"
+  },
+  "formal_metrics": {
+    "val": {
+      "oqi_mae_calibrated": 0.187655,
+      "oqi_plcc": 0.542477,
+      "oqi_srcc": 0.520601,
+      "geometry_srcc": 0.626880,
+      "texture_srcc": 0.608627
+    },
+    "test": {
+      "oqi_mae_calibrated": 0.184333,
+      "oqi_plcc": 0.591191,
+      "oqi_srcc": 0.556586,
+      "geometry_srcc": 0.493320,
+      "texture_srcc": 0.500087
+    },
+    "blind": {
+      "oqi_mae_calibrated": 0.196132,
+      "oqi_plcc": 0.461021,
+      "oqi_srcc": 0.443574,
+      "geometry_srcc": 0.508714,
+      "texture_srcc": 0.586888
+    }
+  },
+  "cache_equivalence": {
+    "pilot_records": 54,
+    "passed": true,
+    "maximum_final_prediction_absolute_difference": 0.0,
+    "threshold": 0.0001
+  },
+  "limitations": [
+    "The current benchmark contains Hong Kong Individualised BUILDING assets only.",
+    "Blind OQI SRCC is a feasibility result and still needs improvement.",
+    "Local patch supervision currently targets geometric defects more directly than texture defects.",
+    "Objective full-reference targets are used for training; no clean reference is used at inference."
+    ,"The released checkpoint predates formal QEM duplicate filtering; see PROVENANCE_AUDIT_ZH.md."
+  ]
+}

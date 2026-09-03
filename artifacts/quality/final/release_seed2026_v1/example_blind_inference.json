@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "protocol": "single-model no-reference inference; no pristine model, alignment, or difference input",
+  "gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack/11-SW-3B/BUILDING/B340741780701063A0/texture_region_missing/medium/B340741780701063A0.gltf",
+  "mesh": {
+    "sampling": {
+      "asset_id": "B340741780701063A0",
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack/11-SW-3B/BUILDING/B340741780701063A0/texture_region_missing/medium/B340741780701063A0.gltf",
+      "vertex_count": 1470,
+      "face_count": 490,
+      "material_count": 1,
+      "image_count": 1,
+      "material_texture_paths": [
+        "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack/11-SW-3B/BUILDING/B340741780701063A0/texture_region_missing/medium/textures/image_00.png"
+      ],
+      "bbox_min": [
+        834064.8232421875,
+        4.920899868011475,
+        -817820.08203125
+      ],
+      "bbox_max": [
+        834081.017578125,
+        10.208900451660156,
+        -817794.275390625
+      ],
+      "bbox_extent": [
+        16.1943359375,
+        5.288000583648682,
+        25.806640625
+      ],
+      "normalization_center": [
+        834072.9204101562,
+        7.564900159835815,
+        -817807.1787109375
+      ],
+      "normalization_scale": 30.92251876832114,
+      "surface_area": 536.1438363993115,
+      "degenerate_face_count": 2
+    },
+    "vertex_count": 1470,
+    "face_count": 490
+  },
+  "quality": {
+    "overall_oqi": 0.8680503310104548,
+    "overall_score_0_100": 86.80503310104548,
+    "geometry_quality": 0.9075067809792771,
+    "texture_quality": 0.9754068327382642,
+    "predicted_degradation_strength": 0.5376982688903809
+  },
+  "auxiliary_degradation_probabilities": {
+    "clean": 0.03274380788207054,
+    "geometry_hole": 0.013753731735050678,
+    "mesh_simplification_qem": 0.0016402570763602853,
+    "geometry_noise_spike": 0.8844314217567444,
+    "texture_detail_loss": 0.023210618644952774,
+    "texture_region_missing": 0.009544947184622288,
+    "texture_misalignment": 0.034675274044275284
+  },
+  "local_patch_quality": {
+    "scores": [
+      0.7333009839057922,
+      0.5481318831443787,
+      0.8548252582550049,
+      0.7422903180122375,
+      0.7187780737876892,
+      0.6155996918678284,
+      0.7101090550422668,
+      0.8134011626243591,
+      0.7962811589241028,
+      0.7660678625106812,
+      0.7611393332481384,
+      0.857673168182373,
+      0.6128556728363037,
+      0.7903923392295837,
+      0.7302321791648865,
+      0.6631500720977783
+    ],
+    "attention": [
+      0.15307296812534332,
+      0.07615294307470322,
+      0.006331830285489559,
+      0.039316609501838684,
+      0.06690754741430283,
+      0.10255834460258484,
+      0.1383790224790573,
+      0.016624681651592255,
+      0.017980478703975677,
+      0.030551034957170486,
+      0.03351128101348877,
+      0.005879361182451248,
+      0.025036541745066643,
+      0.03740650787949562,
+      0.13000737130641937,
+      0.12028343230485916
+    ],
+    "interpretation": "lower quality means a more suspicious local geometric patch"
+  }
+}

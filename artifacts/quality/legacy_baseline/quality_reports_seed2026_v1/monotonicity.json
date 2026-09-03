@@ -1,0 +1,96 @@
+{
+  "seed": 2026,
+  "ordinal_weight": 0.75,
+  "splits": {
+    "test": {
+      "count": 416,
+      "monotonicity": {
+        "multi_level_comparisons": 64,
+        "severity_monotonic_accuracy": 0.640625,
+        "mean_inversion_points": 3.882594398830248,
+        "clean_above_attacked_rate": 0.9765625,
+        "clean_attack_pairs": 384,
+        "mean_oqi_by_attack_and_severity": {
+          "background_shift": {
+            "0.5": 73.42135882377625
+          },
+          "blur1.5": {
+            "0.5": 64.6546585559845
+          },
+          "brightness0.55": {
+            "0.44999998807907104": 34.498911023139954
+          },
+          "camera_jitter12": {
+            "0.5": 75.08567261695862
+          },
+          "connected_crop": {
+            "0.20000000298023224": 56.6539511680603,
+            "0.4000000059604645": 53.165661573410034
+          },
+          "downsample32": {
+            "0.6666666865348816": 55.234612464904785
+          },
+          "hole": {
+            "0.10000000149011612": 60.9472371339798,
+            "0.20000000298023224": 60.596015095710754
+          },
+          "jpeg50": {
+            "0.5": 72.09837746620178
+          },
+          "occlusion20": {
+            "0.20000000298023224": 79.45672512054443
+          },
+          "retriangulate": {
+            "0.5": 52.95191931724548
+          }
+        }
+      },
+      "report_csv": "/root/autodl-tmp/HKMeshIdentityAuth/artifacts/quality_reports_seed2026_v1/quality_reports_test.csv"
+    },
+    "blind": {
+      "count": 416,
+      "monotonicity": {
+        "multi_level_comparisons": 64,
+        "severity_monotonic_accuracy": 0.671875,
+        "mean_inversion_points": 3.5636351449148997,
+        "clean_above_attacked_rate": 0.953125,
+        "clean_attack_pairs": 384,
+        "mean_oqi_by_attack_and_severity": {
+          "background_shift": {
+            "0.5": 73.32164001464844
+          },
+          "blur1.5": {
+            "0.5": 62.56035900115967
+          },
+          "brightness0.55": {
+            "0.44999998807907104": 34.39792585372925
+          },
+          "camera_jitter12": {
+            "0.5": 77.06917977333069
+          },
+          "connected_crop": {
+            "0.20000000298023224": 58.898423075675964,
+            "0.4000000059604645": 55.3652104139328
+          },
+          "downsample32": {
+            "0.6666666865348816": 54.05601704120636
+          },
+          "hole": {
+            "0.10000000149011612": 65.7286171913147,
+            "0.20000000298023224": 63.94134986400604
+          },
+          "jpeg50": {
+            "0.5": 70.88043713569641
+          },
+          "occlusion20": {
+            "0.20000000298023224": 77.98136913776398
+          },
+          "retriangulate": {
+            "0.5": 56.855095744132996
+          }
+        }
+      },
+      "report_csv": "/root/autodl-tmp/HKMeshIdentityAuth/artifacts/quality_reports_seed2026_v1/quality_reports_blind.csv"
+    }
+  }
+}

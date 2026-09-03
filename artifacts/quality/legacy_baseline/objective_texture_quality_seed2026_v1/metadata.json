@@ -1,0 +1,20 @@
+{
+  "status": "OBJECTIVE_TEXTURE_QUALITY_TARGETS_COMPLETE",
+  "seed": 2026,
+  "render_size": 96,
+  "metrics": [
+    "rgb_l1",
+    "rgb_mse",
+    "one_minus_ssim",
+    "edge_l1",
+    "color_mean_shift"
+  ],
+  "attacks": [
+    "blur1.5",
+    "brightness0.55",
+    "downsample32",
+    "jpeg50",
+    "occlusion20"
+  ],
+  "scope": "six aligned standard rendered views; background and camera changes excluded"
+}

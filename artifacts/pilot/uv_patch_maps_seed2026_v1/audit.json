@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "status": "PASSED",
+  "scope": "pilot",
+  "patches": 16,
+  "neighbors": 32,
+  "records": [
+    {
+      "asset_id": "B362651541801063A0",
+      "sheet": "11-SW-15A",
+      "source_gltf": "/Volumes/SANDISK-ELE/UrbanPhotoMeshQA-Data/HK3D-Individualised/11-SW-15A/BUILDING/B362651541801063A0/B362651541801063A0.gltf",
+      "sidecar": "artifacts/pilot/uv_patch_maps_seed2026_v1/B362651541801063A0.npz",
+      "patches": 16,
+      "patch_faces": 512,
+      "uv_valid_patch_faces": 512,
+      "uv_valid_rate": 1.0
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "sheet": "11-SW-4B",
+      "source_gltf": "/Volumes/SANDISK-ELE/UrbanPhotoMeshQA-Data/HK3D-Individualised/11-SW-4B/BUILDING/B355201752601063A0/B355201752601063A0.gltf",
+      "sidecar": "artifacts/pilot/uv_patch_maps_seed2026_v1/B355201752601063A0.npz",
+      "patches": 16,
+      "patch_faces": 512,
+      "uv_valid_patch_faces": 512,
+      "uv_valid_rate": 1.0
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "sheet": "11-SW-4D",
+      "source_gltf": "/Volumes/SANDISK-ELE/UrbanPhotoMeshQA-Data/HK3D-Individualised/11-SW-4D/BUILDING/B356631735402063A0/B356631735402063A0.gltf",
+      "sidecar": "artifacts/pilot/uv_patch_maps_seed2026_v1/B356631735402063A0.npz",
+      "patches": 16,
+      "patch_faces": 512,
+      "uv_valid_patch_faces": 512,
+      "uv_valid_rate": 1.0
+    }
+  ],
+  "mean_uv_valid_rate": 1.0
+}

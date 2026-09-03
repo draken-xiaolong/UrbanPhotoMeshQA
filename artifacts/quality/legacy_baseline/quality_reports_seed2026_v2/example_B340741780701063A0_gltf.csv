@@ -1,0 +1,2 @@
+model_path,format,objective_quality_index,quality_scope,geometry_quality,texture_quality,predicted_degradation,degradation_confidence,predicted_severity,texture_available
+/root/autodl-tmp/HKMeshIdentityAuth/data/multibranch/blind/11-SW-3B/BUILDING/B340741780701063A0/B340741780701063A0.gltf,gltf,98.734,geometry_and_texture,89.443,96.678,clean,0.9917,0.0642,True

@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "reason": "Adjacent QEM severity packages are byte-identical because the simplifier reached the discrete topology limit of a very small mesh.",
+  "records": [
+    {"asset_id": "B362381773802063A0", "attack": "mesh_simplification_qem", "level": "heavy"},
+    {"asset_id": "B354071561701063A0", "attack": "mesh_simplification_qem", "level": "heavy"},
+    {"asset_id": "B427402146801062A0", "attack": "mesh_simplification_qem", "level": "heavy"}
+  ]
+}

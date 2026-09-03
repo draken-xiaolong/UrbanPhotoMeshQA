@@ -1,0 +1,1309 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "thresholds": {
+    "cosine_min": 0.999999,
+    "max_abs_max": 1e-05,
+    "final_prediction_difference_max": 0.0001,
+    "final_prediction_check": "deferred until the new quality head is trained"
+  },
+  "errors": [],
+  "records": [
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "geometry_hole",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999999403953552,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 0.9999999403953552,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999999403953552,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999999403953552,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "texture_region_missing",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "texture_region_missing",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "texture_region_missing",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "texture_misalignment",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "texture_misalignment",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "texture_misalignment",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "geometry_hole",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999999403953552,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999998211860657,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 0.9999999403953552,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 0.9999999403953552,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999999403953552,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 0.9999999403953552,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 0.9999998211860657,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 0.9999999403953552,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "texture_region_missing",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "texture_region_missing",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "texture_region_missing",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "texture_misalignment",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "texture_misalignment",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B355201752601063A0",
+      "attack": "texture_misalignment",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "geometry_hole",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 0.9999999403953552,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 0.9999998807907104,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 0.9999999403953552,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 0.9999998211860657,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "texture_detail_loss",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "texture_detail_loss",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "texture_detail_loss",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "texture_region_missing",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "texture_region_missing",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "texture_region_missing",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "texture_misalignment",
+      "level": "light",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "texture_misalignment",
+      "level": "medium",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "attack": "texture_misalignment",
+      "level": "heavy",
+      "ok": true,
+      "branches": {
+        "point": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "mesh": {
+          "cosine": 1.000000238418579,
+          "max_abs": 0.0
+        },
+        "morphology": {
+          "cosine": 1.0,
+          "max_abs": 0.0
+        },
+        "texture": {
+          "cosine": 1.0000001192092896,
+          "max_abs": 0.0
+        }
+      }
+    }
+  ]
+}

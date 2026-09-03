@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "seed": 2026,
+  "selection": "fixed train80 plus fixed val40/test32/blind32",
+  "records": [
+    {
+      "asset_id": "B340741780701063A0",
+      "sheet": "11-SW-3B",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 489,
+      "gltf_path": "data/multibranch/blind/11-SW-3B/BUILDING/B340741780701063A0/B340741780701063A0.gltf"
+    },
+    {
+      "asset_id": "B341241778301063A0",
+      "sheet": "11-SW-3B",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 364,
+      "gltf_path": "data/multibranch/blind/11-SW-3B/BUILDING/B341241778301063A0/B341241778301063A0.gltf"
+    },
+    {
+      "asset_id": "B341581788502063A0",
+      "sheet": "11-SW-3B",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 4218,
+      "gltf_path": "data/multibranch/blind/11-SW-3B/BUILDING/B341581788502063A0/B341581788502063A0.gltf"
+    },
+    {
+      "asset_id": "B341581788801063A0",
+      "sheet": "11-SW-3B",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 4085,
+      "gltf_path": "data/multibranch/blind/11-SW-3B/BUILDING/B341581788801063A0/B341581788801063A0.gltf"
+    },
+    {
+      "asset_id": "B342151781501063A0",
+      "sheet": "11-SW-3B",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 2107,
+      "gltf_path": "data/multibranch/blind/11-SW-3B/BUILDING/B342151781501063A0/B342151781501063A0.gltf"
+    },
+    {
+      "asset_id": "B342351793101063A0",
+      "sheet": "11-SW-3B",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 1219,
+      "gltf_path": "data/multibranch/blind/11-SW-3B/BUILDING/B342351793101063A0/B342351793101063A0.gltf"
+    },
+    {
+      "asset_id": "B342841785101063A0",
+      "sheet": "11-SW-3B",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 337,
+      "gltf_path": "data/multibranch/blind/11-SW-3B/BUILDING/B342841785101063A0/B342841785101063A0.gltf"
+    },
+    {
+      "asset_id": "B343131781801063A0",
+      "sheet": "11-SW-3B",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 3661,
+      "gltf_path": "data/multibranch/blind/11-SW-3B/BUILDING/B343131781801063A0/B343131781801063A0.gltf"
+    },
+    {
+      "asset_id": "B343341787401063A0",
+      "sheet": "11-SW-3B",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 236,
+      "gltf_path": "data/multibranch/blind/11-SW-3B/BUILDING/B343341787401063A0/B343341787401063A0.gltf"
+    },
+    {
+      "asset_id": "B343811783101062A0",
+      "sheet": "11-SW-3B",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 436,
+      "gltf_path": "data/multibranch/blind/11-SW-3B/BUILDING/B343811783101062A0/B343811783101062A0.gltf"
+    },
+    {
+      "asset_id": "B354191720501063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 42265,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B354191720501063A0/B354191720501063A0.gltf"
+    },
+    {
+      "asset_id": "B355381731601063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 2385,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B355381731601063A0/B355381731601063A0.gltf"
+    },
+    {
+      "asset_id": "B356631735402063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 7047,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B356631735402063A0/B356631735402063A0.gltf"
+    },
+    {
+      "asset_id": "B356701722402063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 6121,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B356701722402063A0/B356701722402063A0.gltf"
+    },
+    {
+      "asset_id": "B357521725801063A1",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 5247,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B357521725801063A1/B357521725801063A1.gltf"
+    },
+    {
+      "asset_id": "B358161715701063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 2571,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B358161715701063A0/B358161715701063A0.gltf"
+    },
+    {
+      "asset_id": "B358341716301063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 965,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B358341716301063A0/B358341716301063A0.gltf"
+    },
+    {
+      "asset_id": "B358341727001063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 1792,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B358341727001063A0/B358341727001063A0.gltf"
+    },
+    {
+      "asset_id": "B358411737101063A1",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 1871,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B358411737101063A1/B358411737101063A1.gltf"
+    },
+    {
+      "asset_id": "B358471720201063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 2488,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B358471720201063A0/B358471720201063A0.gltf"
+    },
+    {
+      "asset_id": "B358631736902063A1",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 1906,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B358631736902063A1/B358631736902063A1.gltf"
+    },
+    {
+      "asset_id": "B358651726301063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 650,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B358651726301063A0/B358651726301063A0.gltf"
+    },
+    {
+      "asset_id": "B358681737301063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 280,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B358681737301063A0/B358681737301063A0.gltf"
+    },
+    {
+      "asset_id": "B358801736201063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 321,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B358801736201063A0/B358801736201063A0.gltf"
+    },
+    {
+      "asset_id": "B358881720201063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 50,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B358881720201063A0/B358881720201063A0.gltf"
+    },
+    {
+      "asset_id": "B358951724501063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 322,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B358951724501063A0/B358951724501063A0.gltf"
+    },
+    {
+      "asset_id": "B358971725201063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 30,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B358971725201063A0/B358971725201063A0.gltf"
+    },
+    {
+      "asset_id": "B358971737901063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 1592,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B358971737901063A0/B358971737901063A0.gltf"
+    },
+    {
+      "asset_id": "B359021721701063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 151,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B359021721701063A0/B359021721701063A0.gltf"
+    },
+    {
+      "asset_id": "B359531738801063A0",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 258,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B359531738801063A0/B359531738801063A0.gltf"
+    },
+    {
+      "asset_id": "B359621716601063A1",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 1597,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B359621716601063A1/B359621716601063A1.gltf"
+    },
+    {
+      "asset_id": "B359761718602063A1",
+      "sheet": "11-SW-4D",
+      "split": "blind",
+      "class_name": "BUILDING",
+      "face_count": 1928,
+      "gltf_path": "data/multibranch/blind/11-SW-4D/BUILDING/B359761718602063A1/B359761718602063A1.gltf"
+    }
+  ],
+  "descriptor_paths": {
+    "train": "artifacts/datasets/texture_domain_gpu_train80_seed2026_v1/descriptors.npz",
+    "val": "artifacts/datasets/texture_domain_gpu_val40_seed2026_v1/descriptors.npz",
+    "test": "artifacts/datasets/texture_domain_gpu_test32_seed2026_v1/descriptors.npz",
+    "blind": "artifacts/datasets/texture_domain_gpu_blind32_seed2026_v1/descriptors.npz"
+  }
+}

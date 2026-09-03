@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "seed": 2026,
+  "selection": "fixed train80 plus fixed val40/test32/blind32",
+  "records": [
+    {
+      "asset_id": "B412542125301063A0",
+      "sheet": "11-NE-13B",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 30,
+      "gltf_path": "data/fusion_train/11-NE-13B/BUILDING/B412542125301063A0/B412542125301063A0.gltf"
+    },
+    {
+      "asset_id": "B413332153701063A0",
+      "sheet": "11-NE-13B",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 257,
+      "gltf_path": "data/fusion_train/11-NE-13B/BUILDING/B413332153701063A0/B413332153701063A0.gltf"
+    },
+    {
+      "asset_id": "B413902122002063A0",
+      "sheet": "11-NE-13B",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 56,
+      "gltf_path": "data/fusion_train/11-NE-13B/BUILDING/B413902122002063A0/B413902122002063A0.gltf"
+    },
+    {
+      "asset_id": "B414592139301063A0",
+      "sheet": "11-NE-13B",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 193,
+      "gltf_path": "data/fusion_train/11-NE-13B/BUILDING/B414592139301063A0/B414592139301063A0.gltf"
+    },
+    {
+      "asset_id": "B415722108801063A0",
+      "sheet": "11-NE-13B",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 2863,
+      "gltf_path": "data/fusion_train/11-NE-13B/BUILDING/B415722108801063A0/B415722108801063A0.gltf"
+    },
+    {
+      "asset_id": "B419472155201062A0",
+      "sheet": "11-NE-13B",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 30,
+      "gltf_path": "data/fusion_train/11-NE-13B/BUILDING/B419472155201062A0/B419472155201062A0.gltf"
+    },
+    {
+      "asset_id": "B360191781702063A0",
+      "sheet": "11-SW-5A",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 1615,
+      "gltf_path": "data/fusion_train/11-SW-5A/BUILDING/B360191781702063A0/B360191781702063A0.gltf"
+    },
+    {
+      "asset_id": "B360561789001063A0",
+      "sheet": "11-SW-5A",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 808,
+      "gltf_path": "data/fusion_train/11-SW-5A/BUILDING/B360561789001063A0/B360561789001063A0.gltf"
+    },
+    {
+      "asset_id": "B360971757901063A0",
+      "sheet": "11-SW-5A",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 1260,
+      "gltf_path": "data/fusion_train/11-SW-5A/BUILDING/B360971757901063A0/B360971757901063A0.gltf"
+    },
+    {
+      "asset_id": "B361611792502063A0",
+      "sheet": "11-SW-5A",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 1873,
+      "gltf_path": "data/fusion_train/11-SW-5A/BUILDING/B361611792502063A0/B361611792502063A0.gltf"
+    },
+    {
+      "asset_id": "B364891765801063A0",
+      "sheet": "11-SW-5A",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 64,
+      "gltf_path": "data/fusion_train/11-SW-5A/BUILDING/B364891765801063A0/B364891765801063A0.gltf"
+    },
+    {
+      "asset_id": "B352821560001063A0",
+      "sheet": "11-SW-9D",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 40,
+      "gltf_path": "data/fusion_train/11-SW-9D/BUILDING/B352821560001063A0/B352821560001063A0.gltf"
+    },
+    {
+      "asset_id": "B354511570301063A0",
+      "sheet": "11-SW-9D",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 14462,
+      "gltf_path": "data/fusion_train/11-SW-9D/BUILDING/B354511570301063A0/B354511570301063A0.gltf"
+    },
+    {
+      "asset_id": "B356271566701063A0",
+      "sheet": "11-SW-9D",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 4572,
+      "gltf_path": "data/fusion_train/11-SW-9D/BUILDING/B356271566701063A0/B356271566701063A0.gltf"
+    },
+    {
+      "asset_id": "B357791617101063A0",
+      "sheet": "11-SW-9D",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 61,
+      "gltf_path": "data/fusion_train/11-SW-9D/BUILDING/B357791617101063A0/B357791617101063A0.gltf"
+    },
+    {
+      "asset_id": "B358831570501063A0",
+      "sheet": "11-SW-9D",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 121,
+      "gltf_path": "data/fusion_train/11-SW-9D/BUILDING/B358831570501063A0/B358831570501063A0.gltf"
+    },
+    {
+      "asset_id": "B360071615701063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 207,
+      "gltf_path": "data/fusion_train/11-SW-10C/BUILDING/B360071615701063A0/B360071615701063A0.gltf"
+    },
+    {
+      "asset_id": "B362591581601063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 692,
+      "gltf_path": "data/fusion_train/11-SW-10C/BUILDING/B362591581601063A0/B362591581601063A0.gltf"
+    },
+    {
+      "asset_id": "B364401564201063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 184,
+      "gltf_path": "data/fusion_train/11-SW-10C/BUILDING/B364401564201063A0/B364401564201063A0.gltf"
+    },
+    {
+      "asset_id": "B365571571301063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 980,
+      "gltf_path": "data/fusion_train/11-SW-10C/BUILDING/B365571571301063A0/B365571571301063A0.gltf"
+    },
+    {
+      "asset_id": "B366521560501063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 781,
+      "gltf_path": "data/fusion_train/11-SW-10C/BUILDING/B366521560501063A0/B366521560501063A0.gltf"
+    },
+    {
+      "asset_id": "B367481578701063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 3374,
+      "gltf_path": "data/fusion_train/11-SW-10C/BUILDING/B367481578701063A0/B367481578701063A0.gltf"
+    },
+    {
+      "asset_id": "B360731545401063A0",
+      "sheet": "11-SW-15A",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 203,
+      "gltf_path": "data/fusion_train/11-SW-15A/BUILDING/B360731545401063A0/B360731545401063A0.gltf"
+    },
+    {
+      "asset_id": "B362151536301063A0",
+      "sheet": "11-SW-15A",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 133,
+      "gltf_path": "data/fusion_train/11-SW-15A/BUILDING/B362151536301063A0/B362151536301063A0.gltf"
+    },
+    {
+      "asset_id": "B363751559401063A0",
+      "sheet": "11-SW-15A",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 714,
+      "gltf_path": "data/fusion_train/11-SW-15A/BUILDING/B363751559401063A0/B363751559401063A0.gltf"
+    },
+    {
+      "asset_id": "B365261551801063A0",
+      "sheet": "11-SW-15A",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 328,
+      "gltf_path": "data/fusion_train/11-SW-15A/BUILDING/B365261551801063A0/B365261551801063A0.gltf"
+    },
+    {
+      "asset_id": "B366791536102063A0",
+      "sheet": "11-SW-15A",
+      "split": "train",
+      "class_name": "BUILDING",
+      "face_count": 111,
+      "gltf_path": "data/fusion_train/11-SW-15A/BUILDING/B366791536102063A0/B366791536102063A0.gltf"
+    }
+  ],
+  "descriptor_paths": {
+    "train": "artifacts/datasets/texture_domain_gpu_train80_seed2026_v1/descriptors.npz",
+    "val": "artifacts/datasets/texture_domain_gpu_val40_seed2026_v1/descriptors.npz",
+    "test": "artifacts/datasets/texture_domain_gpu_test32_seed2026_v1/descriptors.npz",
+    "blind": "artifacts/datasets/texture_domain_gpu_blind32_seed2026_v1/descriptors.npz"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "seed": 2026,
+  "patches": 16,
+  "neighbors": 32,
+  "descriptor_dim": 58,
+  "geometry_attacks": [
+    "connected_crop",
+    "hole",
+    "retriangulate"
+  ],
+  "splits": {
+    "train": {
+      "gallery": 80,
+      "queries": 960
+    },
+    "val": {
+      "gallery": 40,
+      "queries": 480
+    },
+    "test": {
+      "gallery": 32,
+      "queries": 384
+    },
+    "blind": {
+      "gallery": 32,
+      "queries": 384
+    }
+  }
+}

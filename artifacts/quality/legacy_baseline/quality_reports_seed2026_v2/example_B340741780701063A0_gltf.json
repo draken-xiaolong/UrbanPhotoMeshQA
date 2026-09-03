@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "model_path": "/root/autodl-tmp/HKMeshIdentityAuth/data/multibranch/blind/11-SW-3B/BUILDING/B340741780701063A0/B340741780701063A0.gltf",
+  "format": "gltf",
+  "objective_quality_index": 98.734,
+  "quality_scope": "geometry_and_texture",
+  "geometry_quality": 89.443,
+  "texture_quality": 96.678,
+  "predicted_degradation": "clean",
+  "degradation_confidence": 0.9917,
+  "predicted_severity": 0.0642,
+  "texture_available": true,
+  "low_quality_patches": [
+    {
+      "patch_index": 6,
+      "normalized_center": [
+        0.19779600203037262,
+        0.0275030005723238,
+        -0.29606199264526367
+      ],
+      "local_quality": 73.956,
+      "reliability_weight": 0.222055
+    },
+    {
+      "patch_index": 5,
+      "normalized_center": [
+        0.14410400390625,
+        0.07019300013780594,
+        0.1850229948759079
+      ],
+      "local_quality": 73.237,
+      "reliability_weight": 0.164052
+    },
+    {
+      "patch_index": 14,
+      "normalized_center": [
+        0.05090999975800514,
+        0.016963999718427658,
+        -0.38679999113082886
+      ],
+      "local_quality": 73.287,
+      "reliability_weight": 0.115584
+    }
+  ],
+  "mesh_audit": {
+    "vertices": 1470,
+    "faces": 490,
+    "surface_area": 536.1438363993115,
+    "degenerate_faces": 2,
+    "sample_points": 1024,
+    "patches": 16
+  },
+  "component_predictions": {
+    "geometry": {
+      "chamfer_l2": 0.0,
+      "hausdorff": 0.04958602041006088,
+      "normal_error": 0.05161946266889572,
+      "missing_fraction": 0.10994774103164673,
+      "outlier_fraction": 0.08899387717247009,
+      "bbox_extent_relative_error": 0.0
+    },
+    "texture": {
+      "rgb_l1": 0.00551256537437439,
+      "rgb_mse": 0.004659522324800491,
+      "one_minus_ssim": 0.008535332977771759,
+      "edge_l1": 0.002538171596825123,
+      "color_mean_shift": 0.010003726929426193
+    },
+    "attack_probabilities": {
+      "clean": 0.99169,
+      "background_shift": 7e-05,
+      "blur1.5": 0.000626,
+      "brightness0.55": 6.9e-05,
+      "camera_jitter12": 0.005071,
+      "connected_crop": 0.001877,
+      "downsample32": 2.6e-05,
+      "hole": 0.000359,
+      "jpeg50": 4.4e-05,
+      "occlusion20": 8.9e-05,
+      "retriangulate": 7.9e-05
+    }
+  },
+  "protocol": {
+    "no_reference": true,
+    "seed": 2026,
+    "higher_is_better": true,
+    "score_is_mos": false,
+    "warning": null
+  }
+}

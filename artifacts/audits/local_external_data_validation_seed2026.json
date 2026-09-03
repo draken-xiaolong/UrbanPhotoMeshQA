@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "status": "PASSED",
+  "data_root": "/Volumes/SANDISK-ELE/UrbanPhotoMeshQA-Data",
+  "source_gltf_packages": 184,
+  "attack_gltf_packages": 3366,
+  "attack_breakdown": {
+    "formal_generated_attacks": 3312,
+    "pilot_attacks": 54
+  },
+  "raw_feature_caches": 3496,
+  "neural_feature_caches": 3496,
+  "formal_manifest_records": 3493,
+  "formal_manifest_parsed": 3493,
+  "missing_gltf_dependencies": 0,
+  "sampled_combined_asset_digests": 12,
+  "matching_sampled_asset_digests": 12,
+  "appledouble_sidecar_files_after_cleanup": 0,
+  "path_protocol": "data-root-relative portable manifest"
+}

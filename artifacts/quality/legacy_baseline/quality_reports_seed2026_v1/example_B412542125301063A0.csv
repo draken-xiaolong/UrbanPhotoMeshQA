@@ -1,0 +1,2 @@
+model_path,format,objective_quality_index,geometry_quality,texture_quality,predicted_degradation,degradation_confidence,predicted_severity,texture_available
+/root/autodl-tmp/HKMeshIdentityAuth/data/fusion_train/11-NE-13B/BUILDING/B412542125301063A0/B412542125301063A0.gltf,gltf,99.41,99.246,99.512,clean,0.9997,0.022,True

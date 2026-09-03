@@ -1,0 +1,16 @@
+.DS_Store
+._*
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+*.log
+
+# External datasets and machine-local experiment staging
+data/
+datasets/
+server_runs/
+scratch/

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "model_path": "/root/autodl-tmp/HKMeshIdentityAuth/artifacts/cross_format_eval_seed2026_v2/converted/blind/B340741780701063A0.obj",
+  "format": "obj",
+  "objective_quality_index": 96.312,
+  "geometry_quality": 75.556,
+  "texture_quality": null,
+  "predicted_degradation": "clean",
+  "degradation_confidence": 0.7874,
+  "predicted_severity": 0.0592,
+  "texture_available": false,
+  "low_quality_patches": [
+    {
+      "patch_index": 6,
+      "normalized_center": [
+        0.19779600203037262,
+        0.0275030005723238,
+        -0.29606199264526367
+      ],
+      "local_quality": 73.956,
+      "reliability_weight": 0.222055
+    },
+    {
+      "patch_index": 5,
+      "normalized_center": [
+        0.14410400390625,
+        0.07019300013780594,
+        0.1850229948759079
+      ],
+      "local_quality": 73.237,
+      "reliability_weight": 0.164051
+    },
+    {
+      "patch_index": 14,
+      "normalized_center": [
+        0.05090999975800514,
+        0.016963999718427658,
+        -0.38679999113082886
+      ],
+      "local_quality": 73.287,
+      "reliability_weight": 0.115584
+    }
+  ],
+  "mesh_audit": {
+    "vertices": 398,
+    "faces": 489,
+    "surface_area": 536.1438365206424,
+    "degenerate_faces": 1,
+    "sample_points": 1024,
+    "patches": 16
+  },
+  "component_predictions": {
+    "geometry": {
+      "chamfer_l2": 0.0002684213686734438,
+      "hausdorff": 0.11232367157936096,
+      "normal_error": 0.10609166324138641,
+      "missing_fraction": 0.25781363248825073,
+      "outlier_fraction": 0.19884072244167328,
+      "bbox_extent_relative_error": 0.0
+    },
+    "texture": null,
+    "attack_probabilities": {
+      "clean": 0.787398,
+      "background_shift": 0.000248,
+      "blur1.5": 0.002186,
+      "brightness0.55": 0.000431,
+      "camera_jitter12": 0.000497,
+      "connected_crop": 0.060826,
+      "downsample32": 0.000587,
+      "hole": 0.14599,
+      "jpeg50": 0.000265,
+      "occlusion20": 0.001321,
+      "retriangulate": 0.00025
+    }
+  },
+  "protocol": {
+    "no_reference": true,
+    "seed": 2026,
+    "higher_is_better": true,
+    "score_is_mos": false,
+    "warning": "No usable texture was found; the texture branch used a neutral training-domain feature."
+  }
+}

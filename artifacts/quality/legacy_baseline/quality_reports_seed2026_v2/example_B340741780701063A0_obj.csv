@@ -1,0 +1,2 @@
+model_path,format,objective_quality_index,quality_scope,geometry_quality,texture_quality,predicted_degradation,degradation_confidence,predicted_severity,texture_available
+/root/autodl-tmp/HKMeshIdentityAuth/artifacts/cross_format_eval_seed2026_v2/converted/blind/B340741780701063A0.obj,obj,84.817,geometry_only,75.556,,clean,0.7874,0.0592,False
