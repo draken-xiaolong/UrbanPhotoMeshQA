@@ -15,7 +15,7 @@ from dataclasses import replace
 
 from urbanphotomeshqa.gltf import GltfReader
 from urbanphotomeshqa.gltf_export import export_textured_gltf
-from urbanphotomeshqa.integrity import asset_digest
+from urbanphotomeshqa.integrity import asset_digest, extractor_signature, sha256_file
 from urbanphotomeshqa.real_attacks import (
     geometry_hole,
     geometry_noise_spike,
@@ -199,6 +199,19 @@ def main() -> None:
     parser.add_argument("--manifest-output", type=Path, required=True)
     args = parser.parse_args()
     config = json.loads(args.config.read_text(encoding="utf-8"))
+    project = Path(__file__).resolve().parents[1]
+    generator_signature = extractor_signature({
+        "schema_version": 2,
+        "files": {
+            str(path.relative_to(project)): sha256_file(path)
+            for path in (
+                Path(__file__).resolve(),
+                project / "src/urbanphotomeshqa/gltf.py",
+                project / "src/urbanphotomeshqa/gltf_export.py",
+                project / "src/urbanphotomeshqa/real_attacks.py",
+            )
+        },
+    })
     records = load_records(args.manifests)
     if args.asset_ids:
         requested = set(args.asset_ids)
@@ -225,6 +238,7 @@ def main() -> None:
                     try:
                         previous = json.loads(metadata_file.read_text(encoding="utf-8"))
                         if (previous.get("source_asset_digest") == source_digest
+                                and previous.get("generator_signature") == generator_signature
                                 and previous.get("parameters") == params
                                 and previous.get("seed") == seed
                                 and previous.get("attack") == attack
@@ -244,7 +258,8 @@ def main() -> None:
                     generation = export_geometry(source, output, attack, params, seed)
                 validation = validate_output(output, source, attack)
                 metadata = {
-                    "schema_version": 1, "asset_id": record["asset_id"], "sheet": record["sheet"],
+                    "schema_version": 2, "generator_signature": generator_signature,
+                    "asset_id": record["asset_id"], "sheet": record["sheet"],
                     "split": record["split"], "attack": attack, "level": level, "parameters": params,
                     "seed": seed, "source_gltf": str(source), "source_asset_digest": source_digest,
                     **generation, **validation,
@@ -252,7 +267,8 @@ def main() -> None:
                 metadata_file.write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
                 output_records.append({**metadata, "gltf_path": str(output)})
                 print(f"ok {record['asset_id']} {attack} {level}", flush=True)
-    payload = {"schema_version": 1, "seed": config["seed"], "records": output_records}
+    payload = {"schema_version": 2, "seed": config["seed"],
+               "generator_signature": generator_signature, "records": output_records}
     args.manifest_output.parent.mkdir(parents=True, exist_ok=True)
     args.manifest_output.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({"assets": len(records), "variants": len(output_records), "manifest": str(args.manifest_output)}))

@@ -1,0 +1,418 @@
+{
+  "schema_version": 1,
+  "status": "PASSED",
+  "manifest": "/root/autodl-tmp/UrbanPhotoMeshQA/data/Manifests/geometry_export_pilot_v2_seed2026.json",
+  "coordinate_tolerance_m": 0.0001,
+  "maximum_coordinate_roundtrip_error_m": 2.657423890923829e-06,
+  "maximum_local_position_abs_m": 51.865997314453125,
+  "records": [
+    {
+      "asset_id": "B364061599601063A0",
+      "attack": "geometry_hole",
+      "level": "light",
+      "coordinate_roundtrip_max_m": 0.0,
+      "local_position_max_abs_m": 7.140625,
+      "face_count": 100,
+      "asset_digest": "1d3e0f3b7facaf6b17e092a6d3fdbd6ee8fe7a2bec34cc33b68eff1b67eed025",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B364061599601063A0",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "coordinate_roundtrip_max_m": 0.0,
+      "local_position_max_abs_m": 7.140625,
+      "face_count": 89,
+      "asset_digest": "a17ab630775b4421ae4333dc7aed54cd501d0077f2fa8cba89d61c53301bb375",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B364061599601063A0",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "coordinate_roundtrip_max_m": 0.0,
+      "local_position_max_abs_m": 7.140625,
+      "face_count": 73,
+      "asset_digest": "2f30f04b0e4733551316b76d02835c933a640f9e06edca2bdfd068b989f62a4d",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B364061599601063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "coordinate_roundtrip_max_m": 1.7670534968039657e-07,
+      "local_position_max_abs_m": 7.140625,
+      "face_count": 88,
+      "asset_digest": "f2657a1b2e4ad8d60fd739134b1d8c77417233c3db426ccb6b0b59bc166b0977",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B364061599601063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "coordinate_roundtrip_max_m": 1.7670534968039657e-07,
+      "local_position_max_abs_m": 7.140625,
+      "face_count": 73,
+      "asset_digest": "e1ab85e0387359fb025165c45130fa2a9df1f6f84ade5f927a56b7b871aa8d02",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B364061599601063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "coordinate_roundtrip_max_m": 2.2798435942643875e-07,
+      "local_position_max_abs_m": 7.140625,
+      "face_count": 57,
+      "asset_digest": "704cdcd18d38b5ea9679458f1d4021946b755c5ba57327c3af0d1de9b6672934",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B364061599601063A0",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "coordinate_roundtrip_max_m": 2.2641849352171226e-07,
+      "local_position_max_abs_m": 7.140625,
+      "face_count": 105,
+      "asset_digest": "8df8031ba88a9ea6833d317d7a1385875beb2858a6c231e12fb4eb8cce685276",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B364061599601063A0",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "coordinate_roundtrip_max_m": 2.8391997727712233e-07,
+      "local_position_max_abs_m": 7.140625,
+      "face_count": 105,
+      "asset_digest": "234af20681a9780d0076cce2118d7227c162c47c6b855e73d55d1fe78cde98c9",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B364061599601063A0",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "coordinate_roundtrip_max_m": 2.3125305187661863e-07,
+      "local_position_max_abs_m": 7.140625,
+      "face_count": 105,
+      "asset_digest": "459d0d9172c64d5004e87e2a9ccb0f955f8c8274511f3714c463a114800736e2",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B365571571301063A0",
+      "attack": "geometry_hole",
+      "level": "light",
+      "coordinate_roundtrip_max_m": 1.9073486328125e-06,
+      "local_position_max_abs_m": 51.865997314453125,
+      "face_count": 931,
+      "asset_digest": "788f0482fe4908ac872d7f993707790c1b58664ed7f530609f73bf7847bffc00",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B365571571301063A0",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "coordinate_roundtrip_max_m": 1.9073486328125e-06,
+      "local_position_max_abs_m": 51.865997314453125,
+      "face_count": 833,
+      "asset_digest": "2cb304015ba75f39776ec44479dc19f6b0666d976aea9d879b8b30b052c83b7c",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B365571571301063A0",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "coordinate_roundtrip_max_m": 1.9073486328125e-06,
+      "local_position_max_abs_m": 51.865997314453125,
+      "face_count": 686,
+      "asset_digest": "9fdd845daeef8e321682b39bf4637dacf7e13996b86c0211d7aea5bcf6d137f1",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B365571571301063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "coordinate_roundtrip_max_m": 1.904763881546484e-06,
+      "local_position_max_abs_m": 51.865997314453125,
+      "face_count": 833,
+      "asset_digest": "6ada9fa40d20046c5bdb37fe40b744f58a24cab3f80a81e5f7472f009de6fda2",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B365571571301063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "coordinate_roundtrip_max_m": 1.904763881546484e-06,
+      "local_position_max_abs_m": 51.865997314453125,
+      "face_count": 686,
+      "asset_digest": "3bae00a380af79786b23a51795fe135bae2793e99cdc517f754a1403d88d2d65",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B365571571301063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "coordinate_roundtrip_max_m": 1.904763881546484e-06,
+      "local_position_max_abs_m": 51.865997314453125,
+      "face_count": 538,
+      "asset_digest": "cf0210bdd5814c5f65a7af6939619053bd36527cac458028675956092510d0c4",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B365571571301063A0",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "coordinate_roundtrip_max_m": 1.9073486328125e-06,
+      "local_position_max_abs_m": 51.865997314453125,
+      "face_count": 980,
+      "asset_digest": "54a2e237180f0421cdfd56a99e05b1c8fe1ececdf697930cfd0f10ec4d22e71b",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B365571571301063A0",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "coordinate_roundtrip_max_m": 1.9073486328125e-06,
+      "local_position_max_abs_m": 51.865997314453125,
+      "face_count": 980,
+      "asset_digest": "88a822242e0fbb0055b3ceff24b1c834b5b30bd657e6b45f341cfb22e3d3f461",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B365571571301063A0",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "coordinate_roundtrip_max_m": 1.9073486328125e-06,
+      "local_position_max_abs_m": 51.865997314453125,
+      "face_count": 980,
+      "asset_digest": "992a08400e13ea020a13c9f7b181a6da3aed772bfcae2134902f4064ae9805cb",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B355041762402063A0",
+      "attack": "geometry_hole",
+      "level": "light",
+      "coordinate_roundtrip_max_m": 4.76837158203125e-07,
+      "local_position_max_abs_m": 47.46044921875,
+      "face_count": 11645,
+      "asset_digest": "dba4af796b18c34ba1ce7716578d597911cf6dd71db666c6cfc992578647a880",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B355041762402063A0",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "coordinate_roundtrip_max_m": 4.76837158203125e-07,
+      "local_position_max_abs_m": 47.46044921875,
+      "face_count": 10419,
+      "asset_digest": "73350d86d3cb8620b953159ffd901657f01e78a4041d33e2df6ff0511ab42aef",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B355041762402063A0",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "coordinate_roundtrip_max_m": 4.76837158203125e-07,
+      "local_position_max_abs_m": 47.46044921875,
+      "face_count": 8581,
+      "asset_digest": "ec5e2e46680aef64e7e709330269f3dc100763c134a145d990200b7edd2e42f5",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B355041762402063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "coordinate_roundtrip_max_m": 2.5642563994241146e-06,
+      "local_position_max_abs_m": 47.46044921875,
+      "face_count": 10418,
+      "asset_digest": "3fd0bd95e110f10dfd646e65548dced1f9cbdb3809e036de5ad1627d6668278d",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B355041762402063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "coordinate_roundtrip_max_m": 2.5642563994241146e-06,
+      "local_position_max_abs_m": 47.46044921875,
+      "face_count": 8578,
+      "asset_digest": "3d469403ff9eac338cac4ea3629a06b54ab46bb6502ddd806e53d9bc237d453f",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B355041762402063A0",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "coordinate_roundtrip_max_m": 2.5642563994241146e-06,
+      "local_position_max_abs_m": 47.46044921875,
+      "face_count": 6741,
+      "asset_digest": "e3b1b8454d42ebb1d3056a165297c36ea28dfd6d72fa3093e3912dd43c530843",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B355041762402063A0",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "coordinate_roundtrip_max_m": 2.548077019566467e-06,
+      "local_position_max_abs_m": 47.46044921875,
+      "face_count": 12258,
+      "asset_digest": "43942c1bc9e7931b92f23bd35794d6c158b89734e182f689ee04276fc6207946",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B355041762402063A0",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "coordinate_roundtrip_max_m": 2.6507152697019884e-06,
+      "local_position_max_abs_m": 47.46044921875,
+      "face_count": 12258,
+      "asset_digest": "91c577bdd82f07916019eaf1e92081b4613c58f1aecffe41108afe9523dda801",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    },
+    {
+      "asset_id": "B355041762402063A0",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "coordinate_roundtrip_max_m": 2.657423890923829e-06,
+      "local_position_max_abs_m": 47.90678405761719,
+      "face_count": 12258,
+      "asset_digest": "4ee120c7df31d61842f068c103be340b9391da99dffd5d2b1f09beaf1574640e",
+      "materials_preserved": true,
+      "texture_hashes_preserved": true,
+      "errors": []
+    }
+  ],
+  "level_checks": {
+    "B364061599601063A0/geometry_hole": {
+      "digests_unique": true,
+      "severity_monotonic": true,
+      "face_counts": [
+        100,
+        89,
+        73
+      ]
+    },
+    "B364061599601063A0/mesh_simplification_qem": {
+      "digests_unique": true,
+      "severity_monotonic": true,
+      "face_counts": [
+        88,
+        73,
+        57
+      ]
+    },
+    "B364061599601063A0/geometry_noise_spike": {
+      "digests_unique": true,
+      "severity_monotonic": true,
+      "face_counts": [
+        105,
+        105,
+        105
+      ]
+    },
+    "B365571571301063A0/geometry_hole": {
+      "digests_unique": true,
+      "severity_monotonic": true,
+      "face_counts": [
+        931,
+        833,
+        686
+      ]
+    },
+    "B365571571301063A0/mesh_simplification_qem": {
+      "digests_unique": true,
+      "severity_monotonic": true,
+      "face_counts": [
+        833,
+        686,
+        538
+      ]
+    },
+    "B365571571301063A0/geometry_noise_spike": {
+      "digests_unique": true,
+      "severity_monotonic": true,
+      "face_counts": [
+        980,
+        980,
+        980
+      ]
+    },
+    "B355041762402063A0/geometry_hole": {
+      "digests_unique": true,
+      "severity_monotonic": true,
+      "face_counts": [
+        11645,
+        10419,
+        8581
+      ]
+    },
+    "B355041762402063A0/mesh_simplification_qem": {
+      "digests_unique": true,
+      "severity_monotonic": true,
+      "face_counts": [
+        10418,
+        8578,
+        6741
+      ]
+    },
+    "B355041762402063A0/geometry_noise_spike": {
+      "digests_unique": true,
+      "severity_monotonic": true,
+      "face_counts": [
+        12258,
+        12258,
+        12258
+      ]
+    }
+  },
+  "errors": []
+}

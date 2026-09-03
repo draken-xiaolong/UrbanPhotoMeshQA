@@ -1,0 +1,1690 @@
+{
+  "schema_version": 2,
+  "seed": 2026,
+  "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+  "records": [
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B364061599601063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "geometry_hole",
+      "level": "light",
+      "parameters": {
+        "removed_face_fraction": 0.05
+      },
+      "seed": 2911526717753209337,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B364061599601063A0/B364061599601063A0.gltf",
+      "source_asset_digest": "b7b1d8cc974107c1710c14f755b42a8194f990567a8fa6c549e727142a855eef",
+      "source_vertex_count": 315,
+      "source_face_count": 105,
+      "generated_vertex_count": 300,
+      "generated_face_count": 100,
+      "asset_digest": "1d3e0f3b7facaf6b17e092a6d3fdbd6ee8fe7a2bec34cc33b68eff1b67eed025",
+      "dependencies": [
+        {
+          "path": "B364061599601063A0.gltf",
+          "bytes": 2289,
+          "sha256": "2e0a54433184fa020574066a66178ef38b3e38783c232e6e76677a892f6c9807"
+        },
+        {
+          "path": "B364061599601063A0.bin",
+          "bytes": 10800,
+          "sha256": "5cb0727ebcd4f5c7c848c19fc104b17ec05d41097ff56666921eea271631bc22"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 330794,
+          "sha256": "315ca5d1c9c1ee3bfc1cf87ae4aaec36240f49f2bf9d0194d861d02c39c7f2fd"
+        }
+      ],
+      "vertex_count": 300,
+      "face_count": 100,
+      "material_count": 1,
+      "image_count": 1,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B364061599601063A0/geometry_hole/light/B364061599601063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B364061599601063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "parameters": {
+        "removed_face_fraction": 0.15
+      },
+      "seed": 2911526717753209337,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B364061599601063A0/B364061599601063A0.gltf",
+      "source_asset_digest": "b7b1d8cc974107c1710c14f755b42a8194f990567a8fa6c549e727142a855eef",
+      "source_vertex_count": 315,
+      "source_face_count": 105,
+      "generated_vertex_count": 267,
+      "generated_face_count": 89,
+      "asset_digest": "a17ab630775b4421ae4333dc7aed54cd501d0077f2fa8cba89d61c53301bb375",
+      "dependencies": [
+        {
+          "path": "B364061599601063A0.gltf",
+          "bytes": 2288,
+          "sha256": "b99ff85658ccfa4b7778c5329a32e78b25f428d7dcd21cdeb4d3c8c7dc37e10c"
+        },
+        {
+          "path": "B364061599601063A0.bin",
+          "bytes": 9612,
+          "sha256": "5aaffa246965e85361d86bfa49631bc9984835b350d766df604a5e81e88f3112"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 330794,
+          "sha256": "315ca5d1c9c1ee3bfc1cf87ae4aaec36240f49f2bf9d0194d861d02c39c7f2fd"
+        }
+      ],
+      "vertex_count": 267,
+      "face_count": 89,
+      "material_count": 1,
+      "image_count": 1,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B364061599601063A0/geometry_hole/medium/B364061599601063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B364061599601063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "parameters": {
+        "removed_face_fraction": 0.3
+      },
+      "seed": 2911526717753209337,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B364061599601063A0/B364061599601063A0.gltf",
+      "source_asset_digest": "b7b1d8cc974107c1710c14f755b42a8194f990567a8fa6c549e727142a855eef",
+      "source_vertex_count": 315,
+      "source_face_count": 105,
+      "generated_vertex_count": 219,
+      "generated_face_count": 73,
+      "asset_digest": "2f30f04b0e4733551316b76d02835c933a640f9e06edca2bdfd068b989f62a4d",
+      "dependencies": [
+        {
+          "path": "B364061599601063A0.gltf",
+          "bytes": 2287,
+          "sha256": "e44f0ff765c85c9e3c1ca4504c0abdd1419e686dac9c17fc2fb54d432b8a536d"
+        },
+        {
+          "path": "B364061599601063A0.bin",
+          "bytes": 7884,
+          "sha256": "eed5c081488151c95670795bd2fb712aa6cc65a602453397e7626a50212c9ec1"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 330794,
+          "sha256": "315ca5d1c9c1ee3bfc1cf87ae4aaec36240f49f2bf9d0194d861d02c39c7f2fd"
+        }
+      ],
+      "vertex_count": 219,
+      "face_count": 73,
+      "material_count": 1,
+      "image_count": 1,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B364061599601063A0/geometry_hole/heavy/B364061599601063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B364061599601063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "parameters": {
+        "retained_face_fraction": 0.85
+      },
+      "seed": 3433147046387212208,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B364061599601063A0/B364061599601063A0.gltf",
+      "source_asset_digest": "b7b1d8cc974107c1710c14f755b42a8194f990567a8fa6c549e727142a855eef",
+      "source_vertex_count": 315,
+      "source_face_count": 105,
+      "generated_vertex_count": 264,
+      "generated_face_count": 88,
+      "asset_digest": "f2657a1b2e4ad8d60fd739134b1d8c77417233c3db426ccb6b0b59bc166b0977",
+      "dependencies": [
+        {
+          "path": "B364061599601063A0.gltf",
+          "bytes": 2288,
+          "sha256": "3a7d728bbf6e5af9ba1a01aa19cbd8423c90a566783a7e63eee668b67c4e8db1"
+        },
+        {
+          "path": "B364061599601063A0.bin",
+          "bytes": 9504,
+          "sha256": "d85be811f13d63fa80e84d4fcd54a3fbc960b6f95d0a1c3ac1b0af2e36bfc7e1"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 330794,
+          "sha256": "315ca5d1c9c1ee3bfc1cf87ae4aaec36240f49f2bf9d0194d861d02c39c7f2fd"
+        }
+      ],
+      "vertex_count": 264,
+      "face_count": 88,
+      "material_count": 1,
+      "image_count": 1,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B364061599601063A0/mesh_simplification_qem/light/B364061599601063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B364061599601063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "parameters": {
+        "retained_face_fraction": 0.7
+      },
+      "seed": 3433147046387212208,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B364061599601063A0/B364061599601063A0.gltf",
+      "source_asset_digest": "b7b1d8cc974107c1710c14f755b42a8194f990567a8fa6c549e727142a855eef",
+      "source_vertex_count": 315,
+      "source_face_count": 105,
+      "generated_vertex_count": 219,
+      "generated_face_count": 73,
+      "asset_digest": "e1ab85e0387359fb025165c45130fa2a9df1f6f84ade5f927a56b7b871aa8d02",
+      "dependencies": [
+        {
+          "path": "B364061599601063A0.gltf",
+          "bytes": 2287,
+          "sha256": "e44f0ff765c85c9e3c1ca4504c0abdd1419e686dac9c17fc2fb54d432b8a536d"
+        },
+        {
+          "path": "B364061599601063A0.bin",
+          "bytes": 7884,
+          "sha256": "8e33731b57cb05a6fd92f4e693ca3b7598fc8aa8863ea7cb7bd36a512235a632"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 330794,
+          "sha256": "315ca5d1c9c1ee3bfc1cf87ae4aaec36240f49f2bf9d0194d861d02c39c7f2fd"
+        }
+      ],
+      "vertex_count": 219,
+      "face_count": 73,
+      "material_count": 1,
+      "image_count": 1,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B364061599601063A0/mesh_simplification_qem/medium/B364061599601063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B364061599601063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "parameters": {
+        "retained_face_fraction": 0.55
+      },
+      "seed": 3433147046387212208,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B364061599601063A0/B364061599601063A0.gltf",
+      "source_asset_digest": "b7b1d8cc974107c1710c14f755b42a8194f990567a8fa6c549e727142a855eef",
+      "source_vertex_count": 315,
+      "source_face_count": 105,
+      "generated_vertex_count": 171,
+      "generated_face_count": 57,
+      "asset_digest": "704cdcd18d38b5ea9679458f1d4021946b755c5ba57327c3af0d1de9b6672934",
+      "dependencies": [
+        {
+          "path": "B364061599601063A0.gltf",
+          "bytes": 2287,
+          "sha256": "1218d78fb3d145bc258ceef560a67fc41621bff8e1d630f83716ac969d3d180f"
+        },
+        {
+          "path": "B364061599601063A0.bin",
+          "bytes": 6156,
+          "sha256": "6049943cb0b960f7b69e4e4ec943df910d0d88960c87787b658cb6f44bca3aad"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 330794,
+          "sha256": "315ca5d1c9c1ee3bfc1cf87ae4aaec36240f49f2bf9d0194d861d02c39c7f2fd"
+        }
+      ],
+      "vertex_count": 171,
+      "face_count": 57,
+      "material_count": 1,
+      "image_count": 1,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B364061599601063A0/mesh_simplification_qem/heavy/B364061599601063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B364061599601063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "parameters": {
+        "bbox_diagonal_fraction": 0.001,
+        "affected_face_fraction": 0.03
+      },
+      "seed": 16540772391735184286,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B364061599601063A0/B364061599601063A0.gltf",
+      "source_asset_digest": "b7b1d8cc974107c1710c14f755b42a8194f990567a8fa6c549e727142a855eef",
+      "source_vertex_count": 315,
+      "source_face_count": 105,
+      "generated_vertex_count": 315,
+      "generated_face_count": 105,
+      "asset_digest": "8df8031ba88a9ea6833d317d7a1385875beb2858a6c231e12fb4eb8cce685276",
+      "dependencies": [
+        {
+          "path": "B364061599601063A0.gltf",
+          "bytes": 2290,
+          "sha256": "d5b01d9c563e2c202e71ae86452675587135a14376c99fd657ae5201762635e1"
+        },
+        {
+          "path": "B364061599601063A0.bin",
+          "bytes": 11340,
+          "sha256": "e0a436ef80f2cba7734057c58d2604939f7b2e0fe89425650db7946125af709a"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 330794,
+          "sha256": "315ca5d1c9c1ee3bfc1cf87ae4aaec36240f49f2bf9d0194d861d02c39c7f2fd"
+        }
+      ],
+      "vertex_count": 315,
+      "face_count": 105,
+      "material_count": 1,
+      "image_count": 1,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B364061599601063A0/geometry_noise_spike/light/B364061599601063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B364061599601063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "parameters": {
+        "bbox_diagonal_fraction": 0.003,
+        "affected_face_fraction": 0.07
+      },
+      "seed": 16540772391735184286,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B364061599601063A0/B364061599601063A0.gltf",
+      "source_asset_digest": "b7b1d8cc974107c1710c14f755b42a8194f990567a8fa6c549e727142a855eef",
+      "source_vertex_count": 315,
+      "source_face_count": 105,
+      "generated_vertex_count": 315,
+      "generated_face_count": 105,
+      "asset_digest": "234af20681a9780d0076cce2118d7227c162c47c6b855e73d55d1fe78cde98c9",
+      "dependencies": [
+        {
+          "path": "B364061599601063A0.gltf",
+          "bytes": 2290,
+          "sha256": "d5b01d9c563e2c202e71ae86452675587135a14376c99fd657ae5201762635e1"
+        },
+        {
+          "path": "B364061599601063A0.bin",
+          "bytes": 11340,
+          "sha256": "76c6ce8cb05c26223e53e4d2d84280da86ee67e8deab8860ecdf95250a712f7e"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 330794,
+          "sha256": "315ca5d1c9c1ee3bfc1cf87ae4aaec36240f49f2bf9d0194d861d02c39c7f2fd"
+        }
+      ],
+      "vertex_count": 315,
+      "face_count": 105,
+      "material_count": 1,
+      "image_count": 1,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B364061599601063A0/geometry_noise_spike/medium/B364061599601063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B364061599601063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "parameters": {
+        "bbox_diagonal_fraction": 0.006,
+        "affected_face_fraction": 0.12
+      },
+      "seed": 16540772391735184286,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B364061599601063A0/B364061599601063A0.gltf",
+      "source_asset_digest": "b7b1d8cc974107c1710c14f755b42a8194f990567a8fa6c549e727142a855eef",
+      "source_vertex_count": 315,
+      "source_face_count": 105,
+      "generated_vertex_count": 315,
+      "generated_face_count": 105,
+      "asset_digest": "459d0d9172c64d5004e87e2a9ccb0f955f8c8274511f3714c463a114800736e2",
+      "dependencies": [
+        {
+          "path": "B364061599601063A0.gltf",
+          "bytes": 2290,
+          "sha256": "d5b01d9c563e2c202e71ae86452675587135a14376c99fd657ae5201762635e1"
+        },
+        {
+          "path": "B364061599601063A0.bin",
+          "bytes": 11340,
+          "sha256": "e5ed22406f740bd24aa894dde926d8787fa48645352efaf334488deb8dcd1c58"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 330794,
+          "sha256": "315ca5d1c9c1ee3bfc1cf87ae4aaec36240f49f2bf9d0194d861d02c39c7f2fd"
+        }
+      ],
+      "vertex_count": 315,
+      "face_count": 105,
+      "material_count": 1,
+      "image_count": 1,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B364061599601063A0/geometry_noise_spike/heavy/B364061599601063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B365571571301063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "geometry_hole",
+      "level": "light",
+      "parameters": {
+        "removed_face_fraction": 0.05
+      },
+      "seed": 1542766209683212914,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B365571571301063A0/B365571571301063A0.gltf",
+      "source_asset_digest": "b3a3d463ad3259e03181657891d57af124000a097223b7280a55caf7505ef734",
+      "source_vertex_count": 2940,
+      "source_face_count": 980,
+      "generated_vertex_count": 2793,
+      "generated_face_count": 931,
+      "asset_digest": "788f0482fe4908ac872d7f993707790c1b58664ed7f530609f73bf7847bffc00",
+      "dependencies": [
+        {
+          "path": "B365571571301063A0.gltf",
+          "bytes": 3969,
+          "sha256": "27ff0a84f89d39496620f6138880b794ad6c986ee7ba10dc33427ae1cae4c8ef"
+        },
+        {
+          "path": "B365571571301063A0.bin",
+          "bytes": 100548,
+          "sha256": "72bf4a8550b9b2390281c2d8970d7532c3c78e10e07dbaca175cf888f90c3149"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3481721,
+          "sha256": "1c3a25a265eee6832aa274ec3ce63985e80a3b64bf9f9b1d24b95459c5c2c484"
+        },
+        {
+          "path": "textures/material_01.png",
+          "bytes": 15232,
+          "sha256": "b749c0d439ba5d1d992bc717ef44e49be2162ba341f8625b515c5dc4c44e8cac"
+        }
+      ],
+      "vertex_count": 2793,
+      "face_count": 931,
+      "material_count": 2,
+      "image_count": 2,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B365571571301063A0/geometry_hole/light/B365571571301063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B365571571301063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "parameters": {
+        "removed_face_fraction": 0.15
+      },
+      "seed": 1542766209683212914,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B365571571301063A0/B365571571301063A0.gltf",
+      "source_asset_digest": "b3a3d463ad3259e03181657891d57af124000a097223b7280a55caf7505ef734",
+      "source_vertex_count": 2940,
+      "source_face_count": 980,
+      "generated_vertex_count": 2499,
+      "generated_face_count": 833,
+      "asset_digest": "2cb304015ba75f39776ec44479dc19f6b0666d976aea9d879b8b30b052c83b7c",
+      "dependencies": [
+        {
+          "path": "B365571571301063A0.gltf",
+          "bytes": 3965,
+          "sha256": "2032ef4dc28ad8833a3a3da26c786132da4d1bfef40e05afdaa64d23b1fff01c"
+        },
+        {
+          "path": "B365571571301063A0.bin",
+          "bytes": 89964,
+          "sha256": "a8858e5bb415e9b16fb41003c6a76e2a1b8e2c00ffa520da94f7ed49e543b8a0"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3481721,
+          "sha256": "1c3a25a265eee6832aa274ec3ce63985e80a3b64bf9f9b1d24b95459c5c2c484"
+        },
+        {
+          "path": "textures/material_01.png",
+          "bytes": 15232,
+          "sha256": "b749c0d439ba5d1d992bc717ef44e49be2162ba341f8625b515c5dc4c44e8cac"
+        }
+      ],
+      "vertex_count": 2499,
+      "face_count": 833,
+      "material_count": 2,
+      "image_count": 2,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B365571571301063A0/geometry_hole/medium/B365571571301063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B365571571301063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "parameters": {
+        "removed_face_fraction": 0.3
+      },
+      "seed": 1542766209683212914,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B365571571301063A0/B365571571301063A0.gltf",
+      "source_asset_digest": "b3a3d463ad3259e03181657891d57af124000a097223b7280a55caf7505ef734",
+      "source_vertex_count": 2940,
+      "source_face_count": 980,
+      "generated_vertex_count": 2058,
+      "generated_face_count": 686,
+      "asset_digest": "9fdd845daeef8e321682b39bf4637dacf7e13996b86c0211d7aea5bcf6d137f1",
+      "dependencies": [
+        {
+          "path": "B365571571301063A0.gltf",
+          "bytes": 2814,
+          "sha256": "048f75c0181b377b2a8e27c971f4e2bfbd3acf8b7dd574dd36684e6adb018e0c"
+        },
+        {
+          "path": "B365571571301063A0.bin",
+          "bytes": 74088,
+          "sha256": "3b36c0426845f0486e264d6cee4891aa93b46027f016a3d63a044f54505584cd"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3481721,
+          "sha256": "1c3a25a265eee6832aa274ec3ce63985e80a3b64bf9f9b1d24b95459c5c2c484"
+        },
+        {
+          "path": "textures/material_01.png",
+          "bytes": 15232,
+          "sha256": "b749c0d439ba5d1d992bc717ef44e49be2162ba341f8625b515c5dc4c44e8cac"
+        }
+      ],
+      "vertex_count": 2058,
+      "face_count": 686,
+      "material_count": 2,
+      "image_count": 2,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B365571571301063A0/geometry_hole/heavy/B365571571301063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B365571571301063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "parameters": {
+        "retained_face_fraction": 0.85
+      },
+      "seed": 15561622856270385548,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B365571571301063A0/B365571571301063A0.gltf",
+      "source_asset_digest": "b3a3d463ad3259e03181657891d57af124000a097223b7280a55caf7505ef734",
+      "source_vertex_count": 2940,
+      "source_face_count": 980,
+      "generated_vertex_count": 2499,
+      "generated_face_count": 833,
+      "asset_digest": "6ada9fa40d20046c5bdb37fe40b744f58a24cab3f80a81e5f7472f009de6fda2",
+      "dependencies": [
+        {
+          "path": "B365571571301063A0.gltf",
+          "bytes": 3964,
+          "sha256": "0f22c3cec0ae6b03bc9e497d34d20902120081a6c858fc9f0d51c2d411e108c7"
+        },
+        {
+          "path": "B365571571301063A0.bin",
+          "bytes": 89964,
+          "sha256": "da867cf84c4dfe7f5b34f4005a3d8de3c5c594acaf1813d440573a9c3a706f14"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3481721,
+          "sha256": "1c3a25a265eee6832aa274ec3ce63985e80a3b64bf9f9b1d24b95459c5c2c484"
+        },
+        {
+          "path": "textures/material_01.png",
+          "bytes": 15232,
+          "sha256": "b749c0d439ba5d1d992bc717ef44e49be2162ba341f8625b515c5dc4c44e8cac"
+        }
+      ],
+      "vertex_count": 2499,
+      "face_count": 833,
+      "material_count": 2,
+      "image_count": 2,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B365571571301063A0/mesh_simplification_qem/light/B365571571301063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B365571571301063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "parameters": {
+        "retained_face_fraction": 0.7
+      },
+      "seed": 15561622856270385548,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B365571571301063A0/B365571571301063A0.gltf",
+      "source_asset_digest": "b3a3d463ad3259e03181657891d57af124000a097223b7280a55caf7505ef734",
+      "source_vertex_count": 2940,
+      "source_face_count": 980,
+      "generated_vertex_count": 2058,
+      "generated_face_count": 686,
+      "asset_digest": "3bae00a380af79786b23a51795fe135bae2793e99cdc517f754a1403d88d2d65",
+      "dependencies": [
+        {
+          "path": "B365571571301063A0.gltf",
+          "bytes": 3989,
+          "sha256": "b757e1cc60cf46f3149ac446c4496976780485e8ea3b6c902bdc22073ea57b68"
+        },
+        {
+          "path": "B365571571301063A0.bin",
+          "bytes": 74088,
+          "sha256": "5fe7245ddf435c5b7b779708fa3b9bf7b3d2da8e99e24a1bbaffb18f0b8d29bf"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3481721,
+          "sha256": "1c3a25a265eee6832aa274ec3ce63985e80a3b64bf9f9b1d24b95459c5c2c484"
+        },
+        {
+          "path": "textures/material_01.png",
+          "bytes": 15232,
+          "sha256": "b749c0d439ba5d1d992bc717ef44e49be2162ba341f8625b515c5dc4c44e8cac"
+        }
+      ],
+      "vertex_count": 2058,
+      "face_count": 686,
+      "material_count": 2,
+      "image_count": 2,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B365571571301063A0/mesh_simplification_qem/medium/B365571571301063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B365571571301063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "parameters": {
+        "retained_face_fraction": 0.55
+      },
+      "seed": 15561622856270385548,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B365571571301063A0/B365571571301063A0.gltf",
+      "source_asset_digest": "b3a3d463ad3259e03181657891d57af124000a097223b7280a55caf7505ef734",
+      "source_vertex_count": 2940,
+      "source_face_count": 980,
+      "generated_vertex_count": 1614,
+      "generated_face_count": 538,
+      "asset_digest": "cf0210bdd5814c5f65a7af6939619053bd36527cac458028675956092510d0c4",
+      "dependencies": [
+        {
+          "path": "B365571571301063A0.gltf",
+          "bytes": 3988,
+          "sha256": "e096a8b6c02f30487c3b148f617364f70d898acd5ede01df9da3ad2cc65eb2b4"
+        },
+        {
+          "path": "B365571571301063A0.bin",
+          "bytes": 58104,
+          "sha256": "8568441fd7eb921bd99fe918869bef1013585d1c366fbeb71976a6fe2c5f83e6"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3481721,
+          "sha256": "1c3a25a265eee6832aa274ec3ce63985e80a3b64bf9f9b1d24b95459c5c2c484"
+        },
+        {
+          "path": "textures/material_01.png",
+          "bytes": 15232,
+          "sha256": "b749c0d439ba5d1d992bc717ef44e49be2162ba341f8625b515c5dc4c44e8cac"
+        }
+      ],
+      "vertex_count": 1614,
+      "face_count": 538,
+      "material_count": 2,
+      "image_count": 2,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B365571571301063A0/mesh_simplification_qem/heavy/B365571571301063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B365571571301063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "parameters": {
+        "bbox_diagonal_fraction": 0.001,
+        "affected_face_fraction": 0.03
+      },
+      "seed": 11955561530606452158,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B365571571301063A0/B365571571301063A0.gltf",
+      "source_asset_digest": "b3a3d463ad3259e03181657891d57af124000a097223b7280a55caf7505ef734",
+      "source_vertex_count": 2940,
+      "source_face_count": 980,
+      "generated_vertex_count": 2940,
+      "generated_face_count": 980,
+      "asset_digest": "54a2e237180f0421cdfd56a99e05b1c8fe1ececdf697930cfd0f10ec4d22e71b",
+      "dependencies": [
+        {
+          "path": "B365571571301063A0.gltf",
+          "bytes": 3971,
+          "sha256": "45d4e8b735c2dff732b3b97fcadaaad1126b5112f826a6383d36f3c72cf14757"
+        },
+        {
+          "path": "B365571571301063A0.bin",
+          "bytes": 105840,
+          "sha256": "40802984927f34def3142df97b3f4c151a3835d675389306779aac9a148cf56f"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3481721,
+          "sha256": "1c3a25a265eee6832aa274ec3ce63985e80a3b64bf9f9b1d24b95459c5c2c484"
+        },
+        {
+          "path": "textures/material_01.png",
+          "bytes": 15232,
+          "sha256": "b749c0d439ba5d1d992bc717ef44e49be2162ba341f8625b515c5dc4c44e8cac"
+        }
+      ],
+      "vertex_count": 2940,
+      "face_count": 980,
+      "material_count": 2,
+      "image_count": 2,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B365571571301063A0/geometry_noise_spike/light/B365571571301063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B365571571301063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "parameters": {
+        "bbox_diagonal_fraction": 0.003,
+        "affected_face_fraction": 0.07
+      },
+      "seed": 11955561530606452158,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B365571571301063A0/B365571571301063A0.gltf",
+      "source_asset_digest": "b3a3d463ad3259e03181657891d57af124000a097223b7280a55caf7505ef734",
+      "source_vertex_count": 2940,
+      "source_face_count": 980,
+      "generated_vertex_count": 2940,
+      "generated_face_count": 980,
+      "asset_digest": "88a822242e0fbb0055b3ceff24b1c834b5b30bd657e6b45f341cfb22e3d3f461",
+      "dependencies": [
+        {
+          "path": "B365571571301063A0.gltf",
+          "bytes": 3971,
+          "sha256": "45d4e8b735c2dff732b3b97fcadaaad1126b5112f826a6383d36f3c72cf14757"
+        },
+        {
+          "path": "B365571571301063A0.bin",
+          "bytes": 105840,
+          "sha256": "159a9dfe97afca7711b26b8509b3d24f039f6751e86fa8c6253120008594c1a2"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3481721,
+          "sha256": "1c3a25a265eee6832aa274ec3ce63985e80a3b64bf9f9b1d24b95459c5c2c484"
+        },
+        {
+          "path": "textures/material_01.png",
+          "bytes": 15232,
+          "sha256": "b749c0d439ba5d1d992bc717ef44e49be2162ba341f8625b515c5dc4c44e8cac"
+        }
+      ],
+      "vertex_count": 2940,
+      "face_count": 980,
+      "material_count": 2,
+      "image_count": 2,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B365571571301063A0/geometry_noise_spike/medium/B365571571301063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B365571571301063A0",
+      "sheet": "11-SW-10C",
+      "split": "train",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "parameters": {
+        "bbox_diagonal_fraction": 0.006,
+        "affected_face_fraction": 0.12
+      },
+      "seed": 11955561530606452158,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-10C/BUILDING/B365571571301063A0/B365571571301063A0.gltf",
+      "source_asset_digest": "b3a3d463ad3259e03181657891d57af124000a097223b7280a55caf7505ef734",
+      "source_vertex_count": 2940,
+      "source_face_count": 980,
+      "generated_vertex_count": 2940,
+      "generated_face_count": 980,
+      "asset_digest": "992a08400e13ea020a13c9f7b181a6da3aed772bfcae2134902f4064ae9805cb",
+      "dependencies": [
+        {
+          "path": "B365571571301063A0.gltf",
+          "bytes": 3975,
+          "sha256": "afb6d16dad25d744dfd6f1ca476fc2519a5b7a06e147c5c627da80a321900bd2"
+        },
+        {
+          "path": "B365571571301063A0.bin",
+          "bytes": 105840,
+          "sha256": "557bf32a2bfdab6673716b8979e9c6323164b952199bfa6f890e60bab29ce28b"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3481721,
+          "sha256": "1c3a25a265eee6832aa274ec3ce63985e80a3b64bf9f9b1d24b95459c5c2c484"
+        },
+        {
+          "path": "textures/material_01.png",
+          "bytes": 15232,
+          "sha256": "b749c0d439ba5d1d992bc717ef44e49be2162ba341f8625b515c5dc4c44e8cac"
+        }
+      ],
+      "vertex_count": 2940,
+      "face_count": 980,
+      "material_count": 2,
+      "image_count": 2,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-10C/BUILDING/B365571571301063A0/geometry_noise_spike/heavy/B365571571301063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B355041762402063A0",
+      "sheet": "11-SW-4B",
+      "split": "val",
+      "attack": "geometry_hole",
+      "level": "light",
+      "parameters": {
+        "removed_face_fraction": 0.05
+      },
+      "seed": 2753362984348430716,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-4B/BUILDING/B355041762402063A0/B355041762402063A0.gltf",
+      "source_asset_digest": "5d0931cb4ff52900497afdfe365558c7c88638a1aad4bb6c01fcd2908c6ae466",
+      "source_vertex_count": 36774,
+      "source_face_count": 12258,
+      "generated_vertex_count": 34935,
+      "generated_face_count": 11645,
+      "asset_digest": "dba4af796b18c34ba1ce7716578d597911cf6dd71db666c6cfc992578647a880",
+      "dependencies": [
+        {
+          "path": "B355041762402063A0.gltf",
+          "bytes": 20691,
+          "sha256": "087a3abc25d8c757a37d60425a5962dd58928a18884f0f34d639cef32ad47486"
+        },
+        {
+          "path": "B355041762402063A0.bin",
+          "bytes": 1257660,
+          "sha256": "bfc6a4995f3fae328111b4b6cdfb5a43019c9432ff3a86a71761edadf8ada4c4"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3113306,
+          "sha256": "0f0bf387df8e4bb7c6be25697fcd31d780901e69795d4083794c1b4b13b49996"
+        },
+        {
+          "path": "textures/material_01.jpg",
+          "bytes": 2861590,
+          "sha256": "d8c95e4431c497deb330b405dc96f8961a0609ea71ea178d0d8ae760b8b88057"
+        },
+        {
+          "path": "textures/material_02.jpg",
+          "bytes": 2778293,
+          "sha256": "befb68d4da32d87594be302e17d4992479d333a5ec97424026f696c7decfdc4a"
+        },
+        {
+          "path": "textures/material_03.jpg",
+          "bytes": 2331753,
+          "sha256": "6b5dd897996e147019350f77dda130f8b8fad8962fe836cbeeb8bc3191c253bc"
+        },
+        {
+          "path": "textures/material_04.jpg",
+          "bytes": 2630382,
+          "sha256": "80d8572e9e9a543123d3f480ee203d7d02835868509d53bec79799a0af3a7ef2"
+        },
+        {
+          "path": "textures/material_05.jpg",
+          "bytes": 1503898,
+          "sha256": "ade3beefa8cd15a26f9cae5733275d56c20cb2aba70724b20e69b32c0afe0233"
+        },
+        {
+          "path": "textures/material_06.jpg",
+          "bytes": 1720331,
+          "sha256": "6714d2836bef5c5eabe905a9a169d625f9b3c3b954b5cb8180ad63e070396b51"
+        },
+        {
+          "path": "textures/material_07.jpg",
+          "bytes": 1607257,
+          "sha256": "396357b06650c5b0919362b99c7ff57087dcbea559506157c34856a4ea03c5a9"
+        },
+        {
+          "path": "textures/material_08.jpg",
+          "bytes": 2393222,
+          "sha256": "a438cc179c7840d54819470c2af9e7010d9d3ddf91bc91090d6cb5da75f09c8a"
+        },
+        {
+          "path": "textures/material_09.jpg",
+          "bytes": 2388419,
+          "sha256": "3fd0130a49bceff3e0b67f939f72ad4b9fe8d77062c23b6a9979acfc8f428524"
+        },
+        {
+          "path": "textures/material_10.jpg",
+          "bytes": 1379396,
+          "sha256": "454d3ee032bd006813657eaf69880a186c3692e83d7caed50f38f0919ef87850"
+        },
+        {
+          "path": "textures/material_11.jpg",
+          "bytes": 1703795,
+          "sha256": "aa7b59a3378f9f90db5aad55ef44d0485525d2aeecd5129d20c7e4454589c9ca"
+        }
+      ],
+      "vertex_count": 34935,
+      "face_count": 11645,
+      "material_count": 12,
+      "image_count": 12,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-4B/BUILDING/B355041762402063A0/geometry_hole/light/B355041762402063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B355041762402063A0",
+      "sheet": "11-SW-4B",
+      "split": "val",
+      "attack": "geometry_hole",
+      "level": "medium",
+      "parameters": {
+        "removed_face_fraction": 0.15
+      },
+      "seed": 2753362984348430716,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-4B/BUILDING/B355041762402063A0/B355041762402063A0.gltf",
+      "source_asset_digest": "5d0931cb4ff52900497afdfe365558c7c88638a1aad4bb6c01fcd2908c6ae466",
+      "source_vertex_count": 36774,
+      "source_face_count": 12258,
+      "generated_vertex_count": 31257,
+      "generated_face_count": 10419,
+      "asset_digest": "73350d86d3cb8620b953159ffd901657f01e78a4041d33e2df6ff0511ab42aef",
+      "dependencies": [
+        {
+          "path": "B355041762402063A0.gltf",
+          "bytes": 20677,
+          "sha256": "dd12e54f5e255f79a11d0dc6aa95f68a354a7ef9c28d459cf04aeca588d26308"
+        },
+        {
+          "path": "B355041762402063A0.bin",
+          "bytes": 1125252,
+          "sha256": "a24968d1f3bbf9bda3a4d4dd98f74e02d76a729f7643f5a47fe9a444667ce9bf"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3113306,
+          "sha256": "0f0bf387df8e4bb7c6be25697fcd31d780901e69795d4083794c1b4b13b49996"
+        },
+        {
+          "path": "textures/material_01.jpg",
+          "bytes": 2861590,
+          "sha256": "d8c95e4431c497deb330b405dc96f8961a0609ea71ea178d0d8ae760b8b88057"
+        },
+        {
+          "path": "textures/material_02.jpg",
+          "bytes": 2778293,
+          "sha256": "befb68d4da32d87594be302e17d4992479d333a5ec97424026f696c7decfdc4a"
+        },
+        {
+          "path": "textures/material_03.jpg",
+          "bytes": 2331753,
+          "sha256": "6b5dd897996e147019350f77dda130f8b8fad8962fe836cbeeb8bc3191c253bc"
+        },
+        {
+          "path": "textures/material_04.jpg",
+          "bytes": 2630382,
+          "sha256": "80d8572e9e9a543123d3f480ee203d7d02835868509d53bec79799a0af3a7ef2"
+        },
+        {
+          "path": "textures/material_05.jpg",
+          "bytes": 1503898,
+          "sha256": "ade3beefa8cd15a26f9cae5733275d56c20cb2aba70724b20e69b32c0afe0233"
+        },
+        {
+          "path": "textures/material_06.jpg",
+          "bytes": 1720331,
+          "sha256": "6714d2836bef5c5eabe905a9a169d625f9b3c3b954b5cb8180ad63e070396b51"
+        },
+        {
+          "path": "textures/material_07.jpg",
+          "bytes": 1607257,
+          "sha256": "396357b06650c5b0919362b99c7ff57087dcbea559506157c34856a4ea03c5a9"
+        },
+        {
+          "path": "textures/material_08.jpg",
+          "bytes": 2393222,
+          "sha256": "a438cc179c7840d54819470c2af9e7010d9d3ddf91bc91090d6cb5da75f09c8a"
+        },
+        {
+          "path": "textures/material_09.jpg",
+          "bytes": 2388419,
+          "sha256": "3fd0130a49bceff3e0b67f939f72ad4b9fe8d77062c23b6a9979acfc8f428524"
+        },
+        {
+          "path": "textures/material_10.jpg",
+          "bytes": 1379396,
+          "sha256": "454d3ee032bd006813657eaf69880a186c3692e83d7caed50f38f0919ef87850"
+        },
+        {
+          "path": "textures/material_11.jpg",
+          "bytes": 1703795,
+          "sha256": "aa7b59a3378f9f90db5aad55ef44d0485525d2aeecd5129d20c7e4454589c9ca"
+        }
+      ],
+      "vertex_count": 31257,
+      "face_count": 10419,
+      "material_count": 12,
+      "image_count": 12,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-4B/BUILDING/B355041762402063A0/geometry_hole/medium/B355041762402063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B355041762402063A0",
+      "sheet": "11-SW-4B",
+      "split": "val",
+      "attack": "geometry_hole",
+      "level": "heavy",
+      "parameters": {
+        "removed_face_fraction": 0.3
+      },
+      "seed": 2753362984348430716,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-4B/BUILDING/B355041762402063A0/B355041762402063A0.gltf",
+      "source_asset_digest": "5d0931cb4ff52900497afdfe365558c7c88638a1aad4bb6c01fcd2908c6ae466",
+      "source_vertex_count": 36774,
+      "source_face_count": 12258,
+      "generated_vertex_count": 25743,
+      "generated_face_count": 8581,
+      "asset_digest": "ec5e2e46680aef64e7e709330269f3dc100763c134a145d990200b7edd2e42f5",
+      "dependencies": [
+        {
+          "path": "B355041762402063A0.gltf",
+          "bytes": 19467,
+          "sha256": "c0f1a222f27b8a6792dae3499d089f8e22ad62f59c78115d66d3460668181e7b"
+        },
+        {
+          "path": "B355041762402063A0.bin",
+          "bytes": 926748,
+          "sha256": "a34071852259fac54aeae3f24f8396a7b11e7d84b51d6054a1e301b48e429e2a"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3113306,
+          "sha256": "0f0bf387df8e4bb7c6be25697fcd31d780901e69795d4083794c1b4b13b49996"
+        },
+        {
+          "path": "textures/material_01.jpg",
+          "bytes": 2861590,
+          "sha256": "d8c95e4431c497deb330b405dc96f8961a0609ea71ea178d0d8ae760b8b88057"
+        },
+        {
+          "path": "textures/material_02.jpg",
+          "bytes": 2778293,
+          "sha256": "befb68d4da32d87594be302e17d4992479d333a5ec97424026f696c7decfdc4a"
+        },
+        {
+          "path": "textures/material_03.jpg",
+          "bytes": 2331753,
+          "sha256": "6b5dd897996e147019350f77dda130f8b8fad8962fe836cbeeb8bc3191c253bc"
+        },
+        {
+          "path": "textures/material_04.jpg",
+          "bytes": 2630382,
+          "sha256": "80d8572e9e9a543123d3f480ee203d7d02835868509d53bec79799a0af3a7ef2"
+        },
+        {
+          "path": "textures/material_05.jpg",
+          "bytes": 1503898,
+          "sha256": "ade3beefa8cd15a26f9cae5733275d56c20cb2aba70724b20e69b32c0afe0233"
+        },
+        {
+          "path": "textures/material_06.jpg",
+          "bytes": 1720331,
+          "sha256": "6714d2836bef5c5eabe905a9a169d625f9b3c3b954b5cb8180ad63e070396b51"
+        },
+        {
+          "path": "textures/material_07.jpg",
+          "bytes": 1607257,
+          "sha256": "396357b06650c5b0919362b99c7ff57087dcbea559506157c34856a4ea03c5a9"
+        },
+        {
+          "path": "textures/material_08.jpg",
+          "bytes": 2393222,
+          "sha256": "a438cc179c7840d54819470c2af9e7010d9d3ddf91bc91090d6cb5da75f09c8a"
+        },
+        {
+          "path": "textures/material_09.jpg",
+          "bytes": 2388419,
+          "sha256": "3fd0130a49bceff3e0b67f939f72ad4b9fe8d77062c23b6a9979acfc8f428524"
+        },
+        {
+          "path": "textures/material_10.jpg",
+          "bytes": 1379396,
+          "sha256": "454d3ee032bd006813657eaf69880a186c3692e83d7caed50f38f0919ef87850"
+        },
+        {
+          "path": "textures/material_11.jpg",
+          "bytes": 1703795,
+          "sha256": "aa7b59a3378f9f90db5aad55ef44d0485525d2aeecd5129d20c7e4454589c9ca"
+        }
+      ],
+      "vertex_count": 25743,
+      "face_count": 8581,
+      "material_count": 12,
+      "image_count": 12,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-4B/BUILDING/B355041762402063A0/geometry_hole/heavy/B355041762402063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B355041762402063A0",
+      "sheet": "11-SW-4B",
+      "split": "val",
+      "attack": "mesh_simplification_qem",
+      "level": "light",
+      "parameters": {
+        "retained_face_fraction": 0.85
+      },
+      "seed": 13715779543375698539,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-4B/BUILDING/B355041762402063A0/B355041762402063A0.gltf",
+      "source_asset_digest": "5d0931cb4ff52900497afdfe365558c7c88638a1aad4bb6c01fcd2908c6ae466",
+      "source_vertex_count": 36774,
+      "source_face_count": 12258,
+      "generated_vertex_count": 31254,
+      "generated_face_count": 10418,
+      "asset_digest": "3fd0bd95e110f10dfd646e65548dced1f9cbdb3809e036de5ad1627d6668278d",
+      "dependencies": [
+        {
+          "path": "B355041762402063A0.gltf",
+          "bytes": 20694,
+          "sha256": "6fa49406502ad47a462292a19d45c0a5fe55a715fb074b186d286c892f9ffab1"
+        },
+        {
+          "path": "B355041762402063A0.bin",
+          "bytes": 1125144,
+          "sha256": "93c33cdd32eb47a4218101a776c441b003f375b519622aea9f1a5f6fb22d0131"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3113306,
+          "sha256": "0f0bf387df8e4bb7c6be25697fcd31d780901e69795d4083794c1b4b13b49996"
+        },
+        {
+          "path": "textures/material_01.jpg",
+          "bytes": 2861590,
+          "sha256": "d8c95e4431c497deb330b405dc96f8961a0609ea71ea178d0d8ae760b8b88057"
+        },
+        {
+          "path": "textures/material_02.jpg",
+          "bytes": 2778293,
+          "sha256": "befb68d4da32d87594be302e17d4992479d333a5ec97424026f696c7decfdc4a"
+        },
+        {
+          "path": "textures/material_03.jpg",
+          "bytes": 2331753,
+          "sha256": "6b5dd897996e147019350f77dda130f8b8fad8962fe836cbeeb8bc3191c253bc"
+        },
+        {
+          "path": "textures/material_04.jpg",
+          "bytes": 2630382,
+          "sha256": "80d8572e9e9a543123d3f480ee203d7d02835868509d53bec79799a0af3a7ef2"
+        },
+        {
+          "path": "textures/material_05.jpg",
+          "bytes": 1503898,
+          "sha256": "ade3beefa8cd15a26f9cae5733275d56c20cb2aba70724b20e69b32c0afe0233"
+        },
+        {
+          "path": "textures/material_06.jpg",
+          "bytes": 1720331,
+          "sha256": "6714d2836bef5c5eabe905a9a169d625f9b3c3b954b5cb8180ad63e070396b51"
+        },
+        {
+          "path": "textures/material_07.jpg",
+          "bytes": 1607257,
+          "sha256": "396357b06650c5b0919362b99c7ff57087dcbea559506157c34856a4ea03c5a9"
+        },
+        {
+          "path": "textures/material_08.jpg",
+          "bytes": 2393222,
+          "sha256": "a438cc179c7840d54819470c2af9e7010d9d3ddf91bc91090d6cb5da75f09c8a"
+        },
+        {
+          "path": "textures/material_09.jpg",
+          "bytes": 2388419,
+          "sha256": "3fd0130a49bceff3e0b67f939f72ad4b9fe8d77062c23b6a9979acfc8f428524"
+        },
+        {
+          "path": "textures/material_10.jpg",
+          "bytes": 1379396,
+          "sha256": "454d3ee032bd006813657eaf69880a186c3692e83d7caed50f38f0919ef87850"
+        },
+        {
+          "path": "textures/material_11.jpg",
+          "bytes": 1703795,
+          "sha256": "aa7b59a3378f9f90db5aad55ef44d0485525d2aeecd5129d20c7e4454589c9ca"
+        }
+      ],
+      "vertex_count": 31254,
+      "face_count": 10418,
+      "material_count": 12,
+      "image_count": 12,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-4B/BUILDING/B355041762402063A0/mesh_simplification_qem/light/B355041762402063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B355041762402063A0",
+      "sheet": "11-SW-4B",
+      "split": "val",
+      "attack": "mesh_simplification_qem",
+      "level": "medium",
+      "parameters": {
+        "retained_face_fraction": 0.7
+      },
+      "seed": 13715779543375698539,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-4B/BUILDING/B355041762402063A0/B355041762402063A0.gltf",
+      "source_asset_digest": "5d0931cb4ff52900497afdfe365558c7c88638a1aad4bb6c01fcd2908c6ae466",
+      "source_vertex_count": 36774,
+      "source_face_count": 12258,
+      "generated_vertex_count": 25734,
+      "generated_face_count": 8578,
+      "asset_digest": "3d469403ff9eac338cac4ea3629a06b54ab46bb6502ddd806e53d9bc237d453f",
+      "dependencies": [
+        {
+          "path": "B355041762402063A0.gltf",
+          "bytes": 20669,
+          "sha256": "00d25c83b9b8673809cbcda0380845149a58ac3366ca23c4c76b0f8685841e9a"
+        },
+        {
+          "path": "B355041762402063A0.bin",
+          "bytes": 926424,
+          "sha256": "a28ff0c02b0e5465be0d3db4af334713325402ff0bc6cf155213b209be39fedb"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3113306,
+          "sha256": "0f0bf387df8e4bb7c6be25697fcd31d780901e69795d4083794c1b4b13b49996"
+        },
+        {
+          "path": "textures/material_01.jpg",
+          "bytes": 2861590,
+          "sha256": "d8c95e4431c497deb330b405dc96f8961a0609ea71ea178d0d8ae760b8b88057"
+        },
+        {
+          "path": "textures/material_02.jpg",
+          "bytes": 2778293,
+          "sha256": "befb68d4da32d87594be302e17d4992479d333a5ec97424026f696c7decfdc4a"
+        },
+        {
+          "path": "textures/material_03.jpg",
+          "bytes": 2331753,
+          "sha256": "6b5dd897996e147019350f77dda130f8b8fad8962fe836cbeeb8bc3191c253bc"
+        },
+        {
+          "path": "textures/material_04.jpg",
+          "bytes": 2630382,
+          "sha256": "80d8572e9e9a543123d3f480ee203d7d02835868509d53bec79799a0af3a7ef2"
+        },
+        {
+          "path": "textures/material_05.jpg",
+          "bytes": 1503898,
+          "sha256": "ade3beefa8cd15a26f9cae5733275d56c20cb2aba70724b20e69b32c0afe0233"
+        },
+        {
+          "path": "textures/material_06.jpg",
+          "bytes": 1720331,
+          "sha256": "6714d2836bef5c5eabe905a9a169d625f9b3c3b954b5cb8180ad63e070396b51"
+        },
+        {
+          "path": "textures/material_07.jpg",
+          "bytes": 1607257,
+          "sha256": "396357b06650c5b0919362b99c7ff57087dcbea559506157c34856a4ea03c5a9"
+        },
+        {
+          "path": "textures/material_08.jpg",
+          "bytes": 2393222,
+          "sha256": "a438cc179c7840d54819470c2af9e7010d9d3ddf91bc91090d6cb5da75f09c8a"
+        },
+        {
+          "path": "textures/material_09.jpg",
+          "bytes": 2388419,
+          "sha256": "3fd0130a49bceff3e0b67f939f72ad4b9fe8d77062c23b6a9979acfc8f428524"
+        },
+        {
+          "path": "textures/material_10.jpg",
+          "bytes": 1379396,
+          "sha256": "454d3ee032bd006813657eaf69880a186c3692e83d7caed50f38f0919ef87850"
+        },
+        {
+          "path": "textures/material_11.jpg",
+          "bytes": 1703795,
+          "sha256": "aa7b59a3378f9f90db5aad55ef44d0485525d2aeecd5129d20c7e4454589c9ca"
+        }
+      ],
+      "vertex_count": 25734,
+      "face_count": 8578,
+      "material_count": 12,
+      "image_count": 12,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-4B/BUILDING/B355041762402063A0/mesh_simplification_qem/medium/B355041762402063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B355041762402063A0",
+      "sheet": "11-SW-4B",
+      "split": "val",
+      "attack": "mesh_simplification_qem",
+      "level": "heavy",
+      "parameters": {
+        "retained_face_fraction": 0.55
+      },
+      "seed": 13715779543375698539,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-4B/BUILDING/B355041762402063A0/B355041762402063A0.gltf",
+      "source_asset_digest": "5d0931cb4ff52900497afdfe365558c7c88638a1aad4bb6c01fcd2908c6ae466",
+      "source_vertex_count": 36774,
+      "source_face_count": 12258,
+      "generated_vertex_count": 20223,
+      "generated_face_count": 6741,
+      "asset_digest": "e3b1b8454d42ebb1d3056a165297c36ea28dfd6d72fa3093e3912dd43c530843",
+      "dependencies": [
+        {
+          "path": "B355041762402063A0.gltf",
+          "bytes": 20656,
+          "sha256": "5786750becdd87dd773cf06d69facf9c1cccc7093a5155ba5a76b237af4a463a"
+        },
+        {
+          "path": "B355041762402063A0.bin",
+          "bytes": 728028,
+          "sha256": "747bc6c6fba9f361bef383698bb1b6a98129762ff771548dae54a0f3d4be53bc"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3113306,
+          "sha256": "0f0bf387df8e4bb7c6be25697fcd31d780901e69795d4083794c1b4b13b49996"
+        },
+        {
+          "path": "textures/material_01.jpg",
+          "bytes": 2861590,
+          "sha256": "d8c95e4431c497deb330b405dc96f8961a0609ea71ea178d0d8ae760b8b88057"
+        },
+        {
+          "path": "textures/material_02.jpg",
+          "bytes": 2778293,
+          "sha256": "befb68d4da32d87594be302e17d4992479d333a5ec97424026f696c7decfdc4a"
+        },
+        {
+          "path": "textures/material_03.jpg",
+          "bytes": 2331753,
+          "sha256": "6b5dd897996e147019350f77dda130f8b8fad8962fe836cbeeb8bc3191c253bc"
+        },
+        {
+          "path": "textures/material_04.jpg",
+          "bytes": 2630382,
+          "sha256": "80d8572e9e9a543123d3f480ee203d7d02835868509d53bec79799a0af3a7ef2"
+        },
+        {
+          "path": "textures/material_05.jpg",
+          "bytes": 1503898,
+          "sha256": "ade3beefa8cd15a26f9cae5733275d56c20cb2aba70724b20e69b32c0afe0233"
+        },
+        {
+          "path": "textures/material_06.jpg",
+          "bytes": 1720331,
+          "sha256": "6714d2836bef5c5eabe905a9a169d625f9b3c3b954b5cb8180ad63e070396b51"
+        },
+        {
+          "path": "textures/material_07.jpg",
+          "bytes": 1607257,
+          "sha256": "396357b06650c5b0919362b99c7ff57087dcbea559506157c34856a4ea03c5a9"
+        },
+        {
+          "path": "textures/material_08.jpg",
+          "bytes": 2393222,
+          "sha256": "a438cc179c7840d54819470c2af9e7010d9d3ddf91bc91090d6cb5da75f09c8a"
+        },
+        {
+          "path": "textures/material_09.jpg",
+          "bytes": 2388419,
+          "sha256": "3fd0130a49bceff3e0b67f939f72ad4b9fe8d77062c23b6a9979acfc8f428524"
+        },
+        {
+          "path": "textures/material_10.jpg",
+          "bytes": 1379396,
+          "sha256": "454d3ee032bd006813657eaf69880a186c3692e83d7caed50f38f0919ef87850"
+        },
+        {
+          "path": "textures/material_11.jpg",
+          "bytes": 1703795,
+          "sha256": "aa7b59a3378f9f90db5aad55ef44d0485525d2aeecd5129d20c7e4454589c9ca"
+        }
+      ],
+      "vertex_count": 20223,
+      "face_count": 6741,
+      "material_count": 12,
+      "image_count": 12,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-4B/BUILDING/B355041762402063A0/mesh_simplification_qem/heavy/B355041762402063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B355041762402063A0",
+      "sheet": "11-SW-4B",
+      "split": "val",
+      "attack": "geometry_noise_spike",
+      "level": "light",
+      "parameters": {
+        "bbox_diagonal_fraction": 0.001,
+        "affected_face_fraction": 0.03
+      },
+      "seed": 4672316977224838665,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-4B/BUILDING/B355041762402063A0/B355041762402063A0.gltf",
+      "source_asset_digest": "5d0931cb4ff52900497afdfe365558c7c88638a1aad4bb6c01fcd2908c6ae466",
+      "source_vertex_count": 36774,
+      "source_face_count": 12258,
+      "generated_vertex_count": 36774,
+      "generated_face_count": 12258,
+      "asset_digest": "43942c1bc9e7931b92f23bd35794d6c158b89734e182f689ee04276fc6207946",
+      "dependencies": [
+        {
+          "path": "B355041762402063A0.gltf",
+          "bytes": 20723,
+          "sha256": "9f46b932d15a4a3b5d2b38f4511029e5dc21cc845f70b010a26967e10945e489"
+        },
+        {
+          "path": "B355041762402063A0.bin",
+          "bytes": 1323864,
+          "sha256": "889235b2b7795f55195ba79b62abac1f92ff82bb2650a5255f48aa021df7a22b"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3113306,
+          "sha256": "0f0bf387df8e4bb7c6be25697fcd31d780901e69795d4083794c1b4b13b49996"
+        },
+        {
+          "path": "textures/material_01.jpg",
+          "bytes": 2861590,
+          "sha256": "d8c95e4431c497deb330b405dc96f8961a0609ea71ea178d0d8ae760b8b88057"
+        },
+        {
+          "path": "textures/material_02.jpg",
+          "bytes": 2778293,
+          "sha256": "befb68d4da32d87594be302e17d4992479d333a5ec97424026f696c7decfdc4a"
+        },
+        {
+          "path": "textures/material_03.jpg",
+          "bytes": 2331753,
+          "sha256": "6b5dd897996e147019350f77dda130f8b8fad8962fe836cbeeb8bc3191c253bc"
+        },
+        {
+          "path": "textures/material_04.jpg",
+          "bytes": 2630382,
+          "sha256": "80d8572e9e9a543123d3f480ee203d7d02835868509d53bec79799a0af3a7ef2"
+        },
+        {
+          "path": "textures/material_05.jpg",
+          "bytes": 1503898,
+          "sha256": "ade3beefa8cd15a26f9cae5733275d56c20cb2aba70724b20e69b32c0afe0233"
+        },
+        {
+          "path": "textures/material_06.jpg",
+          "bytes": 1720331,
+          "sha256": "6714d2836bef5c5eabe905a9a169d625f9b3c3b954b5cb8180ad63e070396b51"
+        },
+        {
+          "path": "textures/material_07.jpg",
+          "bytes": 1607257,
+          "sha256": "396357b06650c5b0919362b99c7ff57087dcbea559506157c34856a4ea03c5a9"
+        },
+        {
+          "path": "textures/material_08.jpg",
+          "bytes": 2393222,
+          "sha256": "a438cc179c7840d54819470c2af9e7010d9d3ddf91bc91090d6cb5da75f09c8a"
+        },
+        {
+          "path": "textures/material_09.jpg",
+          "bytes": 2388419,
+          "sha256": "3fd0130a49bceff3e0b67f939f72ad4b9fe8d77062c23b6a9979acfc8f428524"
+        },
+        {
+          "path": "textures/material_10.jpg",
+          "bytes": 1379396,
+          "sha256": "454d3ee032bd006813657eaf69880a186c3692e83d7caed50f38f0919ef87850"
+        },
+        {
+          "path": "textures/material_11.jpg",
+          "bytes": 1703795,
+          "sha256": "aa7b59a3378f9f90db5aad55ef44d0485525d2aeecd5129d20c7e4454589c9ca"
+        }
+      ],
+      "vertex_count": 36774,
+      "face_count": 12258,
+      "material_count": 12,
+      "image_count": 12,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-4B/BUILDING/B355041762402063A0/geometry_noise_spike/light/B355041762402063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B355041762402063A0",
+      "sheet": "11-SW-4B",
+      "split": "val",
+      "attack": "geometry_noise_spike",
+      "level": "medium",
+      "parameters": {
+        "bbox_diagonal_fraction": 0.003,
+        "affected_face_fraction": 0.07
+      },
+      "seed": 4672316977224838665,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-4B/BUILDING/B355041762402063A0/B355041762402063A0.gltf",
+      "source_asset_digest": "5d0931cb4ff52900497afdfe365558c7c88638a1aad4bb6c01fcd2908c6ae466",
+      "source_vertex_count": 36774,
+      "source_face_count": 12258,
+      "generated_vertex_count": 36774,
+      "generated_face_count": 12258,
+      "asset_digest": "91c577bdd82f07916019eaf1e92081b4613c58f1aecffe41108afe9523dda801",
+      "dependencies": [
+        {
+          "path": "B355041762402063A0.gltf",
+          "bytes": 20747,
+          "sha256": "a2935046fd130c63e3f4e92bb378db0cbb70d0fad45c23edfd91da5286f4fc5b"
+        },
+        {
+          "path": "B355041762402063A0.bin",
+          "bytes": 1323864,
+          "sha256": "9f4ad5cddeb7048934486b669c1b5b395074543d9bdd88300e802ab351577a7e"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3113306,
+          "sha256": "0f0bf387df8e4bb7c6be25697fcd31d780901e69795d4083794c1b4b13b49996"
+        },
+        {
+          "path": "textures/material_01.jpg",
+          "bytes": 2861590,
+          "sha256": "d8c95e4431c497deb330b405dc96f8961a0609ea71ea178d0d8ae760b8b88057"
+        },
+        {
+          "path": "textures/material_02.jpg",
+          "bytes": 2778293,
+          "sha256": "befb68d4da32d87594be302e17d4992479d333a5ec97424026f696c7decfdc4a"
+        },
+        {
+          "path": "textures/material_03.jpg",
+          "bytes": 2331753,
+          "sha256": "6b5dd897996e147019350f77dda130f8b8fad8962fe836cbeeb8bc3191c253bc"
+        },
+        {
+          "path": "textures/material_04.jpg",
+          "bytes": 2630382,
+          "sha256": "80d8572e9e9a543123d3f480ee203d7d02835868509d53bec79799a0af3a7ef2"
+        },
+        {
+          "path": "textures/material_05.jpg",
+          "bytes": 1503898,
+          "sha256": "ade3beefa8cd15a26f9cae5733275d56c20cb2aba70724b20e69b32c0afe0233"
+        },
+        {
+          "path": "textures/material_06.jpg",
+          "bytes": 1720331,
+          "sha256": "6714d2836bef5c5eabe905a9a169d625f9b3c3b954b5cb8180ad63e070396b51"
+        },
+        {
+          "path": "textures/material_07.jpg",
+          "bytes": 1607257,
+          "sha256": "396357b06650c5b0919362b99c7ff57087dcbea559506157c34856a4ea03c5a9"
+        },
+        {
+          "path": "textures/material_08.jpg",
+          "bytes": 2393222,
+          "sha256": "a438cc179c7840d54819470c2af9e7010d9d3ddf91bc91090d6cb5da75f09c8a"
+        },
+        {
+          "path": "textures/material_09.jpg",
+          "bytes": 2388419,
+          "sha256": "3fd0130a49bceff3e0b67f939f72ad4b9fe8d77062c23b6a9979acfc8f428524"
+        },
+        {
+          "path": "textures/material_10.jpg",
+          "bytes": 1379396,
+          "sha256": "454d3ee032bd006813657eaf69880a186c3692e83d7caed50f38f0919ef87850"
+        },
+        {
+          "path": "textures/material_11.jpg",
+          "bytes": 1703795,
+          "sha256": "aa7b59a3378f9f90db5aad55ef44d0485525d2aeecd5129d20c7e4454589c9ca"
+        }
+      ],
+      "vertex_count": 36774,
+      "face_count": 12258,
+      "material_count": 12,
+      "image_count": 12,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-4B/BUILDING/B355041762402063A0/geometry_noise_spike/medium/B355041762402063A0.gltf"
+    },
+    {
+      "schema_version": 2,
+      "generator_signature": "af7fca4ea00809b17f2449c35257470c02d791584910b46e94978ad01411a147",
+      "asset_id": "B355041762402063A0",
+      "sheet": "11-SW-4B",
+      "split": "val",
+      "attack": "geometry_noise_spike",
+      "level": "heavy",
+      "parameters": {
+        "bbox_diagonal_fraction": 0.006,
+        "affected_face_fraction": 0.12
+      },
+      "seed": 4672316977224838665,
+      "source_gltf": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised/11-SW-4B/BUILDING/B355041762402063A0/B355041762402063A0.gltf",
+      "source_asset_digest": "5d0931cb4ff52900497afdfe365558c7c88638a1aad4bb6c01fcd2908c6ae466",
+      "source_vertex_count": 36774,
+      "source_face_count": 12258,
+      "generated_vertex_count": 36774,
+      "generated_face_count": 12258,
+      "asset_digest": "4ee120c7df31d61842f068c103be340b9391da99dffd5d2b1f09beaf1574640e",
+      "dependencies": [
+        {
+          "path": "B355041762402063A0.gltf",
+          "bytes": 20763,
+          "sha256": "76e02bc47a7d1c8e64a268a18988d6efbea58f76c6e85711efdd4a50b317df13"
+        },
+        {
+          "path": "B355041762402063A0.bin",
+          "bytes": 1323864,
+          "sha256": "c03388e53b8badd47adfcf5f29bdb05aa0d8e6fdea9a5cf3a8fb24170f2d0433"
+        },
+        {
+          "path": "textures/material_00.jpg",
+          "bytes": 3113306,
+          "sha256": "0f0bf387df8e4bb7c6be25697fcd31d780901e69795d4083794c1b4b13b49996"
+        },
+        {
+          "path": "textures/material_01.jpg",
+          "bytes": 2861590,
+          "sha256": "d8c95e4431c497deb330b405dc96f8961a0609ea71ea178d0d8ae760b8b88057"
+        },
+        {
+          "path": "textures/material_02.jpg",
+          "bytes": 2778293,
+          "sha256": "befb68d4da32d87594be302e17d4992479d333a5ec97424026f696c7decfdc4a"
+        },
+        {
+          "path": "textures/material_03.jpg",
+          "bytes": 2331753,
+          "sha256": "6b5dd897996e147019350f77dda130f8b8fad8962fe836cbeeb8bc3191c253bc"
+        },
+        {
+          "path": "textures/material_04.jpg",
+          "bytes": 2630382,
+          "sha256": "80d8572e9e9a543123d3f480ee203d7d02835868509d53bec79799a0af3a7ef2"
+        },
+        {
+          "path": "textures/material_05.jpg",
+          "bytes": 1503898,
+          "sha256": "ade3beefa8cd15a26f9cae5733275d56c20cb2aba70724b20e69b32c0afe0233"
+        },
+        {
+          "path": "textures/material_06.jpg",
+          "bytes": 1720331,
+          "sha256": "6714d2836bef5c5eabe905a9a169d625f9b3c3b954b5cb8180ad63e070396b51"
+        },
+        {
+          "path": "textures/material_07.jpg",
+          "bytes": 1607257,
+          "sha256": "396357b06650c5b0919362b99c7ff57087dcbea559506157c34856a4ea03c5a9"
+        },
+        {
+          "path": "textures/material_08.jpg",
+          "bytes": 2393222,
+          "sha256": "a438cc179c7840d54819470c2af9e7010d9d3ddf91bc91090d6cb5da75f09c8a"
+        },
+        {
+          "path": "textures/material_09.jpg",
+          "bytes": 2388419,
+          "sha256": "3fd0130a49bceff3e0b67f939f72ad4b9fe8d77062c23b6a9979acfc8f428524"
+        },
+        {
+          "path": "textures/material_10.jpg",
+          "bytes": 1379396,
+          "sha256": "454d3ee032bd006813657eaf69880a186c3692e83d7caed50f38f0919ef87850"
+        },
+        {
+          "path": "textures/material_11.jpg",
+          "bytes": 1703795,
+          "sha256": "aa7b59a3378f9f90db5aad55ef44d0485525d2aeecd5129d20c7e4454589c9ca"
+        }
+      ],
+      "vertex_count": 36774,
+      "face_count": 12258,
+      "material_count": 12,
+      "image_count": 12,
+      "gltf_path": "/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-Attack-Pilot-v2/11-SW-4B/BUILDING/B355041762402063A0/geometry_noise_spike/heavy/B355041762402063A0.gltf"
+    }
+  ]
+}

@@ -100,11 +100,13 @@ def export_textured_gltf(
     for index in range(material_count):
         profile = material_profiles[index] if index < len(material_profiles) else {}
         pbr: dict[str, object] = dict(profile.get("pbrMetallicRoughness", {}))
-        pbr.pop("baseColorTexture", None)
-        pbr.setdefault("metallicFactor", 0.0)
-        pbr.setdefault("roughnessFactor", 1.0)
+        base_color_texture = dict(pbr.pop("baseColorTexture", {}))
+        if not profile:
+            pbr.setdefault("metallicFactor", 0.0)
+            pbr.setdefault("roughnessFactor", 1.0)
         if index < len(textures):
-            pbr["baseColorTexture"] = {"index": index}
+            base_color_texture["index"] = index
+            pbr["baseColorTexture"] = base_color_texture
         material = {
             "name": profile.get("name") or f"material_{index:02d}",
             "doubleSided": bool(profile.get("doubleSided", True)),
