@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "seed": 2026,
+  "protocol": {
+    "train_count": 1518,
+    "val_count": 760,
+    "loaded_splits": ["train", "val"],
+    "test_blind_loaded": false,
+    "selection": "Val OQI SRCC, minimum component SRCC, OQI MAE",
+    "head_lr": 0.0002,
+    "base_lr": 0.00001,
+    "gradient_clip": 1.0,
+    "early_stopping_patience": 12
+  },
+  "frozen_control": {
+    "best_epoch": 6,
+    "epochs_run": 18,
+    "val_oqi_mae": 0.2264678180217743,
+    "val_oqi_plcc": 0.5997305938526462,
+    "val_oqi_srcc": 0.6152404408871627,
+    "val_geometry_srcc": 0.6674248316411879,
+    "val_texture_srcc": 0.6137519851339918
+  },
+  "last_blocks": {
+    "best_epoch": 15,
+    "epochs_run": 27,
+    "val_oqi_mae": 0.1772315800189972,
+    "val_oqi_plcc": 0.6759624395915871,
+    "val_oqi_srcc": 0.6772569934007671,
+    "val_geometry_srcc": 0.7175438122996958,
+    "val_texture_srcc": 0.651623048833065
+  },
+  "decision": "Accept partial unfreezing of the final Point local block, Mesh face block, and Mesh fusion block."
+}
