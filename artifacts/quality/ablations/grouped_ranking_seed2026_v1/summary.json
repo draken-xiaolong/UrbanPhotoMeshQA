@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "seed": 2026,
+  "protocol": {
+    "train_count": 1518,
+    "val_count": 760,
+    "loaded_splits": ["train", "val"],
+    "test_blind_loaded": false,
+    "batch_buildings": 4,
+    "ranking_pairs": "within the same building only"
+  },
+  "random_batch_reference": {
+    "val_oqi_mae": 0.2259843498468399,
+    "val_oqi_srcc": 0.6082111106158876,
+    "val_geometry_srcc": 0.6565424421126635,
+    "val_texture_srcc": 0.6096257758876282
+  },
+  "grouped_ranking": {
+    "val_oqi_mae": 0.23219303786754608,
+    "val_oqi_srcc": 0.6075209516384937,
+    "val_geometry_srcc": 0.6983480701417216,
+    "val_texture_srcc": 0.6279012671178862
+  },
+  "decision": "Reject because primary OQI SRCC and MAE regress, despite stronger component correlations."
+}

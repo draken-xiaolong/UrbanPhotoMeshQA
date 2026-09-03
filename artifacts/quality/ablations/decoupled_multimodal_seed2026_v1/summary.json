@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "seed": 2026,
+  "protocol": {
+    "train_count": 1518,
+    "val_count": 760,
+    "loaded_splits": [
+      "train",
+      "val"
+    ],
+    "test_blind_loaded": false,
+    "admission_gate": "Improve OQI without materially regressing Geometry or Texture SRCC"
+  },
+  "shared_balanced": {
+    "val_oqi_mae": 0.2259843498468399,
+    "val_oqi_plcc": 0.5989444898606427,
+    "val_oqi_srcc": 0.6082111106158876,
+    "val_geometry_srcc": 0.6565424421126635,
+    "val_texture_srcc": 0.6096257758876282,
+    "decision": "retain"
+  },
+  "hard_min_decoupled": {
+    "val_oqi_srcc": 0.5769773465629529,
+    "val_geometry_srcc": 0.5675124221674811,
+    "val_texture_srcc": 0.5525123516729475,
+    "decision": "reject"
+  },
+  "decoupled_learned_fusion": {
+    "val_oqi_srcc": 0.5942679959137789,
+    "val_geometry_srcc": 0.5591828454818712,
+    "val_texture_srcc": 0.5469506043675023,
+    "decision": "reject"
+  },
+  "modality_weighted_shared": {
+    "val_oqi_srcc": 0.6194395052036041,
+    "val_geometry_srcc": 0.3914939448563495,
+    "val_texture_srcc": 0.6332409648740213,
+    "decision": "reject: OQI gain sacrifices Geometry"
+  },
+  "decision": "Keep shared multimodal fusion with the new spatial texture input; forced modality decoupling is not adopted."
+}

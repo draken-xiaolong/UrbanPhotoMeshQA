@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "counts": {
+    "train": 1518,
+    "val": 760
+  },
+  "texture_signature": "7f096b9dc258486729b1844254e21fbd5f1d925eac162c935bba4dd80354ae4a",
+  "loaded_splits": [
+    "train",
+    "val"
+  ],
+  "test_blind_loaded": false,
+  "geometry_texture_attacks": "reuse same-asset clean geometry features",
+  "texture_geometry_attacks": "extract attacked glTF visible texture features"
+}

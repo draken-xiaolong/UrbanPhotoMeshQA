@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "source_split": "train",
+  "formal_val_loaded": false,
+  "test_blind_loaded": false,
+  "folds": [
+    {
+      "id": "11_ne_13b",
+      "held_out_sheet": "11-NE-13B",
+      "train_count": 1214,
+      "val_count": 304,
+      "train_sheets": [
+        "11-SW-10C",
+        "11-SW-15A",
+        "11-SW-5A",
+        "11-SW-9D"
+      ]
+    },
+    {
+      "id": "11_sw_10c",
+      "held_out_sheet": "11-SW-10C",
+      "train_count": 1214,
+      "val_count": 304,
+      "train_sheets": [
+        "11-NE-13B",
+        "11-SW-15A",
+        "11-SW-5A",
+        "11-SW-9D"
+      ]
+    },
+    {
+      "id": "11_sw_15a",
+      "held_out_sheet": "11-SW-15A",
+      "train_count": 1214,
+      "val_count": 304,
+      "train_sheets": [
+        "11-NE-13B",
+        "11-SW-10C",
+        "11-SW-5A",
+        "11-SW-9D"
+      ]
+    },
+    {
+      "id": "11_sw_5a",
+      "held_out_sheet": "11-SW-5A",
+      "train_count": 1215,
+      "val_count": 303,
+      "train_sheets": [
+        "11-NE-13B",
+        "11-SW-10C",
+        "11-SW-15A",
+        "11-SW-9D"
+      ]
+    },
+    {
+      "id": "11_sw_9d",
+      "held_out_sheet": "11-SW-9D",
+      "train_count": 1215,
+      "val_count": 303,
+      "train_sheets": [
+        "11-NE-13B",
+        "11-SW-10C",
+        "11-SW-15A",
+        "11-SW-5A"
+      ]
+    }
+  ]
+}

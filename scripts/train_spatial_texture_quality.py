@@ -49,10 +49,10 @@ class TextureQualityModel(nn.Module):
         self.regression = nn.Sequential(nn.Linear(final_dim, 128), nn.LayerNorm(128), nn.GELU(),
                                         nn.Dropout(0.1), nn.Linear(128, 1), nn.Sigmoid())
 
-    def forward(self, tokens, token_mask, view_stats, asset_stats):
+    def encode(self, tokens, token_mask, view_stats, asset_stats):
         if self.variant == "pooled":
             pooled = tokens[:, :, 0].mean(dim=1)
-            return self.regression(self.token_projection(pooled)).squeeze(1)
+            return self.token_projection(pooled)
         encoded = self.token_projection(tokens) + self.view_embedding + self.spatial_embedding
         if self.variant == "spatial_stats":
             encoded = encoded + self.view_statistics(view_stats)[:, :, None, :]
@@ -63,7 +63,10 @@ class TextureQualityModel(nn.Module):
         pooled = torch.sum(torch.softmax(logits, dim=1)[:, :, None] * encoded, dim=1)
         if self.variant == "spatial_stats":
             pooled = torch.cat([pooled, self.asset_statistics(asset_stats)], dim=1)
-        return self.regression(pooled).squeeze(1)
+        return pooled
+
+    def forward(self, tokens, token_mask, view_stats, asset_stats):
+        return self.regression(self.encode(tokens, token_mask, view_stats, asset_stats)).squeeze(1)
 
 
 def load_data(root: Path, split: str, device: torch.device, statistics=None):
