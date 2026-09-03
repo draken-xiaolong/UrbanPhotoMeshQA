@@ -1,0 +1,139 @@
+{
+  "schema_version": 2,
+  "status": "PASSED",
+  "records": 1837,
+  "all_finite": true,
+  "split_order_checks": {
+    "train": true,
+    "val": true,
+    "test": true,
+    "blind": true
+  },
+  "repeatability": {
+    "records": 30,
+    "finite": true,
+    "maximum_absolute_difference": 0.0,
+    "tolerance": 1e-05,
+    "passed": true
+  },
+  "raw_primary_metric_monotonicity": {
+    "geometry_hole": {
+      "passed": 183,
+      "total": 184,
+      "rate": 0.9945652173913043
+    },
+    "mesh_simplification_qem": {
+      "passed": 176,
+      "total": 184,
+      "rate": 0.9565217391304348
+    },
+    "geometry_noise_spike": {
+      "passed": 183,
+      "total": 184,
+      "rate": 0.9945652173913043
+    }
+  },
+  "raw_monotonicity_failures": [
+    {
+      "asset_id": "B362651541801063A0",
+      "attack": "geometry_hole",
+      "metric": "clean_missing_fraction_0p005",
+      "values": [
+        0.0042724609375,
+        0.0220947265625,
+        0.020263671875
+      ]
+    },
+    {
+      "asset_id": "B342351793101063A0",
+      "attack": "mesh_simplification_qem",
+      "metric": "symmetric_chamfer_l1",
+      "values": [
+        6.576301530003548e-06,
+        5.3495947213377804e-05,
+        5.096908353152685e-05
+      ]
+    },
+    {
+      "asset_id": "B343341787401063A0",
+      "attack": "mesh_simplification_qem",
+      "metric": "symmetric_chamfer_l1",
+      "values": [
+        2.3354554286925122e-05,
+        1.9181992684025317e-05,
+        4.17816117987968e-05
+      ]
+    },
+    {
+      "asset_id": "B356681521902063A0",
+      "attack": "mesh_simplification_qem",
+      "metric": "symmetric_chamfer_l1",
+      "values": [
+        0.002548960270360112,
+        0.002846007701009512,
+        0.002799626672640443
+      ]
+    },
+    {
+      "asset_id": "B358801736201063A0",
+      "attack": "mesh_simplification_qem",
+      "metric": "symmetric_chamfer_l1",
+      "values": [
+        0.00019958661869168282,
+        0.00023040638188831508,
+        0.0002077006793115288
+      ]
+    },
+    {
+      "asset_id": "B358881720201063A0",
+      "attack": "mesh_simplification_qem",
+      "metric": "symmetric_chamfer_l1",
+      "values": [
+        0.00011562215513549745,
+        8.319265180034563e-05,
+        8.537933899788186e-05
+      ]
+    },
+    {
+      "asset_id": "B359921765302063A0",
+      "attack": "mesh_simplification_qem",
+      "metric": "symmetric_chamfer_l1",
+      "values": [
+        2.2041117517801467e-06,
+        0.00016982412489596754,
+        0.0001661670539760962
+      ]
+    },
+    {
+      "asset_id": "B360561789001063A0",
+      "attack": "mesh_simplification_qem",
+      "metric": "symmetric_chamfer_l1",
+      "values": [
+        5.869984670425765e-05,
+        0.0004771728999912739,
+        0.0004712489899247885
+      ]
+    },
+    {
+      "asset_id": "B364261532601063A0",
+      "attack": "mesh_simplification_qem",
+      "metric": "symmetric_chamfer_l1",
+      "values": [
+        0.0005757565377280116,
+        0.00929738488048315,
+        0.009210958145558834
+      ]
+    },
+    {
+      "asset_id": "B423322148601062A0",
+      "attack": "geometry_noise_spike",
+      "metric": "symmetric_chamfer_l1",
+      "values": [
+        2.840057641151361e-05,
+        2.209199192293454e-05,
+        0.00018086643831338733
+      ]
+    }
+  ],
+  "monotonicity_policy": "Raw metrics remain unmodified; scalar quality applies a cumulative severity envelope within each asset and attack."
+}

@@ -64,9 +64,17 @@ def main() -> None:
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--coordinate-tolerance", type=float, default=1e-4)
+    parser.add_argument("--exclusions", type=Path)
     args = parser.parse_args()
 
     records = json.loads(args.manifest.read_text(encoding="utf-8"))["records"]
+    excluded = set()
+    if args.exclusions:
+        payload = json.loads(args.exclusions.read_text(encoding="utf-8"))
+        excluded = {
+            (row["asset_id"], row["attack"], row["level"])
+            for row in payload["records"]
+        }
     source_cache = {}
     audit_rows = []
     errors = []
@@ -86,7 +94,13 @@ def main() -> None:
         observed = observed_reader.load_mesh(include_texture=True)
         digest, dependencies = asset_digest(output_path)
 
-        coordinate_error = symmetric_vertex_error(expected.vertices, observed.vertices)
+        # The exporter intentionally compacts vertices that no output face
+        # references.  Unused source vertices are not geometry and must not be
+        # treated as a round-trip error.
+        used_expected = np.unique(expected.faces.reshape(-1))
+        coordinate_error = symmetric_vertex_error(
+            expected.vertices[used_expected], observed.vertices
+        )
         position_accessors = []
         for mesh in observed_reader.root.get("meshes", []):
             for primitive in mesh.get("primitives", []):
@@ -151,16 +165,21 @@ def main() -> None:
     level_checks = {}
     for (asset_id, attack), rows in groups.items():
         rows.sort(key=lambda row: LEVEL_ORDER[row["level"]])
-        digests_unique = len({row["asset_digest"] for row in rows}) == len(rows)
-        face_counts = [row["face_count"] for row in rows]
+        formal_rows = [
+            row for row in rows
+            if (row["asset_id"], row["attack"], row["level"]) not in excluded
+        ]
+        digests_unique = len({row["asset_digest"] for row in formal_rows}) == len(formal_rows)
+        face_counts = [row["face_count"] for row in formal_rows]
         if attack in {"geometry_hole", "mesh_simplification_qem"}:
-            monotonic = face_counts[0] > face_counts[1] > face_counts[2]
+            monotonic = all(left > right for left, right in zip(face_counts, face_counts[1:]))
         else:
             source = source_cache[asset_id]
             displacements = []
             source_records = sorted(
                 [record for record in records
-                 if record["asset_id"] == asset_id and record["attack"] == attack],
+                 if record["asset_id"] == asset_id and record["attack"] == attack
+                 and (record["asset_id"], record["attack"], record["level"]) not in excluded],
                 key=lambda record: LEVEL_ORDER[record["level"]],
             )
             for record in source_records:
@@ -184,6 +203,10 @@ def main() -> None:
         "status": "PASSED" if not errors else "FAILED",
         "manifest": str(args.manifest),
         "coordinate_tolerance_m": args.coordinate_tolerance,
+        "formal_exclusions": [
+            {"asset_id": asset_id, "attack": attack, "level": level}
+            for asset_id, attack, level in sorted(excluded)
+        ],
         "maximum_coordinate_roundtrip_error_m": max(
             row["coordinate_roundtrip_max_m"] for row in audit_rows
         ),

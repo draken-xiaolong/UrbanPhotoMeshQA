@@ -16,6 +16,7 @@ dependencies = [
 train = ["torch>=2.2", "tqdm>=4.66"]
 mesh = ["trimesh>=4.12", "fast-simplification>=0.2"]
 vision = ["opencv-python-headless>=4.10"]
+quality-targets = ["scipy>=1.10", "open3d>=0.19"]
 test = ["pytest>=8"]
 
 [tool.setuptools.packages.find]

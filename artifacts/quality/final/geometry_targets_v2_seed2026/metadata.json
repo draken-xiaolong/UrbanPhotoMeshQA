@@ -1,0 +1,29 @@
+{
+  "schema_version": 2,
+  "method": "deterministic dense surface samples queried against exact triangle surfaces",
+  "coordinate_frame": "clean bbox center and diagonal for both clean and degraded meshes",
+  "sample_count_per_direction": 8192,
+  "seed": 2026,
+  "metric_names": [
+    "symmetric_chamfer_l1",
+    "symmetric_chamfer_l2",
+    "symmetric_distance_p95",
+    "symmetric_distance_p99",
+    "symmetric_hausdorff",
+    "symmetric_normal_error",
+    "clean_missing_fraction_0p0025",
+    "clean_missing_fraction_0p005",
+    "clean_missing_fraction_0p01",
+    "clean_missing_fraction_0p02",
+    "degraded_excess_fraction_0p005",
+    "face_ratio_error",
+    "surface_area_ratio_error",
+    "boundary_edge_ratio_delta",
+    "nonmanifold_edge_ratio_delta",
+    "component_log_delta"
+  ],
+  "scope": "formal",
+  "assets": 184,
+  "records": 1837,
+  "dataset_manifest": "/root/autodl-tmp/UrbanPhotoMeshQA/data/Manifests/quality_dataset_formal_v2_seed2026.json"
+}
