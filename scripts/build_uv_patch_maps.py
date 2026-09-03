@@ -19,6 +19,12 @@ from urbanphotomeshqa.patches import patch_layout, topological_patch_layout
 
 
 def source_path(data_root: Path, row: dict) -> Path:
+    if row.get("gltf_path"):
+        return Path(row["gltf_path"])
+    if row.get("source_gltf"):
+        candidate = data_root / "HK3D-Individualised-Iteration2-300" / row["source_gltf"]
+        if candidate.exists():
+            return candidate
     return (data_root / "HK3D-Individualised" / row["sheet"] / row.get("class_name", "BUILDING")
             / row["asset_id"] / f"{row['asset_id']}.gltf")
 
@@ -39,7 +45,9 @@ def main() -> None:
 
     payload = json.loads(args.source_manifest.read_text(encoding="utf-8"))
     requested = set(args.asset_id)
-    rows = [row for row in payload["records"] if not requested or row["asset_id"] in requested]
+    rows = [row for row in payload["records"] if (row.get("attack", "clean") == "clean")
+            and (not requested or row["asset_id"] in requested)]
+    rows = list({row["asset_id"]: row for row in rows}.values())
     if requested and requested != {row["asset_id"] for row in rows}:
         missing = sorted(requested - {row["asset_id"] for row in rows})
         raise ValueError(f"Unknown asset ids: {missing}")

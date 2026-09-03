@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "protocol": "fixed component/overall Val hybrid; Test/Blind not loaded",
+  "val": {
+    "geometry": {
+      "count": 7200,
+      "mae": 0.18985679745674133,
+      "plcc": 0.48604823471611397,
+      "srcc": 0.49640200935515433
+    },
+    "texture": {
+      "count": 7008,
+      "mae": 0.15959522128105164,
+      "plcc": 0.6394114955125385,
+      "srcc": 0.6233520324014017
+    },
+    "overall": {
+      "count": 13488,
+      "mae": 0.18543511629104614,
+      "plcc": 0.5895594019481575,
+      "srcc": 0.5452312482360719
+    }
+  },
+  "component_checkpoint": "artifacts/quality/ablations/iteration2_local_patch_heads/view_atlas_geometry_context.pt",
+  "overall_checkpoint": "artifacts/quality/ablations/iteration2_local_patch_cross_attention/cross_attention.pt"
+}

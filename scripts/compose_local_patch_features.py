@@ -37,7 +37,7 @@ def main():
         # Frozen neural tokens are high-entropy and barely compress; an
         # uncompressed NPZ is much faster to compose and load for training.
         np.savez(args.output_dir/f"local_patch_features_{split}.npz",**payload)
-    expected={name:{"train":1518,"val":760,"test":607,"blind":608}[name] for name in args.splits}
+    expected={name:sum(row["split"]==name for row in manifest) for name in args.splits}
     audit={"status":"PASSED" if finite and counts==expected else "FAILED",
            "counts":counts,"records":sum(counts.values()),"finite":bool(finite),
            "test_blind_loaded":bool(set(args.splits)&{"test","blind"}),

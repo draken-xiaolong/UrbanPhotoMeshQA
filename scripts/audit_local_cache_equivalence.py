@@ -32,7 +32,7 @@ def main():
             for position,index in enumerate(indices):
                 cache[keys[index]]={name:loaded[name][position] for name in ARRAYS}
     state=torch.load(args.checkpoint,map_location=device,weights_only=False)
-    model=LocalPatchHead(state["use_atlas"],state["geometry_context"]).to(device).eval(); model.load_state_dict(state["model"])
+    model=LocalPatchHead(state["use_atlas"],state["geometry_context"],state.get("cross_attention",False)).to(device).eval(); model.load_state_dict(state["model"])
     normalization={name:tuple(np.asarray(x,np.float32) for x in value) for name,value in state["normalization"].items()}
     encoder=SpatialImageEncoder(device); report=[]
     with torch.no_grad():

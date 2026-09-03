@@ -71,7 +71,7 @@ def ssim_map(reference, candidate):
     return np.stack(output)
 
 
-def patch_metrics(clean, degraded, face_patch, samples):
+def patch_metrics(clean, degraded, face_patch, samples, patch_count):
     clean_mesh, clean_rgb, _, clean_textured, clean_faces = clean
     degraded_mesh, degraded_rgb, _, degraded_textured, degraded_faces = degraded
     if len(clean_mesh.faces) != len(degraded_mesh.faces):
@@ -90,7 +90,7 @@ def patch_metrics(clean, degraded, face_patch, samples):
     degraded_surface, degraded_valid = sample_texture_colors(degraded_mesh, selected, uv)
     surface_difference = clean_surface - degraded_surface
     surface_valid = clean_valid & degraded_valid
-    count = int(face_patch.max()) + 1
+    count = patch_count
     values = np.full((count, len(METRICS)), np.nan, np.float32)
     visible_pixels = np.zeros(count, np.int64); surface_counts = np.zeros(count, np.int64)
     maximum = np.zeros(count, np.float32)
@@ -158,7 +158,9 @@ def main():
         clean = render(resolve_path(clean_row["gltf_path"], args.data_root), args.render_size)
         with np.load(args.patch_map_dir / f"{asset_id}.npz") as sidecar:
             face_patch = sidecar["face_patch"].astype(np.int64)
-            patch_mask = sidecar["patch_mask"].astype(bool)
+            active_mask = sidecar["patch_mask"].astype(bool)
+            patch_mask = np.zeros(16, bool)
+            patch_mask[:len(active_mask)] = active_mask
         samples = sample_patch_uv(clean[0], face_patch, args.samples_per_patch,
                                   stable_seed(args.seed, asset_id))
         asset_records = [row for row in records if row["asset_id"] == asset_id]
@@ -172,7 +174,8 @@ def main():
                 maximum = np.zeros(len(patch_mask), np.float32)
             else:
                 attacked = render(resolve_path(record["gltf_path"], args.data_root), args.render_size)
-                metric, visible, surface, maximum = patch_metrics(clean, attacked, face_patch, samples)
+                metric, visible, surface, maximum = patch_metrics(
+                    clean, attacked, face_patch, samples, len(patch_mask))
             raw = quality(metric, specification); noop = maximum <= 1e-12
             rows.append({"record": record, "metrics": metric, "raw": raw, "quality": raw.copy(),
                          "patch_mask": patch_mask, "visible": visible, "surface": surface,

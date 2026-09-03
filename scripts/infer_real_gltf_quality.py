@@ -131,6 +131,7 @@ def main():
         local_model = LocalPatchHead(
             bool(local_state.get("use_atlas", True)),
             bool(local_state.get("geometry_context", False)),
+            bool(local_state.get("cross_attention", False)),
         ).to(device).eval()
         local_model.load_state_dict(local_state["model"])
         local_mesh = GltfReader(args.gltf).load_mesh(include_texture=True)

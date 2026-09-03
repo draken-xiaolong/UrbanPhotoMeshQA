@@ -81,8 +81,8 @@ def tensorize(raw,normalization,device):
 
 
 class LocalPatchHead(nn.Module):
-    def __init__(self,use_atlas=True,geometry_context=False):
-        super().__init__(); self.use_atlas=use_atlas; self.geometry_context=geometry_context
+    def __init__(self,use_atlas=True,geometry_context=False,cross_attention=False):
+        super().__init__(); self.use_atlas=use_atlas; self.geometry_context=geometry_context; self.cross_attention=cross_attention
         self.geometry=nn.Sequential(nn.LayerNorm(59),nn.Linear(59,128),nn.GELU(),nn.Linear(128,128),nn.GELU())
         if geometry_context:
             self.geometry_attention=nn.MultiheadAttention(128,4,dropout=.1,batch_first=True)
@@ -90,6 +90,11 @@ class LocalPatchHead(nn.Module):
         self.view=nn.Sequential(nn.LayerNorm(588),nn.Linear(588,128),nn.GELU())
         if use_atlas: self.atlas=nn.Sequential(nn.LayerNorm(588),nn.Linear(588,128),nn.GELU())
         self.texture=nn.Sequential(nn.Linear(128*(1+int(use_atlas)),128),nn.LayerNorm(128),nn.GELU())
+        if cross_attention:
+            self.geometry_to_texture=nn.MultiheadAttention(128,4,dropout=.1,batch_first=True)
+            self.texture_to_geometry=nn.MultiheadAttention(128,4,dropout=.1,batch_first=True)
+            self.geometry_cross_norm=nn.LayerNorm(128); self.texture_cross_norm=nn.LayerNorm(128)
+            self.overall_quality=nn.Sequential(nn.Linear(256,128),nn.GELU(),nn.Linear(128,1),nn.Sigmoid())
         self.geometry_quality=nn.Sequential(nn.Linear(128,64),nn.GELU(),nn.Linear(64,1),nn.Sigmoid())
         self.texture_quality=nn.Sequential(nn.Linear(128,64),nn.GELU(),nn.Linear(64,1),nn.Sigmoid())
 
@@ -107,8 +112,13 @@ class LocalPatchHead(nn.Module):
             atlas=self.atlas(torch.cat([get("atlas_tokens"),get("atlas_stats")],-1))
             textures.append(atlas*get("atlas_mask")[:,:,None])
         texture=self.texture(torch.cat(textures,-1))
+        if self.cross_attention:
+            g_cross,_=self.geometry_to_texture(geometry,texture,texture,key_padding_mask=~get("patch_mask"),need_weights=False)
+            t_cross,_=self.texture_to_geometry(texture,geometry,geometry,key_padding_mask=~get("patch_mask"),need_weights=False)
+            geometry=self.geometry_cross_norm(geometry+g_cross); texture=self.texture_cross_norm(texture+t_cross)
         g=self.geometry_quality(geometry).squeeze(-1); t=self.texture_quality(texture).squeeze(-1)
-        return {"geometry":g,"texture":t,"overall":torch.minimum(g,t)}
+        overall=self.overall_quality(torch.cat([geometry,texture],-1)).squeeze(-1) if self.cross_attention else torch.minimum(g,t)
+        return {"geometry":g,"texture":t,"overall":overall}
 
 
 def ranking(pred,target,mask):
@@ -140,8 +150,8 @@ def evaluate(model,data):
     return {name:metrics(prediction[name],truth[name],masks[name]) for name in prediction}
 
 
-def train_variant(name,use_atlas,geometry_context,train,val,args,device):
-    seed_all(args.seed); model=LocalPatchHead(use_atlas,geometry_context).to(device); optimizer=torch.optim.AdamW(model.parameters(),lr=args.lr,weight_decay=1e-4)
+def train_variant(name,use_atlas,geometry_context,cross_attention,train,val,args,device):
+    seed_all(args.seed); model=LocalPatchHead(use_atlas,geometry_context,cross_attention).to(device); optimizer=torch.optim.AdamW(model.parameters(),lr=args.lr,weight_decay=1e-4)
     best=None; best_state=None; best_epoch=None; history=[]
     for epoch in range(1,args.epochs+1):
         model.train(); order=torch.randperm(len(train["geometry"]),device=device); losses=[]
@@ -161,17 +171,18 @@ def main():
     parser.add_argument("--target-dir",type=Path,required=True); parser.add_argument("--output-dir",type=Path,required=True)
     parser.add_argument("--epochs",type=int,default=60); parser.add_argument("--batch-size",type=int,default=32)
     parser.add_argument("--lr",type=float,default=3e-4); parser.add_argument("--seed",type=int,default=2026); parser.add_argument("--device",default="cuda")
-    parser.add_argument("--variants",nargs="+",choices=("view_only","view_atlas","view_atlas_geometry_context"),
+    parser.add_argument("--variants",nargs="+",choices=("view_only","view_atlas","view_atlas_geometry_context","cross_attention"),
                         default=("view_only","view_atlas","view_atlas_geometry_context"))
     args=parser.parse_args(); device=torch.device(args.device)
     if device.type!="cuda" or not torch.cuda.is_available(): raise RuntimeError("CUDA required")
     raw={split:load_split(args.feature_dir,args.target_dir,split) for split in ("train","val")}; norm=statistics(raw["train"])
     data={split:tensorize(raw[split],norm,device) for split in raw}; args.output_dir.mkdir(parents=True,exist_ok=True)
     results={}
-    candidates=(("view_only",False,False),("view_atlas",True,False),("view_atlas_geometry_context",True,True))
-    for name,use_atlas,geometry_context in (item for item in candidates if item[0] in args.variants):
-        model,result=train_variant(name,use_atlas,geometry_context,data["train"],data["val"],args,device); results[name]=result
+    candidates=(("view_only",False,False,False),("view_atlas",True,False,False),("view_atlas_geometry_context",True,True,False),("cross_attention",True,True,True))
+    for name,use_atlas,geometry_context,cross_attention in (item for item in candidates if item[0] in args.variants):
+        model,result=train_variant(name,use_atlas,geometry_context,cross_attention,data["train"],data["val"],args,device); results[name]=result
         torch.save({"model":model.state_dict(),"use_atlas":use_atlas,"geometry_context":geometry_context,
+                    "cross_attention":cross_attention,
                     "normalization":{k:[x.tolist() for x in v] for k,v in norm.items()},
                     "seed":args.seed,"feature_metadata":json.loads((args.feature_dir/"metadata.json").read_text()),
                     "target_metadata":json.loads((args.target_dir/"metadata.json").read_text()),"val":result["val"]},args.output_dir/f"{name}.pt")

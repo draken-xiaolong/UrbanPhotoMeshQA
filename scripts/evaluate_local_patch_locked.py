@@ -15,7 +15,7 @@ def main():
     parser.add_argument("--feature-dir",type=Path,required=True); parser.add_argument("--target-dir",type=Path,required=True)
     parser.add_argument("--output",type=Path,required=True); parser.add_argument("--device",default="cuda")
     args=parser.parse_args(); device=torch.device(args.device); state=torch.load(args.checkpoint,map_location=device,weights_only=False)
-    model=LocalPatchHead(state["use_atlas"],state["geometry_context"]).to(device).eval(); model.load_state_dict(state["model"])
+    model=LocalPatchHead(state["use_atlas"],state["geometry_context"],state.get("cross_attention",False)).to(device).eval(); model.load_state_dict(state["model"])
     normalization={name:tuple(np.asarray(x,np.float32) for x in values) for name,values in state["normalization"].items()}
     results={}
     for split in ("test","blind"):
