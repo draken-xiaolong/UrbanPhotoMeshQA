@@ -75,6 +75,9 @@ def prepare_textures(asset, destination: Path) -> list[str]:
 
 def export_geometry(source: Path, output: Path, attack: str, params: dict, seed: int) -> dict:
     source_asset = GltfReader(source).load_mesh(include_texture=True)
+    coordinate_origin = 0.5 * (
+        source_asset.vertices.min(axis=0) + source_asset.vertices.max(axis=0)
+    )
     if source_asset.texcoords is None:
         source_asset = replace(source_asset, texcoords=np.zeros((len(source_asset.vertices), 2), np.float64))
     elif not np.isfinite(source_asset.texcoords).all():
@@ -90,7 +93,7 @@ def export_geometry(source: Path, output: Path, attack: str, params: dict, seed:
     else:
         raise ValueError(attack)
     names = prepare_textures(source_asset, output.parent)
-    export_textured_gltf(attacked, output, names)
+    export_textured_gltf(attacked, output, names, coordinate_origin=coordinate_origin)
     return {
         "source_vertex_count": len(source_asset.vertices),
         "source_face_count": len(source_asset.faces),

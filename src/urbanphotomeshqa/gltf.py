@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import copy
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -157,18 +158,33 @@ class GltfReader:
         normals = np.concatenate(normals_parts, axis=0)
         face_materials = np.concatenate(material_parts, axis=0)
         material_texture_paths: list[str | None] = []
+        material_profiles: list[dict[str, Any]] = []
         textures = self.root.get("textures", [])
         images = self.root.get("images", [])
         for material in self.root.get("materials", []):
             texture_info = material.get("pbrMetallicRoughness", {}).get("baseColorTexture")
             path = None
+            sampler = None
             if texture_info is not None:
                 texture_index = int(texture_info["index"])
                 if 0 <= texture_index < len(textures):
                     source_index = int(textures[texture_index].get("source", -1))
+                    sampler_index = int(textures[texture_index].get("sampler", -1))
                     if 0 <= source_index < len(images) and images[source_index].get("uri"):
                         path = str((self.path.parent / images[source_index]["uri"]).resolve())
+                    samplers = self.root.get("samplers", [])
+                    if 0 <= sampler_index < len(samplers):
+                        sampler = copy.deepcopy(samplers[sampler_index])
             material_texture_paths.append(path)
+            material_profiles.append({
+                "name": material.get("name"),
+                "doubleSided": bool(material.get("doubleSided", False)),
+                "alphaMode": material.get("alphaMode", "OPAQUE"),
+                "alphaCutoff": material.get("alphaCutoff"),
+                "emissiveFactor": copy.deepcopy(material.get("emissiveFactor")),
+                "pbrMetallicRoughness": copy.deepcopy(material.get("pbrMetallicRoughness", {})),
+                "baseColorSampler": sampler,
+            })
         return MeshAsset(
             vertices=vertices,
             faces=faces,
@@ -182,6 +198,7 @@ class GltfReader:
                 "material_count": int(len(self.root.get("materials", []))),
                 "image_count": int(len(self.root.get("images", []))),
                 "material_texture_paths": material_texture_paths if include_texture else [],
+                "material_profiles": material_profiles if include_texture else [],
             },
             texcoords=np.concatenate(texcoord_parts, axis=0) if include_texture else None,
         )
