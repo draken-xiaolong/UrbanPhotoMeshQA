@@ -192,9 +192,15 @@ def grouped_batches(data,batch_size,shuffle,seed):
     return chunks
 
 
-def forward_batch(model,data,index,device):
+def forward_batch(model,data,index,device,augment=False):
     graph={k:v.to(device) for k,v in pad_mesh_graphs([data["graphs"][i] for i in index]).items()}
     tensors={k:torch.from_numpy(data[k][index]).to(device) for k in ("point","morph","texture","texture_views")}
+    if augment:
+        graph["face_features"]=graph["face_features"]+0.01*torch.randn_like(graph["face_features"])*graph["mask"][:,:,None]
+        for name in ("point","morph","texture","texture_views"):
+            tensors[name]=tensors[name]+0.03*torch.randn_like(tensors[name])
+        token_drop=torch.rand(tensors["texture_views"].shape[:2],device=device)<0.15
+        tensors["texture_views"]=tensors["texture_views"].masked_fill(token_drop[:,:,None],0)
     return model(graph,tensors["point"],tensors["morph"],tensors["texture"],tensors["texture_views"])
 
 
@@ -244,6 +250,7 @@ def main():
     parser.add_argument("--architecture",choices=("gatv2","hierarchical"),default="gatv2")
     parser.add_argument("--ranking-scope",choices=("all","same_group"),default="all")
     parser.add_argument("--quality-balance",choices=("none","clean_light"),default="none")
+    parser.add_argument("--feature-augmentation",action="store_true")
     args=parser.parse_args(); seed_all(args.seed); device=torch.device(args.device)
     train=load_split("train",args); val=load_split("val",args)
     stats={}
@@ -262,7 +269,7 @@ def main():
         model.train(); losses=[]
         iterator=grouped_batches(train,args.batch_size,True,args.seed+epoch) if args.ranking_scope=="same_group" else batches(train,args.batch_size,True,args.seed+epoch)
         for index in iterator:
-            out=forward_batch(model,train,index,device); idx=np.asarray(index)
+            out=forward_batch(model,train,index,device,args.feature_augmentation); idx=np.asarray(index)
             attack=torch.from_numpy(train["attack"][idx]).to(device); severity=torch.from_numpy(train["severity"][idx]).to(device)
             overall=torch.from_numpy(train["overall"][idx]).to(device); geometry=torch.from_numpy(train["geometry"][idx]).to(device); texture=torch.from_numpy(train["texture_target"][idx]).to(device)
             ordinal=torch.from_numpy(train["ordinal"][idx]).to(device); ordinal_truth=(ordinal[:,None]>torch.arange(1,5,device=device)[None]).float()
@@ -281,16 +288,16 @@ def main():
                 group=torch.from_numpy(train["groups"][idx]).to(device)
                 valid &= group[:,None].eq(group[None])
             if valid.any(): loss+=.2*F.softplus(-5*torch.sign(delta[valid])*(out["overall"][:,None]-out["overall"][None])[valid]).mean()
-            optimizer.zero_grad(set_to_none=True); loss.backward(); torch.nn.utils.clip_grad_norm_(model.parameters(),5); optimizer.step(); losses.append(float(loss))
+            optimizer.zero_grad(set_to_none=True); loss.backward(); torch.nn.utils.clip_grad_norm_(model.parameters(),5); optimizer.step(); losses.append(float(loss.detach()))
         metrics=evaluate(model,val,args.batch_size,device); history.append({"epoch":epoch,"loss":float(np.mean(losses)),"val":metrics})
         score=(metrics["overall"]["srcc"],-metrics["overall"]["mae"])
         if best is None or score>best: best=score; best_epoch=epoch; best_state={k:v.detach().cpu().clone() for k,v in model.state_dict().items()}
         print(f"epoch={epoch} loss={np.mean(losses):.4f} val_srcc={metrics['overall']['srcc']:.4f} val_mae={metrics['overall']['mae']:.4f} f1={metrics['macro_f1']:.4f}",flush=True)
     model.load_state_dict(best_state); result=evaluate(model,val,args.batch_size,device); args.output_dir.mkdir(parents=True,exist_ok=True)
-    torch.save({"schema_version":1,"seed":args.seed,"architecture":args.architecture,
+    torch.save({"schema_version":1,"seed":args.seed,"architecture":args.architecture,"feature_augmentation":args.feature_augmentation,
                 "model":model.state_dict(),"statistics":{k:{"mean":v[0].tolist(),"std":v[1].tolist()} for k,v in stats.items()},
                 "texture_view_statistics":{"mean":view_mean.tolist(),"std":view_std.tolist()}},args.output_dir/"gatv2_quality.pt")
-    payload={"schema_version":1,"status":"COMPLETE","seed":args.seed,"architecture":args.architecture,"ranking_scope":args.ranking_scope,"quality_balance":args.quality_balance,"best_epoch":best_epoch,"val":result,"history":history,"protocol":"Train/Val only; Test/Blind not loaded"}
+    payload={"schema_version":1,"status":"COMPLETE","seed":args.seed,"architecture":args.architecture,"ranking_scope":args.ranking_scope,"quality_balance":args.quality_balance,"feature_augmentation":args.feature_augmentation,"best_epoch":best_epoch,"val":result,"history":history,"protocol":"Train/Val only; Test/Blind not loaded"}
     (args.output_dir/"results.json").write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8"); print(json.dumps({"best_epoch":best_epoch,"val":result},ensure_ascii=False))
 
 
