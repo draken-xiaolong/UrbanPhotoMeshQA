@@ -73,6 +73,18 @@ def main():
                              "by_attack":subgroup_metrics(train_ensemble3,train,np.asarray([key[1] for key in train["keys"]])),
                              "by_level":subgroup_metrics(train_ensemble3,train,train["levels"]),
                              "by_tile":subgroup_metrics(train_ensemble3,train,train["tiles"])}}
+        augmented_prediction = None
+        if args.augmented_hierarchical:
+            augmented_model=HierarchicalQualityGAT(val["point"].shape[1],val["morph"].shape[1],val["texture"].shape[1]).to(device)
+            augmented_model.load_state_dict(torch.load(args.augmented_hierarchical,map_location=device,weights_only=False)["model"])
+            augmented_prediction=predict(augmented_model,val,args.batch_size,device)
+            deploy4={name:(ensemble3[name]*3+augmented_prediction[name])/4 for name in ensemble3}
+            report["augmented_hierarchical"]=metrics_from_output(augmented_prediction,val)
+            report["deployable_ensemble4_equal"]=metrics_from_output(deploy4,val)
+            report["deployable_ensemble4_equal_diagnostics"]={
+                "by_attack":subgroup_metrics(deploy4,val,np.asarray([key[1] for key in val["keys"]])),
+                "by_level":subgroup_metrics(deploy4,val,val["levels"]),
+                "by_tile":subgroup_metrics(deploy4,val,val["tiles"])}
         if args.spatial_texture_dir and args.spatial_hierarchical:
             original_texture_dir=args.texture_dir; args.texture_dir=args.spatial_texture_dir
             spatial_train=load_split("train",args); spatial_val=load_split("val",args); args.texture_dir=original_texture_dir
@@ -92,12 +104,8 @@ def main():
                 "by_attack":subgroup_metrics(ensemble4,val,np.asarray([key[1] for key in val["keys"]])),
                 "by_level":subgroup_metrics(ensemble4,val,val["levels"]),
                 "by_tile":subgroup_metrics(ensemble4,val,val["tiles"])}
-            if args.augmented_hierarchical:
-                augmented_model=HierarchicalQualityGAT(val["point"].shape[1],val["morph"].shape[1],val["texture"].shape[1]).to(device)
-                augmented_model.load_state_dict(torch.load(args.augmented_hierarchical,map_location=device,weights_only=False)["model"])
-                augmented_prediction=predict(augmented_model,val,args.batch_size,device)
+            if augmented_prediction is not None:
                 ensemble5={name:(ensemble4[name]*4+augmented_prediction[name])/5 for name in ensemble4}
-                report["augmented_hierarchical"]=metrics_from_output(augmented_prediction,val)
                 report["ensemble5_equal"]=metrics_from_output(ensemble5,val)
                 report["ensemble5_equal_diagnostics"]={
                     "by_attack":subgroup_metrics(ensemble5,val,np.asarray([key[1] for key in val["keys"]])),
