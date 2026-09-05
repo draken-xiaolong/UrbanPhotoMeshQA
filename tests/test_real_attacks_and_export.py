@@ -97,6 +97,30 @@ def test_source_texture_attacks_have_expected_effects():
     assert not np.array_equal(np.asarray(shifted.convert("RGB")), np.asarray(image.convert("RGB")))
 
 
+def test_untextured_material_does_not_gain_placeholder_texture(tmp_path):
+    import json
+    asset = GltfReader(FIXTURE).load_mesh(include_texture=True)
+    profile = asset.metadata['material_profiles'][0]
+    profile['pbrMetallicRoughness'].pop('baseColorTexture', None)
+    profile['pbrMetallicRoughness']['baseColorFactor'] = [.4, .5, .6, 1.]
+    asset.texcoords[:] = np.nan
+    output = tmp_path/'constant.gltf'
+    export_textured_gltf(asset, output, ['placeholder.png'])
+    pbr = json.loads(output.read_text())['materials'][0]['pbrMetallicRoughness']
+    assert 'baseColorTexture' not in pbr
+    assert pbr['baseColorFactor'] == [.4, .5, .6, 1.]
+    reloaded=GltfReader(output).load_mesh(include_texture=True)
+    assert np.isfinite(reloaded.texcoords).all()
+
+
+def test_invalid_textured_uv_is_rejected(tmp_path):
+    import pytest
+    asset=GltfReader(FIXTURE).load_mesh(include_texture=True)
+    asset.texcoords[asset.faces[0][0]] = np.nan
+    with pytest.raises(ValueError,match='non-finite UV'):
+        export_textured_gltf(asset,tmp_path/'invalid.gltf',['texture.png'])
+
+
 def test_texture_local_attacks_use_uv_importance_mask():
     rng = np.random.default_rng(7)
     array = np.full((128, 128, 4), 245, dtype=np.uint8)

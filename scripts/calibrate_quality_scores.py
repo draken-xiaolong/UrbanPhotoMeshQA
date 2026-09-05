@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fit validation-only affine calibration and report locked Test/Blind QA metrics."""
+"""Fit validation-only affine calibration without loading Test or Blind."""
 
 from __future__ import annotations
 
@@ -44,7 +44,9 @@ def main():
     state = torch.load(args.checkpoint, map_location=device, weights_only=False)
     normalization = state.get("statistics", {}).get("normalization", "mean_std")
     store = Store(args.feature_dir, device, args.objective_target_dir,
-                  args.dataset_manifest, args.require_formal, normalization)
+                  args.dataset_manifest, args.require_formal, normalization,
+                  splits=("train", "val"),
+                  base_representation=state.get("base_representation", "identity"))
     checkpoint_provenance = state.get("dataset_provenance")
     if checkpoint_provenance is not None:
         fields = ("ordered_sample_sha256", "counts",
@@ -54,7 +56,7 @@ def main():
             raise ValueError("Checkpoint and calibration dataset provenance do not match")
     model = QualityHead(state["dims"], state["branch_indices"], state["use_patches"]).to(device).eval()
     model.load_state_dict(state["model"])
-    predictions = {split: predict(model, store.data[split]) for split in ("val", "test", "blind")}
+    predictions = {"val": predict(model, store.data["val"])}
     target_names = {"overall": "overall", "geometry": "geometry", "texture": "texture_quality"}
     calibration, results = {}, {}
     for name, target_name in target_names.items():
@@ -62,7 +64,7 @@ def main():
         slope, intercept = affine_fit(predictions["val"][name], val_truth)
         calibration[name] = {"slope": slope, "intercept": intercept, "fit_split": "val"}
         results[name] = {}
-        for split in ("val", "test", "blind"):
+        for split in ("val",):
             truth = store.data[split][target_name].cpu().numpy()
             raw = predictions[split][name]
             calibrated = np.clip(slope * raw + intercept, 0.0, 1.0)

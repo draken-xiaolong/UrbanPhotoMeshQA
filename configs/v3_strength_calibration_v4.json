@@ -1,0 +1,21 @@
+{
+ "protocol":"pilot_v4_surface_budget_20260906",
+ "note":"Candidate ranges, not quality labels. JPEG alone is allowed to have a limited perceptual range. Human MOS is not available.",
+ "scratch_root":"/Volumes/SANDISK-ELE/UrbanPhotoMeshQA-Data/HK3D-Individualised-V3/_scratch",
+ "fractional_texture_budget":true,
+ "distinct_patch_anchors":true,
+ "local_texture_coverage":[0.25,0.45,0.65,0.85],
+ "parameters":{
+  "geometry_missing":[0.025,0.10,0.25,0.45],
+  "geometry_artifacts":[0.45,1.2,3.0,7.0],
+  "mesh_simplification_qem":[0.80,0.65,0.45,0.20],
+  "geometry_smoothing":[0.30,0.90,2.5,6.0],
+  "position_quantization":[9,7,5,3],
+  "uv_quantization":[12,10,8,6],
+  "texture_blur_resolution_loss":[0.25,0.08,0.025,0.008],
+  "texture_compression":[35,12,4,1],
+  "texture_missing_occlusion":[0.008,0.05,0.18,0.50],
+  "texture_misalignment_uv":[12.0,32.0,80.0,160.0],
+  "texture_seam_radiometric":[0.50,1.0,1.8,3.5]
+ }
+}

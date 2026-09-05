@@ -1,0 +1,8 @@
+#right .score-summary{display:none}
+#compact-score{position:absolute;right:10px;top:10px;z-index:4;background:#fffffff0;border:1px solid #dbe5eb;border-radius:5px;padding:5px 9px;font-size:11px;line-height:16px;color:#426074;white-space:nowrap;max-width:calc(100% - 20px);overflow-x:auto}
+#right>.view-label{top:45px;right:12px}
+.navigation #clear-human{margin:0;padding:4px 7px;font-size:10px}
+.filter-label{display:block;font-size:10px;color:#7a8e9f;margin:5px 4px}
+#scale-filter,#type-filter{width:100%;font-size:12px;padding:7px;margin-bottom:4px}
+#filter-count{font-size:10px;color:#8195a4;padding:6px 4px 0}
+#dataset-select{padding:3px 6px;font-size:11px;max-width:450px;margin-bottom:3px}header:has(#dataset-select) h1{font-size:16px;margin-bottom:3px}header:has(#dataset-select) small{display:block;font-size:10px}

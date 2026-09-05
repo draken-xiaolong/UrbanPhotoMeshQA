@@ -26,6 +26,8 @@ def corr(a,b):
 
 def metrics(pred,target,mask):
     p=pred[mask]; t=target[mask]
+    if not len(t):
+        return {"count":0,"mae":None,"plcc":None,"srcc":None}
     return {"count":int(len(t)),"mae":float(np.mean(np.abs(p-t))),"plcc":corr(p,t),
             "srcc":corr(rankdata(p,method="average"),rankdata(t,method="average"))}
 
@@ -50,7 +52,10 @@ def statistics(train):
         np.log1p(16*train["patch_area"]/np.maximum(train["patch_area"].sum(1,keepdims=True),1e-12))[...,None]],2)
     view_mask=train["patch_view_mask"] & patch[:,:,None]; atlas_mask=train["patch_atlas_mask"] & patch
     def stats(values,mask):
-        selected=values[mask]; return selected.mean(0).astype(np.float32),np.maximum(selected.std(0),1e-5).astype(np.float32)
+        selected=values[mask]
+        if not len(selected):
+            return np.zeros(values.shape[-1],np.float32),np.ones(values.shape[-1],np.float32)
+        return selected.mean(0).astype(np.float32),np.maximum(selected.std(0),1e-5).astype(np.float32)
     return {"geometry":stats(geometry,patch),"view_stats":stats(train["patch_view_stats"],view_mask),
             "atlas_stats":stats(train["patch_atlas_stats"],atlas_mask)}
 
@@ -130,9 +135,14 @@ def ranking(pred,target,mask):
 
 def loss_value(out,data,index):
     patch=data["patch_mask"][index]; texture=patch&data["texture_supervision"][index]
-    losses=F.smooth_l1_loss(out["geometry"][patch],data["geometry_target"][index][patch])
-    losses+=F.smooth_l1_loss(out["texture"][texture],data["texture_target"][index][texture])
-    losses+=1.5*F.smooth_l1_loss(out["overall"][patch],data["overall_target"][index][patch])
+    def masked_loss(name,mask):
+        prediction=out[name][mask]
+        if not mask.any():
+            return prediction.sum()
+        return F.smooth_l1_loss(prediction,data[f"{name}_target"][index][mask])
+    losses=masked_loss("geometry",patch)
+    losses+=masked_loss("texture",texture)
+    losses+=1.5*masked_loss("overall",patch)
     losses+=.1*(ranking(out["geometry"],data["geometry_target"][index],patch)+
                 ranking(out["texture"],data["texture_target"][index],texture)+
                 ranking(out["overall"],data["overall_target"][index],patch))
@@ -158,8 +168,11 @@ def train_variant(name,use_atlas,geometry_context,cross_attention,train,val,args
         for start in range(0,len(order),args.batch_size):
             index=order[start:start+args.batch_size]; out=model(train,index); loss=loss_value(out,train,index)
             optimizer.zero_grad(set_to_none=True); loss.backward(); optimizer.step(); losses.append(float(loss.detach()))
-        result=evaluate(model,val); mean_srcc=np.mean([result[k]["srcc"] for k in ("geometry","texture","overall")])
-        mean_mae=np.mean([result[k]["mae"] for k in ("geometry","texture","overall")]); key=(mean_srcc,-mean_mae,-epoch)
+        result=evaluate(model,val)
+        valid=[k for k in ("geometry","texture","overall") if result[k]["count"]>0]
+        if not valid: raise ValueError("No valid validation labels")
+        mean_srcc=np.mean([result[k]["srcc"] for k in valid])
+        mean_mae=np.mean([result[k]["mae"] for k in valid]); key=(mean_srcc,-mean_mae,-epoch)
         history.append({"epoch":epoch,"loss":float(np.mean(losses)),"val":result,"selection_key":[float(mean_srcc),-float(mean_mae),-epoch]})
         if best is None or key>best: best=key; best_epoch=epoch; best_state=copy.deepcopy(model.state_dict())
         if epoch==1 or epoch%10==0: print(name,epoch,float(np.mean(losses)),mean_srcc,flush=True)

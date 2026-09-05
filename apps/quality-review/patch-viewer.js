@@ -1,0 +1,23 @@
+import * as THREE from 'three';
+export function installPatchViewer({left,right,getClean,getCurrent,getVariant,isReady,apiFetch=window.fetch.bind(window)}){
+ const fetch=apiFetch;
+ const $=id=>document.getElementById(id);
+ document.querySelector('.tools').insertAdjacentHTML('afterbegin',`<select id="patch-mode" aria-label="Patch显示模式"><option value="none">原始纹理</option><option value="patch">16 Patch分区</option><option value="both">全部干预范围</option><option value="geometry">几何干预范围</option><option value="texture">纹理干预范围</option></select>`);
+ $('viewers').insertAdjacentHTML('beforeend','<div id="patch-info" hidden>生成干预范围 · 点击面片查看Patch</div>');
+ let payload=null,active='',sequence=0,overlays=[];
+ const palette=Array.from({length:16},(_,i)=>new THREE.Color().setHSL(i*.61803398875%1,.72,.5));
+ function clear(){for(const o of overlays){o.removeFromParent();o.geometry.dispose();o.material.dispose();}overlays=[];}
+ function build(object,values){if(!object)return;const meshes=[];object.traverse(o=>{if(o.isMesh&&!o.userData.patchOverlay)meshes.push(o);});let offset=0;
+  for(const base of meshes){const g=base.geometry.index?base.geometry.toNonIndexed():base.geometry.clone();const n=g.attributes.position.count/3;if(offset+n>values.patch.length)throw Error('Patch面数与模型不匹配');const colors=new Float32Array(n*9);const indices=[];const ids=[];
+   for(let f=0;f<n;f++){const j=offset+f,p=values.patch[j],geo=values.geometry[j],tex=values.texture[j],mode=$('patch-mode').value;let color=null;if(mode==='patch')color=palette[p];if(mode==='geometry'&&geo)color=new THREE.Color('#ed4949');if(mode==='texture'&&tex)color=new THREE.Color('#f2a516');if(mode==='both'&&(geo||tex))color=new THREE.Color(geo&&tex?'#bd55dd':geo?'#ed4949':'#f2a516');if(color){for(let c=0;c<3;c++){colors.set([color.r,color.g,color.b],f*9+c*3);indices.push(f*3+c);}ids.push(p);}}
+   g.setAttribute('color',new THREE.BufferAttribute(colors,3));g.setIndex(indices);const material=new THREE.MeshBasicMaterial({vertexColors:true,transparent:true,opacity:.58,side:THREE.DoubleSide,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2});const overlay=new THREE.Mesh(g,material);overlay.userData={patchOverlay:true,patchIds:ids};overlay.renderOrder=2;base.add(overlay);overlays.push(overlay);base.userData.patchBase={offset,values};offset+=n;
+  }if(offset!==values.patch.length)throw Error('Patch映射不完整');
+ }
+ function draw(){clear();const mode=$('patch-mode').value;$('patch-info').hidden=mode==='none';if(mode==='none'||!payload)return;try{build(getClean(),payload.source);build(getCurrent(),payload.current);$('patch-info').textContent='生成干预范围（非预测） · 红：几何 / 黄：纹理 / 紫：两者 · 点击查看Patch'+(payload.mapping==='exact'?'':' · 待评侧近似映射');}catch(e){clear();$('patch-info').textContent=e.message;}}
+ async function load(){if(!isReady())return;const variant=getVariant(),ticket=++sequence;if(active===variant&&payload){draw();return;}payload=null;clear();try{const response=await fetch('/api/patches?variant='+encodeURIComponent(variant));const p=await response.json();if(!response.ok)throw Error(p.error);if(ticket!==sequence||variant!==getVariant())return;active=variant;payload=p;draw();}catch(e){if(ticket===sequence){$('patch-info').hidden=false;$('patch-info').textContent=e.message;}}}
+ $('patch-mode').onchange=load;
+ new MutationObserver(()=>{if($('patch-mode').value==='patch'&&$('patch-info').textContent.startsWith('生成干预范围'))$('patch-info').textContent='16个源Patch分区 · 颜色仅表示区域编号，非异常程度 · 点击查看Patch';}).observe($('patch-info'),{childList:true});
+ new MutationObserver(()=>{if(isReady())load();else{sequence++;payload=null;active='';clear();}}).observe($('model-state'),{childList:true});
+ for(const panel of [left,right]){let down=null;panel.renderer.domElement.addEventListener('pointerdown',e=>down=[e.clientX,e.clientY]);panel.renderer.domElement.addEventListener('pointerup',e=>{if(!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>5||!payload||$('patch-mode').value==='none')return;const box=panel.renderer.domElement.getBoundingClientRect(),ray=new THREE.Raycaster();ray.setFromCamera(new THREE.Vector2((e.clientX-box.left)/box.width*2-1,-(e.clientY-box.top)/box.height*2+1),panel.camera);const object=panel===left?getClean():getCurrent();const hit=ray.intersectObject(object,true).find(h=>h.object.userData.patchBase&&!h.object.userData.patchOverlay);if(!hit)return;const info=hit.object.userData.patchBase,p=info.values.patch[info.offset+hit.faceIndex],stat=payload.stats[p];$('patch-info').textContent=`Patch ${p+1} / 16 · 源区域几何干预 ${(stat.geometry_fraction*100).toFixed(1)}% · 纹理干预 ${(stat.texture_fraction*100).toFixed(1)}% · 非质量分数${payload.mapping==='exact'?'':' · 待评侧近似映射'}`;});}
+ return {load};
+}

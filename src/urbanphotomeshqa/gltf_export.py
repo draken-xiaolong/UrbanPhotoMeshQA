@@ -71,6 +71,14 @@ def export_textured_gltf(
         positions = np.asarray(asset.vertices[used] - coordinate_origin, dtype="<f4")
         normals = np.asarray(asset.normals[used], dtype="<f4")
         texcoords = np.asarray(asset.texcoords[used], dtype="<f4")
+        if not np.isfinite(texcoords).all():
+            profiles=asset.metadata.get('material_profiles', [])
+            profile=profiles[material] if material<len(profiles) else {}
+            if 'baseColorTexture' in profile.get('pbrMetallicRoughness', {}) or not profile:
+                raise ValueError('Textured primitive contains non-finite UV')
+            # Missing UV is a reader sentinel for valid constant-color faces.
+            # Never serialize NaN accessors; neutral UV is unused by this material.
+            texcoords=np.zeros_like(texcoords)
         indices = np.asarray(remapped, dtype="<u4")
         primitives.append({
             "attributes": {
@@ -104,7 +112,9 @@ def export_textured_gltf(
         if not profile:
             pbr.setdefault("metallicFactor", 0.0)
             pbr.setdefault("roughnessFactor", 1.0)
-        if index < len(textures):
+        # A known untextured material must retain its constant baseColorFactor.
+        # Synthetic placeholder images must not darken it during geometry export.
+        if index < len(textures) and (not profile or "baseColorTexture" in profile.get("pbrMetallicRoughness", {})):
             base_color_texture["index"] = index
             pbr["baseColorTexture"] = base_color_texture
         material = {
