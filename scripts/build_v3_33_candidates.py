@@ -16,7 +16,7 @@ from build_iteration3_pilot import export_geometry, stage_clean, validate
 from urbanphotomeshqa.gltf import GltfReader
 from urbanphotomeshqa.integrity import asset_digest
 from urbanphotomeshqa.patches import topological_patch_layout
-from urbanphotomeshqa.process_degradations import MultiSurfaceRegion, areas, deform, local_texture, surface_mask, textured_qem, island_projection_ghost
+from urbanphotomeshqa.process_degradations import MultiSurfaceRegion, areas, deform, local_texture, surface_mask, textured_qem, island_projection_ghost, exposure_inconsistency
 from urbanphotomeshqa.v3_protocol import PATCH_COUNT, VERSION, effective_rating, planned_slots, stable_seed
 
 
@@ -54,6 +54,9 @@ def recipe(slot, building_index, diagonal):
             entry.update(kind='radiometric' if radiometric else 'missing_texture',
                          fraction=([.25,.45,.65,.85] if radiometric else [.008,.05,.18,.50])[i],
                          strength=[.5,1.,1.8,3.5][i])
+            if radiometric:
+                entry.update(exposure_ev=[-.5,-1.,-2.,-3.5][i], warmth=.12,
+                             color_version='bounded_linear_exposure_v2')
         result.append(entry)
     return result
 
@@ -171,6 +174,13 @@ def build(source, root, admission_path, building_index, selected=None):
                     if kind == 'projection_ghost':
                         valid_domain = surface_mask(clean,remaining.astype(float),material,image.size)
                         image = island_projection_ghost(image,mask,valid_domain,op['shift_relative'])
+                    elif kind == 'radiometric':
+                        image = exposure_inconsistency(image,mask,op['exposure_ev'],op['warmth'])
+                        rgb = np.asarray(image)[...,:3]
+                        op.setdefault('material_pixel_diagnostics',{})[str(material)] = {
+                            'masked_pixels': int(mask.sum()),
+                            'near_white_fraction': float(np.all(rgb[mask]>=250,axis=1).mean()) if mask.any() else None,
+                            'near_black_fraction': float(np.all(rgb[mask]<=5,axis=1).mean()) if mask.any() else None}
                     else:
                         effect = {'missing_texture':'missing','radiometric':'seam'}[kind]
                         image = local_texture(image,mask,effect,strength)

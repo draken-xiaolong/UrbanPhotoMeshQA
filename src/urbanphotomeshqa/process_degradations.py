@@ -281,6 +281,25 @@ def island_projection_ghost(image, destination, valid_domain, relative_shift):
     return Image.fromarray(output)
 
 
+def exposure_inconsistency(image, mask, exposure_ev, warmth=0.):
+    """Bounded linear-light exposure/white-balance mismatch, preserving alpha."""
+    if not np.isfinite(exposure_ev) or abs(exposure_ev) > 4:
+        raise ValueError('Exposure must be finite and within four stops')
+    if not np.isfinite(warmth) or abs(warmth) > .2:
+        raise ValueError('White-balance shift must be finite and bounded')
+    array = np.asarray(image.convert('RGBA')).copy()
+    mask = np.asarray(mask, dtype=bool)
+    if mask.shape != array.shape[:2]:
+        raise ValueError('Texture mask must match image dimensions')
+    rgb = array[..., :3].astype(float)/255
+    linear = np.where(rgb <= .04045, rgb/12.92, ((rgb+.055)/1.055)**2.4)
+    linear *= 2.**exposure_ev * np.array([1+warmth, 1., 1-warmth])
+    linear = np.clip(linear, 0, 1)
+    rgb = np.where(linear <= .0031308, linear*12.92, 1.055*linear**(1/2.4)-.055)
+    array[mask, :3] = np.rint(np.clip(rgb[mask]*255, 0, 255)).astype(np.uint8)
+    return Image.fromarray(array)
+
+
 def local_texture(image, mask, kind, strength):
     array = np.asarray(image.convert('RGBA')).copy()
     if kind == 'missing':

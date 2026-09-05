@@ -66,6 +66,24 @@ def test_ghost_never_samples_disconnected_island_or_transparent_background():
     assert np.array_equal(out,array)
 
 
+def test_bounded_exposure_preserves_alpha_support_and_neutral_color():
+    from urbanphotomeshqa.process_degradations import exposure_inconsistency
+    array = np.full((8,8,4),180,np.uint8); array[...,3]=123
+    mask = np.zeros((8,8),bool);mask[2:6,2:6]=True
+    last = 181
+    for ev in (-.5,-1,-2,-3.5):
+        out = np.asarray(exposure_inconsistency(Image.fromarray(array),mask,ev))
+        assert np.array_equal(out[...,3],array[...,3])
+        assert np.array_equal(out[~mask],array[~mask])
+        assert np.all(out[mask,0] == out[mask,1])
+        assert np.all(out[mask,1] == out[mask,2])
+        assert out[3,3,0] < last
+        last = out[3,3,0]
+    import pytest
+    with pytest.raises(ValueError):
+        exposure_inconsistency(Image.fromarray(array),mask,8)
+
+
 def test_repeat_uv_mask_is_translation_invariant():
     from dataclasses import replace
     m=mesh();selected=np.ones(2,bool)
