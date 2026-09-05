@@ -21,6 +21,10 @@
 
 ### 最新接续：2026-09-06 07:14起，切换8栋有限初筛
 
+**当前在跑会话62109：仅B353361775001063A0七视角1024px复核。**
+
+**本轮末：85537成功完成8栋且已全部回传，已逐栋看三视角。7栋因大片灰区/拉伸或建筑片段不适合锚点；B353361775001063A0列入七视角待复核（底部疑似缺口、附属体灰区仍需确认），不是scale5。筛选决定在`ratings/discovery_train_batch01/screening.json`。已启动该唯一候选1024px七视角复核，下一轮检查新会话并同步`previews/clean_material_v2/B353361775001063A0`。不要重复8栋初筛。**
+
 - 办公楼28527成功退出，证据已同步。已查看宽体B358611580502063A1及办公楼B358311783201063A0七视角：前者侧墙/屋顶大片灰区，后者多个立面模糊拉伸，不作为scale5锚点；决定另存`ratings/clean_material_v2/screening_decisions_second_pair.json`。不再等待旧渲染/重复这两栋。
 - 为减少无效高分辨率筛选，新增`scripts/screen_v3_clean_batch.py`：只在历史qualified Train、GPU现有源包、排除已检查ID后seed2026打乱，先固定8栋名单再512px三方向初筛（方向索引5/6/4）。最多12栋/批；全部只是候选，rating=null，不能据技术qualified直接叫质量合格。入围后才补齐七视角1024px。
 - **GPU运行会话85537**，代码5a0db36，输出`previews/discovery_train_batch01`，`screening_plan.json`先于渲染保存，逐栋receipt完成标记。没有生成退化/训练。不要重复启动同目录。
