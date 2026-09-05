@@ -14,6 +14,8 @@
 - 已建立源文件轻量清单（10图幅2485栋，尚未评级），外置盘`manifests/v3_6class33_seed2026/source_inventory.json`，未解析全量网格，未把这些候选自动标成scale5。
 - 新增多空间区域共享预算与嵌套范围实现（尚需接入新生成器）；分数面积用于纹理支持，删面必须报告整面实际预算误差。
 - 已启用本任务15分钟持续推进心跳`urbanphotomeshqa-3`，读取本日志接续工作；不是后台训练已启动，也不是完成承诺。旧网页服务已关闭。
+- 启动代码提交`2a8f49a`已推送GitHub main；GPU隔离仓库`/root/autodl-tmp/UrbanPhotoMeshQA/iteration3-code`已从GitHub克隆，跳过LFS大文件自动下载。远端Python为`/root/autodl-tmp/mvgsage-env-current/bin/python`，新协议3项测试通过；本地定向测试最终20项通过。
+- 下一次直接从6类生成器适配开始，不再重复归档、克隆或全量历史审计。`source_inventory.json`只列候选不是正式Manifest；评分证据可复用归档中的`_review/clean_reselection_20260906`，读取前校验对应源内容。远端环境是否有pymeshlab/DracoPy尚待检查。
 
 ## 未完成与下一步
 
