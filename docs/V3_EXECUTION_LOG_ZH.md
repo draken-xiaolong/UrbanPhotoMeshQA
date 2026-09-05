@@ -19,6 +19,16 @@
 
 ## 未完成与下一步
 
+### 心跳推进：2026-09-06 05:03起，首栋开发生成运行中
+
+- 已查看A/B七视角总览，并分别近观A的view0/view3、B的view0。正常观看尺度判断均为机器scale5；记录局限为离线多视角，不声称人工MOS或纹理完美。
+- 当前源包digest与iteration2历史审计精确一致，旧视觉证据可复用；新准入记录绑定源digest、证据文件SHA256与本次理由，位于外置盘`ratings/clean_admission_20260906`，脚本`record_v3_clean_review.py`已执行，不重复覆盖。
+- A（B415722108801063A0）进入开发校准；B为reviewed_reserve_train_only，与A形态相似，暂不占第二个多样性开发名额。原B35520仍不作为scale5。还需低/中层及复杂形态校准建筑。
+- GPU已启动A的33候选生成，PID **769248**（复查命令后再操作），本地exec会话 **75700**。远端输出`/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-V3/assets/B415722108801063A0/dev33_attempt01`。目前不是正式33条，必须等candidate_manifest条数、进程退出与唯一性检查确认。不要重复启动/覆盖此目录。
+- 新增`render_v3_blind_evidence.py`，只离线顺序渲染；public队列为匿名编号＋无文字视图，target/class对应放private_mapping，不给评分环节读取。支持哈希校验后复用已完成图片，尚未运行首栋渲染。
+- 代码已同步到GPU **614eddc**。SSH短连接偶发被关闭，重建ControlMaster=auto、ControlPersist=3600、ServerAliveInterval=20后恢复，所有SSH/rsync共享同一ControlPath。
+- 下次步骤：检查A生成退出与33条完整性→将完成资产rsync回外置盘`assets/B415722108801063A0/dev33_attempt01`→GPU离线匿名证据生成（512px、七视角、顺序）→同步previews→只读public证据独立分档。不读private_mapping猜分，不把起始参数作为完成一一对应的证明。此后再做各槽最多6次有限校准搜索。
+
 ### 心跳推进：2026-09-06 04:40—04:55
 
 - 新入口`scripts/build_v3_33_candidates.py`：按33槽位调度6类与8组合；同栋同类四档机制稳定；T3子机制跨建筑轮换，C1/C8固定缺纹理、C5固定色彩。
