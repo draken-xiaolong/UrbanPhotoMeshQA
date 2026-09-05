@@ -26,7 +26,7 @@ def test_recipe_stable_across_grade_and_combo_subtypes():
 
 
 @pytest.mark.parametrize('variant',['T1_level1','C1','C2','C3','C4','C5','C6','C7','C8'])
-def test_fixture_candidate_has_no_automatic_quality_truth(tmp_path,variant):
+def test_fixture_candidate_has_no_automatic_quality_truth(tmp_path,variant,monkeypatch):
     source=Path(__file__).parent/'fixtures/B360011502301063A0/B360011502301063A0.gltf'
     digest,_=asset_digest(source)
     admission=tmp_path/'test_admission.json'
@@ -42,6 +42,18 @@ def test_fixture_candidate_has_no_automatic_quality_truth(tmp_path,variant):
     with np.load(support) as data:
         assert data['source_face_attributes'].shape[1]==6
         assert not np.any(data['source_face_attributes'][~data['source_face_retained'],3:])
+    if variant=='T1_level1':
+        from render_v3_blind_evidence import main as render_evidence
+        monkeypatch.setattr(sys,'argv',['render','--root',str(tmp_path/'candidate'),
+                                      '--output',str(tmp_path/'evidence'),'--size','32'])
+        render_evidence()
+        queue=json.loads((tmp_path/'evidence/review_queue.json').read_text())
+        assert len(queue)==1 and 'target_scale' not in queue[0]
+        assert 'T1' not in json.dumps(queue)
+        image=tmp_path/'evidence'/queue[0]['views']
+        timestamp=image.stat().st_mtime_ns
+        render_evidence()
+        assert image.stat().st_mtime_ns==timestamp
     admission.write_text('{}')
     with pytest.raises(ValueError,match='scale5'):
         build(source,tmp_path/'refused',admission,0,['T1_level1'])

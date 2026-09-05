@@ -6,12 +6,12 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw
 from urbanphotomeshqa.gltf import GltfReader
-from urbanphotomeshqa.texture import render_textured_view
+from urbanphotomeshqa.texture import render_textured_view, render_textured_view_with_masks, _load_texture_path
 
 ROOT = Path('/Volumes/SANDISK-ELE/UrbanPhotoMeshQA-Data/HK3D-Individualised-V3')
 DIRECTIONS = [(1,0,.15),(-1,0,.15),(0,1,.15),(0,-1,.15),(0,0,1),(1,1,.7),(-1,-1,.7)]
 
-def render(path, destination, size=640, directions=DIRECTIONS):
+def render(path, destination, size=640, directions=DIRECTIONS, material_aware=False):
     destination.mkdir(parents=True, exist_ok=True)
     mesh = GltfReader(path).load_mesh(include_texture=True)
     uv = mesh.texcoords.copy(); uv[:,1] = 1-uv[:,1]
@@ -21,12 +21,15 @@ def render(path, destination, size=640, directions=DIRECTIONS):
     mesh = replace(mesh, texcoords=uv, vertices=vertices)
     sheet = Image.new('RGB', (size*2,size*4),'white')
     for i,d in enumerate(directions):
-        im = Image.fromarray(render_textured_view(mesh,direction=d,size=size))
+        pixels = (render_textured_view_with_masks(mesh,direction=d,size=size)[0]
+                  if material_aware else render_textured_view(mesh,direction=d,size=size))
+        im = Image.fromarray(pixels)
         # Renderer image coordinates increase upward; correct display orientation.
         im = im.transpose(Image.Transpose.FLIP_TOP_BOTTOM)
         im.save(destination/f'view{i}.png')
         sheet.paste(im,((i%2)*size,(i//2)*size))
     sheet.save(destination/'views.jpg',quality=95)
+    _load_texture_path.cache_clear()
     return {'vertices':len(mesh.vertices),'faces':len(mesh.faces),'extent':np.ptp(mesh.vertices,axis=0).tolist()}
 
 def main():

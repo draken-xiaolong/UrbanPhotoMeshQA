@@ -33,13 +33,13 @@ def main():
         receipt=folder/'receipt.json'
         if receipt.exists():
             payload=json.loads(receipt.read_text())
-            if payload['content_digest']!=digest or payload['size']!=args.size:
+            if payload['content_digest']!=digest or payload['size']!=args.size or payload.get('renderer')!='material_aware_v2':
                 raise ValueError('Review evidence version mismatch')
             if any(sha256_file(folder/name)!=value for name,value in payload['images'].items()):
                 raise ValueError('Evidence changed; create a new review revision')
         else:
-            render(source,folder,args.size)
-            payload={'content_digest':digest,'size':args.size,
+            render(source,folder,args.size,material_aware=True)
+            payload={'content_digest':digest,'size':args.size,'renderer':'material_aware_v2',
                      'images':{p.name:sha256_file(p) for p in sorted(folder.glob('view*.*'))}}
             receipt.write_text(json.dumps(payload,indent=2))
         # Reviewers receive only this list and neutral images, not the private map.
