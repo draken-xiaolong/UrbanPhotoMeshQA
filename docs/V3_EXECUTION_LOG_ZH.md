@@ -21,6 +21,14 @@
 
 ### 心跳推进：2026-09-06 05:03起，首栋开发生成运行中
 
+**最新检查覆盖下面的“运行中”描述：A生成进程已成功退出，33条候选、33个不同decoded_digest、正式准入仍0。远端资产约1.3GiB。**
+
+- 正在回传外置盘同构目录，rsync本地exec会话`39581`，不可在未传完时称为已完整同步。保留远端副本，不删除。
+- GPU已启动512px×七视角匿名证据，PID`770065`（先核对命令），本地exec会话`36786`；输出`/root/autodl-tmp/UrbanPhotoMeshQA/data/HK3D-Individualised-V3/previews/A_dev33_blind_v1`。预计33条public证据，先检查进程/queue数量再续跑，已有receipt可校验复用。
+- 新证据改用material-aware渲染，尊重baseColorFactor、alpha、sampler wrap；每栋渲染后清空纹理LRU缓存，避免跨样本内存积累。旧历史图像不覆盖，新旧证据有渲染版本区别；独立评分也须复核新证据中的Clean，不强迫其维持5。
+- 匿名队列＋缓存复用小夹具测试通过（1 passed）；远端代码`3dfbc6e`。低层备选B35992、B36161历史预览有大片灰区，两个源模型虽有纹理绑定且UV有限，但不能直接据此确认实际高质量，暂不准入，需要材料感知新证据澄清。
+- **接续重点：** 等回传完整做一次轻量依赖/哈希校验；同步匿名previews，只读取public队列给33候选独立评分，然后才查private映射统计四档成功率。不要现在训练或继续扩大到150栋。
+
 - 已查看A/B七视角总览，并分别近观A的view0/view3、B的view0。正常观看尺度判断均为机器scale5；记录局限为离线多视角，不声称人工MOS或纹理完美。
 - 当前源包digest与iteration2历史审计精确一致，旧视觉证据可复用；新准入记录绑定源digest、证据文件SHA256与本次理由，位于外置盘`ratings/clean_admission_20260906`，脚本`record_v3_clean_review.py`已执行，不重复覆盖。
 - A（B415722108801063A0）进入开发校准；B为reviewed_reserve_train_only，与A形态相似，暂不占第二个多样性开发名额。原B35520仍不作为scale5。还需低/中层及复杂形态校准建筑。
