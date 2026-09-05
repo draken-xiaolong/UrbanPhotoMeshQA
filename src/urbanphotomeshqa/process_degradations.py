@@ -4,7 +4,7 @@ import heapq
 import numpy as np
 from PIL import Image, ImageDraw
 from scipy import sparse
-from scipy.ndimage import map_coordinates
+from scipy.ndimage import map_coordinates, label, find_objects, distance_transform_edt
 from .mesh_attacks import face_adjacency, recompute_vertex_normals
 
 
@@ -240,6 +240,45 @@ def surface_mask(mesh, selected, material, size):
         for shift in shifts:
             draw.polygon([(float(u*(size[0]-1)), float(v*(size[1]-1))) for u, v in uv+shift], fill=255)
     return np.asarray(canvas)>0
+
+
+def island_projection_ghost(image, destination, valid_domain, relative_shift):
+    """Misprojection within raster-connected UV domains, not atlas-wide wrapping.
+
+    Destination coverage does not shrink with displacement. Invalid source samples
+    project to the nearest valid pixel in the SAME component. This is an explicit
+    boundary-extension approximation, not a claim to know original camera poses.
+    Raster connectivity can merge touching UV islands; record that limitation.
+    """
+    if not np.isfinite(relative_shift) or not 0 <= relative_shift <= 1:
+        raise ValueError('relative_shift must be finite and in [0,1]')
+    original = np.asarray(image.convert('RGBA'))
+    destination = np.asarray(destination, dtype=bool)
+    valid_domain = np.asarray(valid_domain, dtype=bool)
+    if destination.shape != original.shape[:2] or valid_domain.shape != destination.shape:
+        raise ValueError('Texture masks must match image dimensions')
+    valid_domain = valid_domain & (original[..., 3] > 0)
+    components, _ = label(valid_domain)
+    output = original.copy()
+    for identity, box in enumerate(find_objects(components), start=1):
+        if box is None:
+            continue
+        domain = components[box] == identity
+        active = destination[box] & domain
+        if not active.any():
+            continue
+        height, width = domain.shape
+        shift = relative_shift * max(0, min(height, width)-1)
+        y, x = np.nonzero(active)
+        sx = np.clip(np.rint(x-shift).astype(int), 0, width-1)
+        sy = np.clip(np.rint(y-.35*shift).astype(int), 0, height-1)
+        nearest = distance_transform_edt(~domain, return_distances=False, return_indices=True)
+        source_y, source_x = nearest[:, sy, sx]
+        source = original[box]
+        output[box][y, x, :3] = np.rint(
+            .5*source[y, x, :3].astype(float) + .5*source[source_y, source_x, :3]
+        ).astype(np.uint8)
+    return Image.fromarray(output)
 
 
 def local_texture(image, mask, kind, strength):

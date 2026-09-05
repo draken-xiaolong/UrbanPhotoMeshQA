@@ -40,6 +40,32 @@ def test_texture_support_and_no_wrap():
     assert not mask[50:, :].any()
 
 
+def test_ghost_does_not_disappear_when_shift_exceeds_destination_width():
+    from urbanphotomeshqa.process_degradations import island_projection_ghost
+    array = np.zeros((32,64,4),np.uint8)
+    array[...,0] = np.arange(64,dtype=np.uint8)[None,:]*3
+    array[...,3] = 193
+    domain = np.ones((32,64),bool)
+    destination = np.zeros_like(domain); destination[8:24,30:32] = True
+    counts = []
+    for shift in (.08,.18,.32,.48):
+        out = np.asarray(island_projection_ghost(Image.fromarray(array),destination,domain,shift))
+        counts.append(np.any(out[...,:3] != array[...,:3],axis=2).sum())
+        assert np.array_equal(out[~destination],array[~destination])
+        assert np.array_equal(out[...,3],array[...,3])
+    assert counts == [32]*4
+
+
+def test_ghost_never_samples_disconnected_island_or_transparent_background():
+    from urbanphotomeshqa.process_degradations import island_projection_ghost
+    array = np.zeros((24,32,4),np.uint8)
+    array[2:20,2:10] = [255,0,0,255]
+    array[2:20,20:28] = [0,255,0,255]
+    domain = array[...,3] > 0
+    out = np.asarray(island_projection_ghost(Image.fromarray(array),domain,domain,1))
+    assert np.array_equal(out,array)
+
+
 def test_repeat_uv_mask_is_translation_invariant():
     from dataclasses import replace
     m=mesh();selected=np.ones(2,bool)

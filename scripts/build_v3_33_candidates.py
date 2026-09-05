@@ -16,7 +16,7 @@ from build_iteration3_pilot import export_geometry, stage_clean, validate
 from urbanphotomeshqa.gltf import GltfReader
 from urbanphotomeshqa.integrity import asset_digest
 from urbanphotomeshqa.patches import topological_patch_layout
-from urbanphotomeshqa.process_degradations import MultiSurfaceRegion, areas, deform, local_texture, surface_mask, textured_qem
+from urbanphotomeshqa.process_degradations import MultiSurfaceRegion, areas, deform, local_texture, surface_mask, textured_qem, island_projection_ghost
 from urbanphotomeshqa.v3_protocol import PATCH_COUNT, VERSION, effective_rating, planned_slots, stable_seed
 
 
@@ -45,7 +45,10 @@ def recipe(slot, building_index, diagonal):
                          jpeg_quality=[55,35,20,10][i])
         elif category == 'T2':
             entry.update(kind='projection_ghost', fraction=[.25,.45,.65,.85][i],
-                         shift_relative=[.006,.016,.04,.08][i])
+                         shift_relative=[.08,.18,.32,.48][i],
+                         sampling_version='raster_connected_uv_domain_v2',
+                         boundary_policy='nearest_valid_same_component',
+                         limitation='touching UV islands may share a raster component; not camera-grounded')
         elif category == 'T3':
             radiometric = slot['variant_id']=='C5' or (slot['variant_id'].startswith('T3') and building_index%2)
             entry.update(kind='radiometric' if radiometric else 'missing_texture',
@@ -164,10 +167,16 @@ def build(source, root, admission_path, building_index, selected=None):
                     weights = support[:,('G1','G2','G3','T1','T2','T3').index(category)] * remaining
                     mask = surface_mask(clean,weights,material,image.size)
                     strength = op.get('strength',0)
+                    before = np.asarray(image).copy()
                     if kind == 'projection_ghost':
-                        strength = min(image.size)*op['shift_relative']
-                    effect = {'projection_ghost':'misalignment','missing_texture':'missing','radiometric':'seam'}[kind]
-                    image = local_texture(image,mask,effect,strength)
+                        valid_domain = surface_mask(clean,remaining.astype(float),material,image.size)
+                        image = island_projection_ghost(image,mask,valid_domain,op['shift_relative'])
+                    else:
+                        effect = {'missing_texture':'missing','radiometric':'seam'}[kind]
+                        image = local_texture(image,mask,effect,strength)
+                    # Actual pixel changes differ from intended intervention support.
+                    evidence[f'pixel_changed_op{number}_material{material}'] = np.any(
+                        np.asarray(image)[...,:3] != before[...,:3], axis=2)
                 evidence[f'pixel_support_op{number}_material{material}'] = mask
             target = folder/'textures'/f'processed_{material:04d}.png'
             image.save(target)
