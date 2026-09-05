@@ -25,7 +25,8 @@ def test_recipe_stable_across_grade_and_combo_subtypes():
                 assert next(o for o in ops if o['class']=='T3')['kind']=='radiometric'
 
 
-def test_fixture_candidate_has_no_automatic_quality_truth(tmp_path):
+@pytest.mark.parametrize('variant',['T1_level1','C1','C2','C3','C4','C5','C6','C7','C8'])
+def test_fixture_candidate_has_no_automatic_quality_truth(tmp_path,variant):
     source=Path(__file__).parent/'fixtures/B360011502301063A0/B360011502301063A0.gltf'
     digest,_=asset_digest(source)
     admission=tmp_path/'test_admission.json'
@@ -33,13 +34,14 @@ def test_fixture_candidate_has_no_automatic_quality_truth(tmp_path):
     admission.write_text(json.dumps({'technical_valid':True,'ratings':{'machine':{
         'content_digest':digest,'scale':5,'uncertain':False,'protocol_version':'unit_test_only',
         'evidence':['synthetic test harness; not a visual review']}}}))
-    rows=build(source,tmp_path/'candidate',admission,0,['T1_level1'])
+    rows=build(source,tmp_path/'candidate',admission,0,[variant])
     assert len(rows)==1 and rows[0]['ratings']=={}
     assert rows[0]['formal_admitted'] is False
     assert not np.any(rows[0]['patch_quality_valid_mask'])
-    support=tmp_path/'candidate/assets/T1_level1/intervention_support.npz'
+    support=tmp_path/'candidate/assets'/variant/'intervention_support.npz'
     with np.load(support) as data:
         assert data['source_face_attributes'].shape[1]==6
+        assert not np.any(data['source_face_attributes'][~data['source_face_retained'],3:])
     admission.write_text('{}')
     with pytest.raises(ValueError,match='scale5'):
         build(source,tmp_path/'refused',admission,0,['T1_level1'])
