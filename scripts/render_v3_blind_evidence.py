@@ -8,6 +8,17 @@ from review_v3_visual_candidates import render
 from urbanphotomeshqa.integrity import asset_digest, sha256_file
 
 
+def ordered_rows(rows, policy='content_seed2026_v2'):
+    if policy == 'legacy_fixed_shuffle_v1':
+        rows = list(rows)
+        random.Random(2026).shuffle(rows)
+        return rows
+    if policy != 'content_seed2026_v2':
+        raise ValueError('Unknown review ordering policy')
+    return sorted(rows, key=lambda row: hashlib.sha256(
+        ('2026:review-order-v2:'+row['content_digest']).encode()).hexdigest())
+
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--root',type=Path,required=True)
@@ -17,11 +28,24 @@ def main():
     args=parser.parse_args()
     if str(args.output).startswith('/Volumes/') and not Path('/Volumes/SANDISK-ELE').is_mount():
         raise RuntimeError('请先插上移动硬盘 SANDISK-ELE')
-    rows=json.loads((args.root/'candidate_manifest.json').read_text())['records']
-    random.Random(2026).shuffle(rows)
+    manifest=args.root/'candidate_manifest.json'
+    rows=json.loads(manifest.read_text())['records']
+    order_path=args.output/'ordering.json'
+    manifest_hash=sha256_file(manifest)
+    if order_path.exists():
+        ordering=json.loads(order_path.read_text())
+        if ordering['manifest_sha256']!=manifest_hash:
+            raise ValueError('Candidate manifest changed; use a new evidence revision')
+    else:
+        policy='legacy_fixed_shuffle_v1' if (args.output/'review_queue.json').exists() else 'content_seed2026_v2'
+        ordering={'policy':policy,'manifest_sha256':manifest_hash,'seed':2026}
+    rows=ordered_rows(rows,ordering['policy'])
     if args.limit is not None:
         rows=rows[:args.limit]
     args.output.mkdir(parents=True,exist_ok=True)
+    if not order_path.exists():
+        with order_path.open('x') as stream:
+            json.dump(ordering,stream,indent=2)
     public=[]; private=[]
     for row in rows:
         source=args.root/row['gltf']

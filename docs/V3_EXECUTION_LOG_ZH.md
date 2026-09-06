@@ -21,6 +21,9 @@
 
 ### 最新接续：2026-09-06 09:42起，T2第三轮生成与接收校验完成
 
+- 本轮继续完成：旧Mac rsync不接受两个远端源写法，改成独立同步1390/6461均成功，未发生数据删除。已经逐条查看第三轮4条512七视角总览和1024原生view0，先保存意见后读映射：level1→4为**3/3/2/1，3/4目标匹配**。评分在`ratings/A_T2_attempt03_blind/independent_scores.json`，带局限的绑定报告`diagnostic_report_with_scope.json`。不是正式准入，原生细节仅view0单独查看。
+- 发现历次固定shuffle令相同槽位序列可被猜测，且评分者同时参与生成，因此本批只作目标隐藏开发意见，明确记录不满足严格盲评。新队列采用seed2026＋内容digest排序，同版本跨分辨率一致、新内容改变次序；旧队列恢复保留旧顺序，新增ordering.json绑定manifest，拒绝原目录静默更换manifest。汇总器保留scope/limitations，不再强写“独立”来源。15项小测试通过。
+- 第三轮中重档暂不再生成。只调整轻档至面积.30、位移.12、纵向逆尺度.975、剪切.015、混合.45，拟生成`dev_T2_attempt04_light`单条；这条因目标已知只能先作开发机制检查，后续须与其他候选混合复核，不能以单条知情意见宣称正式四档验收完成。
 - 7033已成功退出，第三轮4条完成；资产回传57449成功。新工具`audit_v3_candidates.py`完成一次轻量包依赖hash、manifest内容绑定、当前16Patch布局hash及可见标签schema核验，结果4/4通过，外置盘`audits/A_T2_attempt03_received.json`。不重复此不变内容审计；它不重算decoded几何或代替物理/视觉验收。
 - 此工具拒绝过期布局标签、重复ID/hash、越界路径和已有审计覆盖。10项小夹具生成测试通过（含有效审计及过期布局标签拒绝），临时文件在外置盘`_scratch/pytest_received_audit_20260906_0945`。
 - GPU证据会话58203成功退出，第三轮全部4条512与1024七视角均完成，输出`previews/A_T2_attempt03_blind`和`previews/A_T2_attempt03_detail_v2`；已启动两个目录回传。下一步同步结束后，先查看public证据记录独立意见，再查private_mapping，当前未看第三轮对应关系和图像，不按参数猜分。

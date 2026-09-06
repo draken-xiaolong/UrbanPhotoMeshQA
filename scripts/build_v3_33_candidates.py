@@ -45,11 +45,11 @@ def recipe(slot, building_index, diagonal):
             entry.update(kind='downsample_encoding', ratio=[.25,.08,.025,.008][i],
                          jpeg_quality=[55,35,20,10][i])
         elif category == 'T2':
-            entry.update(kind='projection_ghost', fraction=[.45,.65,.85,.97][i],
-                         shift_relative=[.18,.25,.35,.45][i],
-                         vertical_scale=[.90,.65,.35,.12][i],
-                         shear=[.04,.12,.25,.40][i],
-                         blend=[.5,.7,.9,1.][i], linear_blend=True,
+            entry.update(kind='projection_ghost', fraction=[.30,.65,.85,.97][i],
+                         shift_relative=[.12,.25,.35,.45][i],
+                         vertical_scale=[.975,.65,.35,.12][i],
+                         shear=[.015,.12,.25,.40][i],
+                         blend=[.45,.7,.9,1.][i], linear_blend=True,
                          sampling_version='raster_connected_inverse_affine_v3',
                          boundary_policy='nearest_valid_same_component',
                          limitation='touching UV islands may share a raster component; not camera-grounded')

@@ -6,6 +6,22 @@ import pytest
 from summarize_v3_blind_review import summarize
 
 
+def test_review_order_depends_on_content_not_recipe_position():
+    from render_v3_blind_evidence import ordered_rows
+    rows=[{'content_digest':str(i),'variant_id':str(i)} for i in range(20)]
+    assert ordered_rows(rows)==ordered_rows(list(reversed(rows)))
+    changed=[dict(row,content_digest='new-'+row['content_digest']) for row in rows]
+    assert [r['variant_id'] for r in ordered_rows(rows)] != [r['variant_id'] for r in ordered_rows(changed)]
+
+
+def test_review_preserves_blinding_limitations(tmp_path):
+    scores=setup_review(tmp_path)
+    payload=json.loads(scores.read_text())
+    payload['limitations']='Reviewer also generated candidates; type known'
+    scores.write_text(json.dumps(payload))
+    assert summarize(tmp_path,scores)['records'][0]['review_limitations']==payload['limitations']
+
+
 def setup_review(tmp_path):
     folder = tmp_path / 'public' / 'anonymous'
     folder.mkdir(parents=True)

@@ -40,7 +40,9 @@ def summarize(evidence, scores):
         if receipt['content_digest'] != candidate['content_digest']:
             raise ValueError('Candidate and evidence digests disagree')
         result.append({**candidate, 'machine_scale': row['scale'], 'reason': row['reason'],
-                       'rating_source': 'independent_AI_visual_review_not_human_MOS',
+                       'rating_source': 'AI_visual_opinion_not_human_MOS',
+                       'review_scope': opinions.get('scope'),
+                       'review_limitations': opinions.get('limitations'),
                        'evidence_receipt_sha256': digest(receipt_path),
                        'matches_target': row['scale'] == candidate['target_scale'],
                        'formal_admitted': False,
