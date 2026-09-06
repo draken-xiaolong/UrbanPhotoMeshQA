@@ -43,6 +43,16 @@ def test_fixture_candidate_has_no_automatic_quality_truth(tmp_path,variant,monke
     targets=compile_labels(labels,rows[0]['content_digest'],rows[0]['patch_layout_digest'])
     assert not targets['building_valid'].any()
     assert not targets['patches_valid'].any()
+    from audit_v3_candidates import audit
+    report=audit(tmp_path/'candidate')
+    assert report['count']==1 and report['passed']
+    assert report['formal_admitted'] is False
+    labels_path=tmp_path/'candidate/assets'/variant/'visible_attribute_labels.json'
+    stale=dict(labels,patch_layout_digest='stale')
+    labels_path.write_text(json.dumps(stale))
+    with pytest.raises(ValueError,match='patch layout'):
+        audit(tmp_path/'candidate')
+    labels_path.write_text(json.dumps(labels))
     support=tmp_path/'candidate/assets'/variant/'intervention_support.npz'
     with np.load(support) as data:
         assert data['source_face_attributes'].shape[1]==6
