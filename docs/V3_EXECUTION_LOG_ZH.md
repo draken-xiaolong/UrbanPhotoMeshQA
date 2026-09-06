@@ -19,6 +19,18 @@
 
 ## 未完成与下一步
 
+
+### 最新接续：2026-09-06 10:22–10:52，接管与跨建筑批量筛选/生成
+
+- 本任务 `01a07481-8678-7061-875c-3c4cd0951389` 已先暂停旧心跳 `urbanphotomeshqa-3`，确认旧任务空闲、远端没有遗留生成/训练后接管。用户追加授权充分使用空闲Mac；所有预览、临时文件、数据和实验仍只存外置盘/GPU受控目录。未创建重复自动化，没有重新归档当前数据。
+- 外置盘真实挂载；SSH使用已核验的116.136.52.182及原HostKeyAlias。GPU隔离repo保留两份历史fixture脏修改；本地“启动质量评分.command”保留。新训练未开始，正式准入仍0。
+- 本轮额外完成105栋未复查Train候选的3视角512预筛，目录 `previews/discovery_train_batch03_gpu`、`batch04_mac`～`batch11_mac`；各批有冻结screening_plan、receipt、screening.json与逐栋理由。不存在用渲染成功代替scale5。补齐短名单七视角1024，详细拒绝原因在 `ratings/clean_material_v2/batch03_detail_decisions.json`、`batch04_detail_decisions.json`、`batch05_11_detail_decisions.json`。不得重复筛这些已检查资产。
+- 新开发B `B414372125401063A0`（折线长板楼）、C `B412712118401063A0`（低层弧形屋顶体育馆）经七视角＋原生细节人工式AI查看，独立暂评5；记录 `ratings/clean_admission_visual_v2/<ID>.json` 绑定内容/图片hash，非MOS、非正式准入。`B361511560501063A0` 暂评5仅为Train储备，角色 `reviewed_reserve_train_only`；不是第4栋开发。均有纯色墙体/反光/遮蔽局限说明。
+- B/C各33个开发候选已经在GPU生成、完成512与1024全部七视角并回传；目录 `assets/<B或C>/dev33_attempt01`、`previews/devB_33_512`/`devB_33_1024`及devC对应目录。接收包hash与当前16Patch标签绑定核验各33通过，见 `audits/<ID>_dev33_attempt01_received.json`；不要重复不变审计或渲染。A原44保留，因此当前3栋开发建筑、110个候选版本，开发校准尚未验收，正式条数0。
+- Mac新技术筛选 `audits/fresh_train_discovery01`：冻结240个未在历史340列表的候选，仅来自既有Train图幅，排除历史所有Split建筑ID。126达到本批技术/至少256面门槛，114未选中（不统称生成失败）。`previews/fresh_train_detail01` 正在两并发、有180秒单栋上限地生成七视角1024；已有50栋时记录本条。事件日志可恢复，部分失败不覆盖，未评分不冒充scale5。后续还要做跨ID实体分组，不代表正式Split已冻结。
+- 为避免串行视觉复核瓶颈，在独立 `iteration3-review-env` 安装Qwen2.5-VL所需环境；官方ModelScope Qwen2.5-VL-7B-Instruct权重下载到GPU数据 `model_cache`。准备只接收匿名图片的独立机器辅助复核，先在开发候选校准；不传目标/配方/旧分，不使用待训练QA模型自己预测作真值。此时权重下载中，尚无该模型评分；不能报告成训练或正式标注。
+- 主要待完成：开发110版本的目标隐藏混合复核、G1/G3/T3及组合有效性、UV复用回投和有效覆盖检查、3栋校准验收、12栋Train试生产。全新Blind图幅仍未取得，原始2485栋来自10个历史使用图幅，不能换名作全新Blind。用户希望3小时推进完成，但该愿望不是质量门槛豁免或已测量完成承诺。
+
 ### 最新接续：轻档候选完成，用户再次授权持续推进
 
 - 最新收尾：GPU代码**4f2ba19**；T1第二轮单条生成＋512/1024证据链会话75389成功退出，82297/80001/48084全部同步成功，接收校验1/1通过（`audits/A_T1_attempt02_scale2_received.json`）。已查看总览和原生view0，暂评2，另存`ratings/A_T1_attempt02_scale2/development_observation.json`。T1现在也有4/3/2/1开发候选，尚需混合复核，非正式验收。
