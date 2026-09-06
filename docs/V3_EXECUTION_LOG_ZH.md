@@ -21,6 +21,7 @@
 
 ### 最新接续：2026-09-06 08:36起，六属性监督契约接入生成器
 
+- 补充：代码`6a7ac5e`已推送GitHub；89942随后成功退出，T2四份细节证据齐全，已启动回传；并启动`previews/A_C5_attempt02_detail_v2`单条同规格补图。下次先检查这两个目录同步/receipt状态，不重复运行。
 - A原33版本1024细节证据已完成：远端33份receipt、无该渲染进程；回传会话48627成功退出。外置盘`previews/A_dev33_detail_v2`已同步，不要重生成。尚未据此更新评分。
 - 新增`v3_attribute_labels.py`独立版本schema：建筑6属性、当前Mesh固定16×6 Patch属性，未知存null；有效正例/负例必须有明确二值判断、来源、证据、协议与非不确定状态。干预类型不允许当视觉标签；旧softmax类别/order及过期资产/布局digest拒绝。
 - masked sigmoid BCE只取有效元素，支持同一Patch多个异常；全未知返回可反传零，不让未知NaN参与损失。已接入候选生成器输出`visible_attribute_labels.json`，初始全部未知，绑定实际current_patch_layout文件SHA256；不回写旧候选、不修改旧发布模型。
