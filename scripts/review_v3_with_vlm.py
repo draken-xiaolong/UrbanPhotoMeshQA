@@ -50,8 +50,13 @@ def main():
     if any(set(row) != {'review_id', 'evidence_folders'} for row in queue):
         raise ValueError('Review queue must contain only neutral image references')
     import torch
-    from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor
+    from transformers import Qwen2_5_VLForConditionalGeneration, Qwen3VLForConditionalGeneration, AutoProcessor, AutoConfig
     torch.manual_seed(2026)
+    model_type = AutoConfig.from_pretrained(args.model, local_files_only=True).model_type
+    model_class = {'qwen2_5_vl': Qwen2_5_VLForConditionalGeneration,
+                   'qwen3_vl': Qwen3VLForConditionalGeneration}.get(model_type)
+    if model_class is None:
+        raise ValueError('Only explicitly supported local vision model families are allowed')
     provenance_path = args.output/'provenance.json'
     if provenance_path.exists():
         provenance = json.loads(provenance_path.read_text())
@@ -59,7 +64,7 @@ def main():
             raise ValueError('Use a new review version for prompt/model changes')
     else:
         files = sorted(p for p in args.model.iterdir() if p.suffix in ('.json', '.safetensors', '.txt'))
-        provenance = {'model_id': 'Qwen/Qwen2.5-VL-7B-Instruct', 'model_path': str(args.model),
+        provenance = {'model_id': 'Qwen/'+args.model.name, 'model_type': model_type, 'model_path': str(args.model),
             'model_source': 'official Qwen repository on ModelScope', 'model_files': {p.name: sha256_file(p) for p in files},
             'prompt': PROMPT, 'seed': 2026, 'do_sample': False, 'max_new_tokens': args.max_new_tokens,
             'torch': torch.__version__, 'transformers': importlib.metadata.version('transformers'),
@@ -70,7 +75,7 @@ def main():
     provenance_hash = sha256_file(provenance_path)
     processor = AutoProcessor.from_pretrained(args.model, local_files_only=True,
         min_pixels=256*28*28, max_pixels=1024*1024)
-    model = Qwen2_5_VLForConditionalGeneration.from_pretrained(args.model, local_files_only=True,
+    model = model_class.from_pretrained(args.model, local_files_only=True,
         torch_dtype=torch.bfloat16, device_map={'': 'cuda:0'}, attn_implementation='sdpa').eval()
     for row in queue[:args.limit]:
         started = time.monotonic()
