@@ -19,6 +19,7 @@ from urbanphotomeshqa.patches import topological_patch_layout
 from urbanphotomeshqa.process_degradations import MultiSurfaceRegion, areas, deform, local_texture, surface_mask, textured_qem, island_projection_ghost, exposure_inconsistency
 from urbanphotomeshqa.v3_protocol import PATCH_COUNT, VERSION, effective_rating, planned_slots, stable_seed
 from urbanphotomeshqa.v3_attribute_labels import empty_labels
+from urbanphotomeshqa.process_degradations import remove_fractional_faces
 
 
 def recipe(slot, building_index, diagonal):
@@ -108,6 +109,7 @@ def build(source, root, admission_path, building_index, selected=None):
         operations = recipe(slot,building_index,diagonal)
         mesh = clean
         remaining = np.ones(len(clean.faces),bool)
+        removal_fraction = np.zeros(len(clean.faces),float)
         support = np.zeros((len(clean.faces),6),np.float32)
         evidence = {}
         mappings_exact = True
@@ -124,8 +126,10 @@ def build(source, root, admission_path, building_index, selected=None):
                 evidence[f'{category}_region_ids'] = regions[category].region_ids
             support[:,index] = weights
             if kind == 'missing_faces':
-                remaining &= weights == 0
-                support[:,index] = ~remaining
+                removal_fraction = np.maximum(removal_fraction, weights)
+                remaining = removal_fraction < 1
+                support[:,index] = removal_fraction
+                op['removal_version'] = 'fractional_nested_triangle_holes_v1'
             elif kind == 'correlated_noise':
                 mesh = deform(mesh,weights>0,op['amplitude'],op['seed'])
             elif kind == 'bounded_smoothing':
@@ -138,10 +142,13 @@ def build(source, root, admission_path, building_index, selected=None):
                 evidence[f'{category}_vertex_displacement'] = offset
                 support[:,index] = np.any(offset[clean.faces]>1e-9,axis=1)
         # Deleting last preserves source indexing during correlated deformation.
-        if not remaining.all():
+        if removal_fraction.any():
             if not mappings_exact:
                 raise ValueError('Deletion+QEM requires an explicit correspondence implementation')
-            mesh = replace(mesh,faces=mesh.faces[remaining],face_materials=mesh.face_materials[remaining])
+            mesh, source_faces, source_corners = remove_fractional_faces(mesh, removal_fraction)
+            evidence['current_face_source_index'] = source_faces
+            evidence['current_corner_source_barycentric'] = source_corners
+            evidence['source_face_retained_fraction'] = 1-removal_fraction
         # Deleted surfaces cannot also count as an applied texture defect.
         support[:,3:] *= remaining[:,None]
         folder.mkdir(parents=True)
@@ -201,6 +208,12 @@ def build(source, root, admission_path, building_index, selected=None):
         np.savez_compressed(folder/'intervention_support.npz',source_face_attributes=support,
                             source_face_areas=area,source_face_retained=remaining,**evidence)
         current = GltfReader(path).load_mesh(include_texture=True)
+        if removal_fraction.any():
+            # Exporter retains material-grouped face order, but may compact vertices.
+            if current.faces.shape != mesh.faces.shape or not np.array_equal(current.face_materials, mesh.face_materials):
+                raise ValueError('Fractional deletion export changed face correspondence')
+            if not np.allclose(current.vertices[current.faces], mesh.vertices[mesh.faces], atol=1e-4, rtol=0):
+                raise ValueError('Fractional deletion exported corners disagree')
         if (areas(current)>0).sum() < PATCH_COUNT:
             raise ValueError(f"{slot['variant_id']}: fewer than 16 effective faces; reject candidate")
         current_layout = topological_patch_layout(current,PATCH_COUNT)
@@ -217,7 +230,8 @@ def build(source, root, admission_path, building_index, selected=None):
                   'patch_layout_version':'topological_v2_fixed16',
                   'patch_layout_digest':layout_digest,
                   'visible_attribute_labels':'visible_attribute_labels.json',
-                  'current_source_face_mapping':'exact_surviving_face_order' if mappings_exact else 'unknown_after_qem',
+                  'current_source_face_mapping':('exact_face_corner_barycentric_v1' if removal_fraction.any()
+                      else 'exact_surviving_face_order' if mappings_exact else 'unknown_after_qem'),
                   'patch_quality_valid_mask':[[False]*3 for _ in range(PATCH_COUNT)],
                   'visible_attribute_valid_mask':[[False]*6 for _ in range(PATCH_COUNT)],
                   'support_note':'Source intervention evidence only; pixel masks may overlap reused UVs; visible labels remain unknown.',

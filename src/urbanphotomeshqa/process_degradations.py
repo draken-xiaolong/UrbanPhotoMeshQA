@@ -109,6 +109,44 @@ class MultiSurfaceRegion:
         return self.weights(fraction) > 0
 
 
+def remove_fractional_faces(mesh, fractions):
+    """Remove nested central holes without rounding a partial face up to deletion.
+
+    Return exact source-face and barycentric corner correspondence for retained
+    triangles. UVs are interpolated within each original face, preserving seams.
+    This is intervention geometry, not a visible-defect or quality label.
+    """
+    fractions = np.asarray(fractions, dtype=float)
+    if fractions.shape != (len(mesh.faces),) or not np.isfinite(fractions).all() or np.any((fractions < 0) | (fractions > 1)):
+        raise ValueError('Expected one finite removal fraction in [0,1] per face')
+    source, corners = [], []
+    outer = np.eye(3)
+    for face, fraction in enumerate(fractions):
+        if fraction == 1:
+            continue
+        if fraction == 0:
+            source.append(face); corners.append(outer)
+            continue
+        inner = (1-np.sqrt(fraction))/3 + np.sqrt(fraction)*outer
+        # Three trapezoids cover the ring; each has two consistently wound faces.
+        for i in range(3):
+            j = (i+1) % 3
+            source.extend([face, face])
+            corners.extend([np.stack([outer[i],outer[j],inner[j]]),
+                            np.stack([outer[i],inner[j],inner[i]])])
+    source = np.asarray(source, dtype=np.int64)
+    corners = np.asarray(corners, dtype=np.float64).reshape(-1,3,3)
+    def interpolate(values):
+        return np.einsum('fij,fjk->fik', corners, values[mesh.faces[source]]).reshape(-1,values.shape[1])
+    vertices = interpolate(mesh.vertices)
+    normals = interpolate(mesh.normals)
+    normals /= np.maximum(np.linalg.norm(normals,axis=1,keepdims=True),1e-12)
+    result = replace(mesh, vertices=vertices, faces=np.arange(len(vertices)).reshape(-1,3),
+                     normals=normals, face_materials=mesh.face_materials[source],
+                     texcoords=None if mesh.texcoords is None else interpolate(mesh.texcoords))
+    return result, source, corners
+
+
 def deform(mesh, face_mask, amplitude, seed, smooth_steps=0, max_displacement=None):
     points, inverse, faces = topology(mesh)
     edges = np.vstack([faces[:, [0, 1]], faces[:, [1, 2]], faces[:, [2, 0]]])

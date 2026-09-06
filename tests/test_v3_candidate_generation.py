@@ -25,7 +25,7 @@ def test_recipe_stable_across_grade_and_combo_subtypes():
                 assert next(o for o in ops if o['class']=='T3')['kind']=='radiometric'
 
 
-@pytest.mark.parametrize('variant',['T1_level1','C1','C2','C3','C4','C5','C6','C7','C8'])
+@pytest.mark.parametrize('variant',['G1_level1','T1_level1','C1','C2','C3','C4','C5','C6','C7','C8'])
 def test_fixture_candidate_has_no_automatic_quality_truth(tmp_path,variant,monkeypatch):
     source=Path(__file__).parent/'fixtures/B360011502301063A0/B360011502301063A0.gltf'
     digest,_=asset_digest(source)

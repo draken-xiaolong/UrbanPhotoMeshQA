@@ -30,6 +30,22 @@ def test_multi_region_budget_is_shared_and_nested():
     assert not SurfaceRegion(mesh(),2026).mask(0).any()
 
 
+def test_fractional_deletion_preserves_area_uv_winding_and_source_mapping():
+    from urbanphotomeshqa.process_degradations import remove_fractional_faces, areas
+    m = mesh()
+    for fraction in (0, .001, .025, .5, .99, 1):
+        result, source, bary = remove_fractional_faces(m, [fraction, 0])
+        assert np.isclose(areas(result).sum(), 1-.5*fraction, atol=1e-12)
+        assert np.all(areas(result)>0)
+        triangles = result.vertices[result.faces]
+        assert np.all(np.cross(triangles[:,1]-triangles[:,0], triangles[:,2]-triangles[:,0])[:,2]>0)
+        assert np.allclose(result.texcoords, result.vertices[:,:2]*.4+.1)
+        assert np.allclose(bary.sum(2),1) and np.all(bary>=0)
+        assert np.allclose(triangles,np.einsum('fij,fjk->fik',bary,m.vertices[m.faces[source]]))
+    removed, source, bary = remove_fractional_faces(m, [1,1])
+    assert removed.faces.shape==(0,3) and bary.shape==(0,3,3) and source.size==0
+
+
 def test_texture_support_and_no_wrap():
     m = mesh(); mask = surface_mask(m, np.ones(2,bool), 0, (64,64))
     arr = np.random.default_rng(3).integers(0,255,(64,64,4), dtype=np.uint8)
