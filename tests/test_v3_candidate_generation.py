@@ -38,6 +38,11 @@ def test_fixture_candidate_has_no_automatic_quality_truth(tmp_path,variant,monke
     assert len(rows)==1 and rows[0]['ratings']=={}
     assert rows[0]['formal_admitted'] is False
     assert not np.any(rows[0]['patch_quality_valid_mask'])
+    from urbanphotomeshqa.v3_attribute_labels import compile_labels
+    labels=json.loads((tmp_path/'candidate/assets'/variant/'visible_attribute_labels.json').read_text())
+    targets=compile_labels(labels,rows[0]['content_digest'],rows[0]['patch_layout_digest'])
+    assert not targets['building_valid'].any()
+    assert not targets['patches_valid'].any()
     support=tmp_path/'candidate/assets'/variant/'intervention_support.npz'
     with np.load(support) as data:
         assert data['source_face_attributes'].shape[1]==6

@@ -18,6 +18,7 @@ from urbanphotomeshqa.integrity import asset_digest
 from urbanphotomeshqa.patches import topological_patch_layout
 from urbanphotomeshqa.process_degradations import MultiSurfaceRegion, areas, deform, local_texture, surface_mask, textured_qem, island_projection_ghost, exposure_inconsistency
 from urbanphotomeshqa.v3_protocol import PATCH_COUNT, VERSION, effective_rating, planned_slots, stable_seed
+from urbanphotomeshqa.v3_attribute_labels import empty_labels
 
 
 def recipe(slot, building_index, diagonal):
@@ -200,12 +201,17 @@ def build(source, root, admission_path, building_index, selected=None):
         current_layout = topological_patch_layout(current,PATCH_COUNT)
         np.savez_compressed(folder/'current_patch_layout.npz',**current_layout)
         status = validate(path)
+        layout_digest = hashlib.sha256((folder/'current_patch_layout.npz').read_bytes()).hexdigest()
+        (folder/'visible_attribute_labels.json').write_text(json.dumps(
+            empty_labels(status['asset_digest'], layout_digest), indent=2))
         record = {**slot,'schema_version':1,'protocol_version':VERSION,
                   'gltf':str(path.relative_to(root)), 'source_digest':source_digest,
                   'content_digest':status['asset_digest'],'decoded_digest':decoded_digest(current),
                   'operations':operations,'ratings':{},'formal_admitted':False,
                   'rating_status':'pending_independent_review','patch_count':PATCH_COUNT,
                   'patch_layout_version':'topological_v2_fixed16',
+                  'patch_layout_digest':layout_digest,
+                  'visible_attribute_labels':'visible_attribute_labels.json',
                   'current_source_face_mapping':'exact_surviving_face_order' if mappings_exact else 'unknown_after_qem',
                   'patch_quality_valid_mask':[[False]*3 for _ in range(PATCH_COUNT)],
                   'visible_attribute_valid_mask':[[False]*6 for _ in range(PATCH_COUNT)],
