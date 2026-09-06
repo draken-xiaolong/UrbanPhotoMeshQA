@@ -21,6 +21,8 @@
 
 ### 最新接续：2026-09-06 08:59起，V3联合质量头小测试通过
 
+- 本轮收尾：GitHub与GPU隔离代码均到`6c52bc3`（日志后续提交另算），历史fixture本地改动保留。GPU首次测试25通过、9项因新_scratch父目录不存在而setup失败；创建该明确目录后重跑候选模块10通过，共34个不同测试通过，不是模型/数据退化失败。当前没有生成/训练作业运行，由心跳继续，不要等待旧20229。
+- 查看C5第二轮细节总览及原生view2，暂定2未变，T2仍因暗部掩盖而不确定。另存外置盘`ratings/A_C5_attempt02/development_observation_detail_v2.json`，绑定内容和receipt hash，明确目标知情开发意见、非MOS、非正式标签；没有将target1强塞成观测1。其余33＋4条细节尚待复核。
 - 外置盘真挂载，约822GiB空闲。46908、75063均成功退出；T2第二轮4条与C5第二轮1条1024细节均已生成，C5同步55575也成功退出。补充证据目录`A_dev33_detail_v2`、`A_T2_attempt02_detail_v2`、`A_C5_attempt02_detail_v2`均已在外置盘；无需再渲染这些相同证据，下一步是补充视觉复核而非生成。
 - 新建包内`v3_quality_head.py`：轻量共享Patch编码/掩蔽均值聚合，建筑和16Patch分别输出3质量接口与6独立异常logits，额外有单调整序的5档ordinal接口。forward只接受当前资产特征与Patch有效mask，没有Clean/攻击/目标档输入。它是首层基线模块，不替代计划中的GATv2/层次模型比较，不是已训练模型。
 - 损失按建筑/局部、质量/属性分别使用valid mask；总体档位不复制给局部或几何纹理分项。无效Patch的NaN先屏蔽再编码，空监督可微零；质量顺序显式geometry/texture/overall。Checkpoint同时校验模型schema、6类顺序、16Patch、特征签名，旧发布checkpoint不能静默加载。
