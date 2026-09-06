@@ -42,8 +42,8 @@ def recipe(slot, building_index, diagonal):
             else:
                 entry.update(kind='textured_qem', retained=[.80,.60,.35,.12][i])
         elif category == 'T1':
-            entry.update(kind='downsample_encoding', ratio=[.25,.08,.025,.008][i],
-                         jpeg_quality=[55,35,20,10][i])
+            entry.update(kind='downsample_encoding', ratio=[.25,.08,.045,.008][i],
+                         jpeg_quality=[55,35,25,10][i])
         elif category == 'T2':
             entry.update(kind='projection_ghost', fraction=[.30,.65,.85,.97][i],
                          shift_relative=[.12,.25,.35,.45][i],
