@@ -84,6 +84,37 @@ def test_bounded_exposure_preserves_alpha_support_and_neutral_color():
         exposure_inconsistency(Image.fromarray(array),mask,8)
 
 
+def test_inverse_affine_projection_changes_repeated_rows_without_touching_outside():
+    from urbanphotomeshqa.process_degradations import island_projection_ghost
+    array = np.zeros((64,32,4),np.uint8)
+    array[..., :3] = (np.arange(64)[:,None,None] % 8 < 4)*255
+    array[..., 3] = 213
+    domain = np.ones((64,32),bool)
+    selected = np.zeros_like(domain); selected[8:56,4:28] = True
+    out = np.asarray(island_projection_ghost(Image.fromarray(array),selected,domain,0,
+        vertical_scale=.35, shear=.25, blend=.9, linear_blend=True))
+    assert np.any(out[selected,:3] != array[selected,:3])
+    assert np.array_equal(out[~selected],array[~selected])
+    assert np.array_equal(out[...,3],array[...,3])
+    unchanged = np.asarray(island_projection_ghost(Image.fromarray(array),selected,domain,0))
+    assert np.array_equal(unchanged,array)
+
+
+def test_affine_projection_never_crosses_islands_and_rejects_extreme_parameters():
+    from urbanphotomeshqa.process_degradations import island_projection_ghost
+    import pytest
+    array = np.zeros((24,32,4),np.uint8)
+    array[2:20,2:10] = [255,0,0,255]
+    array[2:20,20:28] = [0,255,0,255]
+    domain = array[...,3]>0
+    out = np.asarray(island_projection_ghost(Image.fromarray(array),domain,domain,.45,
+        vertical_scale=.12,shear=.4,blend=1,linear_blend=True))
+    assert np.array_equal(out,array)
+    for kwargs in ({'vertical_scale':0},{'shear':2},{'blend':float('nan')}):
+        with pytest.raises(ValueError):
+            island_projection_ghost(Image.fromarray(array),domain,domain,.1,**kwargs)
+
+
 def test_repeat_uv_mask_is_translation_invariant():
     from dataclasses import replace
     m=mesh();selected=np.ones(2,bool)

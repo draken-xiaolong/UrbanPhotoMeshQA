@@ -45,9 +45,12 @@ def recipe(slot, building_index, diagonal):
             entry.update(kind='downsample_encoding', ratio=[.25,.08,.025,.008][i],
                          jpeg_quality=[55,35,20,10][i])
         elif category == 'T2':
-            entry.update(kind='projection_ghost', fraction=[.25,.45,.65,.85][i],
-                         shift_relative=[.08,.18,.32,.48][i],
-                         sampling_version='raster_connected_uv_domain_v2',
+            entry.update(kind='projection_ghost', fraction=[.45,.65,.85,.97][i],
+                         shift_relative=[.18,.25,.35,.45][i],
+                         vertical_scale=[.90,.65,.35,.12][i],
+                         shear=[.04,.12,.25,.40][i],
+                         blend=[.5,.7,.9,1.][i], linear_blend=True,
+                         sampling_version='raster_connected_inverse_affine_v3',
                          boundary_policy='nearest_valid_same_component',
                          limitation='touching UV islands may share a raster component; not camera-grounded')
         elif category == 'T3':
@@ -174,7 +177,9 @@ def build(source, root, admission_path, building_index, selected=None):
                     before = np.asarray(image).copy()
                     if kind == 'projection_ghost':
                         valid_domain = surface_mask(clean,remaining.astype(float),material,image.size)
-                        image = island_projection_ghost(image,mask,valid_domain,op['shift_relative'])
+                        image = island_projection_ghost(image,mask,valid_domain,op['shift_relative'],
+                            vertical_scale=op['vertical_scale'], shear=op['shear'],
+                            blend=op['blend'], linear_blend=op['linear_blend'])
                     elif kind == 'radiometric':
                         image = exposure_inconsistency(image,mask,op['exposure_ev'],op['warmth'])
                         rgb = np.asarray(image)[...,:3]
